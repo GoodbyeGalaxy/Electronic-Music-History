@@ -1,4 +1,8 @@
-"""Discovers electronic music genres via Wikipedia categories + enriches with Wikidata."""
+"""Discovers electronic music genres via Wikipedia categories + enriches with Wikidata.
+
+Resume-fähig: Zwischenergebnisse werden nach jeder Phase in Checkpoint-Dateien gespeichert.
+Bei Neustart werden bereits abgeschlossene Phasen übersprungen.
+"""
 from __future__ import annotations
 import re
 import time
@@ -9,11 +13,14 @@ from collections import defaultdict
 
 WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 WIKIDATA_ENDPOINT = "https://query.wikidata.org/sparql"
-USER_AGENT = "ElectronicMusicHistoryBot/0.1 (research project)"
+# Wikimedia requires a descriptive User-Agent with contact info for automated scripts.
+USER_AGENT = (
+    "ElectronicMusicHistoryBot/1.0 "
+    "(https://github.com/zuperzee/Electronic-Music-History; research project)"
+)
 ROOT_CATEGORY = "Category:Electronic_music_genres"
 
-# Subcategory names containing these words are skipped during recursion —
-# they are artist/album/event lists, not genre taxonomy branches.
+# Subcategory names containing these words are non-genre branches and skipped.
 _SKIP_SUBCAT_WORDS = frozenset([
     "musician", "artist", "band", "group", "singer", "singer-songwriter",
     "album", "song", "single", "record", "label", "discograph",
@@ -22,19 +29,32 @@ _SKIP_SUBCAT_WORDS = frozenset([
 ])
 
 
-def _wiki_get(params: dict, rate_limit: float) -> dict:
-    """Makes a single Wikipedia API call with rate limiting and 429 backoff."""
-    time.sleep(rate_limit)
+# ---------------------------------------------------------------------------
+# Low-level HTTP helpers
+# ---------------------------------------------------------------------------
+
+def _retry_after(resp: requests.Response, fallback: float = 60.0) -> float:
+    """Parse Retry-After header value; fall back to `fallback` seconds."""
+    try:
+        return float(resp.headers.get("Retry-After", fallback))
+    except (ValueError, TypeError):
+        return fallback
+
+
+def _get_with_backoff(
+    url: str,
+    params: dict,
+    timeout: int = 30,
+    rate_limit: float = 0.0,
+) -> dict:
+    """GET request with pre-sleep, 429 backoff via Retry-After, and 6 retries."""
+    if rate_limit:
+        time.sleep(rate_limit)
     for attempt in range(6):
-        resp = requests.get(
-            WIKIPEDIA_API,
-            params=params,
-            headers={"User-Agent": USER_AGENT},
-            timeout=30,
-        )
+        resp = requests.get(url, params=params, headers={"User-Agent": USER_AGENT}, timeout=timeout)
         if resp.status_code == 429:
-            wait = 10 * (attempt + 1)
-            print(f"  429 rate-limited, waiting {wait}s...")
+            wait = _retry_after(resp)
+            print(f"  429 – waiting {wait:.0f}s (Retry-After)...", flush=True)
             time.sleep(wait)
             continue
         resp.raise_for_status()
@@ -43,9 +63,13 @@ def _wiki_get(params: dict, rate_limit: float) -> dict:
     return {}
 
 
+# ---------------------------------------------------------------------------
+# Phase 1 – Wikipedia category crawl
+# ---------------------------------------------------------------------------
+
 def fetch_category_titles(
     root_category: str,
-    rate_limit: float = 1.0,
+    rate_limit: float = 2.0,
     max_depth: int = 2,
 ) -> list[str]:
     """Iterative BFS over Wikipedia category tree; returns article titles."""
@@ -58,12 +82,13 @@ def fetch_category_titles(
         if category in seen:
             continue
         seen.add(category)
-        data = _wiki_get(
+        data = _get_with_backoff(
+            WIKIPEDIA_API,
             {
                 "action": "query", "list": "categorymembers", "cmtitle": category,
                 "cmlimit": 500, "cmtype": "page|subcat", "format": "json",
             },
-            rate_limit,
+            rate_limit=rate_limit,
         )
         for member in data.get("query", {}).get("categorymembers", []):
             if member.get("ns") == 14:
@@ -79,6 +104,10 @@ def fetch_category_titles(
     return titles
 
 
+# ---------------------------------------------------------------------------
+# Phase 2 – Wikipedia batch (abstracts + QIDs)
+# ---------------------------------------------------------------------------
+
 def fetch_wikipedia_batch(titles: list[str]) -> dict[str, dict]:
     """Fetches abstract + Wikidata QID for up to 50 titles at once.
 
@@ -86,32 +115,20 @@ def fetch_wikipedia_batch(titles: list[str]) -> dict[str, dict]:
     """
     if not titles:
         return {}
-    params = {
-        "action": "query",
-        "titles": "|".join(titles[:50]),
-        "prop": "extracts|pageprops",
-        "exintro": 1,
-        "explaintext": 1,
-        "sentences": 3,
-        "ppprop": "wikibase_item",
-        "format": "json",
-        "redirects": 1,
-    }
-    for attempt in range(6):
-        resp = requests.get(
-            WIKIPEDIA_API, params=params,
-            headers={"User-Agent": USER_AGENT}, timeout=30,
-        )
-        if resp.status_code == 429:
-            wait = 10 * (attempt + 1)
-            print(f"  wiki batch 429, waiting {wait}s...")
-            time.sleep(wait)
-            continue
-        resp.raise_for_status()
-        break
-    else:
-        resp.raise_for_status()
-    data = resp.json()
+    data = _get_with_backoff(
+        WIKIPEDIA_API,
+        {
+            "action": "query",
+            "titles": "|".join(titles[:50]),
+            "prop": "extracts|pageprops",
+            "exintro": 1,
+            "explaintext": 1,
+            "sentences": 3,
+            "ppprop": "wikibase_item",
+            "format": "json",
+            "redirects": 1,
+        },
+    )
     result: dict[str, dict] = {}
     for page in data.get("query", {}).get("pages", {}).values():
         if page.get("missing"):
@@ -125,6 +142,10 @@ def fetch_wikipedia_batch(titles: list[str]) -> dict[str, dict]:
             }
     return result
 
+
+# ---------------------------------------------------------------------------
+# Phase 3 / 4 – Wikidata SPARQL (inception + parents)
+# ---------------------------------------------------------------------------
 
 def fetch_wikidata_for_qids(qids: list[str]) -> dict[str, dict]:
     """Returns {qid: {name, year_start, parent_qids, enwiki_slug}} for the given QIDs."""
@@ -143,27 +164,15 @@ SELECT ?genre ?genreLabel ?inception ?parent ?sitelink WHERE {{
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
 """
-    for attempt in range(6):
-        resp = requests.get(
-            WIKIDATA_ENDPOINT,
-            params={"query": query, "format": "json"},
-            headers={"User-Agent": USER_AGENT},
-            timeout=90,
-        )
-        if resp.status_code == 429:
-            wait = 15 * (attempt + 1)
-            print(f"  wikidata 429, waiting {wait}s...")
-            time.sleep(wait)
-            continue
-        resp.raise_for_status()
-        break
-    else:
-        resp.raise_for_status()
-
+    data = _get_with_backoff(
+        WIKIDATA_ENDPOINT,
+        {"query": query, "format": "json"},
+        timeout=90,
+    )
     grouped: dict[str, dict] = {}
     parent_map: dict[str, set] = defaultdict(set)
 
-    for binding in resp.json()["results"]["bindings"]:
+    for binding in data["results"]["bindings"]:
         qid = binding["genre"]["value"].rsplit("/", 1)[-1]
         if qid not in grouped:
             name = binding.get("genreLabel", {}).get("value", "")
@@ -186,38 +195,85 @@ SELECT ?genre ?genreLabel ?inception ?parent ?sitelink WHERE {{
     return grouped
 
 
-def fetch(output_dir: Path, rate_limit: float = 1.5) -> None:
+# ---------------------------------------------------------------------------
+# Checkpoint helpers
+# ---------------------------------------------------------------------------
+
+def _load_yaml(path: Path) -> object:
+    if path.exists():
+        return yaml.safe_load(path.read_text(encoding="utf-8")) or None
+    return None
+
+
+def _save_yaml(path: Path, data: object) -> None:
+    path.write_text(yaml.dump(data, allow_unicode=True), encoding="utf-8")
+
+
+# ---------------------------------------------------------------------------
+# Main orchestrator
+# ---------------------------------------------------------------------------
+
+def fetch(output_dir: Path, rate_limit: float = 2.0) -> None:
+    """Full pipeline with checkpoint-resume support.
+
+    Checkpoints (skipped if already present):
+      _cp_titles.yaml   – list[str] of Wikipedia titles from category crawl
+      _cp_wiki.yaml     – dict[title, {qid, description}]
+      _cp_wd.yaml       – dict[qid, {name, year_start, parent_qids, enwiki_slug}]
+    """
     output_dir.mkdir(parents=True, exist_ok=True)
+    cp_titles = output_dir / "_cp_titles.yaml"
+    cp_wiki   = output_dir / "_cp_wiki.yaml"
+    cp_wd     = output_dir / "_cp_wd.yaml"
 
-    # Phase 1: Discover genres via Wikipedia category tree
-    print(f"Crawling {ROOT_CATEGORY}...")
-    titles = sorted(set(fetch_category_titles(ROOT_CATEGORY, rate_limit=rate_limit)))
-    print(f"Found {len(titles)} genre articles in category tree")
+    # Phase 1: Category crawl
+    titles_raw = _load_yaml(cp_titles)
+    if titles_raw:
+        titles: list[str] = titles_raw
+        print(f"Phase 1 skipped (checkpoint): {len(titles)} titles", flush=True)
+    else:
+        print(f"Phase 1: crawling {ROOT_CATEGORY}...", flush=True)
+        titles = sorted(set(fetch_category_titles(ROOT_CATEGORY, rate_limit=rate_limit)))
+        _save_yaml(cp_titles, titles)
+        print(f"Phase 1 done: {len(titles)} genre articles found", flush=True)
 
-    # Phase 2: Wikipedia abstracts + Wikidata QIDs in batches of 50
-    print("Fetching Wikipedia data (batches of 50)...")
-    wiki_data: dict[str, dict] = {}
-    for i in range(0, len(titles), 50):
-        wiki_data.update(fetch_wikipedia_batch(titles[i:i + 50]))
-        time.sleep(rate_limit)
-        if i % 200 == 0 and i > 0:
-            print(f"  {i}/{len(titles)} processed")
+    # Phase 2: Wikipedia abstracts + QIDs
+    wiki_raw = _load_yaml(cp_wiki)
+    if wiki_raw:
+        wiki_data: dict[str, dict] = wiki_raw
+        print(f"Phase 2 skipped (checkpoint): {len(wiki_data)} wiki entries", flush=True)
+    else:
+        print(f"Phase 2: fetching Wikipedia data ({len(titles)} titles, batches of 50)...", flush=True)
+        wiki_data = {}
+        for i in range(0, len(titles), 50):
+            batch = fetch_wikipedia_batch(titles[i:i + 50])
+            wiki_data.update(batch)
+            _save_yaml(cp_wiki, wiki_data)          # checkpoint after every batch
+            time.sleep(rate_limit)
+            print(f"  {min(i + 50, len(titles))}/{len(titles)} processed", flush=True)
+        print(f"Phase 2 done: QIDs for {len(wiki_data)}/{len(titles)} articles", flush=True)
 
     primary_qids = [v["qid"] for v in wiki_data.values()]
     primary_qid_set = set(primary_qids)
-    print(f"Got QIDs for {len(primary_qids)}/{len(titles)} articles")
 
-    # Phase 3: Wikidata dates + parent relations in batches of 100
-    print("Fetching Wikidata relations...")
-    wd_data: dict[str, dict] = {}
-    for i in range(0, len(primary_qids), 100):
-        wd_data.update(fetch_wikidata_for_qids(primary_qids[i:i + 100]))
-        time.sleep(rate_limit)
+    # Phase 3: Wikidata dates + parent relations
+    wd_raw = _load_yaml(cp_wd)
+    if wd_raw:
+        wd_data: dict[str, dict] = wd_raw
+        print(f"Phase 3 skipped (checkpoint): {len(wd_data)} wikidata entries", flush=True)
+    else:
+        print(f"Phase 3: fetching Wikidata relations ({len(primary_qids)} QIDs)...", flush=True)
+        wd_data = {}
+        for i in range(0, len(primary_qids), 100):
+            wd_data.update(fetch_wikidata_for_qids(primary_qids[i:i + 100]))
+            _save_yaml(cp_wd, wd_data)              # checkpoint after every batch
+            time.sleep(rate_limit)
+            print(f"  {min(i + 100, len(primary_qids))}/{len(primary_qids)} QIDs done", flush=True)
+        print(f"Phase 3 done: {len(wd_data)} entries", flush=True)
 
-    # Build primary genre list; collect candidate QIDs (parents not in category)
+    # Build primary genre list + collect candidate QIDs
     genres: list[dict] = []
     candidate_qids: set[str] = set()
-
     for title, wiki in wiki_data.items():
         qid = wiki["qid"]
         wd = wd_data.get(qid, {})
@@ -234,33 +290,35 @@ def fetch(output_dir: Path, rate_limit: float = 1.5) -> None:
             "parent_qids": parent_qids,
         })
 
-    # Phase 4: Fetch Wikidata data for candidate genres (no Wikipedia abstract needed)
-    print(f"Fetching {len(candidate_qids)} candidate genres referenced as parents...")
+    # Phase 4: Wikidata for candidate genres (parents not in Wikipedia category)
+    print(f"Phase 4: fetching {len(candidate_qids)} candidate genres...", flush=True)
+    cand_list = sorted(candidate_qids)
     cand_wd: dict[str, dict] = {}
-    cand_list = list(candidate_qids)
     for i in range(0, len(cand_list), 100):
         cand_wd.update(fetch_wikidata_for_qids(cand_list[i:i + 100]))
         time.sleep(rate_limit)
 
-    candidates: list[dict] = []
-    for qid in sorted(candidate_qids):
-        wd = cand_wd.get(qid, {})
-        candidates.append({
+    candidates: list[dict] = [
+        {
             "qid": qid,
-            "name": wd.get("name", qid),
-            "year_start": wd.get("year_start"),
-            "enwiki_slug": wd.get("enwiki_slug", ""),
+            "name": cand_wd.get(qid, {}).get("name", qid),
+            "year_start": cand_wd.get(qid, {}).get("year_start"),
+            "enwiki_slug": cand_wd.get(qid, {}).get("enwiki_slug", ""),
             "description": "",
-            "parent_qids": wd.get("parent_qids", []),
-        })
+            "parent_qids": cand_wd.get(qid, {}).get("parent_qids", []),
+        }
+        for qid in cand_list
+    ]
 
     raw_path = output_dir / "raw.yaml"
-    raw_path.write_text(yaml.dump(genres, allow_unicode=True), encoding="utf-8")
-    print(f"Primary genres: {len(genres)} -> {raw_path}")
+    _save_yaml(raw_path, genres)
+    print(f"Primary genres: {len(genres)} → {raw_path}", flush=True)
 
     candidates_path = output_dir / "candidates.yaml"
-    candidates_path.write_text(yaml.dump(candidates, allow_unicode=True), encoding="utf-8")
-    print(f"Candidates (for review): {len(candidates)} -> {candidates_path}")
+    _save_yaml(candidates_path, candidates)
+    print(f"Candidates: {len(candidates)} → {candidates_path}", flush=True)
+
+    print("Done. Checkpoints kept in _cp_*.yaml (delete to force re-fetch).", flush=True)
 
 
 if __name__ == "__main__":
