@@ -35,6 +35,17 @@ def test_parse_audio_result_rejects_non_cc():
     assert parse_audio_result(mock_page) is None
 
 
+def test_parse_audio_result_accepts_public_domain():
+    mock_page = {
+        "title": "File:Test_audio.ogg",
+        "imageinfo": [{"extmetadata": {
+            "LicenseShortName": {"value": "Public Domain"},
+        }}],
+    }
+    result = parse_audio_result(mock_page)
+    assert result is not None
+
+
 def test_search_audio_calls_commons_api():
     with patch("pipeline.resolve_commons.requests.get") as mock_get:
         mock_get.return_value.json.return_value = {"query": {"pages": {}}}

@@ -6,7 +6,7 @@ from pathlib import Path
 
 COMMONS_API = "https://commons.wikimedia.org/w/api.php"
 USER_AGENT = "ElectronicMusicHistoryBot/0.1 (research project)"
-CC_MARKERS = {"cc-by", "cc-by-sa", "cc0", "pd", "public domain"}
+CC_MARKERS = {"cc-by", "cc-by-sa", "cc0", "pd", "public-domain"}
 
 
 def build_commons_url(filename: str) -> str:
