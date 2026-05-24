@@ -111,17 +111,37 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     edgeSel.classed('edge--dimmed', false);
   }
 
+  let _visibleTracks = null;
+  let _minYear = null;
+  let _maxYear = null;
+
+  function _applyFilters() {
+    nodeSel.style('display', d => {
+      if (_visibleTracks && !_visibleTracks.has(d.track)) return 'none';
+      if (_minYear !== null && d.year_start < _minYear) return 'none';
+      if (_maxYear !== null && d.year_start > _maxYear) return 'none';
+      return null;
+    });
+    edgeSel.style('display', d => {
+      const srcOk = (!_visibleTracks || _visibleTracks.has(d.source.track)) &&
+        (_minYear === null || d.source.year_start >= _minYear) &&
+        (_maxYear === null || d.source.year_start <= _maxYear);
+      const tgtOk = (!_visibleTracks || _visibleTracks.has(d.target.track)) &&
+        (_minYear === null || d.target.year_start >= _minYear) &&
+        (_maxYear === null || d.target.year_start <= _maxYear);
+      return srcOk && tgtOk ? null : 'none';
+    });
+  }
+
   function filterTracks(visibleTrackIds) {
-    const visible = new Set(visibleTrackIds);
-    nodeSel.style('display', d => visible.has(d.track) ? null : 'none');
-    edgeSel.style('display',
-      d => visible.has(d.source.track) && visible.has(d.target.track) ? null : 'none');
+    _visibleTracks = visibleTrackIds ? new Set(visibleTrackIds) : null;
+    _applyFilters();
   }
 
   function filterYears(minYear, maxYear) {
-    nodeSel.style('display', d => d.year_start >= minYear && d.year_start <= maxYear ? null : 'none');
-    edgeSel.style('display',
-      d => d.source.year_start >= minYear && d.target.year_start <= maxYear ? null : 'none');
+    _minYear = minYear;
+    _maxYear = maxYear;
+    _applyFilters();
   }
 
   return { highlight, clearHighlight, filterTracks, filterYears };
