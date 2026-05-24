@@ -36,7 +36,7 @@
 - id: acid_house
   name: Acid House
   track: house
-  year_start: 1986
+  year_start: 1987
   origin: "Chicago, USA"
   parents: [house]
   description: >
