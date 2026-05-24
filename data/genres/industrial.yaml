@@ -1,0 +1,34 @@
+- id: industrial
+  name: Industrial
+  track: industrial
+  year_start: 1977
+  origin: "London, UK"
+  parents: [tape_music]
+  description: >
+    Throbbing Gristle gruendeten 1975 Industrial Records und praegten
+    mit ihrer Musik einen Stil der bewussten Provokation, Noise und
+    konzeptuellen Konfrontation. The Second Annual Report (1977) ist das
+    Debuetalbuem.
+  key_artists: [Throbbing Gristle, "Einstürzende Neubauten", SPK, Nurse with Wound]
+  key_labels: [Industrial Records, Some Bizzare]
+  subvariants: [Power Electronics, Noise, Post-Industrial]
+  wikidata_id: Q185816
+  wikipedia_slug: Industrial_music
+  audio_examples: []
+
+- id: ebm
+  name: EBM
+  track: industrial
+  year_start: 1981
+  origin: "Bruessel, BE"
+  parents: [industrial]
+  description: >
+    Electronic Body Music entstand in Belgien mit Gruppen wie Front 242
+    und Nitzer Ebb als tanzbare Hybride aus Industrial-Aggression und
+    Synthesizer-Pop. Der Begriff wurde von Front 242 selbst gepragt.
+  key_artists: [Front 242, Nitzer Ebb, Skinny Puppy, DAF]
+  key_labels: [Play It Again Sam, "Wax Trax!"]
+  subvariants: [Aggrotech, Futurepop, Dark Electro]
+  wikidata_id: Q578643
+  wikipedia_slug: Electronic_body_music
+  audio_examples: []

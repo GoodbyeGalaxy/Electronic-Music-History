@@ -1,0 +1,69 @@
+- id: techno
+  name: Techno
+  track: techno
+  year_start: 1985
+  origin: "Detroit, USA"
+  parents: [industrial]
+  description: >
+    Die Belleville Three (Juan Atkins, Derrick May, Kevin Saunderson)
+    entwickelten Mitte der 1980er in Detroit einen Stil aus europaeischer
+    Elektronik (Kraftwerk, Giorgio Moroder), Funk und Chicago House.
+    Strings of Life (Derrick May, 1987) ist das bekannteste Schlusselwerk.
+  key_artists: [Juan Atkins, Derrick May, Kevin Saunderson, Jeff Mills, Underground Resistance]
+  key_labels: [Transmat, Metroplex, KMS, Underground Resistance]
+  subvariants: []
+  wikidata_id: Q48803
+  wikipedia_slug: Techno
+  audio_examples: []
+
+- id: acid_techno
+  name: Acid Techno
+  track: techno
+  year_start: 1991
+  origin: London/Berlin
+  parents: [techno]
+  description: >
+    Acid Techno kombiniert den harten Groove des Detroit Techno mit dem
+    verzerrenden TB-303-Bassklang des Acid House. In London und Berlin
+    entstanden in den fruehen 1990ern pragende Tracks auf Labels wie
+    Evolution und T&D.
+  key_artists: [Emmanuel Top, Liberator DJs, Simon F]
+  key_labels: [Evolution Records, T&D Records]
+  subvariants: []
+  wikidata_id: Q830399
+  wikipedia_slug: Acid_techno
+  audio_examples: []
+
+- id: minimal_techno
+  name: Minimal Techno
+  track: techno
+  year_start: 1994
+  origin: Detroit/Berlin
+  parents: [techno]
+  description: >
+    Robert Hood und Daniel Bell schufen Mitte der 1990er einen reduzierten,
+    hypnotischen Stil. In Berlin entwickelten Richie Hawtin und Ricardo Villalobos
+    zu Beginn der 2000er eine Hoehzeit des Subgenres.
+  key_artists: [Robert Hood, Daniel Bell, Richie Hawtin, Ricardo Villalobos]
+  key_labels: [Axis, Minimise, Minus]
+  subvariants: [Microhouse]
+  wikidata_id: Q1195085
+  wikipedia_slug: Minimal_techno
+  audio_examples: []
+
+- id: dub_techno
+  name: Dub Techno
+  track: techno
+  year_start: 1993
+  origin: "Berlin, DE"
+  parents: [techno]
+  description: >
+    Basic Channel (Mark Ernestus und Moritz von Oswald) praegten in Berlin
+    ab 1993 einen tiefen, dubbigen Techno-Stil mit Schallplattenecho und
+    dichter Atmosphaere. Das Label Chain Reaction wurde zum Zentrum.
+  key_artists: [Basic Channel, Maurizio, Deepchord]
+  key_labels: [Basic Channel, Chain Reaction]
+  subvariants: []
+  wikidata_id: Q1228038
+  wikipedia_slug: Dub_techno
+  audio_examples: []

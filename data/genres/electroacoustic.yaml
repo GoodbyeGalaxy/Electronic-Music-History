@@ -1,0 +1,55 @@
+- id: musique_concrete
+  name: "Musique Concrete"
+  track: electroacoustic
+  year_start: 1948
+  origin: "Paris, FR"
+  parents: []
+  description: >
+    Pierre Schaeffer entwickelte 1948 im franzoesischen Rundfunk (RTF) eine
+    Kompositionsmethode, die aufgenommene Alltagsklaenge als musikalisches
+    Material verwendet. Etudes de bruits (1948) gilt als erste Veroeffentlichung.
+  key_artists: [Pierre Schaeffer, Pierre Henry, Luc Ferrari]
+  key_labels: [INA-GRM]
+  subvariants: [Acousmatic Music]
+  wikidata_id: Q207436
+  wikipedia_slug: "Musique_concrete"
+  audio_examples:
+    - file: "Pierre_Schaeffer_-_Etudes_de_bruits_(1948).ogg"
+      source: wikimedia_commons
+      title: "Etudes de bruits (1948)"
+      artist: Pierre Schaeffer
+
+- id: elektronische_musik
+  name: Elektronische Musik
+  track: electroacoustic
+  year_start: 1953
+  origin: "Koeln, DE"
+  parents: []
+  description: >
+    Am Studio fuer elektronische Musik des WDR Koeln entwickelten Stockhausen,
+    Eimert und Nono ab 1953 eine Musik aus rein synthetischen Klaengen.
+    Studien I und II (Stockhausen, 1953/54) sind Schluesselwerke.
+  key_artists: [Karlheinz Stockhausen, Herbert Eimert, Luigi Nono]
+  key_labels: [WDR]
+  subvariants: []
+  wikidata_id: Q816980
+  wikipedia_slug: Electronic_music
+  audio_examples: []
+
+- id: tape_music
+  name: Tape Music
+  track: electroacoustic
+  year_start: 1951
+  origin: "New York, USA"
+  parents: [musique_concrete]
+  description: >
+    In den USA entwickelten Louis und Bebe Barron sowie die New York School
+    (Cage, Tudor) ab den fruehen 1950ern eine eigene Tradition mit Tonband
+    als Kompositionswerkzeug. Forbidden Planet (1956) war der erste vollstaendig
+    elektronische Filmsoundtrack.
+  key_artists: [Louis Barron, Bebe Barron, John Cage, David Tudor]
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1145220
+  wikipedia_slug: Tape_music
+  audio_examples: []

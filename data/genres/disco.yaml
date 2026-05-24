@@ -1,0 +1,51 @@
+- id: disco
+  name: Disco
+  track: disco
+  year_start: 1974
+  origin: "New York, USA"
+  parents: []
+  description: >
+    Disco entstand in den New Yorker Underground-Clubs der fruehen 1970er
+    als Musik fuer queere und afroamerikanische Communities. Giorgio Moroder,
+    Nile Rodgers (Chic) und die Produzenten von Philly Soul definierten
+    den Klang mit Streichern und pumpenden Rhythmen.
+  key_artists: [Giorgio Moroder, Nile Rodgers, Donna Summer, Gloria Gaynor]
+  key_labels: [Casablanca Records, Philadelphia International]
+  subvariants: []
+  wikidata_id: Q10484
+  wikipedia_slug: Disco
+  audio_examples: []
+
+- id: hi_nrg
+  name: Hi-NRG
+  track: disco
+  year_start: 1982
+  origin: San Francisco/London
+  parents: [disco]
+  description: >
+    Hi-NRG entwickelte sich aus Disco in den fruehen 1980ern mit schnellerem
+    Tempo (140-160 BPM), synthetischeren Klaengen und Fokus auf Gay Clubs.
+    Bobby O und Pete Waterman (PWL) praegten den US- und UK-Stil.
+  key_artists: [Bobby O, Sylvester, Dead or Alive, Pet Shop Boys]
+  key_labels: [PWL, Mirage Records]
+  subvariants: []
+  wikidata_id: Q737838
+  wikipedia_slug: Hi-NRG
+  audio_examples: []
+
+- id: italo_disco
+  name: Italo Disco
+  track: disco
+  year_start: 1977
+  origin: Italien
+  parents: [disco]
+  description: >
+    Italienische Produzenten wie Giorgio Moroder entwickelten ab Ende der 1970er
+    einen synthetischeren, melodischeren Disco-Stil. Charakter: Vocoder,
+    Synthesizer-Melodien, oft englische Texte mit deutlichem Akzent.
+  key_artists: [Giorgio Moroder, Den Harrow, Ryan Paris, Spagna]
+  key_labels: [Discomagic, Durium]
+  subvariants: []
+  wikidata_id: Q848916
+  wikipedia_slug: Italo_disco
+  audio_examples: []

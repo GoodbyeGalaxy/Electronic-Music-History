@@ -1,0 +1,68 @@
+- id: house
+  name: House
+  track: house
+  year_start: 1983
+  origin: "Chicago, USA"
+  parents: []
+  description: >
+    Aus den Chicagoer Clubs Warehouse und Music Box hervorgegangen,
+    verbanden DJs wie Frankie Knuckles und Ron Hardy Disco-Rhythmen
+    mit Synthesizern und Drum-Machines. Jesse Saunders On and On (1984)
+    gilt als erste Veroeffentlichung des Genres.
+  key_artists: [Frankie Knuckles, Larry Heard, Marshall Jefferson, Ron Hardy]
+  key_labels: [Trax Records, DJ International]
+  subvariants: []
+  wikidata_id: Q1647099
+  wikipedia_slug: House_music
+  audio_examples: []
+
+- id: deep_house
+  name: Deep House
+  track: house
+  year_start: 1986
+  origin: "Chicago/New York, USA"
+  parents: [house]
+  description: >
+    Larry Heard (Mr. Fingers) praegte mit Tracks wie Can You Feel It (1986)
+    einen soulreicheren, atmosphaerisch tieferen House-Stil. New Yorker
+    Labels wie Strictly Rhythm und Nervous Records trugen zur Verbreitung bei.
+  key_artists: [Larry Heard, Larry Levan, Kerri Chandler]
+  key_labels: [Trax Records, Strictly Rhythm, Nervous Records]
+  subvariants: []
+  wikidata_id: Q1067317
+  wikipedia_slug: Deep_house
+  audio_examples: []
+
+- id: acid_house
+  name: Acid House
+  track: house
+  year_start: 1986
+  origin: "Chicago, USA"
+  parents: [house]
+  description: >
+    Die zufaellig entdeckten Klaenge der Roland TB-303 Bassmaschine —
+    verwendet auf Phuture Acid Tracks (1987) — definierten das Subgenre.
+    In Grossbritannien loeste Acid House 1988 den Second Summer of Love aus.
+  key_artists: [Phuture, DJ Pierre, Armando, "808 State"]
+  key_labels: [Trax Records, FFRR]
+  subvariants: []
+  wikidata_id: Q376670
+  wikipedia_slug: Acid_house
+  audio_examples: []
+
+- id: tech_house
+  name: Tech House
+  track: house
+  year_start: 1994
+  origin: UK/Deutschland
+  parents: [house]
+  description: >
+    Tech House verbindet die Rhythmik und Energie des Techno mit den
+    Harmonieelementen und dem Groove des House. Labels wie Turbo und
+    Hot Creations praegten den internationalen Stil.
+  key_artists: [Ricardo Villalobos, Tiga, Green Velvet, Jamie Jones]
+  key_labels: [Turbo Recordings, Hot Creations, Relief]
+  subvariants: []
+  wikidata_id: Q1662199
+  wikipedia_slug: Tech_house
+  audio_examples: []

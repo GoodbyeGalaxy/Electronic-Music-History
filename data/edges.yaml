@@ -1,0 +1,15 @@
+# Quereinflüsse — nicht als direkte Ableitungen modellierbar
+- from: disco
+  to: house
+  type: influence
+  label: "Chicago Clubs, 1983"
+
+- from: elektronische_musik
+  to: techno
+  type: influence
+  label: "Kraftwerk, Giorgio Moroder"
+
+- from: ebm
+  to: techno
+  type: influence
+  label: "Detroit, 1985"
