@@ -46,7 +46,7 @@ def _wiki_get(params: dict, rate_limit: float) -> dict:
 def fetch_category_titles(
     root_category: str,
     rate_limit: float = 1.0,
-    max_depth: int = 3,
+    max_depth: int = 2,
 ) -> list[str]:
     """Iterative BFS over Wikipedia category tree; returns article titles."""
     seen: set[str] = set()
@@ -86,23 +86,31 @@ def fetch_wikipedia_batch(titles: list[str]) -> dict[str, dict]:
     """
     if not titles:
         return {}
-    resp = requests.get(
-        WIKIPEDIA_API,
-        params={
-            "action": "query",
-            "titles": "|".join(titles[:50]),
-            "prop": "extracts|pageprops",
-            "exintro": 1,
-            "explaintext": 1,
-            "sentences": 3,
-            "ppprop": "wikibase_item",
-            "format": "json",
-            "redirects": 1,
-        },
-        headers={"User-Agent": USER_AGENT},
-        timeout=30,
-    )
-    resp.raise_for_status()
+    params = {
+        "action": "query",
+        "titles": "|".join(titles[:50]),
+        "prop": "extracts|pageprops",
+        "exintro": 1,
+        "explaintext": 1,
+        "sentences": 3,
+        "ppprop": "wikibase_item",
+        "format": "json",
+        "redirects": 1,
+    }
+    for attempt in range(6):
+        resp = requests.get(
+            WIKIPEDIA_API, params=params,
+            headers={"User-Agent": USER_AGENT}, timeout=30,
+        )
+        if resp.status_code == 429:
+            wait = 10 * (attempt + 1)
+            print(f"  wiki batch 429, waiting {wait}s...")
+            time.sleep(wait)
+            continue
+        resp.raise_for_status()
+        break
+    else:
+        resp.raise_for_status()
     data = resp.json()
     result: dict[str, dict] = {}
     for page in data.get("query", {}).get("pages", {}).values():
@@ -135,13 +143,22 @@ SELECT ?genre ?genreLabel ?inception ?parent ?sitelink WHERE {{
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
 """
-    resp = requests.get(
-        WIKIDATA_ENDPOINT,
-        params={"query": query, "format": "json"},
-        headers={"User-Agent": USER_AGENT},
-        timeout=90,
-    )
-    resp.raise_for_status()
+    for attempt in range(6):
+        resp = requests.get(
+            WIKIDATA_ENDPOINT,
+            params={"query": query, "format": "json"},
+            headers={"User-Agent": USER_AGENT},
+            timeout=90,
+        )
+        if resp.status_code == 429:
+            wait = 15 * (attempt + 1)
+            print(f"  wikidata 429, waiting {wait}s...")
+            time.sleep(wait)
+            continue
+        resp.raise_for_status()
+        break
+    else:
+        resp.raise_for_status()
 
     grouped: dict[str, dict] = {}
     parent_map: dict[str, set] = defaultdict(set)
@@ -169,7 +186,7 @@ SELECT ?genre ?genreLabel ?inception ?parent ?sitelink WHERE {{
     return grouped
 
 
-def fetch(output_dir: Path, rate_limit: float = 1.0) -> None:
+def fetch(output_dir: Path, rate_limit: float = 1.5) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Phase 1: Discover genres via Wikipedia category tree
