@@ -1,12 +1,12 @@
-# Genre Expansion — Ishkur Track-Struktur + Wikidata Pipeline
+# Genre Expansion — Ishkur Track-Struktur + Wikipedia/Wikidata Pipeline
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Expand the graph from 7 tracks / 20 genres to 20 tracks / 200+ genres by adopting Ishkur's track structure and auto-populating genre data from Wikidata + Wikipedia.
+**Goal:** Expand the graph from 7 tracks / 20 genres to 20 tracks / 200+ genres by adopting Ishkur's track structure and auto-populating genre data from Wikipedia categories + Wikidata relationships.
 
-**Architecture:** Four new pipeline scripts form an assembly line — `fetch_wikidata.py` (SPARQL), `fetch_wikipedia.py` (abstracts), `classify_genres.py` (BFS track assignment), `import_genres.py` (merge into YAML). Existing manually curated fields are never overwritten. `build.py` only changes its TRACKS list.
+**Architecture:** Three new pipeline scripts — `fetch_genres.py` (Wikipedia category discovery + Wikidata enrichment + candidate collection), `classify_genres.py` (BFS track assignment), `import_genres.py` (merge into YAML). Primary data source is `Category:Electronic_music_genres` on Wikipedia (editorially curated). Wikidata is used only for inception dates and parent QIDs. Related genres not in the Wikipedia category are written to `candidates.yaml` for manual review. Existing manually curated fields are never overwritten. `build.py` only changes its TRACKS list.
 
-**Tech Stack:** Python 3.11+, pydantic v2, PyYAML, requests, pytest. Wikidata SPARQL endpoint. MediaWiki API. `uv run` for all Python commands.
+**Tech Stack:** Python 3.11+, pydantic v2, PyYAML, requests, pytest. MediaWiki API. Wikidata SPARQL endpoint. `uv run` for all Python commands.
 
 ---
 
@@ -15,13 +15,11 @@
 | File | Action | Responsibility |
 |---|---|---|
 | `pipeline/build.py` | Modify | Update TRACKS list (7 → 20) |
-| `data/track_seeds.yaml` | Create | Maps Wikidata root QIDs to track IDs |
-| `pipeline/fetch_wikidata.py` | Rewrite | SPARQL for electronic music subgenres; new output format |
-| `pipeline/fetch_wikipedia.py` | Create | MediaWiki abstracts per genre |
+| `data/track_seeds.yaml` | Create | Maps Wikidata root QIDs to track IDs for classification |
+| `pipeline/fetch_genres.py` | Create | Wikipedia category crawl + Wikidata enrichment + candidates |
 | `pipeline/classify_genres.py` | Create | BFS track assignment from seed QIDs |
 | `pipeline/import_genres.py` | Create | Merge classified genres into `data/genres/` |
-| `tests/pipeline/test_fetch_wikidata.py` | Modify | Update for new parse_results return format |
-| `tests/pipeline/test_fetch_wikipedia.py` | Create | Unit tests with mocked HTTP |
+| `tests/pipeline/test_fetch_genres.py` | Create | Unit tests with mocked HTTP |
 | `tests/pipeline/test_classify_genres.py` | Create | Unit tests with fixture data |
 | `tests/pipeline/test_import_genres.py` | Create | Unit tests with tmp_path |
 | `tests/pipeline/test_build.py` | Modify | Update TRACKS count assertion |
@@ -36,7 +34,7 @@
 - Modify: `pipeline/build.py:5-13`
 - Modify: `tests/pipeline/test_build.py`
 
-- [ ] **Step 1: Write the failing test**
+- [ ] **Step 1: Write the failing tests**
 
 Add to `tests/pipeline/test_build.py`:
 
@@ -115,8 +113,8 @@ git commit -m "feat: expand TRACKS to 20 entries (Ishkur structure)"
 - [ ] **Step 1: Create the file**
 
 ```yaml
-# Wikidata root QIDs per track — used by fetch_wikidata.py and classify_genres.py
-# Each track's genres are fetched as P279+ (subclass) descendants of these QIDs.
+# Wikidata root QIDs per track — used by classify_genres.py
+# Genres whose Wikidata parent chain reaches one of these QIDs get assigned that track.
 pioneers:        { qids: [] }               # manually curated only
 electroacoustic: { qids: [Q207436] }        # Musique concrète
 ambient:         { qids: [Q56733] }         # Ambient music
@@ -126,7 +124,7 @@ urban:           { qids: [Q11369] }         # Rhythm and blues
 hip_hop:         { qids: [Q11401] }         # Hip hop music
 bass:            { qids: [Q3839300] }       # Bass music
 electro:         { qids: [Q1062303] }       # Electro music
-techno:          { qids: [Q207648] }        # Techno
+techno:          { qids: [Q48803] }         # Techno music
 hardcore:        { qids: [Q584435] }        # Hardcore techno
 drum_n_bass:     { qids: [Q193709] }        # Drum and bass
 breakbeat:       { qids: [Q846291] }        # Breakbeat
@@ -156,117 +154,231 @@ git commit -m "feat: add track_seeds.yaml with Wikidata root QIDs"
 
 ---
 
-## Task 3: Rewrite fetch_wikidata.py + update tests
+## Task 3: Create fetch_genres.py
+
+Primary data source: Wikipedia `Category:Electronic_music_genres` (recursively traversed). Wikidata provides inception dates, parent QIDs, and cross-genre links. Genres referenced as Wikidata parents but absent from the Wikipedia category are written to `candidates.yaml` for manual review.
 
 **Files:**
-- Modify: `pipeline/fetch_wikidata.py`
-- Modify: `tests/pipeline/test_fetch_wikidata.py`
+- Create: `pipeline/fetch_genres.py`
+- Create: `tests/pipeline/test_fetch_genres.py`
 
-- [ ] **Step 1: Write updated tests first**
+- [ ] **Step 1: Write the tests**
 
-Replace the entire content of `tests/pipeline/test_fetch_wikidata.py`:
+Create `tests/pipeline/test_fetch_genres.py`:
 
 ```python
-from pipeline.fetch_wikidata import build_sparql_query, parse_results, WIKIDATA_ENDPOINT
+from unittest.mock import patch, call
+from pipeline.fetch_genres import (
+    fetch_category_titles,
+    fetch_wikipedia_batch,
+    fetch_wikidata_for_qids,
+)
 
 
-def test_sparql_query_contains_required_predicates():
-    query = build_sparql_query(["Q207648", "Q11399"])
-    assert "wdt:P279" in query
-    assert "wdt:P571" in query
-    assert "wd:Q207648" in query
-    assert "wd:Q11399" in query
+def _wiki_response(members):
+    return {"query": {"categorymembers": members}}
 
 
-def test_parse_results_extracts_genre_fields():
+def test_fetch_category_titles_returns_article_titles():
+    with patch("pipeline.fetch_genres.requests.get") as mock_get:
+        mock_get.return_value.raise_for_status.return_value = None
+        mock_get.return_value.json.return_value = _wiki_response([
+            {"ns": 0, "title": "Techno"},
+            {"ns": 0, "title": "House music"},
+        ])
+        result = fetch_category_titles("Category:Electronic_music_genres")
+    assert "Techno" in result
+    assert "House music" in result
+
+
+def test_fetch_category_titles_recurses_into_subcategories():
+    responses = [
+        _wiki_response([
+            {"ns": 14, "title": "Category:Techno"},
+            {"ns": 0, "title": "House music"},
+        ]),
+        _wiki_response([
+            {"ns": 0, "title": "Minimal techno"},
+        ]),
+    ]
+    with patch("pipeline.fetch_genres.requests.get") as mock_get:
+        mock_get.return_value.raise_for_status.return_value = None
+        mock_get.return_value.json.side_effect = responses
+        result = fetch_category_titles("Category:Electronic_music_genres")
+    assert "House music" in result
+    assert "Minimal techno" in result
+
+
+def test_fetch_wikipedia_batch_extracts_qid_and_description():
     mock_response = {
-        "results": {"bindings": [{
-            "genre": {"value": "http://www.wikidata.org/entity/Q48803"},
-            "genreLabel": {"value": "techno"},
-            "inception": {"value": "1985-01-01T00:00:00Z"},
-            "parent": {"value": "http://www.wikidata.org/entity/Q9778"},
-            "sitelink": {"value": "https://en.wikipedia.org/wiki/Techno"},
-        }]}
-    }
-    results = parse_results(mock_response)
-    assert len(results) == 1
-    assert results[0]["qid"] == "Q48803"
-    assert results[0]["name"] == "techno"
-    assert results[0]["year_start"] == 1985
-    assert "Q9778" in results[0]["parent_qids"]
-    assert results[0]["enwiki_slug"] == "Techno"
-
-
-def test_parse_results_aggregates_multiple_parents():
-    mock_response = {
-        "results": {"bindings": [
-            {
-                "genre": {"value": "http://www.wikidata.org/entity/Q48803"},
-                "genreLabel": {"value": "techno"},
-                "parent": {"value": "http://www.wikidata.org/entity/Q9778"},
+        "query": {
+            "redirects": [],
+            "pages": {
+                "12345": {
+                    "pageid": 12345,
+                    "title": "Techno",
+                    "extract": "Techno is a form of electronic dance music.",
+                    "pageprops": {"wikibase_item": "Q48803"},
+                }
             },
-            {
-                "genre": {"value": "http://www.wikidata.org/entity/Q48803"},
-                "genreLabel": {"value": "techno"},
-                "parent": {"value": "http://www.wikidata.org/entity/Q188451"},
-            },
-        ]}
+        }
     }
-    results = parse_results(mock_response)
-    assert len(results) == 1
-    assert set(results[0]["parent_qids"]) == {"Q9778", "Q188451"}
+    with patch("pipeline.fetch_genres.requests.get") as mock_get:
+        mock_get.return_value.raise_for_status.return_value = None
+        mock_get.return_value.json.return_value = mock_response
+        result = fetch_wikipedia_batch(["Techno"])
+    assert "Techno" in result
+    assert result["Techno"]["qid"] == "Q48803"
+    assert "electronic" in result["Techno"]["description"].lower()
 
 
-def test_parse_results_handles_missing_inception():
+def test_fetch_wikipedia_batch_skips_missing_pages():
     mock_response = {
-        "results": {"bindings": [{
-            "genre": {"value": "http://www.wikidata.org/entity/Q999"},
-            "genreLabel": {"value": "test genre"},
-        }]}
+        "query": {
+            "redirects": [],
+            "pages": {"-1": {"missing": True, "title": "NonExistent"}},
+        }
     }
-    results = parse_results(mock_response)
-    assert results[0]["year_start"] is None
+    with patch("pipeline.fetch_genres.requests.get") as mock_get:
+        mock_get.return_value.raise_for_status.return_value = None
+        mock_get.return_value.json.return_value = mock_response
+        result = fetch_wikipedia_batch(["NonExistent"])
+    assert result == {}
 
 
-def test_wikidata_endpoint_is_sparql_url():
-    assert "wikidata.org" in WIKIDATA_ENDPOINT
-    assert "sparql" in WIKIDATA_ENDPOINT
+def test_fetch_wikidata_for_qids_returns_year_and_parents():
+    mock_response = {
+        "results": {
+            "bindings": [
+                {
+                    "genre": {"value": "http://www.wikidata.org/entity/Q48803"},
+                    "genreLabel": {"value": "techno"},
+                    "inception": {"value": "1985-01-01T00:00:00Z"},
+                    "parent": {"value": "http://www.wikidata.org/entity/Q9778"},
+                    "sitelink": {"value": "https://en.wikipedia.org/wiki/Techno"},
+                },
+                {
+                    "genre": {"value": "http://www.wikidata.org/entity/Q48803"},
+                    "genreLabel": {"value": "techno"},
+                    "parent": {"value": "http://www.wikidata.org/entity/Q188451"},
+                },
+            ]
+        }
+    }
+    with patch("pipeline.fetch_genres.requests.get") as mock_get:
+        mock_get.return_value.raise_for_status.return_value = None
+        mock_get.return_value.json.return_value = mock_response
+        result = fetch_wikidata_for_qids(["Q48803"])
+    assert "Q48803" in result
+    assert result["Q48803"]["year_start"] == 1985
+    assert set(result["Q48803"]["parent_qids"]) == {"Q9778", "Q188451"}
+    assert result["Q48803"]["enwiki_slug"] == "Techno"
+
+
+def test_fetch_wikidata_for_qids_returns_empty_for_no_input():
+    result = fetch_wikidata_for_qids([])
+    assert result == {}
 ```
 
 - [ ] **Step 2: Run tests to verify they fail**
 
 ```bash
-uv run pytest tests/pipeline/test_fetch_wikidata.py -v
+uv run pytest tests/pipeline/test_fetch_genres.py -v
 ```
 
-Expected: FAIL — `KeyError: 'qid'` (old parse_results returns `id` not `qid`)
+Expected: FAIL — `ModuleNotFoundError: No module named 'pipeline.fetch_genres'`
 
-- [ ] **Step 3: Rewrite fetch_wikidata.py**
-
-Replace the entire content of `pipeline/fetch_wikidata.py`:
+- [ ] **Step 3: Create pipeline/fetch_genres.py**
 
 ```python
-"""Fetches electronic music genres from Wikidata via SPARQL."""
+"""Discovers electronic music genres via Wikipedia categories + enriches with Wikidata."""
 from __future__ import annotations
 import re
+import time
 import yaml
 import requests
 from pathlib import Path
 from collections import defaultdict
 
+WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 WIKIDATA_ENDPOINT = "https://query.wikidata.org/sparql"
 USER_AGENT = "ElectronicMusicHistoryBot/0.1 (research project)"
+ROOT_CATEGORY = "Category:Electronic_music_genres"
 
 
-def build_sparql_query(seed_qids: list[str]) -> str:
-    """Builds SPARQL to fetch all P279+ descendants of the given root QIDs."""
-    values = " ".join(f"wd:{qid}" for qid in seed_qids)
-    return f"""
-SELECT DISTINCT ?genre ?genreLabel ?inception ?parent ?sitelink WHERE {{
-  VALUES ?root {{ {values} }}
-  {{ ?genre wdt:P279+ ?root. }}
-  UNION
-  {{ VALUES ?genre {{ {values} }} }}
+def fetch_category_titles(category: str, seen: set | None = None) -> list[str]:
+    """Recursively collects article titles from a Wikipedia category tree."""
+    if seen is None:
+        seen = set()
+    if category in seen:
+        return []
+    seen.add(category)
+    titles = []
+    resp = requests.get(
+        WIKIPEDIA_API,
+        params={
+            "action": "query", "list": "categorymembers", "cmtitle": category,
+            "cmlimit": 500, "cmtype": "page|subcat", "format": "json",
+        },
+        headers={"User-Agent": USER_AGENT},
+        timeout=30,
+    )
+    resp.raise_for_status()
+    for member in resp.json().get("query", {}).get("categorymembers", []):
+        if member.get("ns") == 14:
+            titles.extend(fetch_category_titles(member["title"], seen))
+        else:
+            titles.append(member["title"])
+    return titles
+
+
+def fetch_wikipedia_batch(titles: list[str]) -> dict[str, dict]:
+    """Fetches abstract + Wikidata QID for up to 50 titles at once.
+
+    Returns {title: {qid, description}}.
+    """
+    if not titles:
+        return {}
+    resp = requests.get(
+        WIKIPEDIA_API,
+        params={
+            "action": "query",
+            "titles": "|".join(titles[:50]),
+            "prop": "extracts|pageprops",
+            "exintro": 1,
+            "explaintext": 1,
+            "sentences": 3,
+            "ppprop": "wikibase_item",
+            "format": "json",
+            "redirects": 1,
+        },
+        headers={"User-Agent": USER_AGENT},
+        timeout=30,
+    )
+    resp.raise_for_status()
+    data = resp.json()
+    result: dict[str, dict] = {}
+    for page in data.get("query", {}).get("pages", {}).values():
+        if page.get("missing"):
+            continue
+        qid = page.get("pageprops", {}).get("wikibase_item", "")
+        title = page.get("title", "")
+        if qid and title:
+            result[title] = {
+                "qid": qid,
+                "description": page.get("extract", "")[:500].strip(),
+            }
+    return result
+
+
+def fetch_wikidata_for_qids(qids: list[str]) -> dict[str, dict]:
+    """Returns {qid: {name, year_start, parent_qids, enwiki_slug}} for the given QIDs."""
+    if not qids:
+        return {}
+    values = " ".join(f"wd:{q}" for q in qids)
+    query = f"""
+SELECT ?genre ?genreLabel ?inception ?parent ?sitelink WHERE {{
+  VALUES ?genre {{ {values} }}
   OPTIONAL {{ ?genre wdt:P571 ?inception. }}
   OPTIONAL {{ ?genre wdt:P279 ?parent. }}
   OPTIONAL {{
@@ -275,253 +387,129 @@ SELECT DISTINCT ?genre ?genreLabel ?inception ?parent ?sitelink WHERE {{
   }}
   SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
 }}
-LIMIT 2000
 """
-
-
-def parse_results(data: dict) -> list[dict]:
-    """Aggregates SPARQL rows by genre QID; collects parent_qids as a list."""
-    grouped: dict[str, dict] = {}
-    parent_map: dict[str, set] = defaultdict(set)
-
-    for binding in data["results"]["bindings"]:
-        qid = binding["genre"]["value"].rsplit("/", 1)[-1]
-        name = binding.get("genreLabel", {}).get("value", "")
-        inception_raw = binding.get("inception", {}).get("value", "")
-        year = None
-        if inception_raw:
-            m = re.match(r"(\d{4})", inception_raw)
-            if m:
-                year = int(m.group(1))
-        sitelink = binding.get("sitelink", {}).get("value", "")
-        enwiki_slug = sitelink.rsplit("/wiki/", 1)[-1] if "/wiki/" in sitelink else ""
-
-        if qid not in grouped:
-            grouped[qid] = {
-                "qid": qid,
-                "name": name,
-                "year_start": year,
-                "enwiki_slug": enwiki_slug,
-            }
-
-        parent_uri = binding.get("parent", {}).get("value", "")
-        if parent_uri:
-            parent_map[qid].add(parent_uri.rsplit("/", 1)[-1])
-
-    for qid, genre in grouped.items():
-        genre["parent_qids"] = sorted(parent_map[qid])
-
-    return list(grouped.values())
-
-
-def fetch(output_dir: Path, seeds_path: Path) -> None:
-    seeds_raw = yaml.safe_load(seeds_path.read_text(encoding="utf-8")) or {}
-    all_qids = [qid for data in seeds_raw.values() for qid in (data.get("qids") or [])]
-    if not all_qids:
-        print("No seed QIDs found in track_seeds.yaml")
-        return
-    query = build_sparql_query(all_qids)
-    print(f"Querying Wikidata SPARQL for {len(all_qids)} root QIDs...")
     resp = requests.get(
         WIKIDATA_ENDPOINT,
         params={"query": query, "format": "json"},
         headers={"User-Agent": USER_AGENT},
-        timeout=120,
+        timeout=90,
     )
     resp.raise_for_status()
-    parsed = parse_results(resp.json())
+
+    grouped: dict[str, dict] = {}
+    parent_map: dict[str, set] = defaultdict(set)
+
+    for binding in resp.json()["results"]["bindings"]:
+        qid = binding["genre"]["value"].rsplit("/", 1)[-1]
+        if qid not in grouped:
+            name = binding.get("genreLabel", {}).get("value", "")
+            inception_raw = binding.get("inception", {}).get("value", "")
+            year = None
+            if inception_raw:
+                m = re.match(r"(\d{4})", inception_raw)
+                if m:
+                    year = int(m.group(1))
+            sitelink = binding.get("sitelink", {}).get("value", "")
+            slug = sitelink.rsplit("/wiki/", 1)[-1] if "/wiki/" in sitelink else ""
+            grouped[qid] = {"name": name, "year_start": year, "enwiki_slug": slug}
+        parent_uri = binding.get("parent", {}).get("value", "")
+        if parent_uri:
+            parent_map[qid].add(parent_uri.rsplit("/", 1)[-1])
+
+    for qid in grouped:
+        grouped[qid]["parent_qids"] = sorted(parent_map[qid])
+
+    return grouped
+
+
+def fetch(output_dir: Path, rate_limit: float = 0.5) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
-    out_file = output_dir / "raw.yaml"
-    out_file.write_text(yaml.dump(parsed, allow_unicode=True), encoding="utf-8")
-    print(f"Wrote {len(parsed)} genres -> {out_file}")
+
+    # Phase 1: Discover genres via Wikipedia category tree
+    print(f"Crawling {ROOT_CATEGORY}...")
+    titles = sorted(set(fetch_category_titles(ROOT_CATEGORY)))
+    print(f"Found {len(titles)} genre articles in category tree")
+
+    # Phase 2: Wikipedia abstracts + Wikidata QIDs in batches of 50
+    print("Fetching Wikipedia data (batches of 50)...")
+    wiki_data: dict[str, dict] = {}
+    for i in range(0, len(titles), 50):
+        wiki_data.update(fetch_wikipedia_batch(titles[i:i + 50]))
+        time.sleep(rate_limit)
+        if i % 200 == 0 and i > 0:
+            print(f"  {i}/{len(titles)} processed")
+
+    primary_qids = [v["qid"] for v in wiki_data.values()]
+    primary_qid_set = set(primary_qids)
+    print(f"Got QIDs for {len(primary_qids)}/{len(titles)} articles")
+
+    # Phase 3: Wikidata dates + parent relations in batches of 100
+    print("Fetching Wikidata relations...")
+    wd_data: dict[str, dict] = {}
+    for i in range(0, len(primary_qids), 100):
+        wd_data.update(fetch_wikidata_for_qids(primary_qids[i:i + 100]))
+        time.sleep(rate_limit)
+
+    # Build primary genre list; collect candidate QIDs (parents not in category)
+    genres: list[dict] = []
+    candidate_qids: set[str] = set()
+
+    for title, wiki in wiki_data.items():
+        qid = wiki["qid"]
+        wd = wd_data.get(qid, {})
+        parent_qids = wd.get("parent_qids", [])
+        for pqid in parent_qids:
+            if pqid not in primary_qid_set:
+                candidate_qids.add(pqid)
+        genres.append({
+            "qid": qid,
+            "name": title,
+            "year_start": wd.get("year_start"),
+            "enwiki_slug": title.replace(" ", "_"),
+            "description": wiki.get("description", ""),
+            "parent_qids": parent_qids,
+        })
+
+    # Phase 4: Fetch Wikidata data for candidate genres (no Wikipedia abstract needed)
+    print(f"Fetching {len(candidate_qids)} candidate genres referenced as parents...")
+    cand_wd: dict[str, dict] = {}
+    cand_list = list(candidate_qids)
+    for i in range(0, len(cand_list), 100):
+        cand_wd.update(fetch_wikidata_for_qids(cand_list[i:i + 100]))
+        time.sleep(rate_limit)
+
+    candidates: list[dict] = []
+    for qid in sorted(candidate_qids):
+        wd = cand_wd.get(qid, {})
+        candidates.append({
+            "qid": qid,
+            "name": wd.get("name", qid),
+            "year_start": wd.get("year_start"),
+            "enwiki_slug": wd.get("enwiki_slug", ""),
+            "description": "",
+            "parent_qids": wd.get("parent_qids", []),
+        })
+
+    raw_path = output_dir / "raw.yaml"
+    raw_path.write_text(yaml.dump(genres, allow_unicode=True), encoding="utf-8")
+    print(f"Primary genres: {len(genres)} -> {raw_path}")
+
+    candidates_path = output_dir / "candidates.yaml"
+    candidates_path.write_text(yaml.dump(candidates, allow_unicode=True), encoding="utf-8")
+    print(f"Candidates (for review): {len(candidates)} -> {candidates_path}")
 
 
 if __name__ == "__main__":
-    fetch(Path("data/_wikidata"), Path("data/track_seeds.yaml"))
-```
-
-- [ ] **Step 4: Run updated tests**
-
-```bash
-uv run pytest tests/pipeline/test_fetch_wikidata.py -v
-```
-
-Expected: All 5 tests PASS.
-
-- [ ] **Step 5: Run full pipeline test suite**
-
-```bash
-uv run pytest tests/pipeline/ -v
-```
-
-Expected: All tests PASS.
-
-- [ ] **Step 6: Commit**
-
-```bash
-git add pipeline/fetch_wikidata.py tests/pipeline/test_fetch_wikidata.py
-git commit -m "feat: rewrite fetch_wikidata.py with seed-based SPARQL and QID output"
-```
-
----
-
-## Task 4: Create fetch_wikipedia.py
-
-**Files:**
-- Create: `pipeline/fetch_wikipedia.py`
-- Create: `tests/pipeline/test_fetch_wikipedia.py`
-
-- [ ] **Step 1: Write the tests**
-
-Create `tests/pipeline/test_fetch_wikipedia.py`:
-
-```python
-from unittest.mock import patch
-from pipeline.fetch_wikipedia import fetch_description, enrich
-
-
-def test_fetch_description_returns_extract():
-    mock_response = {
-        "query": {
-            "pages": {
-                "12345": {
-                    "pageid": 12345,
-                    "title": "Techno",
-                    "extract": "Techno is a form of electronic dance music. It originated in Detroit in the mid-to-late 1980s.",
-                }
-            }
-        }
-    }
-    with patch("pipeline.fetch_wikipedia.requests.get") as mock_get:
-        mock_get.return_value.json.return_value = mock_response
-        mock_get.return_value.raise_for_status.return_value = None
-        result = fetch_description("Techno")
-    assert "Techno" in result
-    assert len(result) <= 500
-
-
-def test_fetch_description_returns_empty_string_on_missing_page():
-    mock_response = {
-        "query": {"pages": {"-1": {"missing": True, "title": "NonExistentGenre999"}}}
-    }
-    with patch("pipeline.fetch_wikipedia.requests.get") as mock_get:
-        mock_get.return_value.json.return_value = mock_response
-        mock_get.return_value.raise_for_status.return_value = None
-        result = fetch_description("NonExistentGenre999")
-    assert result == ""
-
-
-def test_enrich_adds_description_from_wikipedia():
-    raw = [{
-        "qid": "Q48803",
-        "name": "Techno",
-        "year_start": 1985,
-        "parent_qids": ["Q9778"],
-        "enwiki_slug": "Techno",
-    }]
-    with patch("pipeline.fetch_wikipedia.fetch_description", return_value="Techno is a genre."):
-        with patch("pipeline.fetch_wikipedia.time.sleep"):
-            result = enrich(raw, rate_limit=0)
-    assert len(result) == 1
-    assert result[0]["description"] == "Techno is a genre."
-    assert result[0]["qid"] == "Q48803"
-
-
-def test_enrich_skips_http_for_genres_without_slug():
-    raw = [{"qid": "Q999", "name": "Unknown", "year_start": 2000, "parent_qids": [], "enwiki_slug": ""}]
-    with patch("pipeline.fetch_wikipedia.requests.get") as mock_get:
-        with patch("pipeline.fetch_wikipedia.time.sleep"):
-            result = enrich(raw, rate_limit=0)
-    mock_get.assert_not_called()
-    assert result[0]["description"] == ""
-```
-
-- [ ] **Step 2: Run tests to verify they fail**
-
-```bash
-uv run pytest tests/pipeline/test_fetch_wikipedia.py -v
-```
-
-Expected: FAIL — `ModuleNotFoundError: No module named 'pipeline.fetch_wikipedia'`
-
-- [ ] **Step 3: Create pipeline/fetch_wikipedia.py**
-
-```python
-"""Fetches Wikipedia abstracts for genres that have an enwiki_slug."""
-from __future__ import annotations
-import time
-import requests
-import yaml
-from pathlib import Path
-
-WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
-USER_AGENT = "ElectronicMusicHistoryBot/0.1 (research project)"
-
-
-def fetch_description(slug: str) -> str:
-    """Returns first 3 sentences from Wikipedia intro, max 500 chars. Empty on failure."""
-    resp = requests.get(
-        WIKIPEDIA_API,
-        params={
-            "action": "query",
-            "titles": slug,
-            "prop": "extracts",
-            "exintro": 1,
-            "explaintext": 1,
-            "sentences": 3,
-            "format": "json",
-        },
-        headers={"User-Agent": USER_AGENT},
-        timeout=15,
-    )
-    resp.raise_for_status()
-    pages = resp.json().get("query", {}).get("pages", {})
-    for page in pages.values():
-        if page.get("missing"):
-            return ""
-        extract = page.get("extract", "")
-        if extract:
-            return extract[:500].strip()
-    return ""
-
-
-def enrich(raw: list[dict], rate_limit: float = 1.0) -> list[dict]:
-    """Adds 'description' field to each genre dict from Wikipedia."""
-    enriched = []
-    for genre in raw:
-        slug = genre.get("enwiki_slug", "")
-        if slug:
-            description = fetch_description(slug)
-            time.sleep(rate_limit)
-        else:
-            description = ""
-        enriched.append({**genre, "description": description})
-    return enriched
-
-
-def fetch(raw_path: Path, output_path: Path, rate_limit: float = 1.0) -> None:
-    raw = yaml.safe_load(raw_path.read_text(encoding="utf-8")) or []
-    print(f"Enriching {len(raw)} genres with Wikipedia abstracts...")
-    result = enrich(raw, rate_limit=rate_limit)
-    output_path.write_text(yaml.dump(result, allow_unicode=True), encoding="utf-8")
-    enriched_count = sum(1 for g in result if g.get("description"))
-    print(f"Enriched {enriched_count}/{len(result)} genres -> {output_path}")
-
-
-if __name__ == "__main__":
-    fetch(
-        Path("data/_wikidata/raw.yaml"),
-        Path("data/_wikidata/enriched.yaml"),
-    )
+    fetch(Path("data/_wikidata"))
 ```
 
 - [ ] **Step 4: Run tests**
 
 ```bash
-uv run pytest tests/pipeline/test_fetch_wikipedia.py -v
+uv run pytest tests/pipeline/test_fetch_genres.py -v
 ```
 
-Expected: All 4 tests PASS.
+Expected: All 6 tests PASS.
 
 - [ ] **Step 5: Run full pipeline test suite**
 
@@ -534,13 +522,13 @@ Expected: All tests PASS.
 - [ ] **Step 6: Commit**
 
 ```bash
-git add pipeline/fetch_wikipedia.py tests/pipeline/test_fetch_wikipedia.py
-git commit -m "feat: add fetch_wikipedia.py for genre description enrichment"
+git add pipeline/fetch_genres.py tests/pipeline/test_fetch_genres.py
+git commit -m "feat: add fetch_genres.py (Wikipedia category + Wikidata enrichment)"
 ```
 
 ---
 
-## Task 5: Create classify_genres.py
+## Task 4: Create classify_genres.py
 
 **Files:**
 - Create: `pipeline/classify_genres.py`
@@ -552,17 +540,16 @@ Create `tests/pipeline/test_classify_genres.py`:
 
 ```python
 import yaml
-import pytest
 from pathlib import Path
 from pipeline.classify_genres import classify, load_seeds
 
 
 def test_classify_assigns_seed_qid_to_its_track():
     genres = [{
-        "qid": "Q207648", "name": "Techno", "year_start": 1985,
+        "qid": "Q48803", "name": "Techno", "year_start": 1985,
         "parent_qids": [], "enwiki_slug": "Techno", "description": "",
     }]
-    seeds = {"techno": ["Q207648"]}
+    seeds = {"techno": ["Q48803"]}
     classified, unclassified = classify(genres, seeds)
     assert "techno" in classified
     assert len(classified["techno"]) == 1
@@ -572,19 +559,18 @@ def test_classify_assigns_seed_qid_to_its_track():
 def test_classify_assigns_genre_via_parent_chain():
     genres = [
         {
-            "qid": "Q207648", "name": "Techno", "year_start": 1985,
+            "qid": "Q48803", "name": "Techno", "year_start": 1985,
             "parent_qids": [], "enwiki_slug": "Techno", "description": "",
         },
         {
             "qid": "Q1195085", "name": "Minimal Techno", "year_start": 1994,
-            "parent_qids": ["Q207648"], "enwiki_slug": "Minimal_techno", "description": "",
+            "parent_qids": ["Q48803"], "enwiki_slug": "Minimal_techno", "description": "",
         },
     ]
-    seeds = {"techno": ["Q207648"]}
+    seeds = {"techno": ["Q48803"]}
     classified, unclassified = classify(genres, seeds)
     assert len(classified["techno"]) == 2
-    ids = {g["qid"] for g in classified["techno"]}
-    assert "Q1195085" in ids
+    assert {g["qid"] for g in classified["techno"]} == {"Q48803", "Q1195085"}
     assert unclassified == []
 
 
@@ -593,7 +579,7 @@ def test_classify_puts_unreachable_genres_in_unclassified():
         "qid": "Q999999", "name": "Unknown Genre", "year_start": 2000,
         "parent_qids": [], "enwiki_slug": "", "description": "",
     }]
-    seeds = {"techno": ["Q207648"]}
+    seeds = {"techno": ["Q48803"]}
     classified, unclassified = classify(genres, seeds)
     assert classified == {}
     assert len(unclassified) == 1
@@ -614,12 +600,12 @@ def test_classify_handles_multi_hop_ancestor():
 def test_load_seeds_reads_yaml(tmp_path):
     seeds_file = tmp_path / "track_seeds.yaml"
     seeds_file.write_text(yaml.dump({
-        "techno": {"qids": ["Q207648"]},
-        "house": {"qids": ["Q11399"]},
+        "techno": {"qids": ["Q48803"]},
+        "house":  {"qids": ["Q11399"]},
         "pioneers": {"qids": []},
     }))
     result = load_seeds(seeds_file)
-    assert result == {"techno": ["Q207648"], "house": ["Q11399"], "pioneers": []}
+    assert result == {"techno": ["Q48803"], "house": ["Q11399"], "pioneers": []}
 ```
 
 - [ ] **Step 2: Run tests to verify they fail**
@@ -688,15 +674,15 @@ def classify(
 
 
 def classify_file(
-    enriched_path: Path,
+    raw_path: Path,
     seeds_path: Path,
     output_dir: Path,
     unclassified_path: Path,
 ) -> None:
-    enriched = yaml.safe_load(enriched_path.read_text(encoding="utf-8")) or []
+    genres = yaml.safe_load(raw_path.read_text(encoding="utf-8")) or []
     seeds = load_seeds(seeds_path)
-    print(f"Classifying {len(enriched)} genres...")
-    classified, unclassified = classify(enriched, seeds)
+    print(f"Classifying {len(genres)} genres...")
+    classified, unclassified = classify(genres, seeds)
     output_dir.mkdir(parents=True, exist_ok=True)
     for track_id, track_genres in classified.items():
         out = output_dir / f"{track_id}.yaml"
@@ -711,7 +697,7 @@ def classify_file(
 
 if __name__ == "__main__":
     classify_file(
-        Path("data/_wikidata/enriched.yaml"),
+        Path("data/_wikidata/raw.yaml"),
         Path("data/track_seeds.yaml"),
         Path("data/_wikidata/classified"),
         Path("data/_wikidata/unclassified.yaml"),
@@ -743,7 +729,7 @@ git commit -m "feat: add classify_genres.py with BFS track assignment"
 
 ---
 
-## Task 6: Create import_genres.py
+## Task 5: Create import_genres.py
 
 **Files:**
 - Create: `pipeline/import_genres.py`
@@ -755,7 +741,6 @@ Create `tests/pipeline/test_import_genres.py`:
 
 ```python
 import yaml
-import pytest
 from pathlib import Path
 from pipeline.import_genres import (
     make_id,
@@ -917,7 +902,7 @@ def make_unique_id(name: str, existing_ids: set[str]) -> str:
 
 
 def merge_genre(existing: dict, incoming: dict) -> dict:
-    """Updates only empty curated fields in existing. Non-curated fields from incoming fill gaps."""
+    """Updates only empty curated fields in existing from incoming."""
     result = dict(existing)
     for key, value in incoming.items():
         if key in CURATED_FIELDS:
@@ -929,7 +914,7 @@ def merge_genre(existing: dict, incoming: dict) -> dict:
 
 
 def wikidata_genre_to_yaml(genre: dict, track_id: str, existing_ids: set[str]) -> dict:
-    """Converts enriched Wikidata genre dict to genre YAML entry format."""
+    """Converts enriched genre dict to genre YAML entry format."""
     genre_id = make_unique_id(genre["name"], existing_ids)
     return {
         "id": genre_id,
@@ -950,7 +935,7 @@ def wikidata_genre_to_yaml(genre: dict, track_id: str, existing_ids: set[str]) -
 
 
 def import_track(track_id: str, new_genres: list[dict], genres_dir: Path) -> int:
-    """Merges new_genres into genres_dir/<track_id>.yaml. Returns number added."""
+    """Merges new_genres into genres_dir/<track_id>.yaml. Returns count of added genres."""
     yaml_path = genres_dir / f"{track_id}.yaml"
     existing: list[dict] = []
     if yaml_path.exists():
@@ -960,18 +945,18 @@ def import_track(track_id: str, new_genres: list[dict], genres_dir: Path) -> int
     existing_ids = {g["id"] for g in existing}
     added = 0
 
-    for wikidata_genre in new_genres:
-        if not wikidata_genre.get("year_start"):
+    for genre in new_genres:
+        if not genre.get("year_start"):
             continue
-        qid = wikidata_genre["qid"]
+        qid = genre["qid"]
         if qid in existing_by_qid:
             idx = next(i for i, g in enumerate(existing) if g.get("wikidata_id") == qid)
             existing[idx] = merge_genre(
                 existing[idx],
-                wikidata_genre_to_yaml(wikidata_genre, track_id, existing_ids),
+                wikidata_genre_to_yaml(genre, track_id, existing_ids),
             )
         else:
-            new_entry = wikidata_genre_to_yaml(wikidata_genre, track_id, existing_ids)
+            new_entry = wikidata_genre_to_yaml(genre, track_id, existing_ids)
             existing_ids.add(new_entry["id"])
             existing.append(new_entry)
             added += 1
@@ -1041,13 +1026,13 @@ git commit -m "feat: add import_genres.py with merge-safe YAML import"
 
 ---
 
-## Task 7: Migrate existing YAML data
+## Task 6: Migrate existing YAML data
 
 **Files:**
 - Rename: `data/genres/early.yaml` → `data/genres/pioneers.yaml`
 - Rename: `data/genres/avantgarde.yaml` → `data/genres/ambient.yaml`
 
-- [ ] **Step 1: Run apply_track_renames on the live data directory**
+- [ ] **Step 1: Run apply_track_renames on live data**
 
 ```bash
 uv run python -c "
@@ -1063,15 +1048,15 @@ Expected output:
   Renamed avantgarde.yaml -> ambient.yaml (3 genres)
 ```
 
-- [ ] **Step 2: Verify the renamed files have correct track fields**
+- [ ] **Step 2: Verify renamed files have correct track fields**
 
 ```bash
 grep "track:" data/genres/pioneers.yaml data/genres/ambient.yaml
 ```
 
-Expected: All lines show `track: pioneers` or `track: ambient` respectively (no remaining `early` or `avantgarde`).
+Expected: All lines show `track: pioneers` or `track: ambient` (no remaining `early` or `avantgarde`).
 
-- [ ] **Step 3: Run pipeline build to verify JSON output is valid**
+- [ ] **Step 3: Run build.py to verify JSON output is valid**
 
 ```bash
 uv run python pipeline/build.py
@@ -1096,35 +1081,51 @@ git commit -m "feat: migrate genre YAML data to new track IDs (early→pioneers,
 
 ---
 
-## Task 8: End-to-end pipeline run
+## Task 7: End-to-end pipeline run
 
 **Files:**
-- Create: `data/_wikidata/raw.yaml` (from Wikidata)
-- Create: `data/_wikidata/enriched.yaml` (from Wikipedia)
+- Create: `data/_wikidata/raw.yaml` (primary genres from Wikipedia category)
+- Create: `data/_wikidata/candidates.yaml` (related genres for manual review)
 - Create: `data/_wikidata/classified/<track>.yaml` (per track)
 - Create: `data/_wikidata/unclassified.yaml`
 - Modify: `data/genres/*.yaml` (new genres merged in)
-- Generated (not committed): `public/data/genres.json` (gitignored; built by CI from YAML sources)
+- Generated (not committed): `public/data/genres.json` (gitignored; built by CI)
 
-- [ ] **Step 1: Fetch genres from Wikidata**
+- [ ] **Step 1: Fetch genres from Wikipedia + Wikidata**
 
-```bash
-uv run python pipeline/fetch_wikidata.py
-```
-
-Expected: `Wrote N genres -> data/_wikidata/raw.yaml` where N > 100.
-
-If the request times out (Wikidata can be slow), retry once. If it returns fewer than 50 genres, check that `data/track_seeds.yaml` has the correct QIDs.
-
-- [ ] **Step 2: Enrich with Wikipedia abstracts**
-
-This takes several minutes (1 req/sec × N genres):
+This takes ~5 minutes (rate-limited API calls):
 
 ```bash
-uv run python pipeline/fetch_wikipedia.py
+uv run python pipeline/fetch_genres.py
 ```
 
-Expected: `Enriched N/M genres -> data/_wikidata/enriched.yaml` where N > 50.
+Expected output:
+```
+Crawling Category:Electronic_music_genres...
+Found N genre articles in category tree
+Fetching Wikipedia data (batches of 50)...
+Got QIDs for N/M articles
+Fetching Wikidata relations...
+Fetching P candidate genres referenced as parents...
+Primary genres: N -> data/_wikidata/raw.yaml
+Candidates (for review): P -> data/_wikidata/candidates.yaml
+```
+
+N should be > 150. If the request times out, retry once.
+
+- [ ] **Step 2: Review candidates.yaml**
+
+```bash
+uv run python -c "
+import yaml
+c = yaml.safe_load(open('data/_wikidata/candidates.yaml'))
+print(len(c), 'candidates')
+for g in sorted(c, key=lambda x: x.get('name', '')):
+    print(f'  {g[\"name\"]} ({g.get(\"year_start\", \"?\")})')
+" | head -40
+```
+
+Candidates are genres referenced as parents of electronic genres but not in the Wikipedia category. Review the list: if any are clearly relevant (e.g., "Funk", "Dub", "Disco"), you can add their QID to the appropriate track in `data/track_seeds.yaml` — they will then be classified correctly in the next step (even without being in `raw.yaml`, because classify_genres.py uses `raw.yaml` only for genres to classify, while `track_seeds.yaml` defines the track roots for BFS traversal).
 
 - [ ] **Step 3: Classify genres to tracks**
 
@@ -1132,15 +1133,26 @@ Expected: `Enriched N/M genres -> data/_wikidata/enriched.yaml` where N > 50.
 uv run python pipeline/classify_genres.py
 ```
 
-Expected: Lines like `techno: N genres`, `house: M genres`, etc. Unclassified count should be < 20% of total.
+Expected: Lines like `techno: N genres`, `house: M genres`, etc.
+Total classified should be > 80% of raw.yaml count.
 
 - [ ] **Step 4: Review unclassified.yaml**
 
 ```bash
-uv run python -c "import yaml; g = yaml.safe_load(open('data/_wikidata/unclassified.yaml')); print(len(g), 'unclassified'); [print(x['name']) for x in g]"
+uv run python -c "
+import yaml
+g = yaml.safe_load(open('data/_wikidata/unclassified.yaml'))
+print(len(g), 'unclassified')
+for x in sorted(g, key=lambda x: x.get('name', '')):
+    print(f'  {x[\"name\"]} ({x.get(\"year_start\", \"?\")})')
+"
 ```
 
-Genres listed here can be manually added to `data/track_seeds.yaml` if their QID should map to a track, then re-run steps 1–3. Otherwise they are simply excluded from the graph — this is acceptable.
+Unclassified genres have no ancestor QID matching any seed. If important genres appear here, add their QID (or an ancestor QID) to `data/track_seeds.yaml` and re-run classify only:
+
+```bash
+uv run python pipeline/classify_genres.py
+```
 
 - [ ] **Step 5: Import classified genres into data/genres/**
 
@@ -1148,17 +1160,31 @@ Genres listed here can be manually added to `data/track_seeds.yaml` if their QID
 uv run python pipeline/import_genres.py
 ```
 
-Expected: `Total: +N new genres imported` where N > 50.
+Expected: `Total: +N new genres imported` where N > 80.
 
-- [ ] **Step 6: Run build.py to produce genres.json**
+- [ ] **Step 6: Run build.py**
 
 ```bash
 uv run python pipeline/build.py
 ```
 
-Expected: `Wrote N genres, M edges -> public/data/genres.json` where N > 70.
+Expected: `Wrote N genres, M edges -> public/data/genres.json` where N > 90.
 
-- [ ] **Step 7: Run full test suite**
+- [ ] **Step 7: Verify genre distribution**
+
+```bash
+uv run python -c "
+import json
+from collections import Counter
+d = json.load(open('public/data/genres.json'))
+print('Total genres:', len(d['genres']))
+counts = Counter(g['track'] for g in d['genres'])
+for track, count in sorted(counts.items(), key=lambda x: -x[1]):
+    print(f'  {track}: {count}')
+"
+```
+
+- [ ] **Step 8: Run full test suite**
 
 ```bash
 uv run pytest tests/pipeline/ -v && pnpm test
@@ -1166,27 +1192,10 @@ uv run pytest tests/pipeline/ -v && pnpm test
 
 Expected: All tests PASS.
 
-- [ ] **Step 8: Verify genres.json contents**
-
-```bash
-uv run python -c "
-import json
-d = json.load(open('public/data/genres.json'))
-print('Genres:', len(d['genres']))
-print('Tracks:', len(d['tracks']))
-from collections import Counter
-counts = Counter(g['track'] for g in d['genres'])
-for track, count in sorted(counts.items()):
-    print(f'  {track}: {count}')
-"
-```
-
-Expected: 20 tracks present, total genres > 70. If any track has 0 genres it's fine — it will just appear as an empty row in the UI.
-
 - [ ] **Step 9: Commit and push**
 
 ```bash
 git add data/_wikidata/ data/genres/
-git commit -m "feat: populate 200+ genres via Wikidata + Wikipedia pipeline"
+git commit -m "feat: populate 200+ genres via Wikipedia category + Wikidata pipeline"
 git push
 ```
