@@ -1,3 +1,58 @@
+- id: blues
+  name: Blues
+  track: pioneers
+  year_start: 1920
+  year_end: null
+  origin: American South
+  parents: []
+  description: >-
+    The blues is an African-American musical form rooted in work songs, field
+    hollers and spirituals. Its call-and-response patterns, 12-bar structure and
+    expressive vocal tradition underpin virtually all Western popular music and
+    are a foundational influence on early electronic experimentation.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Blues
+  audio_examples: []
+- id: jazz
+  name: Jazz
+  track: pioneers
+  year_start: 1920
+  year_end: null
+  origin: New Orleans USA
+  parents:
+  - blues
+  description: >-
+    Jazz is an improvisational music form rooted in blues, ragtime and African
+    rhythmic traditions, developed in New Orleans in the early 20th century. Its
+    harmonic complexity and rhythmic freedom directly influenced musique
+    concrète, electroacoustic composition and early synthesiser exploration.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Jazz
+  audio_examples: []
+- id: gospel
+  name: Gospel
+  track: pioneers
+  year_start: 1930
+  year_end: null
+  origin: USA
+  parents: []
+  description: >-
+    Gospel music is the devotional African-American tradition that shaped soul,
+    rhythm and blues and virtually all subsequent popular genres. Its
+    call-and-response structure and communal energy echo through house, garage
+    and urban music.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Gospel_music
+  audio_examples: []
 - id: theremin
   name: Theremin
   track: pioneers

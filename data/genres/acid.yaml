@@ -1,15 +1,70 @@
-- id: dogs_on_acid
-  name: Dogs On Acid
+- id: acid_house
+  name: Acid House
   track: acid
-  year_start: 2001
+  year_start: 1985
   year_end: null
-  origin: ''
+  origin: Chicago
   parents: []
-  description: Dogs On Acid, also known as DOA, is a UK-based drum and bass and electronic
-    music website; it was established in 2001.
+  description: >-
+    Acid house was born in Chicago when producers began manipulating the Roland
+    TB-303 bass synthesiser to create squelching, resonant basslines. It launched
+    the UK rave scene and spawned multiple subgenres.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: Q5288438
-  wikipedia_slug: Dogs_On_Acid
+  wikidata_id: Q341364
+  wikipedia_slug: Acid_house
+  audio_examples: []
+- id: acid_techno
+  name: Acid Techno
+  track: acid
+  year_start: 1991
+  year_end: null
+  origin: UK / Germany
+  parents:
+  - acid_house
+  description: >-
+    Acid techno combines the squelching TB-303 basslines of acid house with the
+    darker, harder sound of techno. It was a staple of Berlin's underground scene
+    in the 1990s.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Acid_techno
+  audio_examples: []
+- id: acid_trance
+  name: Acid Trance
+  track: acid
+  year_start: 1992
+  year_end: null
+  origin: Germany
+  parents:
+  - acid_house
+  description: >-
+    Acid trance incorporates prominent TB-303 basslines into the trance template,
+    creating a hypnotic, delirium-inducing sound that connects acid house to the
+    emerging trance scene.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Acid_trance
+  audio_examples: []
+- id: acid_breaks
+  name: Acid Breaks
+  track: acid
+  year_start: 1993
+  year_end: null
+  origin: UK
+  parents:
+  - acid_house
+  description: >-
+    Acid breaks merges the breakbeat rhythms of old-school rave with acid house's
+    characteristic 303 bass manipulation.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Acid_breaks
   audio_examples: []

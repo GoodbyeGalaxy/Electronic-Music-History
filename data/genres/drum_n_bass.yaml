@@ -26,3 +26,75 @@
   wikidata_id: Q1102161
   wikipedia_slug: Jungle_music
   audio_examples: []
+- id: liquid_dnb
+  name: Liquid DnB
+  track: drum_n_bass
+  year_start: 1998
+  year_end: null
+  origin: UK
+  parents:
+  - drum_and_bass
+  description: >-
+    Liquid drum and bass (liquid funk) emphasises warm, soulful elements — lush
+    pads, smooth vocals and melodic basslines — contrasting with the harder edges
+    of techstep and neurofunk.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Liquid_funk
+  audio_examples: []
+- id: neurofunk
+  name: Neurofunk
+  track: drum_n_bass
+  year_start: 1998
+  year_end: null
+  origin: UK
+  parents:
+  - drum_and_bass
+  description: >-
+    Neurofunk is a technically complex, dark form of drum and bass emphasising
+    intricate sound design, warping basslines and a cinematic, dystopian
+    atmosphere.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Neurofunk
+  audio_examples: []
+- id: darkstep
+  name: Darkstep
+  track: drum_n_bass
+  year_start: 1996
+  year_end: null
+  origin: UK
+  parents:
+  - drum_and_bass
+  description: >-
+    Darkstep is an aggressive, pitch-black subgenre of drum and bass
+    incorporating horror-film atmospherics, distorted breaks and brooding
+    soundscapes.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Darkstep
+  audio_examples: []
+- id: jump_up
+  name: Jump Up
+  track: drum_n_bass
+  year_start: 1995
+  year_end: null
+  origin: UK
+  parents:
+  - drum_and_bass
+  description: >-
+    Jump-up drum and bass prioritises dancefloor energy with syncopated wobble
+    basslines, minimal pads and a playful, bouncy aesthetic designed for maximum
+    crowd response.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Jump-up_(drum_and_bass)
+  audio_examples: []

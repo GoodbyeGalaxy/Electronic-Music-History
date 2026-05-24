@@ -1,3 +1,75 @@
+- id: reggae
+  name: Reggae
+  track: bass
+  year_start: 1960
+  year_end: null
+  origin: Jamaica
+  parents: []
+  description: >-
+    Reggae is a Jamaican music genre developed in the late 1960s, built on
+    offbeat rhythms (the 'skank'), deep bass and expressive vocal tradition. It
+    is a foundational influence on dub, dancehall and bass-heavy electronic
+    music globally.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Reggae
+  audio_examples: []
+- id: dub
+  name: Dub
+  track: bass
+  year_start: 1968
+  year_end: null
+  origin: Jamaica
+  parents:
+  - reggae
+  description: >-
+    Dub is a genre derived from reggae, pioneered by Jamaican sound engineers
+    who manipulated studio recordings — removing vocals, adding reverb and delay
+    — to create echo-drenched instrumental versions. It is a foundational
+    influence on bass music, electronic and experimental music.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Dub_music
+  audio_examples: []
+- id: dubstep
+  name: Dubstep
+  track: bass
+  year_start: 2000
+  year_end: null
+  origin: London UK
+  parents:
+  - dub
+  description: >-
+    Dubstep emerged from London's underground sound system culture, fusing the
+    bass weight of UK garage and dub with dark, minimal 140 BPM rhythms.
+    Half-time drum patterns and massive sub-bass became its signature.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Dubstep
+  audio_examples: []
+- id: grime
+  name: Grime
+  track: bass
+  year_start: 2002
+  year_end: null
+  origin: London UK
+  parents: []
+  description: >-
+    Grime is a British genre blending UK garage's rhythms with jungle's energy
+    and MCing culture. Its sparse, abrasive electronic productions support
+    aggressive lyrical delivery, rooted in East London's pirate radio scene.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Grime_music
+  audio_examples: []
 - id: future_bass
   name: Future bass
   track: bass

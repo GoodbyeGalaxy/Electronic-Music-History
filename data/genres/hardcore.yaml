@@ -1,3 +1,75 @@
+- id: hardcore
+  name: Hardcore
+  track: hardcore
+  year_start: 1989
+  year_end: null
+  origin: Netherlands / Belgium / Germany
+  parents: []
+  description: >-
+    Hardcore (also known as hardcore techno) is a genre of electronic dance
+    music that originated in the Netherlands, Belgium, and Germany in the early
+    1990s. It is distinguished by faster tempos (160 to 200 BPM or more) and a
+    distorted sawtooth kick drum.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q388906
+  wikipedia_slug: Hardcore_(electronic_dance_music_genre)
+  audio_examples: []
+- id: gabber
+  name: Gabber
+  track: hardcore
+  year_start: 1991
+  year_end: null
+  origin: Netherlands
+  parents:
+  - hardcore
+  description: >-
+    Gabber is an extreme subgenre of hardcore techno, defined by heavily
+    distorted 909 kick drums at 160–220 BPM, aggressive basslines and shouted
+    vocals. It originated in Rotterdam.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Gabber
+  audio_examples: []
+- id: happy_hardcore
+  name: Happy Hardcore
+  track: hardcore
+  year_start: 1991
+  year_end: null
+  origin: UK
+  parents:
+  - hardcore
+  description: >-
+    Happy hardcore is a euphoric, fast-paced subgenre of hardcore techno,
+    characterised by a tempo of 160–180 BPM, chipmunk-pitched vocals and a
+    joyful, rave-party aesthetic.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Happy_hardcore
+  audio_examples: []
+- id: terrorcore
+  name: Terrorcore
+  track: hardcore
+  year_start: 1993
+  year_end: null
+  origin: Netherlands
+  parents:
+  - gabber
+  description: >-
+    Terrorcore pushes hardcore to its extremes — ultra-fast tempos above 200
+    BPM, distortion-heavy sound design and samples drawn from horror, war and
+    chaos.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Terrorcore
+  audio_examples: []
 - id: frenchcore
   name: Frenchcore
   track: hardcore
@@ -19,33 +91,14 @@
   wikidata_id: Q1455487
   wikipedia_slug: Frenchcore
   audio_examples: []
-- id: hardcore_electronic_dance_music_genre
-  name: Hardcore (electronic dance music genre)
-  track: hardcore
-  year_start: 1989
-  year_end: null
-  origin: ''
-  parents: []
-  description: Hardcore (also known as hardcore techno) is a genre of electronic dance
-    music that originated in the Netherlands, Belgium, and Germany in the early 1990s.
-    It is distinguished by faster tempos (160 to 200 BPM or more) and a distorted
-    sawtooth kick, the intensity of the kicks and the synthesized bass (in some subgenres),
-    the rhythm and the atmosphere of the themes (sometimes violent), the usage of
-    saturation and experimentation close to that of industrial dance music. It would
-    spawn subgenres such
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q388906
-  wikipedia_slug: Hardcore_(electronic_dance_music_genre)
-  audio_examples: []
 - id: hardstyle
   name: Hardstyle
   track: hardcore
   year_start: 1998
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - hardcore
   description: 'Hardstyle, is an electronic dance genre that emerged in the late 1990s,
     with origins in the Netherlands, Belgium and Italy. Hardstyle mixes influences
     from techno, new beat and hardcore.

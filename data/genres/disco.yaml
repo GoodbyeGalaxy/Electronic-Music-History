@@ -1,3 +1,58 @@
+- id: soul
+  name: Soul
+  track: disco
+  year_start: 1955
+  year_end: null
+  origin: USA
+  parents: []
+  description: >-
+    Soul music emerged from the combination of gospel, rhythm and blues and jazz
+    in African-American communities in the 1950s. Its emotional directness,
+    expressive vocals and groove orientation directly spawned funk, disco and
+    house music.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Soul_music
+  audio_examples: []
+- id: funk
+  name: Funk
+  track: disco
+  year_start: 1965
+  year_end: null
+  origin: USA
+  parents:
+  - soul
+  description: >-
+    Funk emphasises the downbeat, interlocking polyrhythmic percussion and bass
+    guitar, and collective rhythmic groove over melody. Developed by James
+    Brown, Sly Stone and others, it is a direct precursor to disco, hip-hop,
+    house and virtually all rhythm-driven electronic genres.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Funk
+  audio_examples: []
+- id: philadelphia_soul
+  name: Philadelphia Soul
+  track: disco
+  year_start: 1971
+  year_end: null
+  origin: Philadelphia USA
+  parents:
+  - soul
+  description: >-
+    Philadelphia soul (Philly soul) defined the lush, orchestral sound of early
+    1970s dance music. Its use of strings, syncopated rhythms and polished
+    production created the direct blueprint for disco.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Philadelphia_soul
+  audio_examples: []
 - id: disco
   name: Disco
   track: disco

@@ -1,22 +1,53 @@
-- id: paradise_garage
-  name: Paradise Garage
+- id: garage_house
+  name: Garage House
   track: garage
-  year_start: 1976
+  year_start: 1977
   year_end: null
-  origin: ''
+  origin: New York USA
   parents: []
-  description: 'Paradise Garage, also known as "the Garage" or the "Gay-rage", was
-    a New York City discotheque notable in the history of dance and pop music, as
-    well as LGBT and nightclub cultures.  The 10,000 square feet (930 m2) club was
-    founded by sole proprietor Michael Brody, and occupied a building formerly located
-    at 84 King Street in the SoHo neighborhood. It operated from 1977 to 1987 and
-    featured resident DJ Larry Levan.
-
-    The Garage is credited with influencing the development of modern nightclubs,
-    and'
+  description: >-
+    Garage house (named after the Paradise Garage club) is a soulful,
+    gospel-inflected variant of house music characterised by warm chord
+    progressions, expressive vocals and deep emotional resonance.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: Q2339843
-  wikipedia_slug: Paradise_Garage
+  wikidata_id: Q928825
+  wikipedia_slug: Garage_house
+  audio_examples: []
+- id: new_jersey_garage
+  name: New Jersey Garage
+  track: garage
+  year_start: 1986
+  year_end: null
+  origin: New Jersey USA
+  parents:
+  - garage_house
+  description: >-
+    The New Jersey garage sound (NJ sound) developed alongside Chicago house in
+    the mid-1980s, with a slightly rawer, faster and more percussive style
+    influenced by the club scene around Newark and Trenton.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: New_Jersey_sound
+  audio_examples: []
+- id: deep_house
+  name: Deep House
+  track: garage
+  year_start: 1986
+  year_end: null
+  origin: Chicago / New York USA
+  parents:
+  - garage_house
+  description: >-
+    Deep house prioritises atmosphere over energy — warm pads, jazz-inflected
+    chord progressions, subdued vocals and a slower, introspective groove. It
+    draws heavily from soul, jazz and gospel.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: ""
+  wikipedia_slug: Deep_house
   audio_examples: []
