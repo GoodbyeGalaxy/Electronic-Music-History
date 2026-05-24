@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/electronic-music-history/',
+  base: '/Electronic-Music-History/',
   build: { outDir: 'dist' },
   test: { environment: 'node' },
 });
