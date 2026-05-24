@@ -1,5 +1,5 @@
 const YEAR_START = 1900;
-const YEAR_END = 2025;
+export const YEAR_END = 2025;
 const NODE_HEIGHT = 36;
 const CHAR_WIDTH = 7;      // px per character at 10px font-size
 const NODE_PADDING_X = 20; // horizontal padding per side

@@ -18,13 +18,14 @@ async function init() {
   searchInput.placeholder = 'Genre suchen…';
   toolbarEl.appendChild(searchInput);
 
+  let renderer;
   const panel = createDetailPanel(panelEl, data.tracks, genreId => {
     renderer.highlight(genreId);
     const genre = data.genres.find(g => g.id === genreId);
     if (genre) panel.open(genre);
   });
 
-  const renderer = createRenderer(wrapper, labelsEl, data, genre => {
+  renderer = createRenderer(wrapper, labelsEl, data, genre => {
     if (!genre) { panel.close(); renderer.clearHighlight(); return; }
     renderer.highlight(genre.id);
     panel.open(genre);

@@ -47,7 +47,9 @@ export function createAudioPlayer(example, trackColor) {
   let playing = false;
   btn.addEventListener('click', () => {
     if (playing) { audio.pause(); btn.textContent = '▶'; }
-    else         { audio.play(); btn.textContent = '⏸'; }
+    else {
+      audio.play().then(() => { btn.textContent = '⏸'; }).catch(() => { playing = false; btn.textContent = '▶'; });
+    }
     playing = !playing;
   });
   audio.addEventListener('ended', () => { btn.textContent = '▶'; playing = false; });

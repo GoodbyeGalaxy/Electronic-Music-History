@@ -1,3 +1,5 @@
+import { YEAR_END } from '../graph/layout.js';
+
 /**
  * Creates track toggle badges and year range slider in toolbar.
  *
@@ -32,7 +34,7 @@ export function createFilters(toolbarEl, tracks, genres, renderer) {
 
   const years = genres.map(g => g.year_start).filter(Boolean);
   const minYear = Math.min(...years);
-  const maxYear = new Date().getFullYear();
+  const maxYear = YEAR_END;
 
   const sliderWrap = document.createElement('div');
   sliderWrap.style.cssText = 'display:flex;align-items:center;gap:8px;';
