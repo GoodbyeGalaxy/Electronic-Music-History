@@ -56,6 +56,17 @@ def test_classify_handles_multi_hop_ancestor():
     assert unclassified == []
 
 
+def test_classify_uses_keyword_fallback_when_no_qid_path():
+    genres = [{
+        "qid": "Q999", "name": "Deep House", "year_start": 1987,
+        "parent_qids": [], "enwiki_slug": "Deep_House", "description": "",
+    }]
+    seeds = {"techno": ["Q170611"]}  # no house seed → BFS fails
+    classified, unclassified = classify(genres, seeds)
+    assert "house" in classified            # keyword fallback kicks in
+    assert unclassified == []
+
+
 def test_load_seeds_reads_yaml(tmp_path):
     seeds_file = tmp_path / "track_seeds.yaml"
     seeds_file.write_text(yaml.dump({

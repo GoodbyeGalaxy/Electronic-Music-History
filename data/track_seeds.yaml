@@ -1,22 +1,23 @@
 # Wikidata root QIDs per track — used by classify_genres.py
 # Genres whose Wikidata parent chain reaches one of these QIDs get assigned that track.
-pioneers:        { qids: [] }               # manually curated only
-electroacoustic: { qids: [Q207436] }        # Musique concrète
-ambient:         { qids: [Q56733] }         # Ambient music
-downtempo:       { qids: [Q1088840] }       # Downtempo
-industrial:      { qids: [Q179012] }        # Industrial music
-urban:           { qids: [Q11369] }         # Rhythm and blues
-hip_hop:         { qids: [Q11401] }         # Hip hop music
-bass:            { qids: [Q3839300] }       # Bass music
-electro:         { qids: [Q1062303] }       # Electro music
-techno:          { qids: [Q48803] }         # Techno music
-hardcore:        { qids: [Q584435] }        # Hardcore techno
-drum_n_bass:     { qids: [Q193709] }        # Drum and bass
-breakbeat:       { qids: [Q846291] }        # Breakbeat
-acid:            { qids: [Q219639] }        # Acid house
-disco:           { qids: [Q11606] }         # Disco
-house:           { qids: [Q11399] }         # House music
-tech_house:      { qids: [Q1362808] }       # Tech house
-progressive:     { qids: [Q3029199] }       # Progressive house
-garage:          { qids: [Q848882] }        # Garage house
-uk_garage:       { qids: [Q487956] }        # UK garage
+# QIDs validated against https://query.wikidata.org/sparql on 2026-05-24.
+pioneers:        { qids: [] }                      # manually curated only
+electroacoustic: { qids: [Q1326777] }              # electroacoustic music
+ambient:         { qids: [Q193207] }               # ambient music
+downtempo:       { qids: [Q251192] }               # downtempo
+industrial:      { qids: [Q487965] }               # industrial music
+urban:           { qids: [Q45981] }                # rhythm and blues
+hip_hop:         { qids: [Q11401] }                # hip-hop
+bass:            { qids: [Q96740854] }             # bass music
+electro:         { qids: [Q217597] }               # electro
+techno:          { qids: [Q170611] }               # techno
+hardcore:        { qids: [Q388906] }               # hardcore
+drum_n_bass:     { qids: [Q188994] }               # drum and bass
+breakbeat:       { qids: [Q663519] }               # breakbeat
+acid:            { qids: [Q341364] }               # acid house
+disco:           { qids: [Q58339] }                # disco
+house:           { qids: [Q20502] }                # house music
+tech_house:      { qids: [Q598593] }               # tech house
+progressive:     { qids: [Q915152] }               # progressive house
+garage:          { qids: [Q928825] }               # garage house
+uk_garage:       { qids: [Q1165777] }              # UK garage
