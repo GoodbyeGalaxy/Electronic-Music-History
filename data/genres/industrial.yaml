@@ -2,33 +2,186 @@
   name: Industrial
   track: industrial
   year_start: 1977
-  origin: "London, UK"
-  parents: [tape_music]
-  description: >
-    Throbbing Gristle gruendeten 1975 Industrial Records und praegten
-    mit ihrer Musik einen Stil der bewussten Provokation, Noise und
-    konzeptuellen Konfrontation. The Second Annual Report (1977) ist das
-    Debuetalbum.
-  key_artists: [Throbbing Gristle, "Einstürzende Neubauten", SPK, Nurse with Wound]
-  key_labels: [Industrial Records, Some Bizzare]
-  subvariants: [Power Electronics, Noise, Post-Industrial]
+  origin: London, UK
+  parents:
+  - tape_music
+  description: 'Throbbing Gristle gruendeten 1975 Industrial Records und praegten
+    mit ihrer Musik einen Stil der bewussten Provokation, Noise und konzeptuellen
+    Konfrontation. The Second Annual Report (1977) ist das Debuetalbum.
+
+    '
+  key_artists:
+  - Throbbing Gristle
+  - Einstürzende Neubauten
+  - SPK
+  - Nurse with Wound
+  key_labels:
+  - Industrial Records
+  - Some Bizzare
+  subvariants:
+  - Power Electronics
+  - Noise
+  - Post-Industrial
   wikidata_id: Q185816
   wikipedia_slug: Industrial_music
   audio_examples: []
-
 - id: ebm
   name: EBM
   track: industrial
   year_start: 1981
-  origin: "Bruessel, BE"
-  parents: [industrial]
-  description: >
-    Electronic Body Music entstand in Belgien mit Gruppen wie Front 242
-    und Nitzer Ebb als tanzbare Hybride aus Industrial-Aggression und
-    Synthesizer-Pop. Der Begriff wurde von Front 242 selbst gepragt.
-  key_artists: [Front 242, Nitzer Ebb, Skinny Puppy, DAF]
-  key_labels: [Play It Again Sam, "Wax Trax!"]
-  subvariants: [Aggrotech, Futurepop, Dark Electro]
+  origin: Bruessel, BE
+  parents:
+  - industrial
+  description: 'Electronic Body Music entstand in Belgien mit Gruppen wie Front 242
+    und Nitzer Ebb als tanzbare Hybride aus Industrial-Aggression und Synthesizer-Pop.
+    Der Begriff wurde von Front 242 selbst gepragt.
+
+    '
+  key_artists:
+  - Front 242
+  - Nitzer Ebb
+  - Skinny Puppy
+  - DAF
+  key_labels:
+  - Play It Again Sam
+  - Wax Trax!
+  subvariants:
+  - Aggrotech
+  - Futurepop
+  - Dark Electro
   wikidata_id: Q578643
   wikipedia_slug: Electronic_body_music
+  audio_examples: []
+- id: electro_industrial
+  name: Electro-industrial
+  track: industrial
+  year_start: 1985
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1403744
+  wikipedia_slug: Electro-industrial
+  audio_examples: []
+- id: electronic_body_music
+  name: Electronic body music
+  track: industrial
+  year_start: 1982
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Electronic body music (EBM) is a genre of electronic music that combines
+    elements of industrial music and synth-punk with elements of dance music. It developed
+    in the early 1980s in Western Europe, as an outgrowth of both the punk and the
+    industrial music cultures. It combines sequenced repetitive basslines, programmed
+    disco rhythms, and mostly undistorted vocals and command-like shouts with confrontational
+    or provocative themes.
+
+    The evolution of the genre reflected "a general shift towards more'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q372103
+  wikipedia_slug: Electronic_body_music
+  audio_examples: []
+- id: industrial_records
+  name: Industrial Records
+  track: industrial
+  year_start: 1976
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q682784
+  wikipedia_slug: Industrial_Records
+  audio_examples: []
+- id: industrial_hip_hop
+  name: Industrial hip-hop
+  track: industrial
+  year_start: 1985
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q2004156
+  wikipedia_slug: Industrial_hip-hop
+  audio_examples: []
+- id: industrial_metal
+  name: Industrial metal
+  track: industrial
+  year_start: 1988
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q208494
+  wikipedia_slug: Industrial_metal
+  audio_examples: []
+- id: industrial_music
+  name: Industrial music
+  track: industrial
+  year_start: 1975
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q487965
+  wikipedia_slug: Industrial_music
+  audio_examples: []
+- id: industrial_rock
+  name: Industrial rock
+  track: industrial
+  year_start: 1976
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q968730
+  wikipedia_slug: Industrial_rock
+  audio_examples: []
+- id: martial_industrial
+  name: Martial industrial
+  track: industrial
+  year_start: 1980
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1078010
+  wikipedia_slug: Martial_industrial
+  audio_examples: []
+- id: power_electronics_music_genre
+  name: Power electronics (music genre)
+  track: industrial
+  year_start: 1980
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q2687544
+  wikipedia_slug: Power_electronics_(music_genre)
   audio_examples: []

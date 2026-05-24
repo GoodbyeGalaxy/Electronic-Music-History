@@ -1,0 +1,77 @@
+- id: frenchcore
+  name: Frenchcore
+  track: hardcore
+  year_start: 1997
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Frenchcore is a subgenre of hardcore techno. The style differs from
+    other forms of hardcore in terms of a faster tempo, usually above 160–185 BPM,
+    and a loud and distorted offbeat bassline.
+
+    In the 1990s, drum machines and samplers were used to make this style. As technology
+    developed, DAWs such as Ableton and Cubase became the standard for production.
+    Modern frenchcore is often performed with live musical performers and sampling
+    alongside a DJ set.'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1455487
+  wikipedia_slug: Frenchcore
+  audio_examples: []
+- id: hardcore_electronic_dance_music_genre
+  name: Hardcore (electronic dance music genre)
+  track: hardcore
+  year_start: 1989
+  year_end: null
+  origin: ''
+  parents: []
+  description: Hardcore (also known as hardcore techno) is a genre of electronic dance
+    music that originated in the Netherlands, Belgium, and Germany in the early 1990s.
+    It is distinguished by faster tempos (160 to 200 BPM or more) and a distorted
+    sawtooth kick, the intensity of the kicks and the synthesized bass (in some subgenres),
+    the rhythm and the atmosphere of the themes (sometimes violent), the usage of
+    saturation and experimentation close to that of industrial dance music. It would
+    spawn subgenres such
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q388906
+  wikipedia_slug: Hardcore_(electronic_dance_music_genre)
+  audio_examples: []
+- id: hardstyle
+  name: Hardstyle
+  track: hardcore
+  year_start: 1998
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Hardstyle, is an electronic dance genre that emerged in the late 1990s,
+    with origins in the Netherlands, Belgium and Italy. Hardstyle mixes influences
+    from techno, new beat and hardcore.
+
+    Early hardstyle was typically written at 140 BPM (beats per minute); however,
+    modern hardstyle is faster, produced around 150 BPM. It consisted of overdriven
+    and hard-sounding kick drums, often accompanied by an offbeat bass, known as a
+    "reverse bass". As the genre grew, the production techniques and songwriting'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q223840
+  wikipedia_slug: Hardstyle
+  audio_examples: []
+- id: masters_of_hardcore
+  name: Masters of Hardcore
+  track: hardcore
+  year_start: 1995
+  year_end: null
+  origin: ''
+  parents: []
+  description: Masters of Hardcore is the name of a Dutch hardcore music label and
+    of its related music festival events.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1087742
+  wikipedia_slug: Masters_of_Hardcore
+  audio_examples: []

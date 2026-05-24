@@ -1,0 +1,63 @@
+- description: ''
+  enwiki_slug: Ambient_music
+  name: Ambient music
+  parent_qids:
+  - Q373342
+  qid: Q193207
+  year_start: 1967
+- description: ''
+  enwiki_slug: Ambient_music_design
+  name: Ambient music design
+  parent_qids: []
+  qid: Q4741434
+  year_start: null
+- description: ''
+  enwiki_slug: Ambient_techno
+  name: Ambient techno
+  parent_qids:
+  - Q106521662
+  qid: Q9149801
+  year_start: 1989
+- description: ''
+  enwiki_slug: Ambient_video
+  name: Ambient video
+  parent_qids:
+  - Q98069877
+  qid: Q55603785
+  year_start: null
+- description: ''
+  enwiki_slug: Dark_ambient
+  name: Dark ambient
+  parent_qids:
+  - Q193207
+  - Q936942
+  qid: Q756956
+  year_start: 1988
+- description: ''
+  enwiki_slug: Chill-out_music
+  name: Chill-out music
+  parent_qids:
+  - Q9778
+  qid: Q757143
+  year_start: 1992
+- description: ''
+  enwiki_slug: Drone_music
+  name: Drone music
+  parent_qids:
+  - Q1640319
+  - Q572901
+  qid: Q650316
+  year_start: 1958
+- description: The following is a list of notable artists who compose, or have composed,
+    dark ambient music at some point in their careers.
+  enwiki_slug: List_of_dark_ambient_artists
+  name: List of dark ambient artists
+  parent_qids: []
+  qid: Q3977716
+  year_start: null
+- description: ''
+  enwiki_slug: Ultima_Thule_Ambient_Music
+  name: Ultima Thule Ambient Music
+  parent_qids: []
+  qid: Q7880101
+  year_start: null

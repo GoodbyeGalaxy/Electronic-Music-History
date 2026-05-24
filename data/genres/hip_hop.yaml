@@ -1,0 +1,163 @@
+- id: cloud_rap
+  name: Cloud rap
+  track: hip_hop
+  year_start: 2006
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q16829781
+  wikipedia_slug: Cloud_rap
+  audio_examples: []
+- id: crunk
+  name: Crunk
+  track: hip_hop
+  year_start: 1997
+  year_end: null
+  origin: ''
+  parents: []
+  description: Crunk is a subgenre of hip hop music that emerged in the early 1990s
+    and gained mainstream success during the mid 2000s. Crunk is often up-tempo and
+    one of Southern hip hop's more dance and club oriented subgenres. An archetypal
+    crunk track frequently uses a main groove consisting of layered keyboard synths,
+    a drum machine clapping rhythm, heavy basslines, and shouting vocals, often in
+    a call and response manner. The term "crunk" was also used throughout the 2000s
+    as a blanket term to denote any
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q936573
+  wikipedia_slug: Crunk
+  audio_examples: []
+- id: crunkcore
+  name: Crunkcore
+  track: hip_hop
+  year_start: 2005
+  year_end: null
+  origin: ''
+  parents: []
+  description: Crunkcore (also known as crunk punk, screamo crunk, and scrunk) is
+    a musical fusion microgenre characterized by the combination of musical elements
+    from crunk, post-hardcore (particularly pop screamo), heavy metal, pop, electronic
+    and dance music. The genre often features screamed vocals, hip hop beats, and
+    sexually provocative lyrics. The genre developed from members of the scene subculture
+    during the mid-2000s.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q2426383
+  wikipedia_slug: Crunkcore
+  audio_examples: []
+- id: digicore
+  name: Digicore
+  track: hip_hop
+  year_start: 2018
+  year_end: null
+  origin: ''
+  parents: []
+  description: "Digicore (originally known as draincore) is an Internet microgenre\
+    \ of hip-hop and electronic music that developed alongside hyperpop in the late\
+    \ 2010s to early 2020s. The genre is typically made up of artists that share stylistic\
+    \ similarities to Drain Gang and 100 gecs, rather than the \"bubblegum bass\"\
+    \ musicians signed to the label PC Music. Drawing influences from trap, emo rap,\
+    \ nightcore and cloud rap.    \nDuring the late 2010s, the style initially emerged\
+    \ as a Drain Gang-inspired form of onli"
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q107515261
+  wikipedia_slug: Digicore
+  audio_examples: []
+- id: edm_trap_music
+  name: EDM trap music
+  track: hip_hop
+  year_start: 2010
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q47781397
+  wikipedia_slug: EDM_trap_music
+  audio_examples: []
+- id: phonk
+  name: Phonk
+  track: hip_hop
+  year_start: 2010
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q90568328
+  wikipedia_slug: Phonk
+  audio_examples: []
+- id: grime_music
+  name: Grime music
+  track: hip_hop
+  year_start: 2001
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1166726
+  wikipedia_slug: Grime_music
+  audio_examples: []
+- id: le_phonographique
+  name: Le Phonographique
+  track: hip_hop
+  year_start: 1979
+  year_end: null
+  origin: ''
+  parents: []
+  description: Le Phonographique (often called the Phono) was a gothic nightclub located
+    underneath the Merrion Centre in Leeds. Founded under the name the WigWam club,
+    the venue's 1979 rebranding led to it becoming a location frequented by members
+    of both the local post-punk and New Romantic scenes. Here, the two scenes collided
+    and created the earliest phase of the goth subculture, becoming the first goth
+    club in the world. Playing gothic rock and dark wave music, the club hosted DJs
+    including Marc Almond an
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q85776059
+  wikipedia_slug: Le_Phonographique
+  audio_examples: []
+- id: lofi_hip_hop
+  name: Lofi hip-hop
+  track: hip_hop
+  year_start: 2010
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q97265899
+  wikipedia_slug: Lofi_hip-hop
+  audio_examples: []
+- id: punk_rap
+  name: Punk rap
+  track: hip_hop
+  year_start: 2007
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q65089257
+  wikipedia_slug: Punk_rap
+  audio_examples: []

@@ -1,0 +1,37 @@
+- description: ''
+  enwiki_slug: Drum_and_bass
+  name: Drum and bass
+  parent_qids:
+  - Q851213
+  qid: Q188994
+  year_start: 1992
+- description: ''
+  enwiki_slug: History_of_drum_and_bass
+  name: History of drum and bass
+  parent_qids: []
+  qid: Q5867746
+  year_start: null
+- description: ''
+  enwiki_slug: Jungle_(British_TV_series)
+  name: Jungle (British TV series)
+  parent_qids: []
+  qid: Q115813031
+  year_start: null
+- description: ''
+  enwiki_slug: Jungle_music
+  name: Jungle music
+  parent_qids:
+  - Q188994
+  qid: Q1102161
+  year_start: 1987
+- description: This is a list of jungle and drum and bass artists/DJs. This includes
+    notable artists who have either been very important to the genre or have had a
+    considerable amount of exposure (such as those who have been on a major label).
+    This list does not include little-known local artists. Artists are listed by the
+    first letter of their pseudonym (not including the words "a", "an", or "the"),
+    and individuals are listed by last name.
+  enwiki_slug: List_of_jungle_and_drum_and_bass_artists
+  name: List of jungle and drum and bass artists
+  parent_qids: []
+  qid: Q2899705
+  year_start: null

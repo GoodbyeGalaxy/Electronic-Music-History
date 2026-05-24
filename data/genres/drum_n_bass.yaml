@@ -1,0 +1,28 @@
+- id: drum_and_bass
+  name: Drum and bass
+  track: drum_n_bass
+  year_start: 1992
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q188994
+  wikipedia_slug: Drum_and_bass
+  audio_examples: []
+- id: jungle_music
+  name: Jungle music
+  track: drum_n_bass
+  year_start: 1987
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1102161
+  wikipedia_slug: Jungle_music
+  audio_examples: []

@@ -1,0 +1,40 @@
+- description: 'Downtempo (or downbeat) is a broad label for electronic music that
+    features an atmospheric sound and slower beats than would typically be found in
+    dance music (downtempo tracks are usually around 90 BPM). Closely related to ambient
+    music but with greater emphasis on rhythm, the style may be played in relaxation
+    clubs or as "warm-up or cool-down" music during a DJ set. Examples of downtempo
+    subgenres include trip hop, ambient house, chillwave, psybient and lofi hip hop.
+
+    The style emerged in the l'
+  enwiki_slug: Downtempo
+  name: Downtempo
+  parent_qids:
+  - Q757143
+  qid: Q251192
+  year_start: 1988
+- description: This is a list of downtempo artists, a genre of electronic music.
+  enwiki_slug: List_of_downtempo_artists
+  name: List of downtempo artists
+  parent_qids: []
+  qid: Q19901469
+  year_start: null
+- description: ''
+  enwiki_slug: Lo-fi_music
+  name: Lo-fi music
+  parent_qids:
+  - Q115484611
+  qid: Q1507298
+  year_start: 1980
+- description: ''
+  enwiki_slug: Lofi_Girl
+  name: Lofi Girl
+  parent_qids: []
+  qid: Q101833802
+  year_start: 2015
+- description: ''
+  enwiki_slug: Trip_hop
+  name: Trip hop
+  parent_qids:
+  - Q251192
+  qid: Q205560
+  year_start: 1992

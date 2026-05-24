@@ -1,0 +1,156 @@
+- description: ''
+  enwiki_slug: Cloud_rap
+  name: Cloud rap
+  parent_qids:
+  - Q11401
+  qid: Q16829781
+  year_start: 2006
+- description: Crunk is a subgenre of hip hop music that emerged in the early 1990s
+    and gained mainstream success during the mid 2000s. Crunk is often up-tempo and
+    one of Southern hip hop's more dance and club oriented subgenres. An archetypal
+    crunk track frequently uses a main groove consisting of layered keyboard synths,
+    a drum machine clapping rhythm, heavy basslines, and shouting vocals, often in
+    a call and response manner. The term "crunk" was also used throughout the 2000s
+    as a blanket term to denote any
+  enwiki_slug: Crunk
+  name: Crunk
+  parent_qids:
+  - Q11401
+  - Q114880124
+  qid: Q936573
+  year_start: 1997
+- description: Crunkcore (also known as crunk punk, screamo crunk, and scrunk) is
+    a musical fusion microgenre characterized by the combination of musical elements
+    from crunk, post-hardcore (particularly pop screamo), heavy metal, pop, electronic
+    and dance music. The genre often features screamed vocals, hip hop beats, and
+    sexually provocative lyrics. The genre developed from members of the scene subculture
+    during the mid-2000s.
+  enwiki_slug: Crunkcore
+  name: Crunkcore
+  parent_qids:
+  - Q377910
+  - Q936573
+  qid: Q2426383
+  year_start: 2005
+- description: "Digicore (originally known as draincore) is an Internet microgenre\
+    \ of hip-hop and electronic music that developed alongside hyperpop in the late\
+    \ 2010s to early 2020s. The genre is typically made up of artists that share stylistic\
+    \ similarities to Drain Gang and 100 gecs, rather than the \"bubblegum bass\"\
+    \ musicians signed to the label PC Music. Drawing influences from trap, emo rap,\
+    \ nightcore and cloud rap.    \nDuring the late 2010s, the style initially emerged\
+    \ as a Drain Gang-inspired form of onli"
+  enwiki_slug: Digicore
+  name: Digicore
+  parent_qids:
+  - Q11401
+  qid: Q107515261
+  year_start: 2018
+- description: ''
+  enwiki_slug: EDM_trap_music
+  name: EDM trap music
+  parent_qids:
+  - Q114880130
+  qid: Q47781397
+  year_start: 2010
+- description: ''
+  enwiki_slug: Phonk
+  name: Phonk
+  parent_qids:
+  - Q11401
+  - Q9778
+  qid: Q90568328
+  year_start: 2010
+- description: ''
+  enwiki_slug: Eskimo_(grime_beat)
+  name: Eskimo (grime beat)
+  parent_qids: []
+  qid: Q5398136
+  year_start: null
+- description: ''
+  enwiki_slug: Grime_music
+  name: Grime music
+  parent_qids:
+  - Q6010
+  - Q851213
+  qid: Q1166726
+  year_start: 2001
+- description: 'Internet rap (also known as online rap or originally blog rap) is
+    a style of hip-hop that emerged in the late 2000s, initially spreading through
+    the online blogosphere, and early social media platforms like Myspace and later
+    Tumblr, as well as mixtape-sharing site DatPiff.
+
+    Internet rap encompasses various online styles and aesthetics deeply intertwined
+    with internet culture, memes, and digital communities. Unlike traditional hip-hop,
+    internet rap is characterized by music primarily influenced by'
+  enwiki_slug: Internet_rap
+  name: Internet rap
+  parent_qids:
+  - Q11401
+  qid: Q135235711
+  year_start: null
+- description: ''
+  enwiki_slug: Joseph_Trapanese
+  name: Joseph Trapanese
+  parent_qids: []
+  qid: Q6287481
+  year_start: null
+- description: ''
+  enwiki_slug: Kino_discography
+  name: Kino discography
+  parent_qids: []
+  qid: Q6414164
+  year_start: null
+- description: Le Phonographique (often called the Phono) was a gothic nightclub located
+    underneath the Merrion Centre in Leeds. Founded under the name the WigWam club,
+    the venue's 1979 rebranding led to it becoming a location frequented by members
+    of both the local post-punk and New Romantic scenes. Here, the two scenes collided
+    and created the earliest phase of the goth subculture, becoming the first goth
+    club in the world. Playing gothic rock and dark wave music, the club hosted DJs
+    including Marc Almond an
+  enwiki_slug: Le_Phonographique
+  name: Le Phonographique
+  parent_qids: []
+  qid: Q85776059
+  year_start: 1979
+- description: ''
+  enwiki_slug: Lofi_hip-hop
+  name: Lofi hip-hop
+  parent_qids:
+  - Q11401
+  - Q757143
+  qid: Q97265899
+  year_start: 2010
+- description: ''
+  enwiki_slug: Punk_rap
+  name: Punk rap
+  parent_qids:
+  - Q11401
+  - Q3071
+  qid: Q65089257
+  year_start: 2007
+- description: '"Rapt" is a song by American musician Karen O and the second track
+    on her debut studio album, Crush Songs (2014). It was released by Cult Records
+    as the album''s lead single on July 28, 2014. Written and produced by Karen O,
+    "Rapt" is a lo-fi song with lyrics about an intense love comparable to the struggles
+    of addiction. Upon release, it did not have a major commercial impact but was
+    well-received by critics. Barnaby Clay, Karen O''s husband, directed a music video
+    released simultaneously with th'
+  enwiki_slug: Rapt_(song)
+  name: Rapt (song)
+  parent_qids: []
+  qid: Q138537508
+  year_start: null
+- description: '"Reverend Black Grape" is a song by the English rock band Black Grape,
+    released in May 1995. It was the first single to be taken from their debut studio
+    album It''s Great When You''re Straight...Yeah and peaked at #9 on the UK singles
+    chart.
+
+    The song was co-produced by Danny Saber and Stephen Lironi. It was written by
+    Shaun Ryder and released by Radioactive Records. The sample "Would he agree that
+    a stately minuet would be preferable to the rain dance" is taken from Sir Thomas
+    Arnold asking a ques'
+  enwiki_slug: Reverend_Black_Grape
+  name: Reverend Black Grape
+  parent_qids: []
+  qid: Q7318124
+  year_start: null

@@ -1,0 +1,164 @@
+- description: Afro house (also known as Afro-house or Afrohouse) is a sub-genre of
+    house music mainly developed in South Africa. The genre emerged in the 1990s.
+    This musical style fuses elements of traditional house with South African rhythms
+    and sounds, incorporating instruments such as the saxophone, piano and synthesizers,
+    as well as vocals in various African languages.
+  enwiki_slug: Afro_house
+  name: Afro house
+  parent_qids:
+  - Q20502
+  qid: Q388100
+  year_start: 2005
+- description: Afro tech (also Afro-tech or AfroTech) is a sub-genre of afro house
+    which originates and is predominantly made in South Africa. It emerged in the
+    2010s. South African DJs and music producers who popularized the genre include
+    Black Coffee, Culoe De Song, Bekzin Terris, Euphonik ( DJ Themba), Punk Mbedzi,
+    DJ Tira, Zakes Bantwini, Shimza and Da Capo.
+  enwiki_slug: Afro_tech
+  name: Afro tech
+  parent_qids:
+  - Q388100
+  qid: Q123413364
+  year_start: null
+- description: ''
+  enwiki_slug: Amapiano
+  name: Amapiano
+  parent_qids:
+  - Q20502
+  - Q4794612
+  qid: Q85741139
+  year_start: 2012
+- description: ''
+  enwiki_slug: Ambient_house
+  name: Ambient house
+  parent_qids:
+  - Q20502
+  - Q757143
+  qid: Q2465085
+  year_start: 1988
+- description: ''
+  enwiki_slug: Bloghouse
+  name: Bloghouse
+  parent_qids:
+  - Q851213
+  qid: Q132324210
+  year_start: null
+- description: ''
+  enwiki_slug: Felix_da_Housecat
+  name: Felix da Housecat
+  parent_qids: []
+  qid: Q518662
+  year_start: null
+- description: ''
+  enwiki_slug: Gqom
+  name: Gqom
+  parent_qids:
+  - Q20502
+  - Q4794612
+  qid: Q29973057
+  year_start: 2012
+- description: ''
+  enwiki_slug: House_Dance_International
+  name: House Dance International
+  parent_qids: []
+  qid: Q5913613
+  year_start: null
+- description: ''
+  enwiki_slug: House_concert
+  name: House concert
+  parent_qids:
+  - Q182832
+  qid: Q362925
+  year_start: null
+- description: ''
+  enwiki_slug: House_music
+  name: House music
+  parent_qids:
+  - Q851213
+  qid: Q20502
+  year_start: 1982
+- description: ''
+  enwiki_slug: House_of_Yes_(Brooklyn)
+  name: House of Yes (Brooklyn)
+  parent_qids: []
+  qid: Q5915552
+  year_start: null
+- description: Kwaito is a music genre that emerged in Soweto, Johannesburg, South
+    Africa, between the late 1980s and 1990s. It is a sound that features the use
+    of South African sounds and samples. Kwaito songs occur at a slower tempo range
+    than other styles of house music and often contain catchy melodic and percussive
+    loop samples, deep bass lines and vocals. They are also very similar tempos to
+    early 1990s NYC house tracks.
+  enwiki_slug: Kwaito
+  name: Kwaito
+  parent_qids:
+  - Q20502
+  - Q4794612
+  qid: Q956717
+  year_start: 1998
+- description: ''
+  enwiki_slug: Outsider_house
+  name: Outsider house
+  parent_qids:
+  - Q20502
+  qid: Q18358879
+  year_start: 2010
+- description: ''
+  enwiki_slug: The_Schoolhouse
+  name: The Schoolhouse
+  parent_qids: []
+  qid: Q7762550
+  year_start: null
+- description: The Warehouse Project is a series of club nights organised in Greater
+    Manchester, England, since 2006. Unlike most other clubs, it has a limited seasonal
+    approach rather than running all year. Each year's season runs from September
+    through to New Year's Day, plus occasional one off dates such as Bank Holiday
+    weekends. This period corresponds with the busiest time of the year and the student
+    calendar.
+  enwiki_slug: The_Warehouse_Project
+  name: The Warehouse Project
+  parent_qids: []
+  qid: Q7773543
+  year_start: 2006
+- description: ''
+  enwiki_slug: UK_hard_house
+  name: UK hard house
+  parent_qids:
+  - Q1033912
+  - Q20502
+  qid: Q1585015
+  year_start: 1992
+- description: 'Vinahouse is a genre of electronic dance music, popularised in Vietnam.
+
+    It rose to prominence in Vietnam in the 1990s. The initial name for the genre
+    was "nhạc bay”, “nhạc sàn”, “nhạc vũ trường"; but the eventual common name for
+    the genre became Vinahouse. It initially emerged in various discotheques and nightclubs
+    across Vietnam, before spreading through Vietnamese diaspora communities in western
+    countries such as in California and Australia.
+
+    Characteristics of the genre include a fusion of Vie'
+  enwiki_slug: Vinahouse
+  name: Vinahouse
+  parent_qids:
+  - Q20502
+  qid: Q109538574
+  year_start: 1990
+- description: The Warehouse is a historic building located in Chicago, Illinois in
+    the United States, best known for the nightclub of the same name catering to the
+    gay and alternative communities that was established in 1977 under the direction
+    of Robert "Robbie" Williams. It was Robbie Williams who on promotional posters
+    would describe events at the Warehouse as 'house' parties or 'house' music. As
+    such, the Warehouse is best known as the namesake for, and one of the origins
+    of, house music. The Warehouse is
+  enwiki_slug: Warehouse_(nightclub)
+  name: Warehouse (nightclub)
+  parent_qids: []
+  qid: Q1423025
+  year_start: null
+- description: ''
+  enwiki_slug: Witch_house
+  name: Witch house
+  parent_qids:
+  - Q9778
+  qid: Q1840167
+  year_start: 2007

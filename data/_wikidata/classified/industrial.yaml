@@ -1,0 +1,127 @@
+- description: ''
+  enwiki_slug: Electro-industrial
+  name: Electro-industrial
+  parent_qids:
+  - Q936942
+  - Q9778
+  qid: Q1403744
+  year_start: 1985
+- description: 'Electronic body music (EBM) is a genre of electronic music that combines
+    elements of industrial music and synth-punk with elements of dance music. It developed
+    in the early 1980s in Western Europe, as an outgrowth of both the punk and the
+    industrial music cultures. It combines sequenced repetitive basslines, programmed
+    disco rhythms, and mostly undistorted vocals and command-like shouts with confrontational
+    or provocative themes.
+
+    The evolution of the genre reflected "a general shift towards more'
+  enwiki_slug: Electronic_body_music
+  name: Electronic body music
+  parent_qids:
+  - Q851213
+  - Q936942
+  qid: Q372103
+  year_start: 1982
+- description: ''
+  enwiki_slug: Industrial_Records
+  name: Industrial Records
+  parent_qids: []
+  qid: Q682784
+  year_start: 1976
+- description: ''
+  enwiki_slug: Industrial_hip-hop
+  name: Industrial hip-hop
+  parent_qids:
+  - Q5421158
+  - Q936942
+  qid: Q2004156
+  year_start: 1985
+- description: ''
+  enwiki_slug: Industrial_metal
+  name: Industrial metal
+  parent_qids:
+  - Q12326776
+  - Q936942
+  qid: Q208494
+  year_start: 1988
+- description: ''
+  enwiki_slug: Industrial_music
+  name: Industrial music
+  parent_qids:
+  - Q1640319
+  qid: Q487965
+  year_start: 1975
+- description: ''
+  enwiki_slug: Industrial_rock
+  name: Industrial rock
+  parent_qids:
+  - Q11399
+  - Q936942
+  qid: Q968730
+  year_start: 1976
+- description: 'This is a page containing all available sales and awards from industrial
+    rock and industrial metal artists.
+
+    This list is far from complete. Many countries were excluded from it because their
+    Industry Associations lacked a searchable, online database. Belgium, Iceland and
+    Mexico are some of them. Some European countries who do have it (Greece, Hungary
+    and Spain) were excluded anyway, because their databases showed no relevant sales
+    pertaining industrial rock and metal groups.  Latin American coun'
+  enwiki_slug: Industrial_rock_sales_and_awards
+  name: Industrial rock sales and awards
+  parent_qids: []
+  qid: Q17087299
+  year_start: null
+- description: This is a list of notable bands who have produced industrial music
+    or industrial rock. Separate lists are maintained of bands that predominately
+    produce electro-industrial and industrial metal.
+  enwiki_slug: List_of_industrial_music_bands
+  name: List of industrial music bands
+  parent_qids: []
+  qid: Q6624014
+  year_start: null
+- description: The following is a list of industrial music festivals, which encapsulates
+    music festivals focused on industrial music. The list may have some overlap with
+    list of electronic music festivals, list of gothic festivals, and list of heavy
+    metal festivals. Industrial music is a genre of experimental music that draws
+    on transgressive and provocative themes. The term was coined in the mid-1970s,  and
+    precursors included acts such as electronic group Kraftwerk, experimental rock
+    acts such as The Velvet
+  enwiki_slug: List_of_industrial_music_festivals
+  name: List of industrial music festivals
+  parent_qids: []
+  qid: Q21026307
+  year_start: null
+- description: ''
+  enwiki_slug: List_of_industrial_music_genres
+  name: List of industrial music genres
+  parent_qids: []
+  qid: Q52459626
+  year_start: null
+- description: 'The following is a list of music labels that predominantly feature
+    industrial music styles and that have released or distributed work by one or more
+    notable industrial music artists or bands.
+
+    The releases for each of the labels here listed can be categorized by one of the
+    many industrial music genres for the entirety of, or a significant portion of,
+    the label''s lifetime. For the purposes of this list we are using a maximally
+    inclusive definition of "industrial" music, taking a cue from S. Alexan'
+  enwiki_slug: List_of_industrial_music_labels
+  name: List of industrial music labels
+  parent_qids: []
+  qid: Q108196190
+  year_start: null
+- description: ''
+  enwiki_slug: Martial_industrial
+  name: Martial industrial
+  parent_qids:
+  - Q936942
+  qid: Q1078010
+  year_start: 1980
+- description: ''
+  enwiki_slug: Power_electronics_(music_genre)
+  name: Power electronics (music genre)
+  parent_qids:
+  - Q487965
+  - Q726239
+  qid: Q2687544
+  year_start: 1980

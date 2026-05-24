@@ -1,0 +1,77 @@
+- description: ''
+  enwiki_slug: Belgian_hardcore_techno
+  name: Belgian hardcore techno
+  parent_qids:
+  - Q170611
+  - Q388906
+  - Q898709
+  qid: Q112663444
+  year_start: 1990
+- description: ''
+  enwiki_slug: Bouncy_techno
+  name: Bouncy techno
+  parent_qids:
+  - Q339906
+  - Q898709
+  qid: Q3066180
+  year_start: 1992
+- description: ''
+  enwiki_slug: I_Love_Techno
+  name: I Love Techno
+  parent_qids: []
+  qid: Q1655230
+  year_start: 1995
+- description: Industrial techno is a subgenre of techno and industrial dance music
+    that originated in the 1990s. Characteristically, it incorporates influences from
+    the bleak, noisy sound and aesthetics of early industrial music acts, particularly
+    Cabaret Voltaire and Throbbing Gristle. American industrial music label Wax Trax!
+    also had a profound influence over the genre's development.
+  enwiki_slug: Industrial_techno
+  name: Industrial techno
+  parent_qids:
+  - Q170611
+  - Q936942
+  qid: Q29480448
+  year_start: 1990
+- description: ''
+  enwiki_slug: Schaffel
+  name: Schaffel
+  parent_qids:
+  - Q170611
+  qid: Q1738175
+  year_start: 2000
+- description: Techno is a genre of electronic music which is generally produced for
+    use in a continuous DJ set, with tempos being in the range from 120 to 150 beats
+    per minute (bpm). The central rhythm is typically in common time (44) and often
+    characterized by a repetitive four on the floor beat. Artists may use electronic
+    instruments such as drum machines, sequencers, and synthesizers, as well as digital
+    audio workstations. Drum machines from the 1980s such as Roland's Roland TR-808
+    and Roland TR-909 are hi
+  enwiki_slug: Techno
+  name: Techno
+  parent_qids:
+  - Q851213
+  qid: Q170611
+  year_start: 1984
+- description: A technoparade (taken from the German word "Technoparade") is a parade
+    of vehicles equipped with strong loudspeakers and amplifiers playing electronic
+    dance music. It resembles a carnival parade in some respects, but the vehicles
+    (called lovemobiles) are usually less elaborately decorated. Unlike some carnival
+    parades, a technoparade does not share the tradition of bombarding the spectators
+    with sweets. However, the revellers do occasionally throw confetti (usually larger
+    and more sparkly than t
+  enwiki_slug: Technoparade
+  name: Technoparade
+  parent_qids:
+  - Q657449
+  - Q868557
+  qid: Q358576
+  year_start: null
+- description: ''
+  enwiki_slug: Tromsø_techno_scene
+  name: Tromsø techno scene
+  parent_qids:
+  - Q170611
+  - Q833189
+  qid: Q7845403
+  year_start: null

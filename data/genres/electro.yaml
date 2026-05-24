@@ -1,0 +1,215 @@
+- id: electro_music
+  name: Electro (music)
+  track: electro
+  year_start: 1980
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q217597
+  wikipedia_slug: Electro_(music)
+  audio_examples: []
+- id: electro_swing
+  name: Electro swing
+  track: electro
+  year_start: 1994
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q602561
+  wikipedia_slug: Electro_swing
+  audio_examples: []
+- id: electroclash
+  name: Electroclash
+  track: electro
+  year_start: 1995
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q861823
+  wikipedia_slug: Electroclash
+  audio_examples: []
+- id: electroclash_festival
+  name: Electroclash Festival
+  track: electro
+  year_start: 2001
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Electroclash is a genre of music that emerged at the end of the 1990s.
+    In the US it came to media attention, when the Electroclash Festival was held
+    from October 10 to 14, 2001 in Williamsburg, New York. The festival was founded
+    by DJ Larry Tee, and held again in 2002 with subsequent live tours across the
+    US and Europe in 2003 and then 2004. Other notable artists who performed at the
+    festivals and subsequent tours include: Scissor Sisters, ADULT., Fischerspooner,
+    Erol Alkan, Princess Superstar,'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q20011168
+  wikipedia_slug: Electroclash_Festival
+  audio_examples: []
+- id: electronic_cottage
+  name: Electronic Cottage
+  track: electro
+  year_start: 1989
+  year_end: null
+  origin: ''
+  parents: []
+  description: Electronic Cottage was a printed magazine that championed and examined
+    DIY cassette culture phenomenon, including reviewers of sound collage, noise music,
+    electronic music and other forms of experimental music. There were six issue produced
+    between the years 1989 to 1991. The first issue was published in April 1989. Hal
+    McGee was the magazine's editor and publisher. The magazine was based in Apollo
+    Beach, Florida. It has since been revived as an online community, emphasizing
+    experimental music a
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q5358233
+  wikipedia_slug: Electronic_Cottage
+  audio_examples: []
+- id: electronic_dance_music
+  name: Electronic dance music
+  track: electro
+  year_start: 1977
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q851213
+  wikipedia_slug: Electronic_dance_music
+  audio_examples: []
+- id: electronic_rock
+  name: Electronic rock
+  track: electro
+  year_start: 1965
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q325504
+  wikipedia_slug: Electronic_rock
+  audio_examples: []
+- id: electronica
+  name: Electronica
+  track: electro
+  year_start: 1991
+  year_end: null
+  origin: ''
+  parents: []
+  description: Electronica is both a broad group of electronic-based music styles
+    intended for listening rather than strictly for dancing and a music scene that
+    came to prominence in the early 1990s in the United Kingdom which incorporated
+    various musical styles. In the United States, the term is mostly used to refer
+    to electronic music generally.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q817138
+  wikipedia_slug: Electronica
+  audio_examples: []
+- id: electronicore
+  name: Electronicore
+  track: electro
+  year_start: 2000
+  year_end: null
+  origin: ''
+  parents: []
+  description: Electronicore (also known as synthcore or trancecore) is a fusion genre
+    of metalcore music with elements of various electronic music genres, often including
+    trance, electronica, and dubstep. Electronicore emerged in the early 2000s. The
+    British band Enter Shikari, founded in 2003, is considered a pioneer. However,
+    several online magazines attribute a pioneering role in this genre to the band
+    I See Stars, due to their debut album 3-D, which was very well-known within the
+    scene.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q2084353
+  wikipedia_slug: Electronicore
+  audio_examples: []
+- id: electropop
+  name: Electropop
+  track: electro
+  year_start: 1998
+  year_end: null
+  origin: ''
+  parents: []
+  description: "Electropop is a popular music fusion genre  combining elements of\
+    \ the electronic and pop styles. \nElectropop has been described as a variant\
+    \ of synth-pop with emphasis on a hard electronic sound. The genre was developed\
+    \ in the 1980s and saw a revival of popularity and influence in the late 2000s.\
+    \ The genre is often confused with electro, which is sometimes called electro-pop.\
+    \ However, electro is a separate genre incorporating funk and early hip hop."
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q188450
+  wikipedia_slug: Electropop
+  audio_examples: []
+- id: electronic_music
+  name: Electronic music
+  track: electro
+  year_start: 1920
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q9778
+  wikipedia_slug: Electronic_music
+  audio_examples: []
+- id: shangaan_electro
+  name: Shangaan electro
+  track: electro
+  year_start: 2007
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q17146868
+  wikipedia_slug: Shangaan_electro
+  audio_examples: []
+- id: synth_pop
+  name: Synth-pop
+  track: electro
+  year_start: 1972
+  year_end: null
+  origin: ''
+  parents: []
+  description: Synth-pop (short for synthesizer pop; also called techno-pop) is a
+    music genre that first became prominent in the late 1970s and features the synthesizer
+    as the dominant musical instrument. It was prefigured in the 1960s and early 1970s
+    by the use of synthesizers in progressive rock, electronic, art rock, disco, and
+    particularly the Krautrock of bands like Kraftwerk. It arose as a distinct genre
+    in Japan and the United Kingdom in the post-punk era as part of the new wave movement
+    of the late 197
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1298934
+  wikipedia_slug: Synth-pop
+  audio_examples: []

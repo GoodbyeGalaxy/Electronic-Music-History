@@ -74,3 +74,73 @@
   wikidata_id: Q1164901
   wikipedia_slug: Drone_music
   audio_examples: []
+- id: ambient_music
+  name: Ambient music
+  track: ambient
+  year_start: 1967
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q193207
+  wikipedia_slug: Ambient_music
+  audio_examples: []
+- id: ambient_techno
+  name: Ambient techno
+  track: ambient
+  year_start: 1989
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q9149801
+  wikipedia_slug: Ambient_techno
+  audio_examples: []
+- id: dark_ambient_2
+  name: Dark ambient
+  track: ambient
+  year_start: 1988
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q756956
+  wikipedia_slug: Dark_ambient
+  audio_examples: []
+- id: chill_out_music
+  name: Chill-out music
+  track: ambient
+  year_start: 1992
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q757143
+  wikipedia_slug: Chill-out_music
+  audio_examples: []
+- id: drone_music
+  name: Drone music
+  track: ambient
+  year_start: 1958
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q650316
+  wikipedia_slug: Drone_music
+  audio_examples: []

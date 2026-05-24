@@ -1,0 +1,63 @@
+- id: downtempo
+  name: Downtempo
+  track: downtempo
+  year_start: 1988
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Downtempo (or downbeat) is a broad label for electronic music that
+    features an atmospheric sound and slower beats than would typically be found in
+    dance music (downtempo tracks are usually around 90 BPM). Closely related to ambient
+    music but with greater emphasis on rhythm, the style may be played in relaxation
+    clubs or as "warm-up or cool-down" music during a DJ set. Examples of downtempo
+    subgenres include trip hop, ambient house, chillwave, psybient and lofi hip hop.
+
+    The style emerged in the l'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q251192
+  wikipedia_slug: Downtempo
+  audio_examples: []
+- id: lo_fi_music
+  name: Lo-fi music
+  track: downtempo
+  year_start: 1980
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1507298
+  wikipedia_slug: Lo-fi_music
+  audio_examples: []
+- id: lofi_girl
+  name: Lofi Girl
+  track: downtempo
+  year_start: 2015
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q101833802
+  wikipedia_slug: Lofi_Girl
+  audio_examples: []
+- id: trip_hop
+  name: Trip hop
+  track: downtempo
+  year_start: 1992
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q205560
+  wikipedia_slug: Trip_hop
+  audio_examples: []

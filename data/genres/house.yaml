@@ -2,67 +2,271 @@
   name: House
   track: house
   year_start: 1983
-  origin: "Chicago, USA"
+  origin: Chicago, USA
   parents: []
-  description: >
-    Aus den Chicagoer Clubs Warehouse und Music Box hervorgegangen,
-    verbanden DJs wie Frankie Knuckles und Ron Hardy Disco-Rhythmen
-    mit Synthesizern und Drum-Machines. Jesse Saunders On and On (1984)
-    gilt als erste Veroeffentlichung des Genres.
-  key_artists: [Frankie Knuckles, Larry Heard, Marshall Jefferson, Ron Hardy]
-  key_labels: [Trax Records, DJ International]
+  description: 'Aus den Chicagoer Clubs Warehouse und Music Box hervorgegangen, verbanden
+    DJs wie Frankie Knuckles und Ron Hardy Disco-Rhythmen mit Synthesizern und Drum-Machines.
+    Jesse Saunders On and On (1984) gilt als erste Veroeffentlichung des Genres.
+
+    '
+  key_artists:
+  - Frankie Knuckles
+  - Larry Heard
+  - Marshall Jefferson
+  - Ron Hardy
+  key_labels:
+  - Trax Records
+  - DJ International
   subvariants: []
   wikidata_id: Q1647099
   wikipedia_slug: House_music
   audio_examples: []
-
 - id: deep_house
   name: Deep House
   track: house
   year_start: 1986
-  origin: "Chicago/New York, USA"
-  parents: [house]
-  description: >
-    Larry Heard (Mr. Fingers) praegte mit Tracks wie Can You Feel It (1986)
-    einen soulreicheren, atmosphaerisch tieferen House-Stil. New Yorker
-    Labels wie Strictly Rhythm und Nervous Records trugen zur Verbreitung bei.
-  key_artists: [Larry Heard, Larry Levan, Kerri Chandler]
-  key_labels: [Trax Records, Strictly Rhythm, Nervous Records]
+  origin: Chicago/New York, USA
+  parents:
+  - house
+  description: 'Larry Heard (Mr. Fingers) praegte mit Tracks wie Can You Feel It (1986)
+    einen soulreicheren, atmosphaerisch tieferen House-Stil. New Yorker Labels wie
+    Strictly Rhythm und Nervous Records trugen zur Verbreitung bei.
+
+    '
+  key_artists:
+  - Larry Heard
+  - Larry Levan
+  - Kerri Chandler
+  key_labels:
+  - Trax Records
+  - Strictly Rhythm
+  - Nervous Records
   subvariants: []
   wikidata_id: Q1067317
   wikipedia_slug: Deep_house
   audio_examples: []
-
 - id: acid_house
   name: Acid House
   track: house
   year_start: 1987
-  origin: "Chicago, USA"
-  parents: [house]
-  description: >
-    Die zufaellig entdeckten Klaenge der Roland TB-303 Bassmaschine —
-    verwendet auf Phuture Acid Tracks (1987) — definierten das Subgenre.
-    In Grossbritannien loeste Acid House 1988 den Second Summer of Love aus.
-  key_artists: [Phuture, DJ Pierre, Armando, "808 State"]
-  key_labels: [Trax Records, FFRR]
+  origin: Chicago, USA
+  parents:
+  - house
+  description: 'Die zufaellig entdeckten Klaenge der Roland TB-303 Bassmaschine —
+    verwendet auf Phuture Acid Tracks (1987) — definierten das Subgenre. In Grossbritannien
+    loeste Acid House 1988 den Second Summer of Love aus.
+
+    '
+  key_artists:
+  - Phuture
+  - DJ Pierre
+  - Armando
+  - 808 State
+  key_labels:
+  - Trax Records
+  - FFRR
   subvariants: []
   wikidata_id: Q376670
   wikipedia_slug: Acid_house
   audio_examples: []
-
 - id: tech_house
   name: Tech House
   track: house
   year_start: 1994
   origin: UK/Deutschland
-  parents: [house]
-  description: >
-    Tech House verbindet die Rhythmik und Energie des Techno mit den
-    Harmonieelementen und dem Groove des House. Labels wie Turbo und
-    Hot Creations praegten den internationalen Stil.
-  key_artists: [Ricardo Villalobos, Tiga, Green Velvet, Jamie Jones]
-  key_labels: [Turbo Recordings, Hot Creations, Relief]
+  parents:
+  - house
+  description: 'Tech House verbindet die Rhythmik und Energie des Techno mit den Harmonieelementen
+    und dem Groove des House. Labels wie Turbo und Hot Creations praegten den internationalen
+    Stil.
+
+    '
+  key_artists:
+  - Ricardo Villalobos
+  - Tiga
+  - Green Velvet
+  - Jamie Jones
+  key_labels:
+  - Turbo Recordings
+  - Hot Creations
+  - Relief
   subvariants: []
   wikidata_id: Q1662199
   wikipedia_slug: Tech_house
+  audio_examples: []
+- id: afro_house
+  name: Afro house
+  track: house
+  year_start: 2005
+  year_end: null
+  origin: ''
+  parents: []
+  description: Afro house (also known as Afro-house or Afrohouse) is a sub-genre of
+    house music mainly developed in South Africa. The genre emerged in the 1990s.
+    This musical style fuses elements of traditional house with South African rhythms
+    and sounds, incorporating instruments such as the saxophone, piano and synthesizers,
+    as well as vocals in various African languages.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q388100
+  wikipedia_slug: Afro_house
+  audio_examples: []
+- id: amapiano
+  name: Amapiano
+  track: house
+  year_start: 2012
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q85741139
+  wikipedia_slug: Amapiano
+  audio_examples: []
+- id: ambient_house
+  name: Ambient house
+  track: house
+  year_start: 1988
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q2465085
+  wikipedia_slug: Ambient_house
+  audio_examples: []
+- id: gqom
+  name: Gqom
+  track: house
+  year_start: 2012
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q29973057
+  wikipedia_slug: Gqom
+  audio_examples: []
+- id: house_music
+  name: House music
+  track: house
+  year_start: 1982
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q20502
+  wikipedia_slug: House_music
+  audio_examples: []
+- id: kwaito
+  name: Kwaito
+  track: house
+  year_start: 1998
+  year_end: null
+  origin: ''
+  parents: []
+  description: Kwaito is a music genre that emerged in Soweto, Johannesburg, South
+    Africa, between the late 1980s and 1990s. It is a sound that features the use
+    of South African sounds and samples. Kwaito songs occur at a slower tempo range
+    than other styles of house music and often contain catchy melodic and percussive
+    loop samples, deep bass lines and vocals. They are also very similar tempos to
+    early 1990s NYC house tracks.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q956717
+  wikipedia_slug: Kwaito
+  audio_examples: []
+- id: outsider_house
+  name: Outsider house
+  track: house
+  year_start: 2010
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q18358879
+  wikipedia_slug: Outsider_house
+  audio_examples: []
+- id: the_warehouse_project
+  name: The Warehouse Project
+  track: house
+  year_start: 2006
+  year_end: null
+  origin: ''
+  parents: []
+  description: The Warehouse Project is a series of club nights organised in Greater
+    Manchester, England, since 2006. Unlike most other clubs, it has a limited seasonal
+    approach rather than running all year. Each year's season runs from September
+    through to New Year's Day, plus occasional one off dates such as Bank Holiday
+    weekends. This period corresponds with the busiest time of the year and the student
+    calendar.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q7773543
+  wikipedia_slug: The_Warehouse_Project
+  audio_examples: []
+- id: uk_hard_house
+  name: UK hard house
+  track: house
+  year_start: 1992
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1585015
+  wikipedia_slug: UK_hard_house
+  audio_examples: []
+- id: vinahouse
+  name: Vinahouse
+  track: house
+  year_start: 1990
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Vinahouse is a genre of electronic dance music, popularised in Vietnam.
+
+    It rose to prominence in Vietnam in the 1990s. The initial name for the genre
+    was "nhạc bay”, “nhạc sàn”, “nhạc vũ trường"; but the eventual common name for
+    the genre became Vinahouse. It initially emerged in various discotheques and nightclubs
+    across Vietnam, before spreading through Vietnamese diaspora communities in western
+    countries such as in California and Australia.
+
+    Characteristics of the genre include a fusion of Vie'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q109538574
+  wikipedia_slug: Vinahouse
+  audio_examples: []
+- id: witch_house
+  name: Witch house
+  track: house
+  year_start: 2007
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1840167
+  wikipedia_slug: Witch_house
   audio_examples: []

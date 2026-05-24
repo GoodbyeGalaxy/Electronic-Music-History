@@ -1,0 +1,36 @@
+- id: future_bass
+  name: Future bass
+  track: bass
+  year_start: 2010
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q22908553
+  wikipedia_slug: Future_bass
+  audio_examples: []
+- id: riddim_genre
+  name: Riddim (genre)
+  track: bass
+  year_start: 2010
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Riddim is a subgenre of dubstep known for its heavy use of repetitive
+    and minimalist sub-bass and triplet percussion arrangements. It shares the same
+    name as the Jamaican genre that influenced both it and dubstep, which originally
+    derived from dub, reggae, and dancehall. Originating in the United Kingdom, specifically
+    Croydon, in the early 2010s as a resurgence of the style used by early dubstep
+    works, riddim started to gain mainstream presence in the electronic music scene
+    around 2015.
+
+    Despite'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q65065491
+  wikipedia_slug: Riddim_(genre)
+  audio_examples: []

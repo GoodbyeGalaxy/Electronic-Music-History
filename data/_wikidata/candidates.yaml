@@ -1,0 +1,950 @@
+- description: ''
+  enwiki_slug: CD_player
+  name: CD player
+  parent_qids:
+  - Q15190726
+  qid: Q1023100
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: music of Pará
+  parent_qids:
+  - Q899215
+  qid: Q10334891
+  year_start: null
+- description: ''
+  enwiki_slug: Hard_dance
+  name: hard dance
+  parent_qids:
+  - Q851213
+  qid: Q1033912
+  year_start: 1992
+- description: ''
+  enwiki_slug: Electrophone
+  name: electrophone
+  parent_qids:
+  - Q2425052
+  - Q34379
+  qid: Q105738
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: experimental electronic music
+  parent_qids:
+  - Q1640319
+  - Q9778
+  qid: Q105763581
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: New Wave film
+  parent_qids:
+  - Q11424
+  qid: Q10604324
+  year_start: null
+- description: ''
+  enwiki_slug: Contemporary_folk_music
+  name: contemporary folk music
+  parent_qids:
+  - Q373342
+  - Q43343
+  qid: Q106298881
+  year_start: 1920
+- description: ''
+  enwiki_slug: ''
+  name: bit music
+  parent_qids:
+  - Q9778
+  qid: Q106422444
+  year_start: 1979
+- description: ''
+  enwiki_slug: ''
+  name: deep techno
+  parent_qids:
+  - Q170611
+  qid: Q106521662
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: music of Central Africa
+  parent_qids:
+  - Q369820
+  qid: Q106588687
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: East Coast club
+  parent_qids:
+  - Q106576141
+  - Q114880124
+  qid: Q107091813
+  year_start: 1991
+- description: ''
+  enwiki_slug: Hardcore_punk
+  name: hardcore punk
+  parent_qids:
+  - Q3071
+  qid: Q10922
+  year_start: 1978
+- description: ''
+  enwiki_slug: ''
+  name: experimental club music
+  parent_qids:
+  - Q105763581
+  - Q851213
+  qid: Q110527222
+  year_start: null
+- description: ''
+  enwiki_slug: Alternative_rock
+  name: alternative rock
+  parent_qids:
+  - Q11399
+  - Q1695023
+  qid: Q11366
+  year_start: 1978
+- description: ''
+  enwiki_slug: Rock_music
+  name: rock music
+  parent_qids:
+  - Q373342
+  qid: Q11399
+  year_start: 1948
+- description: ''
+  enwiki_slug: Hip-hop
+  name: hip-hop
+  parent_qids:
+  - Q373342
+  qid: Q11401
+  year_start: 1973
+- description: ''
+  enwiki_slug: Lounge_music
+  name: lounge music
+  parent_qids:
+  - Q848399
+  qid: Q1141081
+  year_start: 1950
+- description: ''
+  enwiki_slug: Sound
+  name: sound
+  parent_qids:
+  - Q3882459
+  - Q626707
+  qid: Q11461
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: US bass music
+  parent_qids:
+  - Q96740854
+  qid: Q114880124
+  year_start: 1984
+- description: ''
+  enwiki_slug: ''
+  name: bass music (EDM)
+  parent_qids:
+  - Q851213
+  - Q96740854
+  qid: Q114880130
+  year_start: 1997
+- description: ''
+  enwiki_slug: ''
+  name: music
+  parent_qids:
+  - Q11461
+  - Q116474095
+  qid: Q115484611
+  year_start: null
+- description: ''
+  enwiki_slug: Dance
+  name: dance
+  parent_qids:
+  - Q184485
+  - Q747883
+  qid: Q11639
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: Ongu
+  parent_qids:
+  - Q12639
+  qid: Q11664153
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: electronic pop
+  parent_qids:
+  - Q37073
+  - Q9778
+  qid: Q116985035
+  year_start: 1969
+- description: ''
+  enwiki_slug: Brazilian_funk
+  name: Brazilian funk
+  parent_qids:
+  - Q114880124
+  - Q11787389
+  - Q899215
+  qid: Q117745223
+  year_start: 1989
+- description: ''
+  enwiki_slug: Club_music
+  name: club/dance music
+  parent_qids:
+  - Q316930
+  qid: Q11787389
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: pumping house
+  parent_qids:
+  - Q1585015
+  qid: Q11831728
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: metal music
+  parent_qids:
+  - Q11399
+  qid: Q12326776
+  year_start: 1970
+- description: ''
+  enwiki_slug: Idiophone
+  name: idiophone
+  parent_qids:
+  - Q34379
+  qid: Q12639
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: leftist music
+  parent_qids:
+  - Q28146601
+  qid: Q132531661
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: interlude
+  parent_qids:
+  - Q207628
+  - Q2115663
+  qid: Q1413319
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_Yugoslavia
+  name: music of Yugoslavia
+  parent_qids:
+  - Q3211884
+  qid: Q1522794
+  year_start: null
+- description: ''
+  enwiki_slug: Experimental_music
+  name: experimental music
+  parent_qids:
+  - Q115484611
+  qid: Q1640319
+  year_start: 1960
+- description: ''
+  enwiki_slug: Experimental_rock
+  name: experimental rock
+  parent_qids:
+  - Q11399
+  - Q1640319
+  qid: Q1641839
+  year_start: 1966
+- description: ''
+  enwiki_slug: ''
+  name: event
+  parent_qids:
+  - Q1190554
+  - Q7406919
+  qid: Q1656682
+  year_start: null
+- description: ''
+  enwiki_slug: Direct-drive_turntable
+  name: direct-drive turntable
+  parent_qids:
+  - Q7112808
+  qid: Q16973802
+  year_start: null
+- description: ''
+  enwiki_slug: Collage
+  name: collaging
+  parent_qids:
+  - Q36649
+  qid: Q170593
+  year_start: null
+- description: ''
+  enwiki_slug: Record_label
+  name: record label
+  parent_qids:
+  - Q1417728
+  - Q167270
+  - Q2608849
+  - Q32178211
+  - Q431289
+  - Q70382745
+  qid: Q18127
+  year_start: null
+- description: ''
+  enwiki_slug: Concert
+  name: concert
+  parent_qids:
+  - Q113162275
+  - Q19711353
+  - Q6942562
+  qid: Q182832
+  year_start: null
+- description: ''
+  enwiki_slug: Indie_rock
+  name: indie rock
+  parent_qids:
+  - Q11366
+  - Q42201
+  qid: Q183504
+  year_start: 1981
+- description: ''
+  enwiki_slug: Metalcore
+  name: metalcore
+  parent_qids:
+  - Q10922
+  - Q465978
+  qid: Q183862
+  year_start: 1988
+- description: ''
+  enwiki_slug: ''
+  name: music file format
+  parent_qids:
+  - Q233861
+  - Q235557
+  qid: Q1955133
+  year_start: null
+- description: ''
+  enwiki_slug: Nerd_music
+  name: nerd music
+  parent_qids:
+  - Q373342
+  qid: Q19678100
+  year_start: null
+- description: ''
+  enwiki_slug: Party
+  name: party
+  parent_qids:
+  - Q1656682
+  qid: Q200538
+  year_start: null
+- description: ''
+  enwiki_slug: Alternative_metal
+  name: alternative metal
+  parent_qids:
+  - Q12326776
+  - Q1695023
+  qid: Q20378
+  year_start: 1985
+- description: ''
+  enwiki_slug: Musical_composition
+  name: composed musical work
+  parent_qids:
+  - Q2188189
+  qid: Q207628
+  year_start: null
+- description: ''
+  enwiki_slug: Brostep
+  name: brostep
+  parent_qids:
+  - Q20474
+  qid: Q20903
+  year_start: 2007
+- description: ''
+  enwiki_slug: Section_(music)
+  name: passage
+  parent_qids:
+  - Q116943129
+  qid: Q2115663
+  year_start: null
+- description: ''
+  enwiki_slug: Musical_group
+  name: musical group
+  parent_qids:
+  - Q2088357
+  qid: Q215380
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: dōjin work
+  parent_qids:
+  - Q386724
+  qid: Q22669665
+  year_start: null
+- description: ''
+  enwiki_slug: Zouglou
+  name: zouglou
+  parent_qids:
+  - Q6942329
+  qid: Q227036
+  year_start: null
+- description: ''
+  enwiki_slug: Record_company
+  name: record company
+  parent_qids:
+  - Q1331793
+  - Q32178211
+  - Q4830453
+  qid: Q2442401
+  year_start: null
+- description: ''
+  enwiki_slug: Brega_(music)
+  name: brega
+  parent_qids:
+  - Q899215
+  qid: Q2464314
+  year_start: null
+- description: ''
+  enwiki_slug: Dubtronica
+  name: dubtronica
+  parent_qids:
+  - Q817138
+  qid: Q2478478
+  year_start: null
+- description: ''
+  enwiki_slug: Experimental_pop
+  name: experimental pop
+  parent_qids:
+  - Q1640319
+  - Q37073
+  qid: Q25094591
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: punk music
+  parent_qids:
+  - Q11399
+  qid: Q25554481
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_Japan
+  name: music of Japan
+  parent_qids:
+  - Q3868595
+  qid: Q257533
+  year_start: null
+- description: ''
+  enwiki_slug: Subculture
+  name: subculture
+  parent_qids:
+  - Q11042
+  - Q16334295
+  qid: Q264965
+  year_start: null
+- description: ''
+  enwiki_slug: Work_(human_activity)
+  name: work
+  parent_qids:
+  - Q8187769
+  qid: Q268378
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_the_United_Kingdom
+  name: music of the United Kingdom
+  parent_qids:
+  - Q21971297
+  qid: Q268673
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_Germany
+  name: music of Germany
+  parent_qids:
+  - Q106507873
+  qid: Q2743758
+  year_start: null
+- description: ''
+  enwiki_slug: Garden_ornament
+  name: garden ornament
+  parent_qids:
+  - Q112049379
+  - Q335261
+  qid: Q28597527
+  year_start: null
+- description: ''
+  enwiki_slug: Bedroom_pop
+  name: bedroom pop
+  parent_qids:
+  - Q842324
+  qid: Q28746819
+  year_start: null
+- description: ''
+  enwiki_slug: Trap_music
+  name: trap music
+  parent_qids:
+  - Q11401
+  - Q114880124
+  qid: Q2913982
+  year_start: 1990
+- description: ''
+  enwiki_slug: Punk_rock
+  name: punk rock
+  parent_qids:
+  - Q25554481
+  qid: Q3071
+  year_start: 1975
+- description: ''
+  enwiki_slug: Hard_techno
+  name: hard techno
+  parent_qids:
+  - Q170611
+  qid: Q3084222
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: music of Europe
+  parent_qids:
+  - Q16243117
+  - Q3328755
+  qid: Q3328676
+  year_start: null
+- description: ''
+  enwiki_slug: Happy_hardcore
+  name: happy hardcore
+  parent_qids:
+  - Q388906
+  qid: Q339906
+  year_start: 1992
+- description: ''
+  enwiki_slug: Rara_music
+  name: rara
+  parent_qids:
+  - Q107033384
+  - Q3710513
+  qid: Q3419744
+  year_start: null
+- description: ''
+  enwiki_slug: Musical_instrument
+  name: musical instrument
+  parent_qids:
+  - Q267228
+  - Q39546
+  - Q56146933
+  - Q8205328
+  qid: Q34379
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_Italy
+  name: music of Italy
+  parent_qids:
+  - Q106508039
+  qid: Q3679098
+  year_start: null
+- description: ''
+  enwiki_slug: Pop_music
+  name: pop music
+  parent_qids:
+  - Q373342
+  qid: Q37073
+  year_start: 1950
+- description: ''
+  enwiki_slug: Music_of_Haiti
+  name: music of Haiti
+  parent_qids:
+  - Q107025062
+  - Q108151792
+  - Q727781
+  qid: Q3710513
+  year_start: null
+- description: ''
+  enwiki_slug: Popular_music
+  name: popular music
+  parent_qids:
+  - Q115484611
+  qid: Q373342
+  year_start: null
+- description: ''
+  enwiki_slug: Post-hardcore
+  name: post-hardcore
+  parent_qids:
+  - Q25554481
+  qid: Q377910
+  year_start: 1980
+- description: ''
+  enwiki_slug: New_media_art
+  name: new media art
+  parent_qids:
+  - Q42314818
+  qid: Q378604
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: Q3831187
+  parent_qids:
+  - Q15190726
+  qid: Q3831187
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_Tanzania
+  name: music of Tanzania
+  parent_qids:
+  - Q106586248
+  qid: Q3868600
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: world fusion
+  parent_qids:
+  - Q8341
+  qid: Q4020968
+  year_start: null
+- description: ''
+  enwiki_slug: Rhythm_and_blues
+  name: rhythm and blues
+  parent_qids:
+  - Q373342
+  qid: Q45981
+  year_start: 1938
+- description: ''
+  enwiki_slug: Acetate_disc
+  name: acetate disc
+  parent_qids:
+  - Q16629185
+  qid: Q4673255
+  year_start: null
+- description: ''
+  enwiki_slug: Dancehall
+  name: dancehall
+  parent_qids:
+  - Q572717
+  - Q9794
+  qid: Q474027
+  year_start: 1970
+- description: ''
+  enwiki_slug: Music_of_South_Africa
+  name: music of South Africa
+  parent_qids:
+  - Q98528232
+  qid: Q4794612
+  year_start: null
+- description: ''
+  enwiki_slug: British_pop_music
+  name: British pop
+  parent_qids:
+  - Q37073
+  - Q4971423
+  qid: Q4971422
+  year_start: null
+- description: ''
+  enwiki_slug: Dance_party
+  name: dance party
+  parent_qids:
+  - Q200538
+  qid: Q5215299
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: experimental hip-hop
+  parent_qids:
+  - Q11401
+  - Q1640319
+  qid: Q5421158
+  year_start: null
+- description: ''
+  enwiki_slug: Ska
+  name: ska
+  parent_qids:
+  - Q373342
+  qid: Q54365
+  year_start: 1958
+- description: ''
+  enwiki_slug: Glitch_art
+  name: glitch art
+  parent_qids:
+  - Q735
+  qid: Q5569949
+  year_start: null
+- description: ''
+  enwiki_slug: Minimal_music
+  name: minimalist music
+  parent_qids:
+  - Q65937946
+  qid: Q572901
+  year_start: 1964
+- description: ''
+  enwiki_slug: Radio_format
+  name: radio format
+  parent_qids:
+  - Q2085518
+  qid: Q589183
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: tape music
+  parent_qids:
+  - Q1640319
+  qid: Q5969884
+  year_start: null
+- description: ''
+  enwiki_slug: Post-punk
+  name: post-punk
+  parent_qids:
+  - Q25554481
+  qid: Q598929
+  year_start: 1978
+- description: ''
+  enwiki_slug: Rapping
+  name: rapping
+  parent_qids:
+  - Q11401
+  - Q6942562
+  qid: Q6010
+  year_start: 1970
+- description: ''
+  enwiki_slug: Contemporary_classical_music
+  name: contemporary classical music
+  parent_qids:
+  - Q65937946
+  qid: Q612024
+  year_start: 1945
+- description: ''
+  enwiki_slug: Nightclub
+  name: nightclub
+  parent_qids:
+  - Q114727401
+  - Q5307737
+  - Q57660343
+  - Q8719053
+  qid: Q622425
+  year_start: null
+- description: ''
+  enwiki_slug: Musician
+  name: musician
+  parent_qids:
+  - Q483501
+  qid: Q639669
+  year_start: null
+- description: ''
+  enwiki_slug: Christian_music
+  name: Christian music
+  parent_qids:
+  - Q1065742
+  qid: Q6452410
+  year_start: null
+- description: ''
+  enwiki_slug: Beat_(music)
+  name: beat
+  parent_qids:
+  - Q1639408
+  - Q170406
+  qid: Q654693
+  year_start: null
+- description: ''
+  enwiki_slug: Parade
+  name: parade
+  parent_qids:
+  - Q1656682
+  - Q3533467
+  - Q898830
+  qid: Q657449
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: modern classical music
+  parent_qids:
+  - Q9730
+  qid: Q65937946
+  year_start: 1900
+- description: ''
+  enwiki_slug: Music_of_Chicago
+  name: music of Chicago
+  parent_qids:
+  - Q2267955
+  qid: Q6942047
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_Ghana
+  name: music of Ghana
+  parent_qids:
+  - Q6942329
+  qid: Q6942095
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_West_Africa
+  name: music of West Africa
+  parent_qids:
+  - Q369820
+  qid: Q6942329
+  year_start: null
+- description: ''
+  enwiki_slug: Neo-psychedelia
+  name: neo-psychedelia
+  parent_qids:
+  - Q206159
+  qid: Q703778
+  year_start: 1978
+- description: ''
+  enwiki_slug: Pitched_percussion_instrument
+  name: melodic percussion instrument
+  parent_qids:
+  - Q133163
+  qid: Q7198871
+  year_start: null
+- description: ''
+  enwiki_slug: Reductionism_(music)
+  name: reductionism
+  parent_qids:
+  - Q1640319
+  qid: Q7306376
+  year_start: null
+- description: ''
+  enwiki_slug: Problem_solving
+  name: problem solving
+  parent_qids:
+  - Q105606485
+  - Q114023750
+  - Q3249551
+  - Q9420
+  qid: Q730920
+  year_start: null
+- description: ''
+  enwiki_slug: Production_(economics)
+  name: economic production
+  parent_qids:
+  - Q11398090
+  - Q3249551
+  - Q8187769
+  qid: Q739302
+  year_start: null
+- description: ''
+  enwiki_slug: Sound_synthesis
+  name: sound synthesis
+  parent_qids:
+  - Q1497005
+  - Q3123154
+  - Q5532625
+  - Q59163902
+  qid: Q7554316
+  year_start: null
+- description: ''
+  enwiki_slug: Progressive_electronic_music
+  name: progressive electronic music
+  parent_qids:
+  - Q11308620
+  - Q7248857
+  qid: Q79784514
+  year_start: 1969
+- description: ''
+  enwiki_slug: Drum_machine
+  name: drum machine
+  parent_qids:
+  - Q1327500
+  qid: Q831698
+  year_start: null
+- description: ''
+  enwiki_slug: Music_of_Norway
+  name: music of Norway
+  parent_qids:
+  - Q110471193
+  qid: Q833189
+  year_start: null
+- description: ''
+  enwiki_slug: Jazz
+  name: jazz
+  parent_qids:
+  - Q373342
+  qid: Q8341
+  year_start: 1917
+- description: ''
+  enwiki_slug: Music_festival
+  name: music festival
+  parent_qids:
+  - Q113162275
+  - Q4801521
+  qid: Q868557
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: electronic instrument
+  parent_qids:
+  - Q1183543
+  qid: Q876367
+  year_start: null
+- description: ''
+  enwiki_slug: Eurotrance
+  name: Eurotrance
+  parent_qids:
+  - Q170435
+  - Q3328676
+  qid: Q890887
+  year_start: 1995
+- description: ''
+  enwiki_slug: Rave_music
+  name: rave music
+  parent_qids:
+  - Q851213
+  qid: Q898709
+  year_start: null
+- description: ''
+  enwiki_slug: Dreadlocks
+  name: dreadlocks
+  parent_qids: []
+  qid: Q898801
+  year_start: null
+- description: ''
+  enwiki_slug: Post-industrial_(music)
+  name: post-industrial music
+  parent_qids:
+  - Q487965
+  qid: Q936942
+  year_start: 1988
+- description: ''
+  enwiki_slug: Handheld_game_console
+  name: handheld game console
+  parent_qids:
+  - Q5082128
+  - Q8076
+  qid: Q941818
+  year_start: null
+- description: ''
+  enwiki_slug: Schlager_music
+  name: schlager music
+  parent_qids:
+  - Q3328676
+  - Q37073
+  qid: Q959583
+  year_start: 1874
+- description: ''
+  enwiki_slug: Art_movement
+  name: art movement
+  parent_qids:
+  - Q1792644
+  - Q2198855
+  qid: Q968159
+  year_start: null
+- description: ''
+  enwiki_slug: ''
+  name: video
+  parent_qids:
+  - Q119228987
+  - Q174984
+  - Q340169
+  - Q49848
+  qid: Q98069877
+  year_start: null
+- description: ''
+  enwiki_slug: Electro-disco
+  name: electro-disco
+  parent_qids:
+  - Q58339
+  - Q851213
+  qid: Q98528149
+  year_start: 1976
+- description: ''
+  enwiki_slug: ''
+  name: Latin electronic music
+  parent_qids:
+  - Q18345375
+  - Q9778
+  qid: Q98528166
+  year_start: 1989
+- description: ''
+  enwiki_slug: ''
+  name: mod
+  parent_qids:
+  - Q11399
+  qid: Q98528293
+  year_start: null

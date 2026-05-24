@@ -1,0 +1,61 @@
+- description: 2-step garage, or simply 2-step, is a genre of electronic music and
+    a subgenre of UK garage. One of the primary characteristics of the 2-step sound
+    – the term being coined to describe "a general rubric for all kinds of jittery,
+    irregular rhythms that don't conform to garage's traditional four-on-the-floor
+    pulse" – is that the rhythm lacks the kick drum pattern found in many other styles
+    of electronic music with a regular four-on-the-floor beat.
+  enwiki_slug: 2-step_garage
+  name: 2-step garage
+  parent_qids:
+  - Q1165777
+  qid: Q1751409
+  year_start: 1998
+- description: ''
+  enwiki_slug: Bassline_(music_genre)
+  name: Bassline (music genre)
+  parent_qids:
+  - Q114880130
+  - Q1165777
+  qid: Q4846346
+  year_start: 1999
+- description: ''
+  enwiki_slug: Breakstep
+  name: Breakstep
+  parent_qids:
+  - Q1165777
+  qid: Q1987980
+  year_start: 1998
+- description: ''
+  enwiki_slug: Future_garage
+  name: Future garage
+  parent_qids:
+  - Q1165777
+  qid: Q5510816
+  year_start: 2005
+- description: ''
+  enwiki_slug: List_of_UK_garage_artists
+  name: List of UK garage artists
+  parent_qids: []
+  qid: Q6601155
+  year_start: null
+- description: ''
+  enwiki_slug: List_of_UK_garage_songs
+  name: List of UK garage songs
+  parent_qids: []
+  qid: Q60519298
+  year_start: null
+- description: ''
+  enwiki_slug: Speed_garage
+  name: Speed garage
+  parent_qids:
+  - Q1165777
+  - Q20502
+  qid: Q780517
+  year_start: 1994
+- description: ''
+  enwiki_slug: UK_garage
+  name: UK garage
+  parent_qids:
+  - Q851213
+  qid: Q1165777
+  year_start: 1993

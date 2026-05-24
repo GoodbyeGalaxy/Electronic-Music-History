@@ -2,68 +2,193 @@
   name: Techno
   track: techno
   year_start: 1985
-  origin: "Detroit, USA"
-  parents: [industrial]
-  description: >
-    Die Belleville Three (Juan Atkins, Derrick May, Kevin Saunderson)
-    entwickelten Mitte der 1980er in Detroit einen Stil aus europaeischer
-    Elektronik (Kraftwerk, Giorgio Moroder), Funk und Chicago House.
-    Strings of Life (Derrick May, 1987) ist das bekannteste Schlusselwerk.
-  key_artists: [Juan Atkins, Derrick May, Kevin Saunderson, Jeff Mills, Underground Resistance]
-  key_labels: [Transmat, Metroplex, KMS, Underground Resistance]
+  origin: Detroit, USA
+  parents:
+  - industrial
+  description: 'Die Belleville Three (Juan Atkins, Derrick May, Kevin Saunderson)
+    entwickelten Mitte der 1980er in Detroit einen Stil aus europaeischer Elektronik
+    (Kraftwerk, Giorgio Moroder), Funk und Chicago House. Strings of Life (Derrick
+    May, 1987) ist das bekannteste Schlusselwerk.
+
+    '
+  key_artists:
+  - Juan Atkins
+  - Derrick May
+  - Kevin Saunderson
+  - Jeff Mills
+  - Underground Resistance
+  key_labels:
+  - Transmat
+  - Metroplex
+  - KMS
+  - Underground Resistance
   subvariants: []
   wikidata_id: Q48803
   wikipedia_slug: Techno
   audio_examples: []
-
 - id: acid_techno
   name: Acid Techno
   track: techno
   year_start: 1991
   origin: London/Berlin
-  parents: [techno]
-  description: >
-    Acid Techno kombiniert den harten Groove des Detroit Techno mit dem
-    verzerrenden TB-303-Bassklang des Acid House. In London und Berlin
-    entstanden in den fruehen 1990ern pragende Tracks auf Labels wie
-    Evolution und T&D.
-  key_artists: [Emmanuel Top, Liberator DJs, Simon F]
-  key_labels: [Evolution Records, T&D Records]
+  parents:
+  - techno
+  description: 'Acid Techno kombiniert den harten Groove des Detroit Techno mit dem
+    verzerrenden TB-303-Bassklang des Acid House. In London und Berlin entstanden
+    in den fruehen 1990ern pragende Tracks auf Labels wie Evolution und T&D.
+
+    '
+  key_artists:
+  - Emmanuel Top
+  - Liberator DJs
+  - Simon F
+  key_labels:
+  - Evolution Records
+  - T&D Records
   subvariants: []
   wikidata_id: Q830399
   wikipedia_slug: Acid_techno
   audio_examples: []
-
 - id: minimal_techno
   name: Minimal Techno
   track: techno
   year_start: 1994
   origin: Detroit/Berlin
-  parents: [techno]
-  description: >
-    Robert Hood und Daniel Bell schufen Mitte der 1990er einen reduzierten,
+  parents:
+  - techno
+  description: 'Robert Hood und Daniel Bell schufen Mitte der 1990er einen reduzierten,
     hypnotischen Stil. In Berlin entwickelten Richie Hawtin und Ricardo Villalobos
     zu Beginn der 2000er eine Hoehzeit des Subgenres.
-  key_artists: [Robert Hood, Daniel Bell, Richie Hawtin, Ricardo Villalobos]
-  key_labels: [Axis, M-Plant, Minus]
-  subvariants: [Microhouse]
+
+    '
+  key_artists:
+  - Robert Hood
+  - Daniel Bell
+  - Richie Hawtin
+  - Ricardo Villalobos
+  key_labels:
+  - Axis
+  - M-Plant
+  - Minus
+  subvariants:
+  - Microhouse
   wikidata_id: Q1195085
   wikipedia_slug: Minimal_techno
   audio_examples: []
-
 - id: dub_techno
   name: Dub Techno
   track: techno
   year_start: 1993
-  origin: "Berlin, DE"
-  parents: [techno]
-  description: >
-    Basic Channel (Mark Ernestus und Moritz von Oswald) praegten in Berlin
-    ab 1993 einen tiefen, dubbigen Techno-Stil mit Schallplattenecho und
-    dichter Atmosphaere. Das Label Chain Reaction wurde zum Zentrum.
-  key_artists: [Basic Channel, Maurizio, Deepchord]
-  key_labels: [Basic Channel, Chain Reaction]
+  origin: Berlin, DE
+  parents:
+  - techno
+  description: 'Basic Channel (Mark Ernestus und Moritz von Oswald) praegten in Berlin
+    ab 1993 einen tiefen, dubbigen Techno-Stil mit Schallplattenecho und dichter Atmosphaere.
+    Das Label Chain Reaction wurde zum Zentrum.
+
+    '
+  key_artists:
+  - Basic Channel
+  - Maurizio
+  - Deepchord
+  key_labels:
+  - Basic Channel
+  - Chain Reaction
   subvariants: []
   wikidata_id: Q1228038
   wikipedia_slug: Dub_techno
+  audio_examples: []
+- id: belgian_hardcore_techno
+  name: Belgian hardcore techno
+  track: techno
+  year_start: 1990
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q112663444
+  wikipedia_slug: Belgian_hardcore_techno
+  audio_examples: []
+- id: bouncy_techno
+  name: Bouncy techno
+  track: techno
+  year_start: 1992
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q3066180
+  wikipedia_slug: Bouncy_techno
+  audio_examples: []
+- id: i_love_techno
+  name: I Love Techno
+  track: techno
+  year_start: 1995
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1655230
+  wikipedia_slug: I_Love_Techno
+  audio_examples: []
+- id: industrial_techno
+  name: Industrial techno
+  track: techno
+  year_start: 1990
+  year_end: null
+  origin: ''
+  parents: []
+  description: Industrial techno is a subgenre of techno and industrial dance music
+    that originated in the 1990s. Characteristically, it incorporates influences from
+    the bleak, noisy sound and aesthetics of early industrial music acts, particularly
+    Cabaret Voltaire and Throbbing Gristle. American industrial music label Wax Trax!
+    also had a profound influence over the genre's development.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q29480448
+  wikipedia_slug: Industrial_techno
+  audio_examples: []
+- id: schaffel
+  name: Schaffel
+  track: techno
+  year_start: 2000
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1738175
+  wikipedia_slug: Schaffel
+  audio_examples: []
+- id: techno_2
+  name: Techno
+  track: techno
+  year_start: 1984
+  year_end: null
+  origin: ''
+  parents: []
+  description: Techno is a genre of electronic music which is generally produced for
+    use in a continuous DJ set, with tempos being in the range from 120 to 150 beats
+    per minute (bpm). The central rhythm is typically in common time (44) and often
+    characterized by a repetitive four on the floor beat. Artists may use electronic
+    instruments such as drum machines, sequencers, and synthesizers, as well as digital
+    audio workstations. Drum machines from the 1980s such as Roland's Roland TR-808
+    and Roland TR-909 are hi
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q170611
+  wikipedia_slug: Techno
   audio_examples: []

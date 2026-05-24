@@ -1,0 +1,30 @@
+- description: ''
+  enwiki_slug: Electroacoustic_music
+  name: Electroacoustic music
+  parent_qids:
+  - Q1640319
+  - Q612024
+  - Q9778
+  qid: Q1326777
+  year_start: 1956
+- description: Live electronic music (also known as live electronics) is a form of
+    music that can include traditional electronic sound-generating devices, modified
+    electric musical instruments, hacked sound generating technologies, and computers.
+    Initially the practice developed in reaction to sound-based composition for fixed
+    media such as musique concrète, electronic music and early computer music. Musical
+    improvisation often plays a large role in the performance of this music. The timbres
+    of various sounds
+  enwiki_slug: Live_electronic_music
+  name: Live electronic music
+  parent_qids:
+  - Q1326777
+  qid: Q1866223
+  year_start: null
+- description: ''
+  enwiki_slug: Musique_concrète
+  name: Musique concrète
+  parent_qids:
+  - Q1326777
+  - Q65937946
+  qid: Q823560
+  year_start: 1948

@@ -1,0 +1,89 @@
+- id: 2_step_garage
+  name: 2-step garage
+  track: uk_garage
+  year_start: 1998
+  year_end: null
+  origin: ''
+  parents: []
+  description: 2-step garage, or simply 2-step, is a genre of electronic music and
+    a subgenre of UK garage. One of the primary characteristics of the 2-step sound
+    – the term being coined to describe "a general rubric for all kinds of jittery,
+    irregular rhythms that don't conform to garage's traditional four-on-the-floor
+    pulse" – is that the rhythm lacks the kick drum pattern found in many other styles
+    of electronic music with a regular four-on-the-floor beat.
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1751409
+  wikipedia_slug: 2-step_garage
+  audio_examples: []
+- id: bassline_music_genre
+  name: Bassline (music genre)
+  track: uk_garage
+  year_start: 1999
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q4846346
+  wikipedia_slug: Bassline_(music_genre)
+  audio_examples: []
+- id: breakstep
+  name: Breakstep
+  track: uk_garage
+  year_start: 1998
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1987980
+  wikipedia_slug: Breakstep
+  audio_examples: []
+- id: future_garage
+  name: Future garage
+  track: uk_garage
+  year_start: 2005
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q5510816
+  wikipedia_slug: Future_garage
+  audio_examples: []
+- id: speed_garage
+  name: Speed garage
+  track: uk_garage
+  year_start: 1994
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q780517
+  wikipedia_slug: Speed_garage
+  audio_examples: []
+- id: uk_garage
+  name: UK garage
+  track: uk_garage
+  year_start: 1993
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1165777
+  wikipedia_slug: UK_garage
+  audio_examples: []

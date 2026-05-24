@@ -2,50 +2,176 @@
   name: Disco
   track: disco
   year_start: 1974
-  origin: "New York, USA"
+  origin: New York, USA
   parents: []
-  description: >
-    Disco entstand in den New Yorker Underground-Clubs der fruehen 1970er
-    als Musik fuer queere und afroamerikanische Communities. Giorgio Moroder,
-    Nile Rodgers (Chic) und die Produzenten von Philly Soul definierten
-    den Klang mit Streichern und pumpenden Rhythmen.
-  key_artists: [Giorgio Moroder, Nile Rodgers, Donna Summer, Gloria Gaynor]
-  key_labels: [Casablanca Records, Philadelphia International]
+  description: 'Disco entstand in den New Yorker Underground-Clubs der fruehen 1970er
+    als Musik fuer queere und afroamerikanische Communities. Giorgio Moroder, Nile
+    Rodgers (Chic) und die Produzenten von Philly Soul definierten den Klang mit Streichern
+    und pumpenden Rhythmen.
+
+    '
+  key_artists:
+  - Giorgio Moroder
+  - Nile Rodgers
+  - Donna Summer
+  - Gloria Gaynor
+  key_labels:
+  - Casablanca Records
+  - Philadelphia International
   subvariants: []
   wikidata_id: Q10484
   wikipedia_slug: Disco
   audio_examples: []
-
 - id: hi_nrg
   name: Hi-NRG
   track: disco
   year_start: 1982
   origin: San Francisco/London
-  parents: [disco]
-  description: >
-    Hi-NRG entwickelte sich aus Disco in den fruehen 1980ern mit schnellerem
-    Tempo (140-160 BPM), synthetischeren Klaengen und Fokus auf Gay Clubs.
-    Bobby O und Pete Waterman (PWL) praegten den US- und UK-Stil.
-  key_artists: [Bobby O, Sylvester, Dead or Alive, Pet Shop Boys]
-  key_labels: [PWL, Mirage Records]
+  parents:
+  - disco
+  description: 'Hi-NRG entwickelte sich aus Disco in den fruehen 1980ern mit schnellerem
+    Tempo (140-160 BPM), synthetischeren Klaengen und Fokus auf Gay Clubs. Bobby O
+    und Pete Waterman (PWL) praegten den US- und UK-Stil.
+
+    '
+  key_artists:
+  - Bobby O
+  - Sylvester
+  - Dead or Alive
+  - Pet Shop Boys
+  key_labels:
+  - PWL
+  - Mirage Records
   subvariants: []
   wikidata_id: Q737838
   wikipedia_slug: Hi-NRG
   audio_examples: []
-
 - id: italo_disco
   name: Italo Disco
   track: disco
   year_start: 1977
-  origin: "Italy"
-  parents: [disco]
-  description: >
-    Italienische Produzenten wie Giorgio Moroder entwickelten ab Ende der 1970er
-    einen synthetischeren, melodischeren Disco-Stil. Charakter: Vocoder,
+  origin: Italy
+  parents:
+  - disco
+  description: 'Italienische Produzenten wie Giorgio Moroder entwickelten ab Ende
+    der 1970er einen synthetischeren, melodischeren Disco-Stil. Charakter: Vocoder,
     Synthesizer-Melodien, oft englische Texte mit deutlichem Akzent.
-  key_artists: [Giorgio Moroder, Den Harrow, Ryan Paris, Spagna]
-  key_labels: [Discomagic, Durium]
+
+    '
+  key_artists:
+  - Giorgio Moroder
+  - Den Harrow
+  - Ryan Paris
+  - Spagna
+  key_labels:
+  - Discomagic
+  - Durium
   subvariants: []
   wikidata_id: Q848916
   wikipedia_slug: Italo_disco
+  audio_examples: []
+- id: afro_cosmic_music
+  name: Afro/cosmic music
+  track: disco
+  year_start: 1975
+  year_end: null
+  origin: ''
+  parents: []
+  description: In music, the terms Afro/cosmic disco, the cosmic sound, free-style
+    sound, and combinations thereof (Afro, cosmic Afro, Afro-cosmic, Afro-freestyle,
+    etc., as well as Afro-funky and later Afro house) are used somewhat interchangeably
+    to describe various forms of synthesizer-heavy and/or African-influenced dance
+    music and methods of DJing that were originally developed and promoted by a small
+    number of DJs in certain discothèques of Northern Italy from the late 1970s through
+    the mid-1980s. The ter
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q336567
+  wikipedia_slug: Afro/cosmic_music
+  audio_examples: []
+- id: discomagic_records
+  name: Discomagic Records
+  track: disco
+  year_start: 1982
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Discomagic Records (1979–1997), owned by Severo Lombardoni was the
+    largest dance record label in Italy. It spawned a large number of sub-labels from
+    the early 1980s to the early 1990s and it set the standards for an entire genre
+    of music ranging from Italo disco to Italo house.
+
+    With S.r.I as its initial legal form, the company changed its legal form to S.p.A.
+    in 1994, and to S.a.S. in 1995. Due to financial problems, Discomagic ceased its
+    operations in 1997. Lombardoni sold the company to Bernha'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q3709905
+  wikipedia_slug: Discomagic_Records
+  audio_examples: []
+- id: disco_2
+  name: Disco
+  track: disco
+  year_start: 1972
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q58339
+  wikipedia_slug: Disco
+  audio_examples: []
+- id: eurodisco
+  name: Eurodisco
+  track: disco
+  year_start: 1974
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1374731
+  wikipedia_slug: Eurodisco
+  audio_examples: []
+- id: italo_disco_2
+  name: Italo disco
+  track: disco
+  year_start: 1978
+  year_end: null
+  origin: ''
+  parents: []
+  description: 'Italo disco or Italodisco (variously capitalized, and sometimes hyphenated
+    as Italo-disco) is a music genre which originated in Italy in the early 1980s.
+    Italo disco evolved from the then-current post-disco dance music and synth-pop,
+    both domestic and foreign (hi-NRG, Euro disco) and developed into a diverse genre.
+    The genre employs electronic drums, drum machines, synthesizers, and occasionally
+    vocoders. It is usually sung in English, and to a lesser extent in Italian and
+    Spanish.
+
+    The origin of'
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q744417
+  wikipedia_slug: Italo_disco
+  audio_examples: []
+- id: nu_disco
+  name: Nu-disco
+  track: disco
+  year_start: 1993
+  year_end: null
+  origin: ''
+  parents: []
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q4045538
+  wikipedia_slug: Nu-disco
   audio_examples: []
