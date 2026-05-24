@@ -54,6 +54,7 @@ export function createFilters(toolbarEl, tracks, genres, renderer) {
     renderer.filterYears(from, maxYear);
   });
 
+  renderer.filterYears(minYear, maxYear);
   sliderWrap.appendChild(label);
   sliderWrap.appendChild(slider);
   toolbarEl.appendChild(sliderWrap);

@@ -14,6 +14,7 @@ export function createDetailPanel(panelEl, tracks, onTagClick) {
   }
 
   function open(genre) {
+    panelEl.querySelectorAll('.audio-player').forEach(el => el._pauseAudio?.());
     while (panelEl.firstChild) panelEl.removeChild(panelEl.firstChild);
 
     const color = trackColor(genre.track);

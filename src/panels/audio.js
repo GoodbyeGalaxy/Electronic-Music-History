@@ -52,5 +52,6 @@ export function createAudioPlayer(example, trackColor) {
   });
   audio.addEventListener('ended', () => { btn.textContent = '▶'; playing = false; });
 
+  container._pauseAudio = () => { audio.pause(); playing = false; btn.textContent = '▶'; };
   return container;
 }
