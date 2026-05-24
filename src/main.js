@@ -1,5 +1,4 @@
 import { createRenderer } from './graph/renderer.js';
-import { computeLayout } from './graph/layout.js';
 import { createDetailPanel } from './panels/detail.js';
 import { createFilters } from './controls/filters.js';
 import { createSearch } from './controls/search.js';
@@ -31,8 +30,7 @@ async function init() {
     panel.open(genre);
   });
 
-  const layout = computeLayout(data, wrapper.clientWidth, wrapper.clientHeight);
-  createSearch(searchInput, layout.nodes, renderer);
+  createSearch(searchInput, renderer.layout.nodes, renderer);
   createFilters(toolbarEl, data.tracks, data.genres, renderer);
 }
 

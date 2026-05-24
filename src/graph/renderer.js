@@ -144,7 +144,7 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     _applyFilters();
   }
 
-  return { highlight, clearHighlight, filterTracks, filterYears };
+  return { highlight, clearHighlight, filterTracks, filterYears, layout };
 }
 
 function edgePath(d) {
