@@ -89,3 +89,16 @@ def test_build_raises_on_unknown_parent(data_dir):
 def test_tracks_are_ordered_by_order_field():
     orders = [t.order for t in TRACKS]
     assert orders == sorted(orders)
+
+
+def test_tracks_has_20_entries():
+    assert len(TRACKS) == 20
+
+
+def test_tracks_includes_ishkur_categories():
+    track_ids = {t.id for t in TRACKS}
+    required = {"pioneers", "ambient", "hip_hop", "techno", "hardcore",
+                "drum_n_bass", "breakbeat", "acid", "house", "tech_house",
+                "progressive", "garage", "uk_garage", "bass", "electro",
+                "downtempo", "urban", "industrial", "electroacoustic", "disco"}
+    assert required == track_ids
