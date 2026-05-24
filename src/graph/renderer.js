@@ -2,13 +2,13 @@ import * as d3 from 'd3';
 import { computeLayout } from './layout.js';
 
 /**
- * Creates the D3 SVG graph.
+ * Creates the D3 SVG graph with force-directed layout.
  *
  * @param {HTMLElement} wrapper     - #canvas-wrapper
  * @param {HTMLElement} labelsEl    - #track-labels
  * @param {object}      data        - genres.json
  * @param {Function}    onNodeClick - callback(genreObject | null)
- * @returns {{ highlight, clearHighlight, filterTracks, filterYears }}
+ * @returns {{ highlight, clearHighlight, filterTracks, filterYears, layout }}
  */
 export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   const width = wrapper.clientWidth;
@@ -56,16 +56,13 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
       const track = layout.tracks.find(t => t.id === d.target.track);
       return track ? track.color : '#4fc3f7';
     })
-    .attr('stroke-dasharray', d => d.type === 'influence' ? '5,3' : null)
-    .attr('d', edgePath);
+    .attr('stroke-dasharray', d => d.type === 'influence' ? '5,3' : null);
 
   const nodeGroup = zoomGroup.append('g').attr('class', 'nodes');
   const nodeSel = nodeGroup.selectAll('g.node')
     .data(layout.nodes)
     .join('g')
-    .attr('class', 'node')
-    .attr('transform', d => `translate(${d.x - d.width / 2},${d.y - d.height / 2})`)
-    .on('click', (event, d) => { event.stopPropagation(); onNodeClick(d); });
+    .attr('class', 'node');
 
   nodeSel.append('rect')
     .attr('width', d => d.width)
@@ -91,10 +88,51 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     .attr('text-anchor', 'middle').attr('dominant-baseline', 'middle')
     .text(d => d.year_start);
 
+  // Seed simulation from target positions so nodes start at home
+  layout.nodes.forEach(d => { d.x = d.tx; d.y = d.ty; });
+
+  const simulation = d3.forceSimulation(layout.nodes)
+    .force('x', d3.forceX(d => d.tx).strength(0.12))
+    .force('y', d3.forceY(d => d.ty).strength(0.9))
+    .force('collide', d3.forceCollide(d => d.width / 2 + 3).strength(0.9).iterations(3))
+    .alphaDecay(0.015)
+    .on('tick', ticked);
+
+  function ticked() {
+    nodeSel.attr('transform', d =>
+      `translate(${d.x - d.width / 2},${d.y - d.height / 2})`
+    );
+    edgeSel.attr('d', edgePath);
+  }
+
+  // Drag: hold to displace, release to snap back via forces
+  const drag = d3.drag()
+    .on('start', (event, d) => {
+      if (!event.active) simulation.alphaTarget(0.3).restart();
+      d.fx = d.x;
+      d.fy = d.y;
+    })
+    .on('drag', (event, d) => {
+      d.fx = event.x;
+      d.fy = event.y;
+    })
+    .on('end', (event, d) => {
+      if (!event.active) simulation.alphaTarget(0);
+      d.fx = null;
+      d.fy = null;
+    });
+
+  nodeSel.call(drag);
+
+  nodeSel.on('click', (event, d) => {
+    event.stopPropagation();
+    onNodeClick(d);
+    simulation.alpha(0.08).restart();
+  });
+
   svg.on('click', () => { clearHighlight(); onNodeClick(null); });
 
   function highlight(nodeId) {
-    // BFS upward through parent edges to find the full ancestor chain
     const ancestorIds = new Set();
     const pathEdgeKeys = new Set();
     const visited = new Set([nodeId]);
@@ -146,6 +184,7 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
         (_maxYear === null || d.target.year_start <= _maxYear);
       return srcOk && tgtOk ? null : 'none';
     });
+    simulation.alpha(0.08).restart();
   }
 
   function filterTracks(visibleTrackIds) {
@@ -165,11 +204,11 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
 function edgePath(d) {
   const sx = d.source.x + d.source.width / 2;
   const sy = d.source.y;
-  const tx = d.target.x - d.target.width / 2;
-  const ty = d.target.y;
-  if (Math.abs(sy - ty) < 2) return `M ${sx},${sy} L ${tx},${ty}`;
-  const cx = (sx + tx) / 2;
-  return `M ${sx},${sy} C ${cx},${sy} ${cx},${ty} ${tx},${ty}`;
+  const ex = d.target.x - d.target.width / 2;
+  const ey = d.target.y;
+  if (Math.abs(sy - ey) < 2) return `M ${sx},${sy} L ${ex},${ey}`;
+  const mx = (sx + ex) / 2;
+  return `M ${sx},${sy} C ${mx},${sy} ${mx},${ey} ${ex},${ey}`;
 }
 
 function hexToFill(hex) {
