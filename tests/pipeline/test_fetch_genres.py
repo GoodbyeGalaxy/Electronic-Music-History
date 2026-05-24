@@ -1,4 +1,4 @@
-from unittest.mock import patch
+from unittest.mock import patch, MagicMock
 from pipeline.fetch_genres import (
     fetch_category_titles,
     fetch_wikipedia_batch,
@@ -10,13 +10,21 @@ def _wiki_response(members):
     return {"query": {"categorymembers": members}}
 
 
+def _mock_get(json_data):
+    m = MagicMock()
+    m.status_code = 200
+    m.raise_for_status.return_value = None
+    m.json.return_value = json_data
+    return m
+
+
 def test_fetch_category_titles_returns_article_titles():
-    with patch("pipeline.fetch_genres.requests.get") as mock_get:
-        mock_get.return_value.raise_for_status.return_value = None
-        mock_get.return_value.json.return_value = _wiki_response([
+    with patch("pipeline.fetch_genres.requests.get") as mock_get, \
+         patch("pipeline.fetch_genres.time.sleep"):
+        mock_get.return_value = _mock_get(_wiki_response([
             {"ns": 0, "title": "Techno"},
             {"ns": 0, "title": "House music"},
-        ])
+        ]))
         result = fetch_category_titles("Category:Electronic_music_genres")
     assert "Techno" in result
     assert "House music" in result
@@ -24,17 +32,17 @@ def test_fetch_category_titles_returns_article_titles():
 
 def test_fetch_category_titles_recurses_into_subcategories():
     responses = [
-        _wiki_response([
+        _mock_get(_wiki_response([
             {"ns": 14, "title": "Category:Techno"},
             {"ns": 0, "title": "House music"},
-        ]),
-        _wiki_response([
+        ])),
+        _mock_get(_wiki_response([
             {"ns": 0, "title": "Minimal techno"},
-        ]),
+        ])),
     ]
-    with patch("pipeline.fetch_genres.requests.get") as mock_get:
-        mock_get.return_value.raise_for_status.return_value = None
-        mock_get.return_value.json.side_effect = responses
+    with patch("pipeline.fetch_genres.requests.get") as mock_get, \
+         patch("pipeline.fetch_genres.time.sleep"):
+        mock_get.side_effect = responses
         result = fetch_category_titles("Category:Electronic_music_genres")
     assert "House music" in result
     assert "Minimal techno" in result

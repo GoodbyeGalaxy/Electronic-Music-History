@@ -12,30 +12,70 @@ WIKIDATA_ENDPOINT = "https://query.wikidata.org/sparql"
 USER_AGENT = "ElectronicMusicHistoryBot/0.1 (research project)"
 ROOT_CATEGORY = "Category:Electronic_music_genres"
 
+# Subcategory names containing these words are skipped during recursion —
+# they are artist/album/event lists, not genre taxonomy branches.
+_SKIP_SUBCAT_WORDS = frozenset([
+    "musician", "artist", "band", "group", "singer", "singer-songwriter",
+    "album", "song", "single", "record", "label", "discograph",
+    "by nationality", "by country", "by city", "festival", "event",
+    "film", "television", "video", "compilation",
+])
 
-def fetch_category_titles(category: str, seen: set | None = None) -> list[str]:
-    """Recursively collects article titles from a Wikipedia category tree."""
-    if seen is None:
-        seen = set()
-    if category in seen:
-        return []
-    seen.add(category)
-    titles = []
-    resp = requests.get(
-        WIKIPEDIA_API,
-        params={
-            "action": "query", "list": "categorymembers", "cmtitle": category,
-            "cmlimit": 500, "cmtype": "page|subcat", "format": "json",
-        },
-        headers={"User-Agent": USER_AGENT},
-        timeout=30,
-    )
+
+def _wiki_get(params: dict, rate_limit: float) -> dict:
+    """Makes a single Wikipedia API call with rate limiting and 429 backoff."""
+    time.sleep(rate_limit)
+    for attempt in range(6):
+        resp = requests.get(
+            WIKIPEDIA_API,
+            params=params,
+            headers={"User-Agent": USER_AGENT},
+            timeout=30,
+        )
+        if resp.status_code == 429:
+            wait = 10 * (attempt + 1)
+            print(f"  429 rate-limited, waiting {wait}s...")
+            time.sleep(wait)
+            continue
+        resp.raise_for_status()
+        return resp.json()
     resp.raise_for_status()
-    for member in resp.json().get("query", {}).get("categorymembers", []):
-        if member.get("ns") == 14:
-            titles.extend(fetch_category_titles(member["title"], seen))
-        else:
-            titles.append(member["title"])
+    return {}
+
+
+def fetch_category_titles(
+    root_category: str,
+    rate_limit: float = 1.0,
+    max_depth: int = 3,
+) -> list[str]:
+    """Iterative BFS over Wikipedia category tree; returns article titles."""
+    seen: set[str] = set()
+    queue: list[tuple[str, int]] = [(root_category, 0)]
+    titles: list[str] = []
+
+    while queue:
+        category, depth = queue.pop(0)
+        if category in seen:
+            continue
+        seen.add(category)
+        data = _wiki_get(
+            {
+                "action": "query", "list": "categorymembers", "cmtitle": category,
+                "cmlimit": 500, "cmtype": "page|subcat", "format": "json",
+            },
+            rate_limit,
+        )
+        for member in data.get("query", {}).get("categorymembers", []):
+            if member.get("ns") == 14:
+                if depth >= max_depth:
+                    continue
+                lower = member["title"].lower()
+                if any(w in lower for w in _SKIP_SUBCAT_WORDS):
+                    continue
+                queue.append((member["title"], depth + 1))
+            else:
+                titles.append(member["title"])
+
     return titles
 
 
@@ -129,12 +169,12 @@ SELECT ?genre ?genreLabel ?inception ?parent ?sitelink WHERE {{
     return grouped
 
 
-def fetch(output_dir: Path, rate_limit: float = 0.5) -> None:
+def fetch(output_dir: Path, rate_limit: float = 1.0) -> None:
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # Phase 1: Discover genres via Wikipedia category tree
     print(f"Crawling {ROOT_CATEGORY}...")
-    titles = sorted(set(fetch_category_titles(ROOT_CATEGORY)))
+    titles = sorted(set(fetch_category_titles(ROOT_CATEGORY, rate_limit=rate_limit)))
     print(f"Found {len(titles)} genre articles in category tree")
 
     # Phase 2: Wikipedia abstracts + Wikidata QIDs in batches of 50
