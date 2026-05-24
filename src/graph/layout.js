@@ -2,7 +2,7 @@ const YEAR_START = 1900;
 const YEAR_END = 2025;
 const NODE_HEIGHT = 36;
 const CHAR_WIDTH = 7;      // px per character at 10px font-size
-const NODE_PADDING_X = 20; // horizontal padding left+right total
+const NODE_PADDING_X = 20; // horizontal padding per side
 
 /**
  * Computes x/y positions for each node and resolves edge references.
@@ -21,7 +21,14 @@ export function computeLayout(data, svgWidth, svgHeight) {
   const trackHeight = svgHeight / trackCount;
 
   const xScale = year => ((year - YEAR_START) / (YEAR_END - YEAR_START)) * svgWidth;
-  const yScale = trackId => (trackIndex[trackId] + 0.5) * trackHeight;
+  const yScale = trackId => {
+    const idx = trackIndex[trackId];
+    if (idx === undefined) {
+      console.warn(`computeLayout: unknown trackId "${trackId}"`);
+      return 0;
+    }
+    return (idx + 0.5) * trackHeight;
+  };
 
   const nodes = genres.map(genre => {
     const width = Math.max(genre.name.length * CHAR_WIDTH + NODE_PADDING_X * 2, 60);
