@@ -26,9 +26,9 @@ class Genre(BaseModel):
     wikipedia_slug: str = ""
     audio_examples: list[AudioExample] = []
 
-    @field_validator("year_start")
+    @field_validator("year_start", mode="before")
     @classmethod
-    def year_must_be_int(cls, v: int) -> int:
+    def year_must_be_int(cls, v: object) -> int:
         if not isinstance(v, int):
             raise ValueError("year_start must be an integer")
         return v
