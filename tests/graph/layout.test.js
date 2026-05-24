@@ -19,18 +19,18 @@ const MOCK_DATA = {
 };
 
 describe('computeLayout', () => {
-  it('places theremin at ~16% of width for year 1920', () => {
+  it('sets tx ≈ 160px for year 1920 at width 1000', () => {
     const { nodes } = computeLayout(MOCK_DATA, 1000, 400);
     const n = nodes.find(n => n.id === 'theremin');
-    // (1920 - 1900) / (2025 - 1900) * 1000 = 160
-    expect(n.x).toBeCloseTo(160, 0);
+    // (1920 - 1900) / (2025 - 1900) * 1000 ≈ 160
+    expect(n.tx).toBeCloseTo(160, 0);
   });
 
-  it('places musique_concrete below theremin (track order 1 > track order 0)', () => {
+  it('sets ty for musique_concrete below theremin (track order 1 > 0)', () => {
     const { nodes } = computeLayout(MOCK_DATA, 1000, 400);
     const t = nodes.find(n => n.id === 'theremin');
     const m = nodes.find(n => n.id === 'musique_concrete');
-    expect(m.y).toBeGreaterThan(t.y);
+    expect(m.ty).toBeGreaterThan(t.ty);
   });
 
   it('assigns positive width and fixed height to every node', () => {
