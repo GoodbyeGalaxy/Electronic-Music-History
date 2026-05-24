@@ -94,16 +94,31 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   svg.on('click', () => { clearHighlight(); onNodeClick(null); });
 
   function highlight(nodeId) {
-    const neighborIds = new Set(
-      layout.edges
-        .filter(e => e.source.id === nodeId || e.target.id === nodeId)
-        .flatMap(e => [e.source.id, e.target.id])
-    );
+    // BFS upward through parent edges to find the full ancestor chain
+    const ancestorIds = new Set();
+    const pathEdgeKeys = new Set();
+    const visited = new Set([nodeId]);
+    const queue = [nodeId];
+
+    while (queue.length) {
+      const id = queue.shift();
+      layout.edges.forEach(e => {
+        if (e.target.id === id && !visited.has(e.source.id)) {
+          visited.add(e.source.id);
+          ancestorIds.add(e.source.id);
+          pathEdgeKeys.add(`${e.source.id}→${e.target.id}`);
+          queue.push(e.source.id);
+        }
+      });
+    }
+
+    const highlightedIds = new Set([nodeId, ...ancestorIds]);
+
     nodeSel
-      .classed('node--dimmed', d => d.id !== nodeId && !neighborIds.has(d.id))
-      .classed('node--selected', d => d.id === nodeId);
+      .classed('node--dimmed', d => !highlightedIds.has(d.id))
+      .classed('node--selected', d => highlightedIds.has(d.id));
     edgeSel.classed('edge--dimmed',
-      d => d.source.id !== nodeId && d.target.id !== nodeId);
+      d => !pathEdgeKeys.has(`${d.source.id}→${d.target.id}`));
   }
 
   function clearHighlight() {

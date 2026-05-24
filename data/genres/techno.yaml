@@ -192,3 +192,46 @@
   wikidata_id: Q170611
   wikipedia_slug: Techno
   audio_examples: []
+- id: free_tekno
+  name: Free Tekno
+  track: techno
+  year_start: 1993
+  year_end: null
+  origin: UK
+  parents: []
+  description: 'Free Tekno ist Techno der freien Partykultur: illegal, auf Autobahn-Raststplaetzen,
+    in besetzten Gebaeuden, ohne Eintritt. Spiral Tribe praegten den Sound und die
+    Bewegung in England ab 1990. Haerter und roher als Clubtechno, stark politisch
+    konnotiert.'
+  key_artists:
+  - Spiral Tribe
+  - Bedouin
+  - Desert Storm
+  key_labels:
+  - Network 23
+  subvariants:
+  - Tekno
+  - Tribal Techno
+  wikidata_id: ''
+  wikipedia_slug: Free_tekno
+  audio_examples: []
+- id: future_rave
+  name: Future Rave
+  track: techno
+  year_start: 2019
+  year_end: null
+  origin: SE
+  parents: []
+  description: 'Future Rave verbindet melodischen Techno mit Rave-Energie und Trance-Elementen:
+    epische Synthesizer-Boegen ueber treibenden Kicks. David Guetta und Morten praegten
+    den Begriff 2019. Bewegt sich im Grenzbereich zwischen Mainstream-EDM und Underground-Rave.'
+  key_artists:
+  - David Guetta
+  - Morten
+  - Anyma
+  key_labels:
+  - Spinnin' Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Future_rave
+  audio_examples: []

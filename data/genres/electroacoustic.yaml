@@ -95,3 +95,125 @@
   wikidata_id: Q823560
   wikipedia_slug: Musique_concrète
   audio_examples: []
+- id: noise_music
+  name: Noise Music
+  track: electroacoustic
+  year_start: 1910
+  year_end: null
+  origin: IT/JP
+  parents: []
+  description: Noise Music verwendet Laerm, Dissonanz und Klangextreme als aesthetisches
+    Material - von Futuristen wie Luigi Russolo bis zu japanischem Harsh Noise (Merzbow)
+    und amerikanischem Industrial Noise. Die Grenze zwischen Musik und Geraeusch wird
+    bewusst aufgehoben.
+  key_artists:
+  - Merzbow
+  - Whitehouse
+  - Einstürzende Neubauten
+  - Boyd Rice
+  - Nurse With Wound
+  key_labels:
+  - Important Records
+  - Extreme
+  subvariants:
+  - Harsh Noise
+  - Noise Wall
+  - Power Electronics
+  wikidata_id: ''
+  wikipedia_slug: Noise_music
+  audio_examples: []
+- id: no_wave
+  name: No Wave
+  track: electroacoustic
+  year_start: 1977
+  year_end: 1983
+  origin: New York, US
+  parents: []
+  description: No Wave entstand Ende der 70er in New York als radikale Ablehnung von
+    Punk und New Wave. Dissonante Gitarren, atonale Strukturen und performative Zerstoerung
+    praegten Bands wie Teenage Jesus and the Jerks und DNA. Einfluss auf Industrial
+    und Noise Rock.
+  key_artists:
+  - Teenage Jesus and the Jerks
+  - DNA (band)
+  - Mars (band)
+  - The Contortions
+  key_labels:
+  - Ze Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: No_wave
+  audio_examples: []
+- id: idm
+  name: IDM
+  track: electroacoustic
+  year_start: 1992
+  year_end: null
+  origin: UK
+  parents: []
+  description: Intelligent Dance Music ist ein Sammelbegriff fuer komplexe, experimentelle
+    Elektronik jenseits der Tanzflaeche. Warp Records praegte den Begriff 1992. Aphex
+    Twin, Autechre und Boards of Canada stehen fuer polyrhythmische Strukturen, emotionale
+    Tiefe und klangliche Eigenwilligkeit.
+  key_artists:
+  - Aphex Twin
+  - Autechre
+  - Boards of Canada
+  - Squarepusher
+  - µ-Ziq
+  key_labels:
+  - Warp Records
+  - Rephlex Records
+  subvariants:
+  - Braindance
+  - Drill n Bass
+  wikidata_id: ''
+  wikipedia_slug: Intelligent_dance_music
+  audio_examples: []
+- id: glitch
+  name: Glitch
+  track: electroacoustic
+  year_start: 1990
+  year_end: null
+  origin: DE/AT
+  parents:
+  - idm
+  description: Glitch Music nutzt Fehler digitaler Systeme - Datenkompression, Lesefehler,
+    Buffer Underruns - als kompositorisches Material. Kim Cascone praegte den Begriff.
+    Oval, Alva Noto und Ryoji Ikeda erforschten die Aesthetik technischer Versagen.
+  key_artists:
+  - Oval
+  - Alva Noto
+  - Ryoji Ikeda
+  - Fennesz
+  - Matmos
+  key_labels:
+  - Mille Plateaux
+  - Raster-Noton
+  subvariants:
+  - Microsound
+  - Click & Cuts
+  wikidata_id: ''
+  wikipedia_slug: Glitch_(music)
+  audio_examples: []
+- id: algorave
+  name: Algorave
+  track: electroacoustic
+  year_start: 2011
+  year_end: null
+  origin: UK
+  parents:
+  - idm
+  description: 'Algorave ist Live-Coding als Auffuehrungsform: Musik entsteht in Echtzeit
+    durch Programmcode auf der Buehne. Alex McLean und Nick Collins praegten das Format
+    2011. Werkzeuge wie TidalCycles und SuperCollider sind Standard.'
+  key_artists:
+  - Alex McLean
+  - Nick Collins
+  - Yaxu
+  key_labels: []
+  subvariants:
+  - Live Coding
+  wikidata_id: ''
+  wikipedia_slug: Algorave
+  audio_examples: []

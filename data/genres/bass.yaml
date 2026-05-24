@@ -5,15 +5,14 @@
   year_end: null
   origin: Jamaica
   parents: []
-  description: >-
-    Reggae is a Jamaican music genre developed in the late 1960s, built on
-    offbeat rhythms (the 'skank'), deep bass and expressive vocal tradition. It
-    is a foundational influence on dub, dancehall and bass-heavy electronic
-    music globally.
+  description: Reggae is a Jamaican music genre developed in the late 1960s, built
+    on offbeat rhythms (the 'skank'), deep bass and expressive vocal tradition. It
+    is a foundational influence on dub, dancehall and bass-heavy electronic music
+    globally.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Reggae
   audio_examples: []
 - id: dub
@@ -24,15 +23,14 @@
   origin: Jamaica
   parents:
   - reggae
-  description: >-
-    Dub is a genre derived from reggae, pioneered by Jamaican sound engineers
-    who manipulated studio recordings — removing vocals, adding reverb and delay
-    — to create echo-drenched instrumental versions. It is a foundational
-    influence on bass music, electronic and experimental music.
+  description: Dub is a genre derived from reggae, pioneered by Jamaican sound engineers
+    who manipulated studio recordings — removing vocals, adding reverb and delay —
+    to create echo-drenched instrumental versions. It is a foundational influence
+    on bass music, electronic and experimental music.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Dub_music
   audio_examples: []
 - id: dubstep
@@ -43,14 +41,13 @@
   origin: London UK
   parents:
   - dub
-  description: >-
-    Dubstep emerged from London's underground sound system culture, fusing the
-    bass weight of UK garage and dub with dark, minimal 140 BPM rhythms.
-    Half-time drum patterns and massive sub-bass became its signature.
+  description: Dubstep emerged from London's underground sound system culture, fusing
+    the bass weight of UK garage and dub with dark, minimal 140 BPM rhythms. Half-time
+    drum patterns and massive sub-bass became its signature.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Dubstep
   audio_examples: []
 - id: grime
@@ -60,14 +57,13 @@
   year_end: null
   origin: London UK
   parents: []
-  description: >-
-    Grime is a British genre blending UK garage's rhythms with jungle's energy
-    and MCing culture. Its sparse, abrasive electronic productions support
+  description: Grime is a British genre blending UK garage's rhythms with jungle's
+    energy and MCing culture. Its sparse, abrasive electronic productions support
     aggressive lyrical delivery, rooted in East London's pirate radio scene.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Grime_music
   audio_examples: []
 - id: future_bass
@@ -105,4 +101,88 @@
   subvariants: []
   wikidata_id: Q65065491
   wikipedia_slug: Riddim_(genre)
+  audio_examples: []
+- id: kuduro
+  name: Kuduro
+  track: bass
+  year_start: 1990
+  year_end: null
+  origin: Luanda, AO
+  parents: []
+  description: 'Kuduro entstand in den Musseques Luandas als angolisches Tanzgenre:
+    schnelle, perkussive Beats, Zouk-Bass-Einfluesse und akrobatische Tanzbewegungen.
+    M.I.A. und Buraka Som Sistema machten Kuduro international bekannt.'
+  key_artists:
+  - Buraka Som Sistema
+  - Tony Amado
+  - Os Lambas
+  key_labels:
+  - Enchufada
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Kuduro
+  audio_examples: []
+- id: uk_bass
+  name: UK Bass
+  track: bass
+  year_start: 2006
+  year_end: null
+  origin: UK
+  parents: []
+  description: 'UK Bass ist ein Sammelbegriff fuer den Bass-orientierten britischen
+    Club-Sound jenseits von Dubstep: Post-Dubstep, Funky House und Future Bass. Mount
+    Kimbie, James Blake und Actress praegten die Post-Dubstep-Aesthetik.'
+  key_artists:
+  - Mount Kimbie
+  - James Blake
+  - Actress
+  - Mosca
+  key_labels:
+  - Hotflush Recordings
+  - Tri Angle Records
+  subvariants:
+  - Post-Dubstep
+  - Wonky
+  wikidata_id: ''
+  wikipedia_slug: UK_bass_music
+  audio_examples: []
+- id: reggaestep
+  name: Reggaestep
+  track: bass
+  year_start: 2010
+  year_end: null
+  origin: UK
+  parents: []
+  description: 'Reggaestep verbindet die Riddim-Strukturen des jamaikanischen Dancehall
+    und Reggae mit Dubstep-Produktionstechniken: wobbling Basslines, synkopierte Sub-Bass-Explosionen
+    und toasting Vocals.'
+  key_artists:
+  - Mungo's Hi Fi
+  - Vibronics
+  key_labels:
+  - Scotch Bonnet Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Reggaestep
+  audio_examples: []
+- id: singeli
+  name: Singeli
+  track: bass
+  year_start: 2015
+  year_end: null
+  origin: Dar es Salaam, TZ
+  parents: []
+  description: 'Singeli ist ein hyperaktives tanzanisches Electronic-Genre aus den
+    Ghettos Dar es Salaams: extrem schnelle Tempos (200+ BPM), repetitive melodische
+    Loops und Vocals auf Swahili. MCs und DJs wie Beka Flavour und Country Boy praegten
+    den Sound.'
+  key_artists:
+  - Beka Flavour
+  - Country Boy
+  - Dully Sykes
+  key_labels:
+  - Nyege Nyege Tapes
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Singeli
   audio_examples: []

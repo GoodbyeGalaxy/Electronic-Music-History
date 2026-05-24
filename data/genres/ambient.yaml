@@ -144,3 +144,140 @@
   wikidata_id: Q650316
   wikipedia_slug: Drone_music
   audio_examples: []
+- id: new_age
+  name: New Age
+  track: ambient
+  year_start: 1960
+  year_end: null
+  origin: US
+  parents: []
+  description: New Age Music entstand in der Meditations- und Wellnessbewegung der
+    60er und 70er. Ruhige, harmonische Synthesizer-Texturen, Naturklaenge und spirituelle
+    Intention kennzeichnen das Genre. Windham Hill Records machte es kommerziell.
+    Beeinflusste Ambient und Chill-Out stark.
+  key_artists:
+  - Brian Eno
+  - Enya
+  - Kitaro
+  - Tangerine Dream
+  - Steve Hillage
+  key_labels:
+  - Windham Hill
+  - Private Music
+  subvariants:
+  - Space Music
+  - Healing Music
+  wikidata_id: ''
+  wikipedia_slug: New-age_music
+  audio_examples: []
+- id: space_music
+  name: Space Music
+  track: ambient
+  year_start: 1970
+  year_end: null
+  origin: DE
+  parents:
+  - new_age
+  description: Space Music evoziert Weite, Schwerelosigkeit und kosmische Dimensionen
+    durch lange Synthesizer-Boegen und modale Harmonik. Tangerine Dream und Klaus
+    Schulze etablierten den Sound Ende der 60er. Direkter Einfluss auf Ambient.
+  key_artists:
+  - Tangerine Dream
+  - Klaus Schulze
+  - Vangelis
+  - Jean-Michel Jarre
+  key_labels:
+  - Virgin Records
+  - Ohr
+  subvariants:
+  - Kosmische Musik
+  wikidata_id: ''
+  wikipedia_slug: Space_music
+  audio_examples: []
+- id: ethereal_wave
+  name: Ethereal Wave
+  track: ambient
+  year_start: 1982
+  year_end: null
+  origin: UK
+  parents: []
+  description: Ethereal Wave verbindet Gothic-Elemente mit schwebenden Synthesizern,
+    Reverb-getraenkten Vocals und traumhafter Atmosphaere. Cocteau Twins und Dead
+    Can Dance praegten den Sound. Entstand im Umfeld des Post-Punk und Dark Wave.
+  key_artists:
+  - Cocteau Twins
+  - Dead Can Dance
+  - This Mortal Coil
+  - Slowdive
+  key_labels:
+  - 4AD
+  subvariants:
+  - Dream Pop
+  wikidata_id: ''
+  wikipedia_slug: Ethereal_wave
+  audio_examples: []
+- id: dungeon_synth
+  name: Dungeon Synth
+  track: ambient
+  year_start: 1991
+  year_end: null
+  origin: 'NO'
+  parents: []
+  description: 'Dungeon Synth ist ein Nischengenre aus dem norwegischen Black-Metal-Umfeld:
+    lo-fi Synthesizer-Musik, die Fantasiewelten, mittelalterliche Atmosphaeren und
+    Einsamkeit evoziert. Burzum und Mortiis begruendeten den Stil als Soloprojekte.'
+  key_artists:
+  - Burzum
+  - Mortiis
+  - Summoning
+  - Wongraven
+  key_labels: []
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Dungeon_synth
+  audio_examples: []
+- id: vaporwave
+  name: Vaporwave
+  track: ambient
+  year_start: 2010
+  year_end: null
+  origin: Internet
+  parents: []
+  description: Vaporwave ist ein Internet-Mikrogenre, das Samples aus 80er-Muzak,
+    japanischen City-Pop und frueher CD-ROM-Aesthetik verlangsamt und verfremdet.
+    Chuck Person (Daniel Lopatin) und James Ferraro praegten den Sound 2010-2011.
+    Kritik am Konsumkapitalismus durch dessen Aesthetik.
+  key_artists:
+  - Macintosh Plus
+  - James Ferraro
+  - Chuck Person
+  - Saint Pepsi
+  key_labels:
+  - Beer on the Rug
+  subvariants:
+  - Mallsoft
+  - Future Funk
+  - Vaportrap
+  wikidata_id: ''
+  wikipedia_slug: Vaporwave
+  audio_examples: []
+- id: chillwave
+  name: Chillwave
+  track: ambient
+  year_start: 2008
+  year_end: null
+  origin: US
+  parents: []
+  description: 'Chillwave ist eine lo-fi Indie-Elektronik aus den spaeten 2000ern:
+    verwaschene Synthesizer, Nostalgie-Sampleaesthetik und sommerliche Melancholie.
+    Neon Indian, Toro y Moi und Washed Out praegten den Sound 2009-2010.'
+  key_artists:
+  - Neon Indian
+  - Toro y Moi
+  - Washed Out
+  key_labels:
+  - Mexican Summer
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Chillwave
+  audio_examples: []

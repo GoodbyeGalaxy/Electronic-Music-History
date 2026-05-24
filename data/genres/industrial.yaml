@@ -185,3 +185,163 @@
   wikidata_id: Q2687544
   wikipedia_slug: Power_electronics_(music_genre)
   audio_examples: []
+- id: cold_wave
+  name: Cold Wave
+  track: industrial
+  year_start: 1977
+  year_end: null
+  origin: FR/BE
+  parents: []
+  description: Cold Wave entstand in Frankreich und Belgien Ende der 70er als eiskalter
+    Post-Punk mit Synthesizern statt Gitarren. Dunkle, minimalistische Arrangements
+    und Vocals mit nihilistischer Distanz. Trisomie 21, Kas Product und Asylum Party
+    praegten den Sound.
+  key_artists:
+  - Trisomie 21
+  - Asylum Party
+  - Kas Product
+  - Martin Dupont
+  key_labels:
+  - New Rose Records
+  - Closer Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Cold_wave_(music)
+  audio_examples: []
+- id: minimal_wave
+  name: Minimal Wave
+  track: industrial
+  year_start: 1977
+  year_end: null
+  origin: US/EU
+  parents: []
+  description: 'Minimal Wave ist eine Retrobezeichnung fuer experimentellen Synthesizer-Undergroundpop
+    der spaeten 70er bis 80er: Lo-fi, karg, selbstproduziert. Das Label Minimal Wave
+    Records (Chloe Lula, 2005) machte das Genre retrospektiv bekannt.'
+  key_artists:
+  - Oppenheimer Analysis
+  - Absolute Body Control
+  - Snowy Red
+  key_labels:
+  - Minimal Wave Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Minimal_wave
+  audio_examples: []
+- id: dark_wave
+  name: Dark Wave
+  track: industrial
+  year_start: 1980
+  year_end: null
+  origin: UK/US
+  parents:
+  - cold_wave
+  description: Dark Wave ist ein breiter Begriff fuer duestere, introspektive Elektronik
+    im Schnittfeld von Gothic, Post-Punk und Cold Wave. Sisters of Mercy, Clan of
+    Xymox und Faith and the Muse stehen fuer schwarze Aesthetik, schwere Synthesizer
+    und dramatischen Gesang.
+  key_artists:
+  - Sisters of Mercy
+  - Clan of Xymox
+  - Faith and the Muse
+  - Dead Can Dance
+  key_labels:
+  - Merciful Release
+  subvariants:
+  - Gothic Rock
+  - Neogoth
+  wikidata_id: ''
+  wikipedia_slug: Dark_wave
+  audio_examples: []
+- id: power_noise
+  name: Power Noise
+  track: industrial
+  year_start: 1981
+  year_end: null
+  origin: DE/UK
+  parents: []
+  description: Power Noise kombiniert Industrial-Rhythmus mit Harsh-Noise-Texturen
+    zu einer tanzbaren, brutalen Musik. Distorted, perkussive Patterns mit Rauschgeneratoren.
+    Winterkaelte, Converter und Suicide Commando praegten den Post-EBM Sound.
+  key_artists:
+  - Winterkälte
+  - Converter
+  - Noisex
+  - P·A·L
+  key_labels:
+  - Ant-Zen
+  - Hands Productions
+  subvariants:
+  - Rhythmic Noise
+  - Harsh EBM
+  wikidata_id: ''
+  wikipedia_slug: Power_noise
+  audio_examples: []
+- id: neue_deutsche_haerte
+  name: Neue Deutsche Härte
+  track: industrial
+  year_start: 1990
+  year_end: null
+  origin: DE
+  parents: []
+  description: 'Neue Deutsche Haerte verbindet Industrial und Metal zu einem aggressiven,
+    deutschsprachigen Genre: harte Gitarren, stampfende Beats, tiefe Vocals. Rammstein
+    internationalisierten den Sound ab 1995. KMFDM und Oomph! gehoeren zu den Wegbereitern.'
+  key_artists:
+  - Rammstein
+  - KMFDM
+  - Oomph!
+  - Megaherz
+  - Eisbrecher
+  key_labels:
+  - Motor Music
+  - Nuclear Blast
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Neue_Deutsche_Härte
+  audio_examples: []
+- id: futurepop
+  name: Futurepop
+  track: industrial
+  year_start: 1993
+  year_end: null
+  origin: DE/SE
+  parents: []
+  description: 'Futurepop fusioniert EBM-Energie mit melodischem Trance-Synthpop:
+    aggressive Basslines, Dancefloor-Hooks und eingaengige Gesangsmelodien. VNV Nation
+    und Assemblage 23 praegten den Sound im Goth-Club-Umfeld.'
+  key_artists:
+  - VNV Nation
+  - Assemblage 23
+  - Covenant
+  - Apoptygma Berzerk
+  key_labels:
+  - Metropolis Records
+  - Dependent Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Futurepop
+  audio_examples: []
+- id: new_beat
+  name: New Beat
+  track: industrial
+  year_start: 1987
+  year_end: 1992
+  origin: BE
+  parents: []
+  description: 'New Beat entstand 1987 in Belgien als Zufallsprodukt: zu langsam abgespielte
+    EBM-Platten ergaben einen entrueckten, schweren Rhythmus. A Split Second, Lords
+    of Acid und Confetti''s schufen Classics. Bruecke zwischen EBM und der entstehenden
+    Rave-Kultur.'
+  key_artists:
+  - A Split Second
+  - Lords of Acid
+  - Confetti's
+  - Chakk
+  key_labels:
+  - Play It Again Sam
+  - R&S Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: New_beat
+  audio_examples: []

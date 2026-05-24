@@ -5,11 +5,10 @@
   year_end: null
   origin: Netherlands / Belgium / Germany
   parents: []
-  description: >-
-    Hardcore (also known as hardcore techno) is a genre of electronic dance
-    music that originated in the Netherlands, Belgium, and Germany in the early
-    1990s. It is distinguished by faster tempos (160 to 200 BPM or more) and a
-    distorted sawtooth kick drum.
+  description: Hardcore (also known as hardcore techno) is a genre of electronic dance
+    music that originated in the Netherlands, Belgium, and Germany in the early 1990s.
+    It is distinguished by faster tempos (160 to 200 BPM or more) and a distorted
+    sawtooth kick drum.
   key_artists: []
   key_labels: []
   subvariants: []
@@ -24,14 +23,13 @@
   origin: Netherlands
   parents:
   - hardcore
-  description: >-
-    Gabber is an extreme subgenre of hardcore techno, defined by heavily
-    distorted 909 kick drums at 160–220 BPM, aggressive basslines and shouted
-    vocals. It originated in Rotterdam.
+  description: Gabber is an extreme subgenre of hardcore techno, defined by heavily
+    distorted 909 kick drums at 160–220 BPM, aggressive basslines and shouted vocals.
+    It originated in Rotterdam.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Gabber
   audio_examples: []
 - id: happy_hardcore
@@ -42,14 +40,13 @@
   origin: UK
   parents:
   - hardcore
-  description: >-
-    Happy hardcore is a euphoric, fast-paced subgenre of hardcore techno,
-    characterised by a tempo of 160–180 BPM, chipmunk-pitched vocals and a
-    joyful, rave-party aesthetic.
+  description: Happy hardcore is a euphoric, fast-paced subgenre of hardcore techno,
+    characterised by a tempo of 160–180 BPM, chipmunk-pitched vocals and a joyful,
+    rave-party aesthetic.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Happy_hardcore
   audio_examples: []
 - id: terrorcore
@@ -60,14 +57,13 @@
   origin: Netherlands
   parents:
   - gabber
-  description: >-
-    Terrorcore pushes hardcore to its extremes — ultra-fast tempos above 200
-    BPM, distortion-heavy sound design and samples drawn from horror, war and
+  description: Terrorcore pushes hardcore to its extremes — ultra-fast tempos above
+    200 BPM, distortion-heavy sound design and samples drawn from horror, war and
     chaos.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Terrorcore
   audio_examples: []
 - id: frenchcore
@@ -127,4 +123,82 @@
   subvariants: []
   wikidata_id: Q1087742
   wikipedia_slug: Masters_of_Hardcore
+  audio_examples: []
+- id: makina
+  name: Mákina
+  track: hardcore
+  year_start: 1995
+  year_end: null
+  origin: Valencia, ES
+  parents: []
+  description: 'Makina ist Spaniens eigene Form des Hard Dance: schnelle, treibende
+    Synthpop-Loops, eingaengige Melodien und Hardtrance-Kicks. Entstand in den Clubs
+    Valencias in der zweiten Haelfte der 90er und wurde zum kulturellen Phaenomen
+    im Sueden Spaniens.'
+  key_artists:
+  - DJ Nano
+  - DJ Toni Peret
+  - Quequé
+  key_labels:
+  - Blanco y Negro
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Mákina_(music_genre)
+  audio_examples: []
+- id: hardbass
+  name: Hardbass
+  track: hardcore
+  year_start: 2001
+  year_end: null
+  origin: RU
+  parents: []
+  description: 'Hardbass ist eine osteuropaeische Hard-Dance-Variante aus Russland:
+    haemmernde Kicks, synkopierte Basslines und aggressive Synthesizer-Riffs. Entstand
+    Anfang der 2000er, wurde 2010er durch Internet-Memes und Squat-Dance-Videos weltweit
+    bekannt.'
+  key_artists:
+  - DJ Blyatman
+  - Russian Village Boys
+  key_labels: []
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Hardbass
+  audio_examples: []
+- id: hard_nrg
+  name: Hard NRG
+  track: hardcore
+  year_start: 1994
+  year_end: null
+  origin: UK
+  parents: []
+  description: 'Hard NRG ist eine britische Form des Hard House und Hard Trance: treibende
+    Basslines, harte Kicks und energiegeladene Melodien jenseits der 145 BPM. Entstand
+    Mitte der 90er als Reaktion auf das langsame Tempo des Progressive House.'
+  key_artists:
+  - BK
+  - Judge Jules
+  - Lisa Pin-Up
+  key_labels:
+  - Nukleuz Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Hard_NRG
+  audio_examples: []
+- id: lento_violento
+  name: Lento Violento
+  track: hardcore
+  year_start: 1999
+  year_end: null
+  origin: IT
+  parents: []
+  description: 'Lento Violento ist eine italienische Hardcore-Variante mit paradoxem
+    Tempo: extrem langsam (50-80 BPM) aber maximal aggressiv. Die verzerrten, massiven
+    Bassdrops erzeugen koerperliche Wucht. Entstanden in Sueditalien.'
+  key_artists:
+  - Benny Benassi
+  - Prezioso
+  key_labels: []
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Lento_violento
   audio_examples: []

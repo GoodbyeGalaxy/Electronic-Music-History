@@ -270,3 +270,45 @@
   wikidata_id: Q1840167
   wikipedia_slug: Witch_house
   audio_examples: []
+- id: tribal_guarachero
+  name: Tribal Guarachero
+  track: house
+  year_start: 2000
+  year_end: null
+  origin: Monterrey, MX
+  parents: []
+  description: 'Tribal Guarachero entstand in Monterrey als mexikanische Fusion: rollende,
+    perkussive Tribal-House-Loops treffen auf norteno-Einfluesse und auffaellige Basslines.
+    DJ Blass und Toy Selectah praegten den Sound, der in der lateinamerikanischen
+    Club-Szene dominiert.'
+  key_artists:
+  - DJ Blass
+  - Toy Selectah
+  - El Increible
+  key_labels: []
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Tribal_guarachero
+  audio_examples: []
+- id: moombahton
+  name: Moombahton
+  track: house
+  year_start: 2010
+  year_end: null
+  origin: Washington D.C., US
+  parents: []
+  description: 'Moombahton entstand 2009 durch Zufall: Dave Nada verlangsamte einen
+    Afrojack-House-Track auf 108 BPM, wodurch der Reggaeton-Rhythmus hoerbar wurde.
+    House-Struktur mit Reggaeton-Dembow-Pattern - das neue Genre verbreitete sich
+    viral und beeinflusste Tropical Bass.'
+  key_artists:
+  - Dave Nada
+  - Munchi
+  - Dillon Francis
+  key_labels:
+  - Mad Decent
+  subvariants:
+  - Moombahcore
+  wikidata_id: ''
+  wikipedia_slug: Moombahton
+  audio_examples: []

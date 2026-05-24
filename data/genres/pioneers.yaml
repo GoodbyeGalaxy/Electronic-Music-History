@@ -5,15 +5,14 @@
   year_end: null
   origin: American South
   parents: []
-  description: >-
-    The blues is an African-American musical form rooted in work songs, field
-    hollers and spirituals. Its call-and-response patterns, 12-bar structure and
-    expressive vocal tradition underpin virtually all Western popular music and
+  description: The blues is an African-American musical form rooted in work songs,
+    field hollers and spirituals. Its call-and-response patterns, 12-bar structure
+    and expressive vocal tradition underpin virtually all Western popular music and
     are a foundational influence on early electronic experimentation.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Blues
   audio_examples: []
 - id: jazz
@@ -24,15 +23,14 @@
   origin: New Orleans USA
   parents:
   - blues
-  description: >-
-    Jazz is an improvisational music form rooted in blues, ragtime and African
-    rhythmic traditions, developed in New Orleans in the early 20th century. Its
-    harmonic complexity and rhythmic freedom directly influenced musique
-    concrète, electroacoustic composition and early synthesiser exploration.
+  description: Jazz is an improvisational music form rooted in blues, ragtime and
+    African rhythmic traditions, developed in New Orleans in the early 20th century.
+    Its harmonic complexity and rhythmic freedom directly influenced musique concrète,
+    electroacoustic composition and early synthesiser exploration.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Jazz
   audio_examples: []
 - id: gospel
@@ -42,15 +40,13 @@
   year_end: null
   origin: USA
   parents: []
-  description: >-
-    Gospel music is the devotional African-American tradition that shaped soul,
-    rhythm and blues and virtually all subsequent popular genres. Its
-    call-and-response structure and communal energy echo through house, garage
-    and urban music.
+  description: Gospel music is the devotional African-American tradition that shaped
+    soul, rhythm and blues and virtually all subsequent popular genres. Its call-and-response
+    structure and communal energy echo through house, garage and urban music.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Gospel_music
   audio_examples: []
 - id: theremin
@@ -113,4 +109,30 @@
   - Tonewheel Organ
   wikidata_id: Q188248
   wikipedia_slug: Hammond_organ
+  audio_examples: []
+- id: krautrock
+  name: Krautrock
+  track: pioneers
+  year_start: 1967
+  year_end: null
+  origin: DE
+  parents: []
+  description: Krautrock ist ein Sammelbegriff fuer die deutsche Avantgarde-Rockmusik
+    der fruehen 70er, die elektronische Experimente, repetitive Rhythmen und Synthesizer
+    mit Psychedelia verband. Bands wie Can, Neu!, Faust und Tangerine Dream schufen
+    den Boden fuer Techno, Ambient und Electronic Music.
+  key_artists:
+  - Can
+  - Neu!
+  - Faust
+  - Tangerine Dream
+  - Amon Düül II
+  key_labels:
+  - Brain Records
+  - Kosmische Kuriere
+  subvariants:
+  - Kosmische Musik
+  - Motorik
+  wikidata_id: ''
+  wikipedia_slug: Krautrock
   audio_examples: []

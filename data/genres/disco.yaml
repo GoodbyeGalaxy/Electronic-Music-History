@@ -5,15 +5,14 @@
   year_end: null
   origin: USA
   parents: []
-  description: >-
-    Soul music emerged from the combination of gospel, rhythm and blues and jazz
-    in African-American communities in the 1950s. Its emotional directness,
-    expressive vocals and groove orientation directly spawned funk, disco and
-    house music.
+  description: Soul music emerged from the combination of gospel, rhythm and blues
+    and jazz in African-American communities in the 1950s. Its emotional directness,
+    expressive vocals and groove orientation directly spawned funk, disco and house
+    music.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Soul_music
   audio_examples: []
 - id: funk
@@ -24,15 +23,14 @@
   origin: USA
   parents:
   - soul
-  description: >-
-    Funk emphasises the downbeat, interlocking polyrhythmic percussion and bass
-    guitar, and collective rhythmic groove over melody. Developed by James
-    Brown, Sly Stone and others, it is a direct precursor to disco, hip-hop,
-    house and virtually all rhythm-driven electronic genres.
+  description: Funk emphasises the downbeat, interlocking polyrhythmic percussion
+    and bass guitar, and collective rhythmic groove over melody. Developed by James
+    Brown, Sly Stone and others, it is a direct precursor to disco, hip-hop, house
+    and virtually all rhythm-driven electronic genres.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Funk
   audio_examples: []
 - id: philadelphia_soul
@@ -43,14 +41,13 @@
   origin: Philadelphia USA
   parents:
   - soul
-  description: >-
-    Philadelphia soul (Philly soul) defined the lush, orchestral sound of early
-    1970s dance music. Its use of strings, syncopated rhythms and polished
+  description: Philadelphia soul (Philly soul) defined the lush, orchestral sound
+    of early 1970s dance music. Its use of strings, syncopated rhythms and polished
     production created the direct blueprint for disco.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Philadelphia_soul
   audio_examples: []
 - id: disco
@@ -229,4 +226,50 @@
   subvariants: []
   wikidata_id: Q4045538
   wikipedia_slug: Nu-disco
+  audio_examples: []
+- id: eurobeat
+  name: Eurobeat
+  track: disco
+  year_start: 1988
+  year_end: null
+  origin: IT/JP
+  parents:
+  - hi_nrg
+  description: Eurobeat ist eine schnelle, synthesizergetriebene Tanzmusik, die in
+    Japan durch Initial D und Para Para Paradise zur Kulterscheinung wurde. Urspruenglich
+    Italian Disco-Ableger, entwickelte sich eine separate japanisch-italinische Produktionsindustrie.
+  key_artists:
+  - Dave Rodgers
+  - Franz Tornado
+  - Max Coveri
+  key_labels:
+  - SCP Records
+  - A-Beat C
+  subvariants:
+  - Para Para
+  wikidata_id: ''
+  wikipedia_slug: Eurobeat
+  audio_examples: []
+- id: italo_dance
+  name: Italo Dance
+  track: disco
+  year_start: 1988
+  year_end: null
+  origin: IT
+  parents:
+  - hi_nrg
+  description: 'Italo Dance ist die internationale Weiterentwicklung des Italo Disco:
+    eingaengige Synthesizer-Melodien, Vier-auf-den-Boden-Rhythmik und emotionale Vocals
+    auf Englisch. Eiffel 65, Gigi D''Agostino und Alice Deejay dominierten die Eurodance-Aera.'
+  key_artists:
+  - Eiffel 65
+  - Gigi D'Agostino
+  - Corona
+  - Alice Deejay
+  key_labels:
+  - Bliss Corporation
+  - ZYX Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Italo_dance
   audio_examples: []

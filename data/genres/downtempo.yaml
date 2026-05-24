@@ -61,3 +61,92 @@
   wikidata_id: Q205560
   wikipedia_slug: Trip_hop
   audio_examples: []
+- id: illbient
+  name: Illbient
+  track: downtempo
+  year_start: 1994
+  year_end: null
+  origin: New York, US
+  parents: []
+  description: Illbient entstand in der New Yorker Underground-Szene um DJ Spooky
+    als duestere Verschmelzung von Ambient, Dub und Hip-Hop. Langsame, desorientierte
+    Beats, schwere Basslinien und surreale Sample-Collagen charakterisieren den Sound.
+  key_artists:
+  - DJ Spooky
+  - Byzar
+  - Sub Dub
+  key_labels:
+  - Asphodel Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Illbient
+  audio_examples: []
+- id: broken_beat
+  name: Broken Beat
+  track: downtempo
+  year_start: 1993
+  year_end: null
+  origin: London, UK
+  parents: []
+  description: Broken Beat entstand in den Londoner Jazzclubs der 90er als Fusion
+    aus Jazz, Soul, Funk und elektronischen Produktionstechniken. Unregelmaessige,
+    synkopierte Rhythmen und reichhaltige Harmonik. Bugz in the Attic, 4Hero und Dego
+    waren zentral.
+  key_artists:
+  - Bugz in the Attic
+  - 4Hero
+  - Dego
+  - Kaidi Tatham
+  key_labels:
+  - Reinforced Records
+  - Warp Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Broken_beat
+  audio_examples: []
+- id: nu_jazz
+  name: Nu Jazz
+  track: downtempo
+  year_start: 1995
+  year_end: null
+  origin: UK/DE
+  parents:
+  - broken_beat
+  description: 'Nu Jazz verbindet akustische Jazz-Improvisation mit elektronischer
+    Produktion: Loop-basierte Strukturen, DJs und Jazzmusiker auf derselben Buehne.
+    Jazzanova, St Germain und Nils Petter Molvaer waren wegweisend.'
+  key_artists:
+  - Jazzanova
+  - St Germain
+  - Nils Petter Molvær
+  - Bugge Wesseltoft
+  key_labels:
+  - Compost Records
+  - Infracom
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Nu_jazz
+  audio_examples: []
+- id: folktronica
+  name: Folktronica
+  track: downtempo
+  year_start: 1993
+  year_end: null
+  origin: UK
+  parents: []
+  description: Folktronica verbindet akustische Folk-Instrumente - Akustikgitarre,
+    Banjo, Cello - mit elektronischen Beats, Sampling und Synthesizern. Lemon Jelly,
+    Mum und Four Tet praegten den zerbrechlichen, organischen Sound.
+  key_artists:
+  - Lemon Jelly
+  - Múm
+  - Four Tet
+  - Tunng
+  - Lone
+  key_labels:
+  - XL Recordings
+  - Morr Music
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Folktronica
+  audio_examples: []

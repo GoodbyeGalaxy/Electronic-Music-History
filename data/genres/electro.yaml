@@ -213,3 +213,126 @@
   wikidata_id: Q1298934
   wikipedia_slug: Synth-pop
   audio_examples: []
+- id: neue_deutsche_welle
+  name: Neue Deutsche Welle
+  track: electro
+  year_start: 1976
+  year_end: 1984
+  origin: DE/AT
+  parents: []
+  description: 'Neue Deutsche Welle war die deutschsprachige Antwort auf New Wave:
+    eingaengige Synthesizer-Popsongs auf Deutsch mit oft ironischem oder politischem
+    Unterton. DAF, Spliff und Nena machten NDW zur Massenerscheinung.'
+  key_artists:
+  - DAF
+  - Nena
+  - Spliff
+  - Ideal
+  - Extrabreit
+  key_labels:
+  - WEA
+  - CBS
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Neue_Deutsche_Welle
+  audio_examples: []
+- id: new_wave
+  name: New Wave
+  track: electro
+  year_start: 1976
+  year_end: null
+  origin: UK/US
+  parents: []
+  description: New Wave entstand als Ableger des Punk mit staerkerem Fokus auf Synthesizer,
+    Keyboards und Pop-Strukturen. Talking Heads, Devo und Gary Numan bauten Bruecken
+    zwischen Punk-Haltung und elektronischen Texturen.
+  key_artists:
+  - Talking Heads
+  - Devo
+  - The Cars
+  - Blondie
+  - Gary Numan
+  key_labels:
+  - Sire Records
+  - Chrysalis Records
+  subvariants:
+  - Synth-pop
+  - Post-Punk
+  wikidata_id: ''
+  wikipedia_slug: New_wave_music
+  audio_examples: []
+- id: chiptune
+  name: Chiptune
+  track: electro
+  year_start: 1978
+  year_end: null
+  origin: US/JP
+  parents: []
+  description: Chiptune (auch 8-Bit-Musik) nutzt die Soundchips alter Spielkonsolen
+    und Heimcomputer - Commodore 64, Game Boy, NES - als Instrumente. Entstand parallel
+    mit der Videospielindustrie. Heute lebt das Genre als bewusste Aesthetik in der
+    DIY-Musikszene weiter.
+  key_artists:
+  - Anamanaguchi
+  - Sabrepulse
+  - Bit Shifter
+  - Nullsleep
+  key_labels:
+  - 8bitpeoples
+  subvariants:
+  - Bitpop
+  - Nintendocore
+  wikidata_id: ''
+  wikipedia_slug: Chiptune
+  audio_examples: []
+- id: synthwave
+  name: Synthwave
+  track: electro
+  year_start: 2005
+  year_end: null
+  origin: Internet
+  parents: []
+  description: 'Synthwave ist eine von 80er-Aesthetik inspirierte Elektronik: Analog-Synthesizer,
+    Neon-Visuals und cinematische Atmosphaeren. Kavinsky, College und Perturbator
+    formten den Retrowave-Sound. Stark beeinflusst von John Carpenter, Giorgio Moroder
+    und dem Film Drive (2011).'
+  key_artists:
+  - Kavinsky
+  - College
+  - Perturbator
+  - Gunship
+  - FM-84
+  key_labels:
+  - Record Makers
+  - Blood Music
+  subvariants:
+  - Retrowave
+  - Darksynth
+  - Outrun
+  wikidata_id: ''
+  wikipedia_slug: Synthwave
+  audio_examples: []
+- id: freestyle
+  name: Freestyle
+  track: electro
+  year_start: 1982
+  year_end: null
+  origin: New York, US
+  parents: []
+  description: Freestyle entstand in der Latin-Community New Yorks als Fusion aus
+    Electro, Hi-NRG und Latin Rhythmik. Synthesizer-Basslines, Drum-Machine-Beats
+    und emotionale Vocals ueber unglueckliche Liebe. Shannon, TKA und Lisa Lisa waren
+    wegweisend.
+  key_artists:
+  - Shannon
+  - TKA
+  - Lisa Lisa
+  - Exposé
+  - Cover Girls
+  key_labels:
+  - Tommy Boy Records
+  - Fever Records
+  subvariants: []
+  wikidata_id: ''
+  wikipedia_slug: Freestyle_music
+  audio_examples: []
