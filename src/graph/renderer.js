@@ -11,9 +11,14 @@ import { computeLayout } from './layout.js';
  * @returns {{ highlight, clearHighlight, filterTracks, filterYears, layout }}
  */
 export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
-  const width = wrapper.clientWidth;
-  const height = wrapper.clientHeight;
-  const layout = computeLayout(data, width, height);
+  const viewWidth  = wrapper.clientWidth;
+  const viewHeight = wrapper.clientHeight;
+
+  // Layout uses a wider internal canvas so nodes at similar years have room
+  // to spread. Initial zoom is set to fit everything in the viewport.
+  const LAYOUT_SCALE = 3;
+  const layoutWidth = viewWidth * LAYOUT_SCALE;
+  const layout = computeLayout(data, layoutWidth, viewHeight);
 
   while (labelsEl.firstChild) labelsEl.removeChild(labelsEl.firstChild);
   layout.tracks.forEach(track => {
@@ -28,22 +33,25 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   const svg = d3.select(wrapper)
     .append('svg')
     .attr('class', 'graph-canvas')
-    .attr('width', width)
-    .attr('height', height);
+    .attr('width', viewWidth)
+    .attr('height', viewHeight);
 
   const zoomGroup = svg.append('g').attr('class', 'zoom-group');
 
-  svg.call(
-    d3.zoom().scaleExtent([0.2, 4])
-      .on('zoom', e => zoomGroup.attr('transform', e.transform))
-  );
+  const zoomBehavior = d3.zoom()
+    .scaleExtent([0.15, 4])
+    .on('zoom', e => zoomGroup.attr('transform', e.transform));
+
+  svg.call(zoomBehavior);
+  // Start zoomed out to show full layout width
+  svg.call(zoomBehavior.transform, d3.zoomIdentity.scale(1 / LAYOUT_SCALE));
 
   layout.tracks.forEach((_, i) => {
     if (i === 0) return;
     zoomGroup.append('line')
       .attr('class', 'track-separator')
       .attr('x1', 0).attr('y1', i * layout.trackHeight)
-      .attr('x2', width).attr('y2', i * layout.trackHeight);
+      .attr('x2', layoutWidth).attr('y2', i * layout.trackHeight);
   });
 
   const edgeGroup = zoomGroup.append('g').attr('class', 'edges');
