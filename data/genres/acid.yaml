@@ -15,24 +15,6 @@
   wikidata_id: Q341364
   wikipedia_slug: Acid_house
   audio_examples: []
-- id: acid_techno
-  name: Acid Techno
-  track: acid
-  year_start: 1991
-  year_end: null
-  origin: UK / Germany
-  parents:
-  - acid_house
-  - techno
-  description: Acid techno combines the squelching TB-303 basslines of acid house
-    with the darker, harder sound of techno. It was a staple of Berlin's underground
-    scene in the 1990s.
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: ''
-  wikipedia_slug: Acid_techno
-  audio_examples: []
 - id: acid_trance
   name: Acid Trance
   track: acid

@@ -140,27 +140,6 @@
   wikidata_id: Q1166726
   wikipedia_slug: Grime_music
   audio_examples: []
-- id: le_phonographique
-  name: Le Phonographique
-  track: hip_hop
-  year_start: 1979
-  year_end: null
-  origin: ''
-  parents:
-  - hip_hop
-  description: Le Phonographique (often called the Phono) was a gothic nightclub located
-    underneath the Merrion Centre in Leeds. Founded under the name the WigWam club,
-    the venue's 1979 rebranding led to it becoming a location frequented by members
-    of both the local post-punk and New Romantic scenes. Here, the two scenes collided
-    and created the earliest phase of the goth subculture, becoming the first goth
-    club in the world. Playing gothic rock and dark wave music, the club hosted DJs
-    including Marc Almond an
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q85776059
-  wikipedia_slug: Le_Phonographique
-  audio_examples: []
 - id: lofi_hip_hop
   name: Lofi hip-hop
   track: hip_hop

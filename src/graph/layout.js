@@ -3,7 +3,7 @@ export const YEAR_END = 2025;
 const NODE_HEIGHT = 36;
 const CHAR_WIDTH = 7;
 const NODE_PADDING_X = 20;
-const MIN_TRACK_H = 40;
+const MIN_TRACK_H = 80;
 
 /**
  * Computes target positions (tx, ty) for each node and resolves edge references.
@@ -78,7 +78,12 @@ export function computeLayout(data, svgWidth, svgHeight) {
     cumY += trackHeights.get(t.id);
   });
 
-  const xScale = year => ((year - YEAR_START) / (YEAR_END - YEAR_START)) * svgWidth;
+  // Power scale: exponent >1 compresses early years and stretches later ones.
+  const YEAR_SCALE_EXP = 1.5;
+  const xScale = year => {
+    const t = (year - YEAR_START) / (YEAR_END - YEAR_START);
+    return Math.pow(t, YEAR_SCALE_EXP) * svgWidth;
+  };
   const yScale = trackId => {
     const top = trackTops.get(trackId);
     const h = trackHeights.get(trackId);

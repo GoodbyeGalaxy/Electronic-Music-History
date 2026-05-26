@@ -14,19 +14,21 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   const viewWidth  = wrapper.clientWidth;
   const viewHeight = wrapper.clientHeight;
 
-  // Internal canvas is LAYOUT_SCALE× wider and taller than the viewport so
-  // nodes have room to spread in both axes. Initial zoom fits both axes exactly.
-  const LAYOUT_SCALE = 2;
+  // X: 2× wider so years have room horizontally; zoom = 0.5 fits full width.
+  // Y: 4× taller so nodes can spread vertically without overlapping;
+  //    rendered height (4× × 0.5zoom) = 2× viewport → user pans to see all tracks.
+  const LAYOUT_SCALE   = 2;
+  const LAYOUT_SCALE_Y = 4;
   const layoutWidth  = viewWidth  * LAYOUT_SCALE;
-  const layoutHeight = viewHeight * LAYOUT_SCALE;
+  const layoutHeight = viewHeight * LAYOUT_SCALE_Y;
   const layout = computeLayout(data, layoutWidth, layoutHeight);
 
   while (labelsEl.firstChild) labelsEl.removeChild(labelsEl.firstChild);
   layout.tracks.forEach(track => {
     const div = document.createElement('div');
     div.className = 'track-label';
-    // Divide by LAYOUT_SCALE so labels match rendered (zoomed) track height
-    div.style.height = `${layout.trackHeights.get(track.id) / LAYOUT_SCALE}px`;
+    // Divide by LAYOUT_SCALE_Y so labels match rendered (zoomed) track height
+    div.style.height = `${layout.trackHeights.get(track.id) / LAYOUT_SCALE_Y}px`;
     div.style.color = track.color;
     div.textContent = track.label;
     labelsEl.appendChild(div);
@@ -45,9 +47,7 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     .on('zoom', e => zoomGroup.attr('transform', e.transform));
 
   svg.call(zoomBehavior);
-  // Fit initial zoom so the full canvas (width × height) is visible
-  const zoomScale = Math.min(viewWidth / layoutWidth, viewHeight / layoutHeight);
-  svg.call(zoomBehavior.transform, d3.zoomIdentity.scale(zoomScale));
+  svg.call(zoomBehavior.transform, d3.zoomIdentity.scale(1 / LAYOUT_SCALE));
 
   layout.tracks.forEach((track, i) => {
     if (i === 0) return;
@@ -104,9 +104,9 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   layout.nodes.forEach(d => { d.x = d.tx; d.y = d.ty; });
 
   const simulation = d3.forceSimulation(layout.nodes)
-    .force('x', d3.forceX(d => d.tx).strength(0.45))
+    .force('x', d3.forceX(d => d.tx).strength(0.2))
     .force('y', d3.forceY(d => d.ty).strength(0.9))
-    .force('collide', d3.forceCollide(d => d.height / 2 + 4).strength(0.9).iterations(4))
+    .force('collide', forceRectCollide(16, 14, 6))
     .alphaDecay(0.015)
     .on('tick', ticked);
 
@@ -130,7 +130,6 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     })
     .on('end', (event, d) => {
       if (!event.active) simulation.alphaTarget(0);
-      d.x = d.tx;  // snap X back to year column immediately on release
       d.fx = null;
       d.fy = null;
       simulation.alpha(0.3).restart();
@@ -138,39 +137,69 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
 
   nodeSel.call(drag);
 
-  nodeSel.on('click', (event, d) => {
-    event.stopPropagation();
-    onNodeClick(d);
-    simulation.alpha(0.08).restart();
-  });
+  nodeSel
+    .on('click', (event, d) => {
+      event.stopPropagation();
+      onNodeClick(d);
+      highlight(d.id);
+      simulation.alpha(0.08).restart();
+    })
+    .on('mouseover', (event, d) => {
+      if (!_clickHighlightId) highlightHover(d.id);
+    })
+    .on('mouseout', () => {
+      if (!_clickHighlightId) clearHighlight();
+    });
 
-  svg.on('click', () => { clearHighlight(); onNodeClick(null); });
+  svg.on('click', () => { _clickHighlightId = null; clearHighlight(); onNodeClick(null); });
+
+  let _clickHighlightId = null;
 
   function highlight(nodeId) {
-    const ancestorIds = new Set();
+    _clickHighlightId = nodeId;
+    const relatedIds = new Set([nodeId]);
     const pathEdgeKeys = new Set();
-    const visited = new Set([nodeId]);
     const queue = [nodeId];
+    const visited = new Set([nodeId]);
 
     while (queue.length) {
       const id = queue.shift();
       layout.edges.forEach(e => {
+        // ancestors
         if (e.target.id === id && !visited.has(e.source.id)) {
           visited.add(e.source.id);
-          ancestorIds.add(e.source.id);
+          relatedIds.add(e.source.id);
           pathEdgeKeys.add(`${e.source.id}→${e.target.id}`);
           queue.push(e.source.id);
+        }
+        // descendants
+        if (e.source.id === id && !visited.has(e.target.id)) {
+          visited.add(e.target.id);
+          relatedIds.add(e.target.id);
+          pathEdgeKeys.add(`${e.source.id}→${e.target.id}`);
+          queue.push(e.target.id);
         }
       });
     }
 
-    const highlightedIds = new Set([nodeId, ...ancestorIds]);
-
     nodeSel
-      .classed('node--dimmed', d => !highlightedIds.has(d.id))
-      .classed('node--selected', d => highlightedIds.has(d.id));
+      .classed('node--dimmed', d => !relatedIds.has(d.id))
+      .classed('node--selected', d => relatedIds.has(d.id));
     edgeSel.classed('edge--dimmed',
       d => !pathEdgeKeys.has(`${d.source.id}→${d.target.id}`));
+  }
+
+  function highlightHover(nodeId) {
+    const neighborIds = new Set([nodeId]);
+    const edgeKeys = new Set();
+    layout.edges.forEach(e => {
+      if (e.source.id === nodeId) { neighborIds.add(e.target.id); edgeKeys.add(`${e.source.id}→${e.target.id}`); }
+      if (e.target.id === nodeId) { neighborIds.add(e.source.id); edgeKeys.add(`${e.source.id}→${e.target.id}`); }
+    });
+    nodeSel
+      .classed('node--dimmed', d => !neighborIds.has(d.id))
+      .classed('node--selected', d => d.id === nodeId);
+    edgeSel.classed('edge--dimmed', d => !edgeKeys.has(`${d.source.id}→${d.target.id}`));
   }
 
   function clearHighlight() {
@@ -213,6 +242,46 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   }
 
   return { highlight, clearHighlight, filterTracks, filterYears, layout };
+}
+
+// Rectangular collision force: resolves overlap along the axis with least penetration.
+// Same-year nodes → pushed vertically; adjacent-year nodes → pushed horizontally.
+// Rectangular collision force with constant-strength resolution (no alpha decay).
+// Resolves along the axis of least penetration:
+// same-year nodes → pushed vertically; adjacent-year nodes → pushed horizontally.
+function forceRectCollide(xPad = 16, yPad = 6, iterations = 6) {
+  let nodes;
+  function force() {
+    for (let k = 0; k < iterations; k++) {
+      for (let i = 0; i < nodes.length; i++) {
+        const a = nodes[i];
+        for (let j = i + 1; j < nodes.length; j++) {
+          const b = nodes[j];
+          const dx = b.x - a.x;
+          const dy = b.y - a.y;
+          const gapX = (a.width + b.width) / 2 + xPad;
+          const gapY = (a.height + b.height) / 2 + yPad;
+          if (Math.abs(dx) < gapX && Math.abs(dy) < gapY) {
+            const ox = gapX - Math.abs(dx);
+            const oy = gapY - Math.abs(dy);
+            // Bias toward vertical resolution when same track
+            const sameTrack = a.track === b.track;
+            if (!sameTrack && ox < oy) {
+              const s = dx === 0 ? 1 : Math.sign(dx);
+              b.x += ox * 0.5 * s;
+              a.x -= ox * 0.5 * s;
+            } else {
+              const s = dy === 0 ? 1 : Math.sign(dy);
+              b.y += oy * 0.5 * s;
+              a.y -= oy * 0.5 * s;
+            }
+          }
+        }
+      }
+    }
+  }
+  force.initialize = n => { nodes = n; };
+  return force;
 }
 
 function edgePath(d) {

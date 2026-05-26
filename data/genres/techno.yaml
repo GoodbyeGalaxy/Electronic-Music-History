@@ -183,27 +183,6 @@
   wikidata_id: Q1738175
   wikipedia_slug: Schaffel
   audio_examples: []
-- id: techno_2
-  name: Techno
-  track: techno
-  year_start: 1984
-  year_end: null
-  origin: ''
-  parents:
-  - techno
-  description: Techno is a genre of electronic music which is generally produced for
-    use in a continuous DJ set, with tempos being in the range from 120 to 150 beats
-    per minute (bpm). The central rhythm is typically in common time (44) and often
-    characterized by a repetitive four on the floor beat. Artists may use electronic
-    instruments such as drum machines, sequencers, and synthesizers, as well as digital
-    audio workstations. Drum machines from the 1980s such as Roland's Roland TR-808
-    and Roland TR-909 are hi
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q170611
-  wikipedia_slug: Techno
-  audio_examples: []
 - id: free_tekno
   name: Free Tekno
   track: techno

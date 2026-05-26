@@ -22,8 +22,8 @@ describe('computeLayout', () => {
   it('sets tx ≈ 160px for year 1920 at width 1000', () => {
     const { nodes } = computeLayout(MOCK_DATA, 1000, 400);
     const n = nodes.find(n => n.id === 'theremin');
-    // (1920 - 1900) / (2025 - 1900) * 1000 ≈ 160
-    expect(n.tx).toBeCloseTo(160, 0);
+    // ((1920 - 1900) / (2025 - 1900))^1.5 * 1000 ≈ 64
+    expect(n.tx).toBeCloseTo(64, 0);
   });
 
   it('sets ty for musique_concrete below theremin (track order 1 > 0)', () => {
@@ -37,7 +37,7 @@ describe('computeLayout', () => {
     const { nodes } = computeLayout(MOCK_DATA, 1000, 400);
     for (const n of nodes) {
       expect(n.width).toBeGreaterThan(0);
-      expect(n.height).toBe(36);
+      expect(n.height).toBe(72);
     }
   });
 

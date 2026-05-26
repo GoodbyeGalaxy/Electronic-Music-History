@@ -220,26 +220,6 @@
   wikidata_id: Q18358879
   wikipedia_slug: Outsider_house
   audio_examples: []
-- id: the_warehouse_project
-  name: The Warehouse Project
-  track: house
-  year_start: 2006
-  year_end: null
-  origin: ''
-  parents:
-  - house
-  description: The Warehouse Project is a series of club nights organised in Greater
-    Manchester, England, since 2006. Unlike most other clubs, it has a limited seasonal
-    approach rather than running all year. Each year's season runs from September
-    through to New Year's Day, plus occasional one off dates such as Bank Holiday
-    weekends. This period corresponds with the busiest time of the year and the student
-    calendar.
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q7773543
-  wikipedia_slug: The_Warehouse_Project
-  audio_examples: []
 - id: uk_hard_house
   name: UK hard house
   track: house

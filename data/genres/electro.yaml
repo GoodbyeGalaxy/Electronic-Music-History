@@ -47,27 +47,6 @@
   wikidata_id: Q861823
   wikipedia_slug: Electroclash
   audio_examples: []
-- id: electroclash_festival
-  name: Electroclash Festival
-  track: electro
-  year_start: 2001
-  year_end: null
-  origin: ''
-  parents:
-  - electroclash
-  description: 'Electroclash is a genre of music that emerged at the end of the 1990s.
-    In the US it came to media attention, when the Electroclash Festival was held
-    from October 10 to 14, 2001 in Williamsburg, New York. The festival was founded
-    by DJ Larry Tee, and held again in 2002 with subsequent live tours across the
-    US and Europe in 2003 and then 2004. Other notable artists who performed at the
-    festivals and subsequent tours include: Scissor Sisters, ADULT., Fischerspooner,
-    Erol Alkan, Princess Superstar,'
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q20011168
-  wikipedia_slug: Electroclash_Festival
-  audio_examples: []
 - id: electronic_cottage
   name: Electronic Cottage
   track: electro

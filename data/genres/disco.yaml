@@ -207,29 +207,6 @@
   wikidata_id: Q1374731
   wikipedia_slug: Eurodisco
   audio_examples: []
-- id: italo_disco_2
-  name: Italo disco
-  track: disco
-  year_start: 1978
-  year_end: null
-  origin: ''
-  parents:
-  - disco
-  description: 'Italo disco or Italodisco (variously capitalized, and sometimes hyphenated
-    as Italo-disco) is a music genre which originated in Italy in the early 1980s.
-    Italo disco evolved from the then-current post-disco dance music and synth-pop,
-    both domestic and foreign (hi-NRG, Euro disco) and developed into a diverse genre.
-    The genre employs electronic drums, drum machines, synthesizers, and occasionally
-    vocoders. It is usually sung in English, and to a lesser extent in Italian and
-    Spanish.
-
-    The origin of'
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q744417
-  wikipedia_slug: Italo_disco
-  audio_examples: []
 - id: nu_disco
   name: Nu-disco
   track: disco
