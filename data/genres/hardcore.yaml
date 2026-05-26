@@ -4,7 +4,8 @@
   year_start: 1989
   year_end: null
   origin: Netherlands / Belgium / Germany
-  parents: []
+  parents:
+  - techno
   description: Hardcore (also known as hardcore techno) is a genre of electronic dance
     music that originated in the Netherlands, Belgium, and Germany in the early 1990s.
     It is distinguished by faster tempos (160 to 200 BPM or more) and a distorted
@@ -40,6 +41,7 @@
   origin: UK
   parents:
   - hardcore
+  - trance
   description: Happy hardcore is a euphoric, fast-paced subgenre of hardcore techno,
     characterised by a tempo of 160–180 BPM, chipmunk-pitched vocals and a joyful,
     rave-party aesthetic.

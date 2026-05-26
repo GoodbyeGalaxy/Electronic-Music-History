@@ -180,7 +180,8 @@
   year_start: 1980
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - industrial_music
   description: ''
   key_artists: []
   key_labels: []
@@ -221,6 +222,8 @@
   origin: US/EU
   parents:
   - electronic_music
+  - cold_wave
+  - industrial_music
   description: 'Minimal Wave ist eine Retrobezeichnung fuer experimentellen Synthesizer-Undergroundpop
     der spaeten 70er bis 80er: Lo-fi, karg, selbstproduziert. Das Label Minimal Wave
     Records (Chloe Lula, 2005) machte das Genre retrospektiv bekannt.'

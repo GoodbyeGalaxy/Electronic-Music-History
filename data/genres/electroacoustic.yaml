@@ -105,6 +105,7 @@
   origin: IT/JP
   parents:
   - electronic_music
+  - industrial_music
   description: Noise Music verwendet Laerm, Dissonanz und Klangextreme als aesthetisches
     Material - von Futuristen wie Luigi Russolo bis zu japanischem Harsh Noise (Merzbow)
     und amerikanischem Industrial Noise. Die Grenze zwischen Musik und Geraeusch wird
@@ -209,6 +210,7 @@
   origin: UK
   parents:
   - idm
+  - electronic_music
   description: 'Algorave ist Live-Coding als Auffuehrungsform: Musik entsteht in Echtzeit
     durch Programmcode auf der Buehne. Alex McLean und Nick Collins praegten das Format
     2011. Werkzeuge wie TidalCycles und SuperCollider sind Standard.'

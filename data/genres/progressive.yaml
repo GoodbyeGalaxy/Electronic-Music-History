@@ -4,7 +4,9 @@
   year_start: 1990
   year_end: null
   origin: Germany
-  parents: []
+  parents:
+  - techno
+  - hardcore
   description: Trance is an electronic dance music genre that developed in the early
     1990s in Germany. Characterised by a tempo of 128–145 BPM, driving basslines and
     synthesiser riffs, it builds hypnotic, euphoric states on the dancefloor.

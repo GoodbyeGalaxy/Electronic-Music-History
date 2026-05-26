@@ -21,6 +21,7 @@
   origin: ''
   parents:
   - electronic_dance_music
+  - electro_music
   description: ''
   key_artists: []
   key_labels: []
@@ -51,7 +52,8 @@
   year_start: 1988
   year_end: null
   origin: Baltimore USA
-  parents: []
+  parents:
+  - house
   description: Baltimore club music is a frenetic, sample-heavy style that strips
     breakbeat to its bare elements — fast chopped vocals, stuttered loops and relentless
     energy — rooted in the Baltimore club scene.
@@ -67,7 +69,8 @@
   year_start: 1983
   year_end: null
   origin: Miami USA
-  parents: []
+  parents:
+  - electro_music
   description: Miami bass (booty bass) is a subgenre of hip-hop and electronic music
     characterised by heavy, distorted 808 bass drum beats, call-and-response vocals
     and a stripped-down party aesthetic.
@@ -83,7 +86,8 @@
   year_start: 2007
   year_end: null
   origin: Chicago, US
-  parents: []
+  parents:
+  - house
   description: 'Footwork (auch Juke) entstand in der Chicagoer Tanzkultur: extrem
     schnelle, zerhackte Samples bei 160 BPM, synkopierte Kicks und Bassloops. RP Boo
     und DJ Rashad praegten den Sound. Planet Mu brachte ihn 2010 international zur
@@ -107,7 +111,9 @@
   year_start: 2002
   year_end: null
   origin: Newark, US
-  parents: []
+  parents:
+  - baltimore_club
+  - house
   description: 'Jersey Club entstand in den Clubs New Jerseys als Abwandlung von Baltimore
     Club und Footwork: charakteristische Hi-Hat-Patterns, Bass-Kicks und Hip-Hop-Samples.
     UNIIQU3 und DJ Tameil praegten den Sound. Heute Einfluss auf globalen Club-Sound.'

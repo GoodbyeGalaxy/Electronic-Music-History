@@ -224,6 +224,7 @@
   origin: ''
   parents:
   - disco
+  - house
   description: ''
   key_artists: []
   key_labels: []

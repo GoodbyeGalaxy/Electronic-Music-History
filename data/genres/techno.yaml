@@ -4,10 +4,11 @@
   year_start: 1985
   origin: Detroit, USA
   parents:
-  - industrial
-  - electronic_dance_music
   - house
+  - industrial
   - electro_music
+  - electronic_dance_music
+  - electronic_body_music
   description: 'Die Belleville Three (Juan Atkins, Derrick May, Kevin Saunderson)
     entwickelten Mitte der 1980er in Detroit einen Stil aus europaeischer Elektronik
     (Kraftwerk, Giorgio Moroder), Funk und Chicago House. Strings of Life (Derrick
@@ -204,7 +205,8 @@
   year_start: 1993
   year_end: null
   origin: UK
-  parents: []
+  parents:
+  - hardcore
   description: 'Free Tekno ist Techno der freien Partykultur: illegal, auf Autobahn-Raststplaetzen,
     in besetzten Gebaeuden, ohne Eintritt. Spiral Tribe praegten den Sound und die
     Bewegung in England ab 1990. Haerter und roher als Clubtechno, stark politisch

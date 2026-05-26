@@ -4,7 +4,9 @@
   year_start: 1988
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - dub
+  - jazz
   description: 'Downtempo (or downbeat) is a broad label for electronic music that
     features an atmospheric sound and slower beats than would typically be found in
     dance music (downtempo tracks are usually around 90 BPM). Closely related to ambient
@@ -56,6 +58,7 @@
   origin: ''
   parents:
   - downtempo
+  - dub
   description: ''
   key_artists: []
   key_labels: []
@@ -116,8 +119,10 @@
   year_end: null
   origin: UK/DE
   parents:
-  - broken_beat
   - electronica
+  - broken_beat
+  - jazz
+  - downtempo
   description: 'Nu Jazz verbindet akustische Jazz-Improvisation mit elektronischer
     Produktion: Loop-basierte Strukturen, DJs und Jazzmusiker auf derselben Buehne.
     Jazzanova, St Germain und Nils Petter Molvaer waren wegweisend.'

@@ -5,9 +5,10 @@
   year_end: null
   origin: ''
   parents:
-  - electronic_dance_music
   - jungle_music
   - breakbeat
+  - electronic_dance_music
+  - hardcore
   description: ''
   key_artists: []
   key_labels: []
@@ -22,10 +23,11 @@
   year_end: null
   origin: ''
   parents:
-  - drum_and_bass
-  - breakbeat
-  - reggae
   - dub
+  - breakbeat
+  - drum_and_bass
+  - reggae
+  - hardcore
   description: ''
   key_artists: []
   key_labels: []
@@ -41,6 +43,7 @@
   origin: UK
   parents:
   - drum_and_bass
+  - jungle_music
   description: Liquid drum and bass (liquid funk) emphasises warm, soulful elements
     — lush pads, smooth vocals and melodic basslines — contrasting with the harder
     edges of techstep and neurofunk.

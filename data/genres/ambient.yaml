@@ -83,6 +83,8 @@
   origin: ''
   parents:
   - electronic_music
+  - chill_out_music
+  - downtempo
   description: ''
   key_artists: []
   key_labels: []
@@ -96,7 +98,9 @@
   year_start: 1989
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - techno
+  - ambient_music
   description: ''
   key_artists: []
   key_labels: []
@@ -154,7 +158,8 @@
   year_start: 1960
   year_end: null
   origin: US
-  parents: []
+  parents:
+  - ambient_music
   description: New Age Music entstand in der Meditations- und Wellnessbewegung der
     60er und 70er. Ruhige, harmonische Synthesizer-Texturen, Naturklaenge und spirituelle
     Intention kennzeichnen das Genre. Windham Hill Records machte es kommerziell.
@@ -228,7 +233,9 @@
   year_start: 1991
   year_end: null
   origin: 'NO'
-  parents: []
+  parents:
+  - dark_ambient
+  - ambient_music
   description: 'Dungeon Synth ist ein Nischengenre aus dem norwegischen Black-Metal-Umfeld:
     lo-fi Synthesizer-Musik, die Fantasiewelten, mittelalterliche Atmosphaeren und
     Einsamkeit evoziert. Burzum und Mortiis begruendeten den Stil als Soloprojekte.'
@@ -248,7 +255,10 @@
   year_start: 2010
   year_end: null
   origin: Internet
-  parents: []
+  parents:
+  - synthwave
+  - ambient_music
+  - chillwave
   description: Vaporwave ist ein Internet-Mikrogenre, das Samples aus 80er-Muzak,
     japanischen City-Pop und frueher CD-ROM-Aesthetik verlangsamt und verfremdet.
     Chuck Person (Daniel Lopatin) und James Ferraro praegten den Sound 2010-2011.
@@ -275,6 +285,8 @@
   origin: US
   parents:
   - electronic_music
+  - synth_pop
+  - ambient_music
   description: 'Chillwave ist eine lo-fi Indie-Elektronik aus den spaeten 2000ern:
     verwaschene Synthesizer, Nostalgie-Sampleaesthetik und sommerliche Melancholie.
     Neon Indian, Toro y Moi und Washed Out praegten den Sound 2009-2010.'

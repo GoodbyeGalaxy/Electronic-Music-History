@@ -277,7 +277,8 @@
   year_start: 1978
   year_end: null
   origin: US/JP
-  parents: []
+  parents:
+  - electro_music
   description: Chiptune (auch 8-Bit-Musik) nutzt die Soundchips alter Spielkonsolen
     und Heimcomputer - Commodore 64, Game Boy, NES - als Instrumente. Entstand parallel
     mit der Videospielindustrie. Heute lebt das Genre als bewusste Aesthetik in der
