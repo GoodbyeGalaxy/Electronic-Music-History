@@ -4,8 +4,9 @@
   year_start: 1983
   origin: Chicago, USA
   parents:
-  - disco
   - soul
+  - disco
+  - jazz
   description: 'Aus den Chicagoer Clubs Warehouse und Music Box hervorgegangen, verbanden
     DJs wie Frankie Knuckles und Ron Hardy Disco-Rhythmen mit Synthesizern und Drum-Machines.
     Jesse Saunders On and On (1984) gilt als erste Veroeffentlichung des Genres.
@@ -107,6 +108,7 @@
   origin: ''
   parents:
   - house_music
+  - deep_house
   description: Afro house (also known as Afro-house or Afrohouse) is a sub-genre of
     house music mainly developed in South Africa. The genre emerged in the 1990s.
     This musical style fuses elements of traditional house with South African rhythms
@@ -126,6 +128,7 @@
   origin: ''
   parents:
   - house_music
+  - deep_house
   description: ''
   key_artists: []
   key_labels: []
@@ -142,6 +145,7 @@
   parents:
   - house_music
   - house
+  - techno
   description: ''
   key_artists: []
   key_labels: []
@@ -157,6 +161,7 @@
   origin: ''
   parents:
   - house_music
+  - house
   description: ''
   key_artists: []
   key_labels: []
@@ -188,6 +193,7 @@
   origin: ''
   parents:
   - house_music
+  - disco
   description: Kwaito is a music genre that emerged in Soweto, Johannesburg, South
     Africa, between the late 1980s and 1990s. It is a sound that features the use
     of South African sounds and samples. Kwaito songs occur at a slower tempo range

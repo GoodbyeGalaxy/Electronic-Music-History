@@ -58,6 +58,8 @@
   origin: Germany
   parents:
   - tech_house
+  - minimal_tech_house
+  - deep_tech
   description: 'Micro house reduces house music to its smallest sonic elements: glitchy
     clicks, minimal percussion and texture-based bass, influenced by the clicks-and-cuts
     movement.'

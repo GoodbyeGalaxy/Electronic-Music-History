@@ -45,6 +45,7 @@
   origin: Philadelphia USA
   parents:
   - soul
+  - disco
   description: Philadelphia soul (Philly soul) defined the lush, orchestral sound
     of early 1970s dance music. Its use of strings, syncopated rhythms and polished
     production created the direct blueprint for disco.
@@ -86,8 +87,9 @@
   year_start: 1982
   origin: San Francisco/London
   parents:
-  - disco
   - soul
+  - disco
+  - eurodisco
   description: 'Hi-NRG entwickelte sich aus Disco in den fruehen 1980ern mit schnellerem
     Tempo (140-160 BPM), synthetischeren Klaengen und Fokus auf Gay Clubs. Bobby O
     und Pete Waterman (PWL) praegten den US- und UK-Stil.
@@ -111,8 +113,9 @@
   year_start: 1977
   origin: Italy
   parents:
-  - disco
   - synth_pop
+  - disco
+  - eurodisco
   description: 'Italienische Produzenten wie Giorgio Moroder entwickelten ab Ende
     der 1970er einen synthetischeren, melodischeren Disco-Stil. Charakter: Vocoder,
     Synthesizer-Melodien, oft englische Texte mit deutlichem Akzent.
@@ -138,6 +141,7 @@
   origin: ''
   parents:
   - disco
+  - italo_disco
   description: In music, the terms Afro/cosmic disco, the cosmic sound, free-style
     sound, and combinations thereof (Afro, cosmic Afro, Afro-cosmic, Afro-freestyle,
     etc., as well as Afro-funky and later Afro house) are used somewhat interchangeably
@@ -157,7 +161,8 @@
   year_start: 1982
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - italo_disco
   description: 'Discomagic Records (1979–1997), owned by Severo Lombardoni was the
     largest dance record label in Italy. It spawned a large number of sub-labels from
     the early 1980s to the early 1990s and it set the standards for an entire genre
@@ -178,7 +183,8 @@
   year_start: 1972
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - disco
   description: ''
   key_artists: []
   key_labels: []
@@ -247,8 +253,9 @@
   year_end: null
   origin: IT/JP
   parents:
-  - hi_nrg
   - electronic_dance_music
+  - hi_nrg
+  - italo_disco
   description: Eurobeat ist eine schnelle, synthesizergetriebene Tanzmusik, die in
     Japan durch Initial D und Para Para Paradise zur Kulterscheinung wurde. Urspruenglich
     Italian Disco-Ableger, entwickelte sich eine separate japanisch-italinische Produktionsindustrie.

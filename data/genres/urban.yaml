@@ -4,7 +4,9 @@
   year_start: 1980
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - funk
+  - electronic_dance_music
   description: 'Funk carioca (Brazilian Portuguese pronunciation: [ˈfɐ̃k(i) kɐɾiˈɔkɐ,
     - kaɾ-]), also known as baile funk, Brazilian funk, or simply funk, is a Brazilian
     hip hop-influenced music genre from Rio de Janeiro, taking influences from musical

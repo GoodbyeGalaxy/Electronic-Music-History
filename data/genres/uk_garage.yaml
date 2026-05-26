@@ -41,6 +41,7 @@
   origin: ''
   parents:
   - uk_garage
+  - drum_and_bass
   description: ''
   key_artists: []
   key_labels: []
@@ -56,6 +57,7 @@
   origin: ''
   parents:
   - uk_garage
+  - dubstep
   description: ''
   key_artists: []
   key_labels: []

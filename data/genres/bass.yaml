@@ -4,7 +4,9 @@
   year_start: 1960
   year_end: null
   origin: Jamaica
-  parents: []
+  parents:
+  - blues
+  - gospel
   description: Reggae is a Jamaican music genre developed in the late 1960s, built
     on offbeat rhythms (the 'skank'), deep bass and expressive vocal tradition. It
     is a foundational influence on dub, dancehall and bass-heavy electronic music
@@ -59,6 +61,7 @@
   origin: London UK
   parents:
   - uk_garage
+  - hip_hop
   description: Grime is a British genre blending UK garage's rhythms with jungle's
     energy and MCing culture. Its sparse, abrasive electronic productions support
     aggressive lyrical delivery, rooted in East London's pirate radio scene.
@@ -76,6 +79,7 @@
   origin: ''
   parents:
   - dubstep
+  - edm_trap_music
   description: ''
   key_artists: []
   key_labels: []
@@ -89,7 +93,8 @@
   year_start: 2010
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - dubstep
   description: 'Riddim is a subgenre of dubstep known for its heavy use of repetitive
     and minimalist sub-bass and triplet percussion arrangements. It shares the same
     name as the Jamaican genre that influenced both it and dubstep, which originally
@@ -113,6 +118,7 @@
   origin: Luanda, AO
   parents:
   - electronic_dance_music
+  - house_music
   description: 'Kuduro entstand in den Musseques Luandas als angolisches Tanzgenre:
     schnelle, perkussive Beats, Zouk-Bass-Einfluesse und akrobatische Tanzbewegungen.
     M.I.A. und Buraka Som Sistema machten Kuduro international bekannt.'
@@ -132,7 +138,9 @@
   year_start: 2006
   year_end: null
   origin: UK
-  parents: []
+  parents:
+  - uk_garage
+  - dubstep
   description: 'UK Bass ist ein Sammelbegriff fuer den Bass-orientierten britischen
     Club-Sound jenseits von Dubstep: Post-Dubstep, Funky House und Future Bass. Mount
     Kimbie, James Blake und Actress praegten die Post-Dubstep-Aesthetik.'

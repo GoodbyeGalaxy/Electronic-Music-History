@@ -6,6 +6,8 @@
   origin: ''
   parents:
   - electronic_music
+  - hip_hop
+  - funk
   description: ''
   key_artists: []
   key_labels: []
@@ -21,6 +23,7 @@
   origin: ''
   parents:
   - electronic_dance_music
+  - jazz
   description: ''
   key_artists: []
   key_labels: []
@@ -36,8 +39,9 @@
   origin: ''
   parents:
   - electronic_dance_music
-  - electro_music
   - new_wave
+  - electro_music
+  - synth_pop
   description: ''
   key_artists: []
   key_labels: []
@@ -51,7 +55,8 @@
   year_start: 2001
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electroclash
   description: 'Electroclash is a genre of music that emerged at the end of the 1990s.
     In the US it came to media attention, when the Electroclash Festival was held
     from October 10 to 14, 2001 in Williamsburg, New York. The festival was founded
@@ -71,7 +76,8 @@
   year_start: 1989
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: Electronic Cottage was a printed magazine that championed and examined
     DIY cassette culture phenomenon, including reviewers of sound collage, noise music,
     electronic music and other forms of experimental music. There were six issue produced
@@ -140,7 +146,9 @@
   year_start: 2000
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
+  - hardcore
   description: Electronicore (also known as synthcore or trancecore) is a fusion genre
     of metalcore music with elements of various electronic music genres, often including
     trance, electronica, and dubstep. Electronicore emerged in the early 2000s. The
@@ -162,6 +170,7 @@
   origin: ''
   parents:
   - synth_pop
+  - new_wave
   description: "Electropop is a popular music fusion genre  combining elements of\
     \ the electronic and pop styles. \nElectropop has been described as a variant\
     \ of synth-pop with emphasis on a hard electronic sound. The genre was developed\
@@ -196,6 +205,7 @@
   origin: ''
   parents:
   - electronic_dance_music
+  - house_music
   description: ''
   key_artists: []
   key_labels: []
@@ -309,6 +319,8 @@
   origin: Internet
   parents:
   - electronic_dance_music
+  - synth_pop
+  - new_wave
   description: 'Synthwave ist eine von 80er-Aesthetik inspirierte Elektronik: Analog-Synthesizer,
     Neon-Visuals und cinematische Atmosphaeren. Kavinsky, College und Perturbator
     formten den Retrowave-Sound. Stark beeinflusst von John Carpenter, Giorgio Moroder

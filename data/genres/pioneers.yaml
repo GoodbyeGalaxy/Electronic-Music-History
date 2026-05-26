@@ -39,7 +39,8 @@
   year_start: 1930
   year_end: null
   origin: USA
-  parents: []
+  parents:
+  - blues
   description: Gospel music is the devotional African-American tradition that shaped
     soul, rhythm and blues and virtually all subsequent popular genres. Its call-and-response
     structure and communal energy echo through house, garage and urban music.

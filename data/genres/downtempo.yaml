@@ -43,7 +43,9 @@
   year_start: 2015
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - lo_fi_music
+  - lofi_hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -58,9 +60,10 @@
   year_end: null
   origin: ''
   parents:
-  - dub
   - downtempo
   - hip_hop
+  - dub
+  - soul
   description: ''
   key_artists: []
   key_labels: []
@@ -99,9 +102,10 @@
   origin: London, UK
   parents:
   - electronic_dance_music
+  - jazz
   - downtempo
   - electronica
-  - jazz
+  - soul
   description: Broken Beat entstand in den Londoner Jazzclubs der 90er als Fusion
     aus Jazz, Soul, Funk und elektronischen Produktionstechniken. Unregelmaessige,
     synkopierte Rhythmen und reichhaltige Harmonik. Bugz in the Attic, 4Hero und Dego
@@ -126,9 +130,10 @@
   origin: UK/DE
   parents:
   - electronica
-  - broken_beat
   - jazz
   - downtempo
+  - broken_beat
+  - soul
   description: 'Nu Jazz verbindet akustische Jazz-Improvisation mit elektronischer
     Produktion: Loop-basierte Strukturen, DJs und Jazzmusiker auf derselben Buehne.
     Jazzanova, St Germain und Nils Petter Molvaer waren wegweisend.'
@@ -153,6 +158,7 @@
   parents:
   - electronica
   - electronic_music
+  - downtempo
   description: Folktronica verbindet akustische Folk-Instrumente - Akustikgitarre,
     Banjo, Cello - mit elektronischen Beats, Sampling und Synthesizern. Lemon Jelly,
     Mum und Four Tet praegten den zerbrechlichen, organischen Sound.
