@@ -4,11 +4,12 @@
   year_start: 1977
   year_end: null
   origin: New York USA
-  parents: []
-  description: >-
-    Garage house (named after the Paradise Garage club) is a soulful,
-    gospel-inflected variant of house music characterised by warm chord
-    progressions, expressive vocals and deep emotional resonance.
+  parents:
+  - house
+  - soul
+  description: Garage house (named after the Paradise Garage club) is a soulful, gospel-inflected
+    variant of house music characterised by warm chord progressions, expressive vocals
+    and deep emotional resonance.
   key_artists: []
   key_labels: []
   subvariants: []
@@ -23,14 +24,13 @@
   origin: New Jersey USA
   parents:
   - garage_house
-  description: >-
-    The New Jersey garage sound (NJ sound) developed alongside Chicago house in
-    the mid-1980s, with a slightly rawer, faster and more percussive style
+  description: The New Jersey garage sound (NJ sound) developed alongside Chicago
+    house in the mid-1980s, with a slightly rawer, faster and more percussive style
     influenced by the club scene around Newark and Trenton.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: New_Jersey_sound
   audio_examples: []
 - id: deep_house
@@ -41,13 +41,14 @@
   origin: Chicago / New York USA
   parents:
   - garage_house
-  description: >-
-    Deep house prioritises atmosphere over energy — warm pads, jazz-inflected
-    chord progressions, subdued vocals and a slower, introspective groove. It
-    draws heavily from soul, jazz and gospel.
+  - house
+  - soul
+  description: Deep house prioritises atmosphere over energy — warm pads, jazz-inflected
+    chord progressions, subdued vocals and a slower, introspective groove. It draws
+    heavily from soul, jazz and gospel.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Deep_house
   audio_examples: []

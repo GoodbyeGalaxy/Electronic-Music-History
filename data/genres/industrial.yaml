@@ -72,7 +72,9 @@
   year_start: 1982
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
+  - industrial_music
   description: 'Electronic body music (EBM) is a genre of electronic music that combines
     elements of industrial music and synth-punk with elements of dance music. It developed
     in the early 1980s in Western Europe, as an outgrowth of both the punk and the
@@ -135,7 +137,8 @@
   year_start: 1975
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - noise_music
   description: ''
   key_artists: []
   key_labels: []
@@ -191,7 +194,9 @@
   year_start: 1977
   year_end: null
   origin: FR/BE
-  parents: []
+  parents:
+  - new_wave
+  - industrial_music
   description: Cold Wave entstand in Frankreich und Belgien Ende der 70er als eiskalter
     Post-Punk mit Synthesizern statt Gitarren. Dunkle, minimalistische Arrangements
     und Vocals mit nihilistischer Distanz. Trisomie 21, Kas Product und Asylum Party
@@ -214,7 +219,8 @@
   year_start: 1977
   year_end: null
   origin: US/EU
-  parents: []
+  parents:
+  - electronic_music
   description: 'Minimal Wave ist eine Retrobezeichnung fuer experimentellen Synthesizer-Undergroundpop
     der spaeten 70er bis 80er: Lo-fi, karg, selbstproduziert. Das Label Minimal Wave
     Records (Chloe Lula, 2005) machte das Genre retrospektiv bekannt.'
@@ -236,6 +242,7 @@
   origin: UK/US
   parents:
   - cold_wave
+  - new_wave
   description: Dark Wave ist ein breiter Begriff fuer duestere, introspektive Elektronik
     im Schnittfeld von Gothic, Post-Punk und Cold Wave. Sisters of Mercy, Clan of
     Xymox und Faith and the Muse stehen fuer schwarze Aesthetik, schwere Synthesizer
@@ -259,7 +266,8 @@
   year_start: 1981
   year_end: null
   origin: DE/UK
-  parents: []
+  parents:
+  - noise_music
   description: Power Noise kombiniert Industrial-Rhythmus mit Harsh-Noise-Texturen
     zu einer tanzbaren, brutalen Musik. Distorted, perkussive Patterns mit Rauschgeneratoren.
     Winterkaelte, Converter und Suicide Commando praegten den Post-EBM Sound.
@@ -283,7 +291,9 @@
   year_start: 1990
   year_end: null
   origin: DE
-  parents: []
+  parents:
+  - industrial_metal
+  - industrial_music
   description: 'Neue Deutsche Haerte verbindet Industrial und Metal zu einem aggressiven,
     deutschsprachigen Genre: harte Gitarren, stampfende Beats, tiefe Vocals. Rammstein
     internationalisierten den Sound ab 1995. KMFDM und Oomph! gehoeren zu den Wegbereitern.'
@@ -306,7 +316,8 @@
   year_start: 1993
   year_end: null
   origin: DE/SE
-  parents: []
+  parents:
+  - electronic_body_music
   description: 'Futurepop fusioniert EBM-Energie mit melodischem Trance-Synthpop:
     aggressive Basslines, Dancefloor-Hooks und eingaengige Gesangsmelodien. VNV Nation
     und Assemblage 23 praegten den Sound im Goth-Club-Umfeld.'
@@ -328,7 +339,8 @@
   year_start: 1987
   year_end: 1992
   origin: BE
-  parents: []
+  parents:
+  - electronic_body_music
   description: 'New Beat entstand 1987 in Belgien als Zufallsprodukt: zu langsam abgespielte
     EBM-Platten ergaben einen entrueckten, schweren Rhythmus. A Split Second, Lords
     of Acid und Confetti''s schufen Classics. Bruecke zwischen EBM und der entstehenden

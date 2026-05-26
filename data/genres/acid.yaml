@@ -4,10 +4,10 @@
   year_start: 1985
   year_end: null
   origin: Chicago
-  parents: []
-  description: >-
-    Acid house was born in Chicago when producers began manipulating the Roland
-    TB-303 bass synthesiser to create squelching, resonant basslines. It launched
+  parents:
+  - house
+  description: Acid house was born in Chicago when producers began manipulating the
+    Roland TB-303 bass synthesiser to create squelching, resonant basslines. It launched
     the UK rave scene and spawned multiple subgenres.
   key_artists: []
   key_labels: []
@@ -23,14 +23,14 @@
   origin: UK / Germany
   parents:
   - acid_house
-  description: >-
-    Acid techno combines the squelching TB-303 basslines of acid house with the
-    darker, harder sound of techno. It was a staple of Berlin's underground scene
-    in the 1990s.
+  - techno
+  description: Acid techno combines the squelching TB-303 basslines of acid house
+    with the darker, harder sound of techno. It was a staple of Berlin's underground
+    scene in the 1990s.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Acid_techno
   audio_examples: []
 - id: acid_trance
@@ -41,14 +41,14 @@
   origin: Germany
   parents:
   - acid_house
-  description: >-
-    Acid trance incorporates prominent TB-303 basslines into the trance template,
-    creating a hypnotic, delirium-inducing sound that connects acid house to the
-    emerging trance scene.
+  - trance
+  description: Acid trance incorporates prominent TB-303 basslines into the trance
+    template, creating a hypnotic, delirium-inducing sound that connects acid house
+    to the emerging trance scene.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Acid_trance
   audio_examples: []
 - id: acid_breaks
@@ -59,12 +59,12 @@
   origin: UK
   parents:
   - acid_house
-  description: >-
-    Acid breaks merges the breakbeat rhythms of old-school rave with acid house's
-    characteristic 303 bass manipulation.
+  - breakbeat
+  description: Acid breaks merges the breakbeat rhythms of old-school rave with acid
+    house's characteristic 303 bass manipulation.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Acid_breaks
   audio_examples: []

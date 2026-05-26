@@ -29,7 +29,8 @@
   track: electroacoustic
   year_start: 1953
   origin: Koeln, DE
-  parents: []
+  parents:
+  - musique_concrete
   description: 'Am Studio fuer elektronische Musik des WDR Koeln entwickelten Stockhausen,
     Eimert und Nono ab 1953 eine Musik aus rein synthetischen Klaengen. Studien I
     und II (Stockhausen, 1953/54) sind Schluesselwerke.
@@ -73,7 +74,8 @@
   year_start: 1956
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: ''
   key_artists: []
   key_labels: []
@@ -101,7 +103,8 @@
   year_start: 1910
   year_end: null
   origin: IT/JP
-  parents: []
+  parents:
+  - electronic_music
   description: Noise Music verwendet Laerm, Dissonanz und Klangextreme als aesthetisches
     Material - von Futuristen wie Luigi Russolo bis zu japanischem Harsh Noise (Merzbow)
     und amerikanischem Industrial Noise. Die Grenze zwischen Musik und Geraeusch wird
@@ -150,7 +153,9 @@
   year_start: 1992
   year_end: null
   origin: UK
-  parents: []
+  parents:
+  - electroacoustic_music
+  - techno
   description: Intelligent Dance Music ist ein Sammelbegriff fuer komplexe, experimentelle
     Elektronik jenseits der Tanzflaeche. Warp Records praegte den Begriff 1992. Aphex
     Twin, Autechre und Boards of Canada stehen fuer polyrhythmische Strukturen, emotionale

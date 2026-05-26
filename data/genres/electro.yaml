@@ -4,7 +4,8 @@
   year_start: 1980
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: ''
   key_artists: []
   key_labels: []
@@ -18,7 +19,8 @@
   year_start: 1994
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
   description: ''
   key_artists: []
   key_labels: []
@@ -32,7 +34,8 @@
   year_start: 1995
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
   description: ''
   key_artists: []
   key_labels: []
@@ -86,7 +89,8 @@
   year_start: 1977
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: ''
   key_artists: []
   key_labels: []
@@ -100,7 +104,8 @@
   year_start: 1965
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: ''
   key_artists: []
   key_labels: []
@@ -114,7 +119,8 @@
   year_start: 1991
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: Electronica is both a broad group of electronic-based music styles
     intended for listening rather than strictly for dancing and a music scene that
     came to prominence in the early 1990s in the United Kingdom which incorporated
@@ -185,7 +191,8 @@
   year_start: 2007
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
   description: ''
   key_artists: []
   key_labels: []
@@ -199,7 +206,9 @@
   year_start: 1972
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - new_wave
+  - electro_music
   description: Synth-pop (short for synthesizer pop; also called techno-pop) is a
     music genre that first became prominent in the late 1970s and features the synthesizer
     as the dominant musical instrument. It was prefigured in the 1960s and early 1970s
@@ -242,7 +251,8 @@
   year_start: 1976
   year_end: null
   origin: UK/US
-  parents: []
+  parents:
+  - electronic_music
   description: New Wave entstand als Ableger des Punk mit staerkerem Fokus auf Synthesizer,
     Keyboards und Pop-Strukturen. Talking Heads, Devo und Gary Numan bauten Bruecken
     zwischen Punk-Haltung und elektronischen Texturen.
@@ -291,7 +301,8 @@
   year_start: 2005
   year_end: null
   origin: Internet
-  parents: []
+  parents:
+  - electronic_dance_music
   description: 'Synthwave ist eine von 80er-Aesthetik inspirierte Elektronik: Analog-Synthesizer,
     Neon-Visuals und cinematische Atmosphaeren. Kavinsky, College und Perturbator
     formten den Retrowave-Sound. Stark beeinflusst von John Carpenter, Giorgio Moroder

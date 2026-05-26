@@ -5,6 +5,9 @@
   origin: Detroit, USA
   parents:
   - industrial
+  - electronic_dance_music
+  - house
+  - electro_music
   description: 'Die Belleville Three (Juan Atkins, Derrick May, Kevin Saunderson)
     entwickelten Mitte der 1980er in Detroit einen Stil aus europaeischer Elektronik
     (Kraftwerk, Giorgio Moroder), Funk und Chicago House. Strings of Life (Derrick
@@ -104,7 +107,8 @@
   year_start: 1990
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - techno
   description: ''
   key_artists: []
   key_labels: []
@@ -146,7 +150,8 @@
   year_start: 1990
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - techno
   description: Industrial techno is a subgenre of techno and industrial dance music
     that originated in the 1990s. Characteristically, it incorporates influences from
     the bleak, noisy sound and aesthetics of early industrial music acts, particularly
@@ -164,7 +169,8 @@
   year_start: 2000
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - techno
   description: ''
   key_artists: []
   key_labels: []
@@ -221,7 +227,8 @@
   year_start: 2019
   year_end: null
   origin: SE
-  parents: []
+  parents:
+  - electronic_dance_music
   description: 'Future Rave verbindet melodischen Techno mit Rave-Energie und Trance-Elementen:
     epische Synthesizer-Boegen ueber treibenden Kicks. David Guetta und Morten praegten
     den Begriff 2019. Bewegt sich im Grenzbereich zwischen Mainstream-EDM und Underground-Rave.'

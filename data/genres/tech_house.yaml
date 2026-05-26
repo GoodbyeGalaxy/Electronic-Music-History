@@ -4,10 +4,11 @@
   year_start: 1995
   year_end: null
   origin: UK / USA
-  parents: []
-  description: >-
-    Tech house occupies the space between techno and house. It retains the
-    groove and warmth of house music while incorporating the darker, mechanical
+  parents:
+  - techno
+  - house
+  description: Tech house occupies the space between techno and house. It retains
+    the groove and warmth of house music while incorporating the darker, mechanical
     textures and minimal structures of techno.
   key_artists: []
   key_labels: []
@@ -23,14 +24,13 @@
   origin: Germany
   parents:
   - tech_house
-  description: >-
-    Minimal tech house strips production to its essentials — sparse percussion,
-    hypnotic basslines, restrained use of synths — creating a cerebral but
-    groove-driven sound.
+  description: Minimal tech house strips production to its essentials — sparse percussion,
+    hypnotic basslines, restrained use of synths — creating a cerebral but groove-driven
+    sound.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Minimal_tech_house
   audio_examples: []
 - id: deep_tech
@@ -41,13 +41,13 @@
   origin: UK
   parents:
   - tech_house
-  description: >-
-    Deep tech merges the atmospheric qualities of deep house with the propulsive
+  - deep_house
+  description: Deep tech merges the atmospheric qualities of deep house with the propulsive
     rhythms of tech house, emphasising moodier, more introspective textures.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Deep_tech_(music)
   audio_examples: []
 - id: micro_house
@@ -58,13 +58,12 @@
   origin: Germany
   parents:
   - tech_house
-  description: >-
-    Micro house reduces house music to its smallest sonic elements: glitchy
-    clicks, minimal percussion and texture-based bass, influenced by the
-    clicks-and-cuts movement.
+  description: 'Micro house reduces house music to its smallest sonic elements: glitchy
+    clicks, minimal percussion and texture-based bass, influenced by the clicks-and-cuts
+    movement.'
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Micro_house
   audio_examples: []

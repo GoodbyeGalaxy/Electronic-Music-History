@@ -25,7 +25,8 @@
   year_start: 1999
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
   description: Funkot (an abbreviation from Funky Kota) is an electronic dance music
     genre from Indonesia that emerged in the 1990s. Funkot is a mix of House music
     with a tempo of 160 to 220 bpm (beats per minute). Many other names exist for
@@ -43,7 +44,8 @@
   year_start: 2012
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - uk_funky
   description: Funkstep (also known as dubbage) is a style of UK funky, incorporating
     elements of dubstep and sometimes drum and bass.
   key_artists: []
@@ -58,7 +60,8 @@
   year_start: 1965
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - soul
   description: ''
   key_artists: []
   key_labels: []
@@ -72,7 +75,8 @@
   year_start: 2006
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
   description: ''
   key_artists: []
   key_labels: []

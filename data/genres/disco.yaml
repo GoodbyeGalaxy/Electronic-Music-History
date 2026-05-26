@@ -55,7 +55,9 @@
   track: disco
   year_start: 1974
   origin: New York, USA
-  parents: []
+  parents:
+  - soul
+  - funk
   description: 'Disco entstand in den New Yorker Underground-Clubs der fruehen 1970er
     als Musik fuer queere und afroamerikanische Communities. Giorgio Moroder, Nile
     Rodgers (Chic) und die Produzenten von Philly Soul definierten den Klang mit Streichern
@@ -183,7 +185,8 @@
   year_start: 1974
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - disco
   description: ''
   key_artists: []
   key_labels: []
@@ -219,7 +222,8 @@
   year_start: 1993
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - disco
   description: ''
   key_artists: []
   key_labels: []
@@ -235,6 +239,7 @@
   origin: IT/JP
   parents:
   - hi_nrg
+  - electronic_dance_music
   description: Eurobeat ist eine schnelle, synthesizergetriebene Tanzmusik, die in
     Japan durch Initial D und Para Para Paradise zur Kulterscheinung wurde. Urspruenglich
     Italian Disco-Ableger, entwickelte sich eine separate japanisch-italinische Produktionsindustrie.
@@ -258,6 +263,7 @@
   origin: IT
   parents:
   - hi_nrg
+  - eurodance
   description: 'Italo Dance ist die internationale Weiterentwicklung des Italo Disco:
     eingaengige Synthesizer-Melodien, Vier-auf-den-Boden-Rhythmik und emotionale Vocals
     auf Englisch. Eiffel 65, Gigi D''Agostino und Alice Deejay dominierten die Eurodance-Aera.'

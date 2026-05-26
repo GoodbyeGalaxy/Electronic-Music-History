@@ -41,6 +41,7 @@
   origin: London UK
   parents:
   - dub
+  - uk_garage
   description: Dubstep emerged from London's underground sound system culture, fusing
     the bass weight of UK garage and dub with dark, minimal 140 BPM rhythms. Half-time
     drum patterns and massive sub-bass became its signature.
@@ -56,7 +57,8 @@
   year_start: 2002
   year_end: null
   origin: London UK
-  parents: []
+  parents:
+  - uk_garage
   description: Grime is a British genre blending UK garage's rhythms with jungle's
     energy and MCing culture. Its sparse, abrasive electronic productions support
     aggressive lyrical delivery, rooted in East London's pirate radio scene.
@@ -72,7 +74,8 @@
   year_start: 2010
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - dubstep
   description: ''
   key_artists: []
   key_labels: []
@@ -108,7 +111,8 @@
   year_start: 1990
   year_end: null
   origin: Luanda, AO
-  parents: []
+  parents:
+  - electronic_dance_music
   description: 'Kuduro entstand in den Musseques Luandas als angolisches Tanzgenre:
     schnelle, perkussive Beats, Zouk-Bass-Einfluesse und akrobatische Tanzbewegungen.
     M.I.A. und Buraka Som Sistema machten Kuduro international bekannt.'
@@ -152,7 +156,8 @@
   year_start: 2010
   year_end: null
   origin: UK
-  parents: []
+  parents:
+  - dubstep
   description: 'Reggaestep verbindet die Riddim-Strukturen des jamaikanischen Dancehall
     und Reggae mit Dubstep-Produktionstechniken: wobbling Basslines, synkopierte Sub-Bass-Explosionen
     und toasting Vocals.'
@@ -171,7 +176,8 @@
   year_start: 2015
   year_end: null
   origin: Dar es Salaam, TZ
-  parents: []
+  parents:
+  - electronic_dance_music
   description: 'Singeli ist ein hyperaktives tanzanisches Electronic-Genre aus den
     Ghettos Dar es Salaams: extrem schnelle Tempos (200+ BPM), repetitive melodische
     Loops und Vocals auf Swahili. MCs und DJs wie Beka Flavour und Country Boy praegten

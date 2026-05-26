@@ -30,6 +30,7 @@
   origin: Europe
   parents:
   - ambient
+  - ambient_music
   description: 'Dark Ambient entstand aus der Schnittmenge von Ambient und Industrial
     und zeichnet sich durch duestere, bedrohliche oder atmosphaerisch dichte Klangwelten
     aus. Gruppen wie Lustmord, Coil und Deutsch Nepal praegten das Genre.
@@ -80,7 +81,8 @@
   year_start: 1967
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: ''
   key_artists: []
   key_labels: []
@@ -122,7 +124,8 @@
   year_start: 1992
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - ambient_music
   description: ''
   key_artists: []
   key_labels: []
@@ -136,7 +139,8 @@
   year_start: 1958
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - ambient_music
   description: ''
   key_artists: []
   key_labels: []
@@ -178,6 +182,7 @@
   origin: DE
   parents:
   - new_age
+  - electronic_music
   description: Space Music evoziert Weite, Schwerelosigkeit und kosmische Dimensionen
     durch lange Synthesizer-Boegen und modale Harmonik. Tangerine Dream und Klaus
     Schulze etablierten den Sound Ende der 60er. Direkter Einfluss auf Ambient.
@@ -200,7 +205,8 @@
   year_start: 1982
   year_end: null
   origin: UK
-  parents: []
+  parents:
+  - dark_wave
   description: Ethereal Wave verbindet Gothic-Elemente mit schwebenden Synthesizern,
     Reverb-getraenkten Vocals und traumhafter Atmosphaere. Cocteau Twins und Dead
     Can Dance praegten den Sound. Entstand im Umfeld des Post-Punk und Dark Wave.
@@ -267,7 +273,8 @@
   year_start: 2008
   year_end: null
   origin: US
-  parents: []
+  parents:
+  - electronic_music
   description: 'Chillwave ist eine lo-fi Indie-Elektronik aus den spaeten 2000ern:
     verwaschene Synthesizer, Nostalgie-Sampleaesthetik und sommerliche Melancholie.
     Neon Indian, Toro y Moi und Washed Out praegten den Sound 2009-2010.'

@@ -3,7 +3,9 @@
   track: house
   year_start: 1983
   origin: Chicago, USA
-  parents: []
+  parents:
+  - disco
+  - soul
   description: 'Aus den Chicagoer Clubs Warehouse und Music Box hervorgegangen, verbanden
     DJs wie Frankie Knuckles und Ron Hardy Disco-Rhythmen mit Synthesizern und Drum-Machines.
     Jesse Saunders On and On (1984) gilt als erste Veroeffentlichung des Genres.
@@ -28,6 +30,7 @@
   origin: Chicago/New York, USA
   parents:
   - house
+  - soul
   description: 'Larry Heard (Mr. Fingers) praegte mit Tracks wie Can You Feel It (1986)
     einen soulreicheren, atmosphaerisch tieferen House-Stil. New Yorker Labels wie
     Strictly Rhythm und Nervous Records trugen zur Verbreitung bei.
@@ -76,6 +79,7 @@
   origin: UK/Deutschland
   parents:
   - house
+  - techno
   description: 'Tech House verbindet die Rhythmik und Energie des Techno mit den Harmonieelementen
     und dem Groove des House. Labels wie Turbo und Hot Creations praegten den internationalen
     Stil.
@@ -100,7 +104,8 @@
   year_start: 2005
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
   description: Afro house (also known as Afro-house or Afrohouse) is a sub-genre of
     house music mainly developed in South Africa. The genre emerged in the 1990s.
     This musical style fuses elements of traditional house with South African rhythms
@@ -118,7 +123,8 @@
   year_start: 2012
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
   description: ''
   key_artists: []
   key_labels: []
@@ -132,7 +138,8 @@
   year_start: 1988
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
   description: ''
   key_artists: []
   key_labels: []
@@ -146,7 +153,8 @@
   year_start: 2012
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
   description: ''
   key_artists: []
   key_labels: []
@@ -160,7 +168,8 @@
   year_start: 1982
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
   description: ''
   key_artists: []
   key_labels: []
@@ -174,7 +183,8 @@
   year_start: 1998
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
   description: Kwaito is a music genre that emerged in Soweto, Johannesburg, South
     Africa, between the late 1980s and 1990s. It is a sound that features the use
     of South African sounds and samples. Kwaito songs occur at a slower tempo range
@@ -193,7 +203,8 @@
   year_start: 2010
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
   description: ''
   key_artists: []
   key_labels: []
@@ -226,7 +237,8 @@
   year_start: 1992
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
   description: ''
   key_artists: []
   key_labels: []
@@ -240,7 +252,8 @@
   year_start: 1990
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
   description: 'Vinahouse is a genre of electronic dance music, popularised in Vietnam.
 
     It rose to prominence in Vietnam in the 1990s. The initial name for the genre
@@ -262,7 +275,8 @@
   year_start: 2007
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: ''
   key_artists: []
   key_labels: []
@@ -276,7 +290,8 @@
   year_start: 2000
   year_end: null
   origin: Monterrey, MX
-  parents: []
+  parents:
+  - electronic_dance_music
   description: 'Tribal Guarachero entstand in Monterrey als mexikanische Fusion: rollende,
     perkussive Tribal-House-Loops treffen auf norteno-Einfluesse und auffaellige Basslines.
     DJ Blass und Toy Selectah praegten den Sound, der in der lateinamerikanischen
@@ -296,7 +311,8 @@
   year_start: 2010
   year_end: null
   origin: Washington D.C., US
-  parents: []
+  parents:
+  - electronic_dance_music
   description: 'Moombahton entstand 2009 durch Zufall: Dave Nada verlangsamte einen
     Afrojack-House-Track auf 108 BPM, wodurch der Reggaeton-Rhythmus hoerbar wurde.
     House-Struktur mit Reggaeton-Dembow-Pattern - das neue Genre verbreitete sich

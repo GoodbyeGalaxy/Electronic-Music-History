@@ -4,7 +4,8 @@
   year_start: 1992
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - breakbeat
   description: ''
   key_artists: []
   key_labels: []
@@ -18,7 +19,8 @@
   year_start: 1987
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
   description: ''
   key_artists: []
   key_labels: []

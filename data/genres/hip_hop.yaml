@@ -38,7 +38,8 @@
   year_start: 2005
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - crunk
   description: Crunkcore (also known as crunk punk, screamo crunk, and scrunk) is
     a musical fusion microgenre characterized by the combination of musical elements
     from crunk, post-hardcore (particularly pop screamo), heavy metal, pop, electronic
@@ -91,7 +92,8 @@
   year_start: 2010
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_music
   description: ''
   key_artists: []
   key_labels: []
@@ -105,7 +107,8 @@
   year_start: 2001
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
   description: ''
   key_artists: []
   key_labels: []

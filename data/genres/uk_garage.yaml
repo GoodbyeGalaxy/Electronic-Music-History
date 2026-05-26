@@ -4,7 +4,8 @@
   year_start: 1998
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - uk_garage
   description: 2-step garage, or simply 2-step, is a genre of electronic music and
     a subgenre of UK garage. One of the primary characteristics of the 2-step sound
     – the term being coined to describe "a general rubric for all kinds of jittery,
@@ -37,7 +38,8 @@
   year_start: 1998
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - uk_garage
   description: ''
   key_artists: []
   key_labels: []
@@ -51,7 +53,8 @@
   year_start: 2005
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - uk_garage
   description: ''
   key_artists: []
   key_labels: []
@@ -65,7 +68,9 @@
   year_start: 1994
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house_music
+  - uk_garage
   description: ''
   key_artists: []
   key_labels: []
@@ -79,7 +84,9 @@
   year_start: 1993
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
+  - house
   description: ''
   key_artists: []
   key_labels: []

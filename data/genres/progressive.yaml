@@ -5,9 +5,8 @@
   year_end: null
   origin: Germany
   parents: []
-  description: >-
-    Trance is an electronic dance music genre that developed in the early 1990s
-    in Germany. Characterised by a tempo of 128–145 BPM, driving basslines and
+  description: Trance is an electronic dance music genre that developed in the early
+    1990s in Germany. Characterised by a tempo of 128–145 BPM, driving basslines and
     synthesiser riffs, it builds hypnotic, euphoric states on the dancefloor.
   key_artists: []
   key_labels: []
@@ -21,15 +20,15 @@
   year_start: 1993
   year_end: null
   origin: UK / Germany
-  parents: []
-  description: >-
-    Progressive trance evolved from house and early trance, featuring long
-    build-ups and evolving melodic layers. It strips back the bombastic elements
-    of Eurotrance in favour of subtler, deeper progressions.
+  parents:
+  - trance
+  description: Progressive trance evolved from house and early trance, featuring long
+    build-ups and evolving melodic layers. It strips back the bombastic elements of
+    Eurotrance in favour of subtler, deeper progressions.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Progressive_trance
   audio_examples: []
 - id: goa_trance
@@ -40,14 +39,14 @@
   origin: Goa, India
   parents:
   - trance
-  description: >-
-    Goa trance emerged from the beach parties of Goa, India. It blends
-    psychedelic textures, Eastern scales and rapid arpeggiated synthesisers into
-    a hypnotic spiritual experience.
+  - psytrance
+  description: Goa trance emerged from the beach parties of Goa, India. It blends
+    psychedelic textures, Eastern scales and rapid arpeggiated synthesisers into a
+    hypnotic spiritual experience.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Goa_trance
   audio_examples: []
 - id: psytrance
@@ -58,14 +57,14 @@
   origin: Israel / Global
   parents:
   - goa_trance
-  description: >-
-    Psychedelic trance (psytrance) developed from Goa trance with faster tempos,
-    complex acid basslines and overtly psychedelic imagery. It fractures into
+  - trance
+  description: Psychedelic trance (psytrance) developed from Goa trance with faster
+    tempos, complex acid basslines and overtly psychedelic imagery. It fractures into
     numerous sub-scenes worldwide.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Psychedelic_trance
   audio_examples: []
 - id: eurodance
@@ -74,15 +73,15 @@
   year_start: 1989
   year_end: null
   origin: Germany / Sweden
-  parents: []
-  description: >-
-    Eurodance is a genre of electronic dance music developed in Europe in the
-    late 1980s, combining energetic beats with sung or rapped vocals, catchy
+  parents:
+  - electronic_dance_music
+  description: Eurodance is a genre of electronic dance music developed in Europe
+    in the late 1980s, combining energetic beats with sung or rapped vocals, catchy
     melodies and a polished pop aesthetic.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Eurodance
   audio_examples: []
 - id: eurotrance
@@ -94,14 +93,13 @@
   parents:
   - trance
   - eurodance
-  description: >-
-    Eurotrance (or commercial trance) combined trance's energy with pop-song
-    structures, radio-friendly hooks and anthemic drops. Dominated European
-    charts and clubs in the late 1990s.
+  description: Eurotrance (or commercial trance) combined trance's energy with pop-song
+    structures, radio-friendly hooks and anthemic drops. Dominated European charts
+    and clubs in the late 1990s.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Eurotrance
   audio_examples: []
 - id: vocal_trance
@@ -112,14 +110,14 @@
   origin: Netherlands
   parents:
   - eurotrance
-  description: >-
-    Vocal trance centres the genre on powerful female or male lead vocals over
-    orchestral trance backing tracks. It became one of the most commercially
+  - trance
+  description: Vocal trance centres the genre on powerful female or male lead vocals
+    over orchestral trance backing tracks. It became one of the most commercially
     successful trance variants.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Vocal_trance
   audio_examples: []
 - id: uplifting_trance
@@ -131,14 +129,13 @@
   parents:
   - vocal_trance
   - trance
-  description: >-
-    Uplifting trance (anthem trance) is defined by soaring lead synthesisers,
-    euphoric breakdowns and an energetic main drop. DJ Tiësto and Armin van
-    Buuren are central figures.
+  description: Uplifting trance (anthem trance) is defined by soaring lead synthesisers,
+    euphoric breakdowns and an energetic main drop. DJ Tiësto and Armin van Buuren
+    are central figures.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Uplifting_trance
   audio_examples: []
 - id: hard_trance
@@ -149,12 +146,12 @@
   origin: Germany / UK
   parents:
   - trance
-  description: >-
-    Hard trance incorporates elements of hardcore and techno into trance music,
-    driving at higher BPMs with distorted basslines and aggressive sound design.
+  - hardcore
+  description: Hard trance incorporates elements of hardcore and techno into trance
+    music, driving at higher BPMs with distorted basslines and aggressive sound design.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Hard_trance
   audio_examples: []

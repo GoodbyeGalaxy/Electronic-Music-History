@@ -4,7 +4,10 @@
   year_start: 1992
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - electronic_dance_music
+  - jungle_music
+  - breakbeat
   description: ''
   key_artists: []
   key_labels: []
@@ -18,7 +21,11 @@
   year_start: 1987
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - drum_and_bass
+  - breakbeat
+  - reggae
+  - dub
   description: ''
   key_artists: []
   key_labels: []
@@ -34,14 +41,13 @@
   origin: UK
   parents:
   - drum_and_bass
-  description: >-
-    Liquid drum and bass (liquid funk) emphasises warm, soulful elements — lush
-    pads, smooth vocals and melodic basslines — contrasting with the harder edges
-    of techstep and neurofunk.
+  description: Liquid drum and bass (liquid funk) emphasises warm, soulful elements
+    — lush pads, smooth vocals and melodic basslines — contrasting with the harder
+    edges of techstep and neurofunk.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Liquid_funk
   audio_examples: []
 - id: neurofunk
@@ -52,14 +58,12 @@
   origin: UK
   parents:
   - drum_and_bass
-  description: >-
-    Neurofunk is a technically complex, dark form of drum and bass emphasising
-    intricate sound design, warping basslines and a cinematic, dystopian
-    atmosphere.
+  description: Neurofunk is a technically complex, dark form of drum and bass emphasising
+    intricate sound design, warping basslines and a cinematic, dystopian atmosphere.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Neurofunk
   audio_examples: []
 - id: darkstep
@@ -70,14 +74,12 @@
   origin: UK
   parents:
   - drum_and_bass
-  description: >-
-    Darkstep is an aggressive, pitch-black subgenre of drum and bass
-    incorporating horror-film atmospherics, distorted breaks and brooding
-    soundscapes.
+  description: Darkstep is an aggressive, pitch-black subgenre of drum and bass incorporating
+    horror-film atmospherics, distorted breaks and brooding soundscapes.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Darkstep
   audio_examples: []
 - id: jump_up
@@ -88,13 +90,12 @@
   origin: UK
   parents:
   - drum_and_bass
-  description: >-
-    Jump-up drum and bass prioritises dancefloor energy with syncopated wobble
-    basslines, minimal pads and a playful, bouncy aesthetic designed for maximum
+  description: Jump-up drum and bass prioritises dancefloor energy with syncopated
+    wobble basslines, minimal pads and a playful, bouncy aesthetic designed for maximum
     crowd response.
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ""
+  wikidata_id: ''
   wikipedia_slug: Jump-up_(drum_and_bass)
   audio_examples: []

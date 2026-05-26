@@ -25,7 +25,8 @@
   year_start: 1980
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - downtempo
   description: ''
   key_artists: []
   key_labels: []
@@ -53,7 +54,8 @@
   year_start: 1992
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - downtempo
   description: ''
   key_artists: []
   key_labels: []
@@ -67,7 +69,8 @@
   year_start: 1994
   year_end: null
   origin: New York, US
-  parents: []
+  parents:
+  - electronic_music
   description: Illbient entstand in der New Yorker Underground-Szene um DJ Spooky
     als duestere Verschmelzung von Ambient, Dub und Hip-Hop. Langsame, desorientierte
     Beats, schwere Basslinien und surreale Sample-Collagen charakterisieren den Sound.
@@ -87,7 +90,9 @@
   year_start: 1993
   year_end: null
   origin: London, UK
-  parents: []
+  parents:
+  - electronic_dance_music
+  - electronica
   description: Broken Beat entstand in den Londoner Jazzclubs der 90er als Fusion
     aus Jazz, Soul, Funk und elektronischen Produktionstechniken. Unregelmaessige,
     synkopierte Rhythmen und reichhaltige Harmonik. Bugz in the Attic, 4Hero und Dego
@@ -112,6 +117,7 @@
   origin: UK/DE
   parents:
   - broken_beat
+  - electronica
   description: 'Nu Jazz verbindet akustische Jazz-Improvisation mit elektronischer
     Produktion: Loop-basierte Strukturen, DJs und Jazzmusiker auf derselben Buehne.
     Jazzanova, St Germain und Nils Petter Molvaer waren wegweisend.'
@@ -133,7 +139,8 @@
   year_start: 1993
   year_end: null
   origin: UK
-  parents: []
+  parents:
+  - electronica
   description: Folktronica verbindet akustische Folk-Instrumente - Akustikgitarre,
     Banjo, Cello - mit elektronischen Beats, Sampling und Synthesizern. Lemon Jelly,
     Mum und Four Tet praegten den zerbrechlichen, organischen Sound.
