@@ -39,6 +39,26 @@ export function computeLayout(data, svgWidth, svgHeight) {
     return { ...genre, tx, ty, width, height: NODE_HEIGHT };
   });
 
+  // Pre-distribute nodes sharing the same track+year bucket vertically
+  // so the force simulation starts without overlaps and doesn't need to drift horizontally.
+  const buckets = new Map();
+  nodes.forEach(n => {
+    const key = `${n.track}:${n.year_start}`;
+    if (!buckets.has(key)) buckets.set(key, []);
+    buckets.get(key).push(n);
+  });
+  buckets.forEach(bucket => {
+    if (bucket.length < 2) return;
+    bucket.sort((a, b) => a.name.localeCompare(b.name));
+    const step = NODE_HEIGHT + 4;
+    const half = (bucket.length - 1) / 2;
+    const maxOffset = (trackHeight / 2) - NODE_HEIGHT / 2 - 2;
+    bucket.forEach((n, i) => {
+      const raw = (i - half) * step;
+      n.ty += Math.max(-maxOffset, Math.min(maxOffset, raw));
+    });
+  });
+
   const nodeById = Object.fromEntries(nodes.map(n => [n.id, n]));
 
   const resolvedEdges = edges

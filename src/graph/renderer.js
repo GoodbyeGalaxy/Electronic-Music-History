@@ -92,9 +92,9 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   layout.nodes.forEach(d => { d.x = d.tx; d.y = d.ty; });
 
   const simulation = d3.forceSimulation(layout.nodes)
-    .force('x', d3.forceX(d => d.tx).strength(0.12))
+    .force('x', d3.forceX(d => d.tx).strength(0.45))
     .force('y', d3.forceY(d => d.ty).strength(0.9))
-    .force('collide', d3.forceCollide(d => d.width / 2 + 3).strength(0.9).iterations(3))
+    .force('collide', d3.forceCollide(d => d.height / 2 + 4).strength(0.9).iterations(4))
     .alphaDecay(0.015)
     .on('tick', ticked);
 
@@ -118,8 +118,10 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     })
     .on('end', (event, d) => {
       if (!event.active) simulation.alphaTarget(0);
+      d.x = d.tx;  // snap X back to year column immediately on release
       d.fx = null;
       d.fy = null;
+      simulation.alpha(0.3).restart();
     });
 
   nodeSel.call(drag);
