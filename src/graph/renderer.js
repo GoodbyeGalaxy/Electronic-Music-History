@@ -16,7 +16,7 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
 
   // Layout uses a wider internal canvas so nodes at similar years have room
   // to spread. Initial zoom is set to fit everything in the viewport.
-  const LAYOUT_SCALE = 3;
+  const LAYOUT_SCALE = 2;
   const layoutWidth = viewWidth * LAYOUT_SCALE;
   const layout = computeLayout(data, layoutWidth, viewHeight);
 
@@ -24,7 +24,7 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   layout.tracks.forEach(track => {
     const div = document.createElement('div');
     div.className = 'track-label';
-    div.style.height = `${layout.trackHeight}px`;
+    div.style.height = `${layout.trackHeights.get(track.id)}px`;
     div.style.color = track.color;
     div.textContent = track.label;
     labelsEl.appendChild(div);
@@ -46,12 +46,13 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   // Start zoomed out to show full layout width
   svg.call(zoomBehavior.transform, d3.zoomIdentity.scale(1 / LAYOUT_SCALE));
 
-  layout.tracks.forEach((_, i) => {
+  layout.tracks.forEach((track, i) => {
     if (i === 0) return;
+    const y = layout.trackTops.get(track.id);
     zoomGroup.append('line')
       .attr('class', 'track-separator')
-      .attr('x1', 0).attr('y1', i * layout.trackHeight)
-      .attr('x2', layoutWidth).attr('y2', i * layout.trackHeight);
+      .attr('x1', 0).attr('y1', y)
+      .attr('x2', layoutWidth).attr('y2', y);
   });
 
   const edgeGroup = zoomGroup.append('g').attr('class', 'edges');

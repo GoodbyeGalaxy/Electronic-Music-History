@@ -1,7 +1,8 @@
 import { YEAR_END } from '../graph/layout.js';
 
 /**
- * Creates track toggle badges and year range slider in toolbar.
+ * Creates track solo badges and year range slider in toolbar.
+ * Solo mode: click a badge to isolate that track; click again to show all.
  *
  * @param {HTMLElement} toolbarEl
  * @param {object[]}    tracks    - from genres.json
@@ -9,10 +10,12 @@ import { YEAR_END } from '../graph/layout.js';
  * @param {object}      renderer  - { filterTracks, filterYears }
  */
 export function createFilters(toolbarEl, tracks, genres, renderer) {
-  const activeTrackIds = new Set(tracks.map(t => t.id));
+  let soloTrackId = null;
+  const allTrackIds = tracks.map(t => t.id);
+  const badges = new Map();
 
   const badgeWrap = document.createElement('div');
-  badgeWrap.style.cssText = 'display:flex;gap:6px;align-items:center;margin-left:auto;';
+  badgeWrap.style.cssText = 'display:flex;gap:6px;align-items:center;margin-left:auto;flex-wrap:wrap;';
 
   tracks.forEach(track => {
     const badge = document.createElement('button');
@@ -20,15 +23,19 @@ export function createFilters(toolbarEl, tracks, genres, renderer) {
     badge.style.cssText = `background:${track.color}22;border-color:${track.color};color:${track.color};`;
     badge.textContent = track.label;
     badge.addEventListener('click', () => {
-      if (activeTrackIds.has(track.id)) {
-        activeTrackIds.delete(track.id);
-        badge.classList.remove('active');
+      if (soloTrackId === track.id) {
+        // De-solo: show all
+        soloTrackId = null;
+        badges.forEach(b => b.classList.add('active'));
+        renderer.filterTracks(null);
       } else {
-        activeTrackIds.add(track.id);
-        badge.classList.add('active');
+        // Solo this track
+        soloTrackId = track.id;
+        badges.forEach((b, id) => b.classList.toggle('active', id === track.id));
+        renderer.filterTracks([track.id]);
       }
-      renderer.filterTracks([...activeTrackIds]);
     });
+    badges.set(track.id, badge);
     badgeWrap.appendChild(badge);
   });
 
