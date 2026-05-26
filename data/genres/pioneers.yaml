@@ -52,7 +52,7 @@
   audio_examples: []
 - id: theremin
   name: Theremin
-  track: pioneers
+  track: electroacoustic
   year_start: 1920
   origin: Petrograd, RU
   parents: []
@@ -72,7 +72,7 @@
   audio_examples: []
 - id: ondes_martenot
   name: Ondes Martenot
-  track: pioneers
+  track: electroacoustic
   year_start: 1928
   origin: Paris, FR
   parents: []
@@ -92,7 +92,7 @@
   audio_examples: []
 - id: hammond_organ
   name: Hammond Organ
-  track: pioneers
+  track: electroacoustic
   year_start: 1935
   origin: Evanston, USA
   parents: []

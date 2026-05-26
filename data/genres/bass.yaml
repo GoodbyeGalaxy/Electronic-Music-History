@@ -117,7 +117,6 @@
   year_end: null
   origin: Luanda, AO
   parents:
-  - electronic_dance_music
   - house_music
   description: 'Kuduro entstand in den Musseques Luandas als angolisches Tanzgenre:
     schnelle, perkussive Beats, Zouk-Bass-Einfluesse und akrobatische Tanzbewegungen.
@@ -185,7 +184,7 @@
   year_end: null
   origin: Dar es Salaam, TZ
   parents:
-  - electronic_dance_music
+  - electronic_music
   description: 'Singeli ist ein hyperaktives tanzanisches Electronic-Genre aus den
     Ghettos Dar es Salaams: extrem schnelle Tempos (200+ BPM), repetitive melodische
     Loops und Vocals auf Swahili. MCs und DJs wie Beka Flavour und Country Boy praegten

@@ -7,7 +7,6 @@
   - house
   - industrial
   - electro_music
-  - electronic_dance_music
   - electronic_body_music
   description: 'Die Belleville Three (Juan Atkins, Derrick May, Kevin Saunderson)
     entwickelten Mitte der 1980er in Detroit einen Stil aus europaeischer Elektronik
@@ -236,7 +235,8 @@
   year_end: null
   origin: SE
   parents:
-  - electronic_dance_music
+  - techno
+  - house
   description: 'Future Rave verbindet melodischen Techno mit Rave-Energie und Trance-Elementen:
     epische Synthesizer-Boegen ueber treibenden Kicks. David Guetta und Morten praegten
     den Begriff 2019. Bewegt sich im Grenzbereich zwischen Mainstream-EDM und Underground-Rave.'

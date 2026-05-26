@@ -176,7 +176,6 @@
   year_end: null
   origin: ''
   parents:
-  - electronic_dance_music
   - house
   description: ''
   key_artists: []
@@ -301,7 +300,7 @@
   year_end: null
   origin: Monterrey, MX
   parents:
-  - electronic_dance_music
+  - house
   description: 'Tribal Guarachero entstand in Monterrey als mexikanische Fusion: rollende,
     perkussive Tribal-House-Loops treffen auf norteno-Einfluesse und auffaellige Basslines.
     DJ Blass und Toy Selectah praegten den Sound, der in der lateinamerikanischen
@@ -322,7 +321,7 @@
   year_end: null
   origin: Washington D.C., US
   parents:
-  - electronic_dance_music
+  - house
   description: 'Moombahton entstand 2009 durch Zufall: Dave Nada verlangsamte einen
     Afrojack-House-Track auf 108 BPM, wodurch der Reggaeton-Rhythmus hoerbar wurde.
     House-Struktur mit Reggaeton-Dembow-Pattern - das neue Genre verbreitete sich
