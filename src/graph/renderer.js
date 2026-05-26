@@ -14,17 +14,19 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   const viewWidth  = wrapper.clientWidth;
   const viewHeight = wrapper.clientHeight;
 
-  // Layout uses a wider internal canvas so nodes at similar years have room
-  // to spread. Initial zoom is set to fit everything in the viewport.
+  // Internal canvas is LAYOUT_SCALE× wider and taller than the viewport so
+  // nodes have room to spread in both axes. Initial zoom fits both axes exactly.
   const LAYOUT_SCALE = 2;
-  const layoutWidth = viewWidth * LAYOUT_SCALE;
-  const layout = computeLayout(data, layoutWidth, viewHeight);
+  const layoutWidth  = viewWidth  * LAYOUT_SCALE;
+  const layoutHeight = viewHeight * LAYOUT_SCALE;
+  const layout = computeLayout(data, layoutWidth, layoutHeight);
 
   while (labelsEl.firstChild) labelsEl.removeChild(labelsEl.firstChild);
   layout.tracks.forEach(track => {
     const div = document.createElement('div');
     div.className = 'track-label';
-    div.style.height = `${layout.trackHeights.get(track.id)}px`;
+    // Divide by LAYOUT_SCALE so labels match rendered (zoomed) track height
+    div.style.height = `${layout.trackHeights.get(track.id) / LAYOUT_SCALE}px`;
     div.style.color = track.color;
     div.textContent = track.label;
     labelsEl.appendChild(div);
@@ -43,8 +45,9 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     .on('zoom', e => zoomGroup.attr('transform', e.transform));
 
   svg.call(zoomBehavior);
-  // Start zoomed out to show full layout width
-  svg.call(zoomBehavior.transform, d3.zoomIdentity.scale(1 / LAYOUT_SCALE));
+  // Fit initial zoom so the full canvas (width × height) is visible
+  const zoomScale = Math.min(viewWidth / layoutWidth, viewHeight / layoutHeight);
+  svg.call(zoomBehavior.transform, d3.zoomIdentity.scale(zoomScale));
 
   layout.tracks.forEach((track, i) => {
     if (i === 0) return;
