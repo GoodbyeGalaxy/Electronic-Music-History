@@ -4,7 +4,10 @@
   year_start: 1955
   year_end: null
   origin: USA
-  parents: []
+  parents:
+  - gospel
+  - blues
+  - jazz
   description: Soul music emerged from the combination of gospel, rhythm and blues
     and jazz in African-American communities in the 1950s. Its emotional directness,
     expressive vocals and groove orientation directly spawned funk, disco and house
@@ -23,6 +26,7 @@
   origin: USA
   parents:
   - soul
+  - gospel
   description: Funk emphasises the downbeat, interlocking polyrhythmic percussion
     and bass guitar, and collective rhythmic groove over melody. Developed by James
     Brown, Sly Stone and others, it is a direct precursor to disco, hip-hop, house
@@ -83,6 +87,7 @@
   origin: San Francisco/London
   parents:
   - disco
+  - soul
   description: 'Hi-NRG entwickelte sich aus Disco in den fruehen 1980ern mit schnellerem
     Tempo (140-160 BPM), synthetischeren Klaengen und Fokus auf Gay Clubs. Bobby O
     und Pete Waterman (PWL) praegten den US- und UK-Stil.
@@ -107,6 +112,7 @@
   origin: Italy
   parents:
   - disco
+  - synth_pop
   description: 'Italienische Produzenten wie Giorgio Moroder entwickelten ab Ende
     der 1970er einen synthetischeren, melodischeren Disco-Stil. Charakter: Vocoder,
     Synthesizer-Melodien, oft englische Texte mit deutlichem Akzent.
@@ -130,7 +136,8 @@
   year_start: 1975
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - disco
   description: In music, the terms Afro/cosmic disco, the cosmic sound, free-style
     sound, and combinations thereof (Afro, cosmic Afro, Afro-cosmic, Afro-freestyle,
     etc., as well as Afro-funky and later Afro house) are used somewhat interchangeably
@@ -200,7 +207,8 @@
   year_start: 1978
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - disco
   description: 'Italo disco or Italodisco (variously capitalized, and sometimes hyphenated
     as Italo-disco) is a music genre which originated in Italy in the early 1980s.
     Italo disco evolved from the then-current post-disco dance music and synth-pop,

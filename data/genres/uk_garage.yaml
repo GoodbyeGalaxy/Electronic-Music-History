@@ -24,7 +24,8 @@
   year_start: 1999
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - uk_garage
   description: ''
   key_artists: []
   key_labels: []

@@ -114,7 +114,8 @@
   year_start: 1988
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - dark_ambient
   description: ''
   key_artists: []
   key_labels: []
@@ -188,6 +189,7 @@
   parents:
   - new_age
   - electronic_music
+  - ambient_music
   description: Space Music evoziert Weite, Schwerelosigkeit und kosmische Dimensionen
     durch lange Synthesizer-Boegen und modale Harmonik. Tangerine Dream und Klaus
     Schulze etablierten den Sound Ende der 60er. Direkter Einfluss auf Ambient.
@@ -212,6 +214,7 @@
   origin: UK
   parents:
   - dark_wave
+  - ambient_music
   description: Ethereal Wave verbindet Gothic-Elemente mit schwebenden Synthesizern,
     Reverb-getraenkten Vocals und traumhafter Atmosphaere. Cocteau Twins und Dead
     Can Dance praegten den Sound. Entstand im Umfeld des Post-Punk und Dark Wave.

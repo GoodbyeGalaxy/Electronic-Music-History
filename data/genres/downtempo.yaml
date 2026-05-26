@@ -29,6 +29,7 @@
   origin: ''
   parents:
   - downtempo
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -57,8 +58,9 @@
   year_end: null
   origin: ''
   parents:
-  - downtempo
   - dub
+  - downtempo
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -73,7 +75,9 @@
   year_end: null
   origin: New York, US
   parents:
+  - downtempo
   - electronic_music
+  - hip_hop
   description: Illbient entstand in der New Yorker Underground-Szene um DJ Spooky
     als duestere Verschmelzung von Ambient, Dub und Hip-Hop. Langsame, desorientierte
     Beats, schwere Basslinien und surreale Sample-Collagen charakterisieren den Sound.
@@ -95,7 +99,9 @@
   origin: London, UK
   parents:
   - electronic_dance_music
+  - downtempo
   - electronica
+  - jazz
   description: Broken Beat entstand in den Londoner Jazzclubs der 90er als Fusion
     aus Jazz, Soul, Funk und elektronischen Produktionstechniken. Unregelmaessige,
     synkopierte Rhythmen und reichhaltige Harmonik. Bugz in the Attic, 4Hero und Dego
@@ -146,6 +152,7 @@
   origin: UK
   parents:
   - electronica
+  - electronic_music
   description: Folktronica verbindet akustische Folk-Instrumente - Akustikgitarre,
     Banjo, Cello - mit elektronischen Beats, Sampling und Synthesizern. Lemon Jelly,
     Mum und Four Tet praegten den zerbrechlichen, organischen Sound.

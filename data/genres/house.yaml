@@ -141,6 +141,7 @@
   origin: ''
   parents:
   - house_music
+  - house
   description: ''
   key_artists: []
   key_labels: []
@@ -171,6 +172,7 @@
   origin: ''
   parents:
   - electronic_dance_music
+  - house
   description: ''
   key_artists: []
   key_labels: []
@@ -219,7 +221,8 @@
   year_start: 2006
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - house
   description: The Warehouse Project is a series of club nights organised in Greater
     Manchester, England, since 2006. Unlike most other clubs, it has a limited seasonal
     approach rather than running all year. Each year's season runs from September

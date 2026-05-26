@@ -89,7 +89,8 @@
   year_start: 1948
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - musique_concrete
   description: ''
   key_artists: []
   key_labels: []
@@ -132,7 +133,9 @@
   year_start: 1977
   year_end: 1983
   origin: New York, US
-  parents: []
+  parents:
+  - noise_music
+  - new_wave
   description: No Wave entstand Ende der 70er in New York als radikale Ablehnung von
     Punk und New Wave. Dissonante Gitarren, atonale Strukturen und performative Zerstoerung
     praegten Bands wie Teenage Jesus and the Jerks und DNA. Einfluss auf Industrial

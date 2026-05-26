@@ -5,10 +5,11 @@
   year_end: null
   origin: ''
   parents:
-  - jungle_music
   - breakbeat
+  - jungle_music
   - electronic_dance_music
   - hardcore
+  - techno
   description: ''
   key_artists: []
   key_labels: []

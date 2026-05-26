@@ -32,6 +32,8 @@
   origin: Bruessel, BE
   parents:
   - industrial
+  - electronic_body_music
+  - industrial_music
   description: 'Electronic Body Music entstand in Belgien mit Gruppen wie Front 242
     und Nitzer Ebb als tanzbare Hybride aus Industrial-Aggression und Synthesizer-Pop.
     Der Begriff wurde von Front 242 selbst gepragt.
@@ -58,7 +60,9 @@
   year_start: 1985
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - industrial_music
+  - electro_music
   description: ''
   key_artists: []
   key_labels: []
@@ -109,7 +113,9 @@
   year_start: 1985
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - industrial_music
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -123,7 +129,8 @@
   year_start: 1988
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - industrial_music
   description: ''
   key_artists: []
   key_labels: []
@@ -152,7 +159,8 @@
   year_start: 1976
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - industrial_music
   description: ''
   key_artists: []
   key_labels: []
@@ -166,7 +174,8 @@
   year_start: 1980
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - industrial_music
   description: ''
   key_artists: []
   key_labels: []
@@ -271,6 +280,7 @@
   origin: DE/UK
   parents:
   - noise_music
+  - industrial_music
   description: Power Noise kombiniert Industrial-Rhythmus mit Harsh-Noise-Texturen
     zu einer tanzbaren, brutalen Musik. Distorted, perkussive Patterns mit Rauschgeneratoren.
     Winterkaelte, Converter und Suicide Commando praegten den Post-EBM Sound.
@@ -295,8 +305,9 @@
   year_end: null
   origin: DE
   parents:
-  - industrial_metal
   - industrial_music
+  - industrial_metal
+  - electronic_body_music
   description: 'Neue Deutsche Haerte verbindet Industrial und Metal zu einem aggressiven,
     deutschsprachigen Genre: harte Gitarren, stampfende Beats, tiefe Vocals. Rammstein
     internationalisierten den Sound ab 1995. KMFDM und Oomph! gehoeren zu den Wegbereitern.'
@@ -321,6 +332,7 @@
   origin: DE/SE
   parents:
   - electronic_body_music
+  - synth_pop
   description: 'Futurepop fusioniert EBM-Energie mit melodischem Trance-Synthpop:
     aggressive Basslines, Dancefloor-Hooks und eingaengige Gesangsmelodien. VNV Nation
     und Assemblage 23 praegten den Sound im Goth-Club-Umfeld.'

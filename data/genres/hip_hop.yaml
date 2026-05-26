@@ -1,10 +1,27 @@
+- id: hip_hop
+  name: Hip-Hop
+  track: hip_hop
+  year_start: 1979
+  year_end: null
+  origin: New York
+  parents:
+  - funk
+  - soul
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q11401
+  wikipedia_slug: Hip-hop_music
+  audio_examples: []
 - id: cloud_rap
   name: Cloud rap
   track: hip_hop
   year_start: 2006
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -18,7 +35,9 @@
   year_start: 1997
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - miami_bass
+  - hip_hop
   description: Crunk is a subgenre of hip hop music that emerged in the early 1990s
     and gained mainstream success during the mid 2000s. Crunk is often up-tempo and
     one of Southern hip hop's more dance and club oriented subgenres. An archetypal
@@ -40,6 +59,7 @@
   origin: ''
   parents:
   - crunk
+  - hip_hop
   description: Crunkcore (also known as crunk punk, screamo crunk, and scrunk) is
     a musical fusion microgenre characterized by the combination of musical elements
     from crunk, post-hardcore (particularly pop screamo), heavy metal, pop, electronic
@@ -58,7 +78,8 @@
   year_start: 2018
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - hip_hop
   description: "Digicore (originally known as draincore) is an Internet microgenre\
     \ of hip-hop and electronic music that developed alongside hyperpop in the late\
     \ 2010s to early 2020s. The genre is typically made up of artists that share stylistic\
@@ -78,7 +99,9 @@
   year_start: 2010
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - crunk
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -94,6 +117,7 @@
   origin: ''
   parents:
   - electronic_music
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -109,6 +133,7 @@
   origin: ''
   parents:
   - electronic_dance_music
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -122,7 +147,8 @@
   year_start: 1979
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - hip_hop
   description: Le Phonographique (often called the Phono) was a gothic nightclub located
     underneath the Merrion Centre in Leeds. Founded under the name the WigWam club,
     the venue's 1979 rebranding led to it becoming a location frequented by members
@@ -142,7 +168,8 @@
   year_start: 2010
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -156,7 +183,8 @@
   year_start: 2007
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []

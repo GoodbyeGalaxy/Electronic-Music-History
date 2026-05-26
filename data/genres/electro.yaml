@@ -36,6 +36,8 @@
   origin: ''
   parents:
   - electronic_dance_music
+  - electro_music
+  - new_wave
   description: ''
   key_artists: []
   key_labels: []
@@ -158,7 +160,8 @@
   year_start: 1998
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - synth_pop
   description: "Electropop is a popular music fusion genre  combining elements of\
     \ the electronic and pop styles. \nElectropop has been described as a variant\
     \ of synth-pop with emphasis on a hard electronic sound. The genre was developed\
@@ -228,7 +231,9 @@
   year_start: 1976
   year_end: 1984
   origin: DE/AT
-  parents: []
+  parents:
+  - synth_pop
+  - new_wave
   description: 'Neue Deutsche Welle war die deutschsprachige Antwort auf New Wave:
     eingaengige Synthesizer-Popsongs auf Deutsch mit oft ironischem oder politischem
     Unterton. DAF, Spliff und Nena machten NDW zur Massenerscheinung.'
@@ -330,7 +335,9 @@
   year_start: 1982
   year_end: null
   origin: New York, US
-  parents: []
+  parents:
+  - electro_music
+  - hip_hop
   description: Freestyle entstand in der Latin-Community New Yorks als Fusion aus
     Electro, Hi-NRG und Latin Rhythmik. Synthesizer-Basslines, Drum-Machine-Beats
     und emotionale Vocals ueber unglueckliche Liebe. Shannon, TKA und Lisa Lisa waren

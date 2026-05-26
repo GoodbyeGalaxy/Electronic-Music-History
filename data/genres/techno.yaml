@@ -37,6 +37,7 @@
   origin: London/Berlin
   parents:
   - techno
+  - acid_house
   description: 'Acid Techno kombiniert den harten Groove des Detroit Techno mit dem
     verzerrenden TB-303-Bassklang des Acid House. In London und Berlin entstanden
     in den fruehen 1990ern pragende Tracks auf Labels wie Evolution und T&D.
@@ -86,6 +87,7 @@
   origin: Berlin, DE
   parents:
   - techno
+  - dub
   description: 'Basic Channel (Mark Ernestus und Moritz von Oswald) praegten in Berlin
     ab 1993 einen tiefen, dubbigen Techno-Stil mit Schallplattenecho und dichter Atmosphaere.
     Das Label Chain Reaction wurde zum Zentrum.
@@ -123,7 +125,8 @@
   year_start: 1992
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - techno
   description: ''
   key_artists: []
   key_labels: []
@@ -137,7 +140,8 @@
   year_start: 1995
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - techno
   description: ''
   key_artists: []
   key_labels: []
@@ -185,7 +189,8 @@
   year_start: 1984
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - techno
   description: Techno is a genre of electronic music which is generally produced for
     use in a continuous DJ set, with tempos being in the range from 120 to 150 beats
     per minute (bpm). The central rhythm is typically in common time (44) and often

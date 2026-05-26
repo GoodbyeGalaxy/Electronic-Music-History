@@ -75,7 +75,8 @@
   year_start: 1997
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - hardcore
   description: 'Frenchcore is a subgenre of hardcore techno. The style differs from
     other forms of hardcore in terms of a faster tempo, usually above 160–185 BPM,
     and a loud and distorted offbeat bassline.
@@ -118,7 +119,8 @@
   year_start: 1995
   year_end: null
   origin: ''
-  parents: []
+  parents:
+  - hardcore
   description: Masters of Hardcore is the name of a Dutch hardcore music label and
     of its related music festival events.
   key_artists: []
@@ -133,7 +135,8 @@
   year_start: 1995
   year_end: null
   origin: Valencia, ES
-  parents: []
+  parents:
+  - hardcore
   description: 'Makina ist Spaniens eigene Form des Hard Dance: schnelle, treibende
     Synthpop-Loops, eingaengige Melodien und Hardtrance-Kicks. Entstand in den Clubs
     Valencias in der zweiten Haelfte der 90er und wurde zum kulturellen Phaenomen
@@ -154,7 +157,8 @@
   year_start: 2001
   year_end: null
   origin: RU
-  parents: []
+  parents:
+  - hardcore
   description: 'Hardbass ist eine osteuropaeische Hard-Dance-Variante aus Russland:
     haemmernde Kicks, synkopierte Basslines und aggressive Synthesizer-Riffs. Entstand
     Anfang der 2000er, wurde 2010er durch Internet-Memes und Squat-Dance-Videos weltweit
@@ -173,7 +177,9 @@
   year_start: 1994
   year_end: null
   origin: UK
-  parents: []
+  parents:
+  - hardcore
+  - hi_nrg
   description: 'Hard NRG ist eine britische Form des Hard House und Hard Trance: treibende
     Basslines, harte Kicks und energiegeladene Melodien jenseits der 145 BPM. Entstand
     Mitte der 90er als Reaktion auf das langsame Tempo des Progressive House.'
@@ -193,7 +199,8 @@
   year_start: 1999
   year_end: null
   origin: IT
-  parents: []
+  parents:
+  - hardcore
   description: 'Lento Violento ist eine italienische Hardcore-Variante mit paradoxem
     Tempo: extrem langsam (50-80 BPM) aber maximal aggressiv. Die verzerrten, massiven
     Bassdrops erzeugen koerperliche Wucht. Entstanden in Sueditalien.'

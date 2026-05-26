@@ -22,6 +22,7 @@
   parents:
   - electronic_dance_music
   - electro_music
+  - hip_hop
   description: ''
   key_artists: []
   key_labels: []
@@ -54,6 +55,7 @@
   origin: Baltimore USA
   parents:
   - house
+  - breakbeat
   description: Baltimore club music is a frenetic, sample-heavy style that strips
     breakbeat to its bare elements — fast chopped vocals, stuttered loops and relentless
     energy — rooted in the Baltimore club scene.
@@ -71,6 +73,7 @@
   origin: Miami USA
   parents:
   - electro_music
+  - hip_hop
   description: Miami bass (booty bass) is a subgenre of hip-hop and electronic music
     characterised by heavy, distorted 808 bass drum beats, call-and-response vocals
     and a stripped-down party aesthetic.
@@ -132,7 +135,9 @@
   year_start: 2003
   year_end: null
   origin: London, UK
-  parents: []
+  parents:
+  - breakbeat
+  - new_wave
   description: 'New Rave war eine kurzlebige Indie-Rave-Bewegung aus London Mitte
     der 2000er: Indie-Rock mit bunten Neon-Outfits, Acid-House-Energie und verzerrten
     Gitarren. Klaxons popularisierten den Look und Sound.'
