@@ -19,10 +19,12 @@ async function init() {
   toolbarEl.appendChild(searchInput);
 
   let renderer;
-  const panel = createDetailPanel(panelEl, data.tracks, genreId => {
-    renderer.highlight(genreId);
+  const panel = createDetailPanel(panelEl, data.tracks, data.genres, data.edges, genreId => {
     const genre = data.genres.find(g => g.id === genreId);
-    if (genre) panel.open(genre);
+    if (!genre) return;
+    renderer.highlight(genreId);
+    renderer.scrollToNode(genreId);
+    panel.open(genre);
   });
 
   renderer = createRenderer(wrapper, labelsEl, data, genre => {
@@ -32,7 +34,8 @@ async function init() {
   });
 
   createSearch(searchInput, renderer.layout.nodes, renderer);
-  createFilters(toolbarEl, data.tracks, data.genres, renderer);
+  const filters = createFilters(toolbarEl, data.tracks, data.genres, renderer);
+  renderer.setBackgroundClickHandler(filters.deactivate);
 }
 
 init().catch(err => {

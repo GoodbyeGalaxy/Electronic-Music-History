@@ -17,6 +17,32 @@
   wikidata_id: ''
   wikipedia_slug: Reggae
   audio_examples: []
+- id: dancehall
+  name: Dancehall
+  track: bass
+  year_start: 1979
+  year_end: null
+  origin: Jamaica
+  parents:
+  - reggae
+  description: Dancehall emerged in Jamaica in the late 1970s as reggae shed its Rasta
+    roots in favour of digital riddims, deejay toasting and a harder, faster sound.
+    It is the direct ancestor of ragga, reggaeton and the MC culture that shaped grime
+    and UK hip hop.
+  key_artists:
+  - Yellowman
+  - Shabba Ranks
+  - Bounty Killer
+  - Beenie Man
+  key_labels:
+  - Greensleeves Records
+  - VP Records
+  subvariants:
+  - Ragga
+  - Lovers Rock
+  wikidata_id: Q131272
+  wikipedia_slug: Dancehall
+  audio_examples: []
 - id: dub
   name: Dub
   track: bass
@@ -62,6 +88,7 @@
   parents:
   - uk_garage
   - hip_hop
+  - dancehall
   description: Grime is a British genre blending UK garage's rhythms with jungle's
     energy and MCing culture. Its sparse, abrasive electronic productions support
     aggressive lyrical delivery, rooted in East London's pirate radio scene.
@@ -117,7 +144,7 @@
   year_end: null
   origin: Luanda, AO
   parents:
-  - house_music
+  - house
   description: 'Kuduro entstand in den Musseques Luandas als angolisches Tanzgenre:
     schnelle, perkussive Beats, Zouk-Bass-Einfluesse und akrobatische Tanzbewegungen.
     M.I.A. und Buraka Som Sistema machten Kuduro international bekannt.'
@@ -176,26 +203,4 @@
   subvariants: []
   wikidata_id: ''
   wikipedia_slug: Reggaestep
-  audio_examples: []
-- id: singeli
-  name: Singeli
-  track: bass
-  year_start: 2015
-  year_end: null
-  origin: Dar es Salaam, TZ
-  parents:
-  - electronic_music
-  description: 'Singeli ist ein hyperaktives tanzanisches Electronic-Genre aus den
-    Ghettos Dar es Salaams: extrem schnelle Tempos (200+ BPM), repetitive melodische
-    Loops und Vocals auf Swahili. MCs und DJs wie Beka Flavour und Country Boy praegten
-    den Sound.'
-  key_artists:
-  - Beka Flavour
-  - Country Boy
-  - Dully Sykes
-  key_labels:
-  - Nyege Nyege Tapes
-  subvariants: []
-  wikidata_id: ''
-  wikipedia_slug: Singeli
   audio_examples: []

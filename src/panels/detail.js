@@ -1,17 +1,12 @@
 import { createAudioPlayer } from './audio.js';
 
-/**
- * Manages the slide-in genre detail panel.
- * All DOM operations via createElement — no innerHTML.
- *
- * @param {HTMLElement} panelEl    - #detail-panel
- * @param {object[]}    tracks     - from genres.json
- * @param {Function}    onTagClick - callback(genreId)
- */
-export function createDetailPanel(panelEl, tracks, onTagClick) {
-  function trackColor(trackId) {
-    return tracks.find(t => t.id === trackId)?.color ?? '#888';
-  }
+export function createDetailPanel(panelEl, tracks, genres, edges, onTagClick) {
+  const genreById = Object.fromEntries(genres.map(g => [g.id, g]));
+  const trackById = Object.fromEntries(tracks.map(t => [t.id, t]));
+
+  function trackColor(trackId) { return trackById[trackId]?.color ?? '#888'; }
+  function genreName(id)       { return genreById[id]?.name ?? id; }
+  function genreColor(id)      { return trackColor(genreById[id]?.track); }
 
   function open(genre) {
     panelEl.querySelectorAll('.audio-player').forEach(el => el._pauseAudio?.());
@@ -21,7 +16,6 @@ export function createDetailPanel(panelEl, tracks, onTagClick) {
 
     const header = document.createElement('div');
     header.className = 'panel-header';
-
     const headerLeft = document.createElement('div');
 
     const badge = document.createElement('span');
@@ -62,17 +56,53 @@ export function createDetailPanel(panelEl, tracks, onTagClick) {
       }));
     }
 
-    if (genre.parents?.length) {
-      body.appendChild(makeSection('Herkunft', () =>
-        makeTagList(genre.parents, color, onTagClick)
-      ));
+    // Wurzeln: derives parents + influence sources
+    const influencedBy = edges.filter(e => e.type === 'influence' && e.to === genre.id);
+    if (genre.parents?.length || influencedBy.length) {
+      body.appendChild(makeSection('Wurzeln', () => {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'display:flex;flex-direction:column;gap:10px;';
+        if (genre.parents?.length) {
+          wrap.appendChild(makeSubGroup('Abstammung', genre.parents, genreColor, genreName, onTagClick));
+        }
+        if (influencedBy.length) {
+          wrap.appendChild(makeSubGroup('Einflüsse', influencedBy.map(e => e.from), genreColor, genreName, onTagClick));
+        }
+        return wrap;
+      }));
+    }
+
+    // Nachfolger: derives children + influence targets
+    const children = genres.filter(g => g.parents?.includes(genre.id)).map(g => g.id);
+    const influences = edges.filter(e => e.type === 'influence' && e.from === genre.id);
+    if (children.length || influences.length) {
+      body.appendChild(makeSection('Nachfolger', () => {
+        const wrap = document.createElement('div');
+        wrap.style.cssText = 'display:flex;flex-direction:column;gap:10px;';
+        if (children.length) {
+          wrap.appendChild(makeSubGroup('Abgeleitet', children, genreColor, genreName, onTagClick));
+        }
+        if (influences.length) {
+          wrap.appendChild(makeSubGroup('Beeinflusst', influences.map(e => e.to), genreColor, genreName, onTagClick));
+        }
+        return wrap;
+      }));
     }
 
     if (genre.key_artists?.length) {
-      body.appendChild(makeSection('Schluesselkuenstler:innen', () => {
+      body.appendChild(makeSection('Schlüsselkünstler:innen', () => {
         const p = document.createElement('p');
         p.style.cssText = 'color:#cdd9e5;font-size:11px;line-height:1.8;';
         p.textContent = genre.key_artists.join(' · ');
+        return p;
+      }));
+    }
+
+    if (genre.key_labels?.length) {
+      body.appendChild(makeSection('Labels', () => {
+        const p = document.createElement('p');
+        p.style.cssText = 'color:#888;font-size:11px;line-height:1.8;';
+        p.textContent = genre.key_labels.join(' · ');
         return p;
       }));
     }
@@ -96,21 +126,15 @@ export function createDetailPanel(panelEl, tracks, onTagClick) {
     }
 
     const links = [];
-    if (genre.wikipedia_slug) {
-      links.push({ label: '📖 Wikipedia', href: `https://en.wikipedia.org/wiki/${genre.wikipedia_slug}` });
-    }
-    if (genre.wikidata_id) {
-      links.push({ label: `🔗 Wikidata ${genre.wikidata_id}`, href: `https://www.wikidata.org/wiki/${genre.wikidata_id}` });
-    }
+    if (genre.wikipedia_slug) links.push({ label: '📖 Wikipedia', href: `https://en.wikipedia.org/wiki/${genre.wikipedia_slug}` });
+    if (genre.wikidata_id)    links.push({ label: `🔗 Wikidata ${genre.wikidata_id}`, href: `https://www.wikidata.org/wiki/${genre.wikidata_id}` });
     if (links.length) {
       body.appendChild(makeSection('Links', () => {
         const wrap = document.createElement('div');
         wrap.style.cssText = 'display:flex;gap:12px;';
         links.forEach(({ label, href }) => {
           const a = document.createElement('a');
-          a.href = href;
-          a.target = '_blank';
-          a.rel = 'noopener noreferrer';
+          a.href = href; a.target = '_blank'; a.rel = 'noopener noreferrer';
           a.style.cssText = 'color:#4fc3f7;font-size:11px;text-decoration:none;';
           a.textContent = label;
           wrap.appendChild(a);
@@ -142,16 +166,23 @@ function makeSection(label, contentFn) {
   return wrap;
 }
 
-function makeTagList(ids, color, onClick) {
+function makeSubGroup(label, ids, colorFn, nameFn, onClick) {
   const wrap = document.createElement('div');
-  wrap.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;';
+  const lbl = document.createElement('div');
+  lbl.style.cssText = 'color:#444;font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;';
+  lbl.textContent = label;
+  wrap.appendChild(lbl);
+  const tags = document.createElement('div');
+  tags.style.cssText = 'display:flex;flex-wrap:wrap;gap:6px;';
   ids.forEach(id => {
+    const c = colorFn(id);
     const tag = document.createElement('span');
     tag.className = 'tag';
-    tag.style.cssText = `background:${color}11;border-color:${color};color:${color};`;
-    tag.textContent = id;
+    tag.style.cssText = `background:${c}18;border-color:${c}88;color:${c};cursor:pointer;`;
+    tag.textContent = nameFn(id);
     tag.addEventListener('click', () => onClick(id));
-    wrap.appendChild(tag);
+    tags.appendChild(tag);
   });
+  wrap.appendChild(tags);
   return wrap;
 }

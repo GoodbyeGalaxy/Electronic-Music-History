@@ -1,23 +1,6 @@
-- id: acid_house
-  name: Acid House
-  track: acid
-  year_start: 1985
-  year_end: null
-  origin: Chicago
-  parents:
-  - house
-  description: Acid house was born in Chicago when producers began manipulating the
-    Roland TB-303 bass synthesiser to create squelching, resonant basslines. It launched
-    the UK rave scene and spawned multiple subgenres.
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q341364
-  wikipedia_slug: Acid_house
-  audio_examples: []
 - id: acid_trance
   name: Acid Trance
-  track: acid
+  track: progressive
   year_start: 1992
   year_end: null
   origin: Germany
@@ -35,7 +18,7 @@
   audio_examples: []
 - id: acid_breaks
   name: Acid Breaks
-  track: acid
+  track: breakbeat
   year_start: 1993
   year_end: null
   origin: UK

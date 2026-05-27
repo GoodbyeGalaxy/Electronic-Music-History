@@ -1,35 +1,9 @@
-- id: ambient
-  name: Ambient
-  track: ambient
-  year_start: 1978
-  origin: London, UK
-  parents:
-  - tape_music
-  description: 'Brian Eno pragte 1978 mit Ambient 1: Music for Airports sowohl den
-    Begriff als auch das Genre. Charakteristisch sind langsame Entwicklungen, Atmosphaere
-    und bewusste Indifferenz gegenueber aktiver Aufmerksamkeit.
-
-    '
-  key_artists:
-  - Brian Eno
-  - Harold Budd
-  - William Basinski
-  key_labels:
-  - EG Records
-  - Opal
-  subvariants:
-  - Ambient Techno
-  - Ambient House
-  wikidata_id: Q205718
-  wikipedia_slug: Ambient_music
-  audio_examples: []
 - id: dark_ambient
   name: Dark Ambient
   track: ambient
   year_start: 1989
   origin: Europe
   parents:
-  - ambient
   - ambient_music
   description: 'Dark Ambient entstand aus der Schnittmenge von Ambient und Industrial
     und zeichnet sich durch duestere, bedrohliche oder atmosphaerisch dichte Klangwelten
@@ -57,6 +31,7 @@
   origin: New York, USA
   parents:
   - tape_music
+  - ambient_music
   description: 'Aus La Monte Youngs minimalistischer Praxis der 1960er entstanden,
     basiert Drone auf lang gehaltenen Toenen oder Klangmassen. Terry Riley, Tony Conrad
     und spaeter Sunn O))) gehoeren zu den wichtigsten Vertretern.
@@ -76,20 +51,30 @@
   wikipedia_slug: Drone_music
   audio_examples: []
 - id: ambient_music
-  name: Ambient music
+  name: Ambient
   track: ambient
   year_start: 1967
   year_end: null
   origin: ''
   parents:
   - electronic_music
-  - chill_out_music
-  - downtempo
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q193207
+  - tape_music
+  description: 'Brian Eno pragte 1978 mit Ambient 1: Music for Airports sowohl den
+    Begriff als auch das Genre. Charakteristisch sind langsame Entwicklungen, Atmosphaere
+    und bewusste Indifferenz gegenueber aktiver Aufmerksamkeit.
+
+    '
+  key_artists:
+  - Brian Eno
+  - Harold Budd
+  - William Basinski
+  key_labels:
+  - EG Records
+  - Opal
+  subvariants:
+  - Ambient Techno
+  - Ambient House
+  wikidata_id: Q205718
   wikipedia_slug: Ambient_music
   audio_examples: []
 - id: ambient_techno
@@ -108,21 +93,6 @@
   wikidata_id: Q9149801
   wikipedia_slug: Ambient_techno
   audio_examples: []
-- id: dark_ambient_2
-  name: Dark ambient
-  track: ambient
-  year_start: 1988
-  year_end: null
-  origin: ''
-  parents:
-  - dark_ambient
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q756956
-  wikipedia_slug: Dark_ambient
-  audio_examples: []
 - id: chill_out_music
   name: Chill-out music
   track: ambient
@@ -137,21 +107,6 @@
   subvariants: []
   wikidata_id: Q757143
   wikipedia_slug: Chill-out_music
-  audio_examples: []
-- id: drone_music
-  name: Drone music
-  track: ambient
-  year_start: 1958
-  year_end: null
-  origin: ''
-  parents:
-  - ambient_music
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q650316
-  wikipedia_slug: Drone_music
   audio_examples: []
 - id: new_age
   name: New Age

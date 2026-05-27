@@ -5,7 +5,7 @@
   origin: Detroit, USA
   parents:
   - house
-  - industrial
+  - industrial_music
   - electro_music
   - electronic_body_music
   description: 'Die Belleville Three (Juan Atkins, Derrick May, Kevin Saunderson)
@@ -157,6 +157,7 @@
   origin: ''
   parents:
   - techno
+  - industrial_music
   description: Industrial techno is a subgenre of techno and industrial dance music
     that originated in the 1990s. Characteristically, it incorporates influences from
     the bleak, noisy sound and aesthetics of early industrial music acts, particularly

@@ -174,3 +174,106 @@
   wikidata_id: ''
   wikipedia_slug: Folktronica
   audio_examples: []
+- id: acid_jazz
+  name: Acid Jazz
+  track: downtempo
+  year_start: 1987
+  year_end: null
+  origin: London, UK
+  parents:
+  - jazz
+  - funk
+  - soul
+  - hip_hop
+  description: Acid Jazz entstand in Londons Rare-Groove-Szene der späten 1980er, als
+    DJs obskure Jazz-Funk-Platten in Clubs spielten und Bands begannen, diese Ästhetik
+    live umzusetzen. Der Sound verbindet Funk-Basslines, Soul-Gesang und Hip-Hop-Sampling
+    mit jazzig-improvisierten Bläsersätzen und tanzbaren Grooves. Jamiroquai, The Brand
+    New Heavies und Us3 prägten das Genre, bevor es in den späten 1990ern von elektronischer
+    Clubmusik verdrängt wurde.
+  key_artists:
+  - Jamiroquai
+  - The Brand New Heavies
+  - Us3
+  - Guru
+  - Incognito
+  key_labels:
+  - Acid Jazz Records
+  - Talkin' Loud
+  subvariants: []
+  wikidata_id: Q221772
+  wikipedia_slug: Acid_jazz
+  audio_examples: []
+- id: chill_out
+  name: Chill-out
+  track: downtempo
+  year_start: 1989
+  year_end: null
+  origin: London, UK
+  parents:
+  - ambient_house
+  - downtempo
+  description: Chill-out entstand 1989 im Londoner Club Heaven, als DJs wie The Orb
+    langsame Ambient-Dance-Musik mit lush Sampling und reduzierten Beats entwickelten.
+    Der Sound verbindet elektronische Produktion mit akustischen Elementen zu meditativen,
+    atmosphärischen Klanglandschaften — Vorläufer der Ibiza-Lounge-Kultur und des modernen
+    Ambient Pop.
+  key_artists:
+  - The Orb
+  - The KLF
+  - Café del Mar DJs
+  key_labels:
+  - Big Life
+  - Inter Modo
+  subvariants: []
+  wikidata_id: Q757143
+  wikipedia_slug: Chill-out_music
+  audio_examples: []
+- id: chillwave
+  name: Chillwave
+  track: downtempo
+  year_start: 2009
+  year_end: null
+  origin: USA
+  parents:
+  - lo_fi_music
+  - synth_pop
+  - electronica
+  description: Chillwave entstand Ende der 2000er als verträumter Lo-Fi-Sound mit
+    dickem Reverb, Vintage-Synthesizern und nostalgischen 80er-Referenzen. Washed Out,
+    Neon Indian und Toro y Moi prägten den eskapistischen, introspektiven Sound, der
+    DIY-Bedroom-Produktion mit elektronischer Ästhetik verband.
+  key_artists:
+  - Washed Out
+  - Neon Indian
+  - Toro y Moi
+  - Tycho
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q2626684
+  wikipedia_slug: Chillwave
+  audio_examples: []
+- id: vaporwave
+  name: Vaporwave
+  track: downtempo
+  year_start: 2010
+  year_end: null
+  origin: Internet
+  parents:
+  - chillwave
+  - lo_fi_music
+  - electronica
+  description: Vaporwave kristallisierte sich Anfang der 2010er als Internet-natives
+    Genre heraus, das Samples aus Corporate- und Lounge-Musik der 80er und 90er verlangsamt,
+    mit starkem Reverb belegt und neu kontextualisiert. Der surreale Klang verbindet
+    Konsumkritik mit nostalgischer Ästhetik und wurde zu einer der prägendsten Mikrogenres
+    der digitalen Musikkultur.
+  key_artists:
+  - Macintosh Plus
+  - James Ferraro
+  - 猫 シ Corp.
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q15733887
+  wikipedia_slug: Vaporwave
+  audio_examples: []

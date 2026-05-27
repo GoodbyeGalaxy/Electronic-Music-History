@@ -24,15 +24,14 @@ export function createFilters(toolbarEl, tracks, genres, renderer) {
     badge.textContent = track.label;
     badge.addEventListener('click', () => {
       if (soloTrackId === track.id) {
-        // De-solo: show all
         soloTrackId = null;
         badges.forEach(b => b.classList.add('active'));
         renderer.filterTracks(null);
       } else {
-        // Solo this track
         soloTrackId = track.id;
         badges.forEach((b, id) => b.classList.toggle('active', id === track.id));
         renderer.filterTracks([track.id]);
+        renderer.focusTrack(track.id);
       }
     });
     badges.set(track.id, badge);
@@ -68,4 +67,13 @@ export function createFilters(toolbarEl, tracks, genres, renderer) {
   sliderWrap.appendChild(slider);
   toolbarEl.appendChild(sliderWrap);
   toolbarEl.appendChild(badgeWrap);
+
+  function deactivate() {
+    if (!soloTrackId) return;
+    soloTrackId = null;
+    badges.forEach(b => b.classList.add('active'));
+    renderer.filterTracks(null);
+  }
+
+  return { deactivate };
 }

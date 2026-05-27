@@ -27,7 +27,7 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
+  - house
   description: Funkot (an abbreviation from Funky Kota) is an electronic dance music
     genre from Indonesia that emerged in the 1990s. Funkot is a mix of House music
     with a tempo of 160 to 220 bpm (beats per minute). Many other names exist for
@@ -55,22 +55,6 @@
   wikidata_id: Q1460303
   wikipedia_slug: Funkstep
   audio_examples: []
-- id: funk
-  name: Funk
-  track: urban
-  year_start: 1965
-  year_end: null
-  origin: ''
-  parents:
-  - soul
-  - gospel
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q164444
-  wikipedia_slug: Funk
-  audio_examples: []
 - id: uk_funky
   name: UK funky
   track: urban
@@ -86,4 +70,30 @@
   subvariants: []
   wikidata_id: Q9364028
   wikipedia_slug: UK_funky
+  audio_examples: []
+- id: bhangra
+  name: Bhangra
+  track: urban
+  year_start: 1990
+  year_end: null
+  origin: UK / Punjab
+  parents:
+  - house
+  - hip_hop
+  description: Bhangra-Fusion entstand Anfang der 1990er in der britisch-südasiatischen
+    Diaspora, als traditionelle Punjabi-Instrumente (Dhol, Tumbi) mit House-Beats,
+    Hip-Hop-Sampling und Synthesizern kombiniert wurden. Produzenten wie Bally Sagoo
+    und Panjabi MC machten den Sound international bekannt und prägten einen eigenständigen
+    Crossover zwischen südasiatischer Musiktradition und westlicher Clubkultur.
+  key_artists:
+  - Panjabi MC
+  - Bally Sagoo
+  - Talvin Singh
+  - Apache Indian
+  key_labels:
+  - Multitone Records
+  - Oriental Star Agencies
+  subvariants: []
+  wikidata_id: Q190257
+  wikipedia_slug: Bhangra_(music)
   audio_examples: []

@@ -1,7 +1,79 @@
-- id: industrial
+- id: electro_industrial
+  name: Electro-industrial
+  track: industrial
+  subgroup: ebm
+  subgroup_order: 1
+  year_start: 1985
+  year_end: null
+  origin: ''
+  parents:
+  - industrial_music
+  - electro_music
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q1403744
+  wikipedia_slug: Electro-industrial
+  audio_examples: []
+- id: electronic_body_music
+  name: Electronic Body Music
+  track: industrial
+  subgroup: ebm
+  subgroup_order: 1
+  year_start: 1981
+  origin: Bruessel, BE
+  parents:
+  - industrial_music
+  - post_punk
+  - synth_pop
+  description: 'Electronic Body Music (EBM) entstand Anfang der 1980er in Westeuropa,
+    vor allem in Belgien. Tanzbare Hybride aus Industrial-Aggression und Synthesizer-Pop:
+    sequenzierte Basslinien, programmierte Rhythmen und kommandierende Vocals mit konfrontativen
+    Themen. Front 242, Nitzer Ebb und DAF praegten den Sound; den Begriff EBM praegte
+    Front 242 selbst.
+
+    '
+  key_artists:
+  - Front 242
+  - Nitzer Ebb
+  - Skinny Puppy
+  - DAF
+  key_labels:
+  - Play It Again Sam
+  - Wax Trax!
+  subvariants:
+  - Aggrotech
+  - Futurepop
+  - Dark Electro
+  wikidata_id: Q578643
+  wikipedia_slug: Electronic_body_music
+  audio_examples: []
+- id: industrial_hip_hop
+  name: Industrial hip-hop
+  track: industrial
+  subgroup: industrial
+  subgroup_order: 0
+  year_start: 1985
+  year_end: null
+  origin: ''
+  parents:
+  - industrial_music
+  - hip_hop
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q2004156
+  wikipedia_slug: Industrial_hip-hop
+  audio_examples: []
+- id: industrial_music
   name: Industrial
   track: industrial
-  year_start: 1977
+  subgroup: industrial
+  subgroup_order: 0
+  year_start: 1975
+  year_end: null
   origin: London, UK
   parents:
   - tape_music
@@ -21,146 +93,21 @@
   subvariants:
   - Power Electronics
   - Noise
-  - Post-Industrial
   wikidata_id: Q185816
-  wikipedia_slug: Industrial_music
-  audio_examples: []
-- id: ebm
-  name: EBM
-  track: industrial
-  year_start: 1981
-  origin: Bruessel, BE
-  parents:
-  - industrial
-  - electronic_body_music
-  - industrial_music
-  description: 'Electronic Body Music entstand in Belgien mit Gruppen wie Front 242
-    und Nitzer Ebb als tanzbare Hybride aus Industrial-Aggression und Synthesizer-Pop.
-    Der Begriff wurde von Front 242 selbst gepragt.
-
-    '
-  key_artists:
-  - Front 242
-  - Nitzer Ebb
-  - Skinny Puppy
-  - DAF
-  key_labels:
-  - Play It Again Sam
-  - Wax Trax!
-  subvariants:
-  - Aggrotech
-  - Futurepop
-  - Dark Electro
-  wikidata_id: Q578643
-  wikipedia_slug: Electronic_body_music
-  audio_examples: []
-- id: electro_industrial
-  name: Electro-industrial
-  track: industrial
-  year_start: 1985
-  year_end: null
-  origin: ''
-  parents:
-  - industrial_music
-  - electro_music
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q1403744
-  wikipedia_slug: Electro-industrial
-  audio_examples: []
-- id: electronic_body_music
-  name: Electronic body music
-  track: industrial
-  year_start: 1982
-  year_end: null
-  origin: ''
-  parents:
-  - industrial_music
-  description: 'Electronic body music (EBM) is a genre of electronic music that combines
-    elements of industrial music and synth-punk with elements of dance music. It developed
-    in the early 1980s in Western Europe, as an outgrowth of both the punk and the
-    industrial music cultures. It combines sequenced repetitive basslines, programmed
-    disco rhythms, and mostly undistorted vocals and command-like shouts with confrontational
-    or provocative themes.
-
-    The evolution of the genre reflected "a general shift towards more'
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q372103
-  wikipedia_slug: Electronic_body_music
-  audio_examples: []
-- id: industrial_records
-  name: Industrial Records
-  track: industrial
-  year_start: 1976
-  year_end: null
-  origin: ''
-  parents:
-  - industrial_music
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q682784
-  wikipedia_slug: Industrial_Records
-  audio_examples: []
-- id: industrial_hip_hop
-  name: Industrial hip-hop
-  track: industrial
-  year_start: 1985
-  year_end: null
-  origin: ''
-  parents:
-  - industrial_music
-  - hip_hop
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q2004156
-  wikipedia_slug: Industrial_hip-hop
-  audio_examples: []
-- id: industrial_metal
-  name: Industrial metal
-  track: industrial
-  year_start: 1988
-  year_end: null
-  origin: ''
-  parents:
-  - industrial_music
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q208494
-  wikipedia_slug: Industrial_metal
-  audio_examples: []
-- id: industrial_music
-  name: Industrial music
-  track: industrial
-  year_start: 1975
-  year_end: null
-  origin: ''
-  parents:
-  - noise_music
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q487965
   wikipedia_slug: Industrial_music
   audio_examples: []
 - id: industrial_rock
   name: Industrial rock
   track: industrial
+  subgroup: industrial
+  subgroup_order: 0
   year_start: 1976
   year_end: null
   origin: ''
   parents:
   - industrial_music
+  - punk
+  - heavy_metal
   description: ''
   key_artists: []
   key_labels: []
@@ -171,6 +118,8 @@
 - id: martial_industrial
   name: Martial industrial
   track: industrial
+  subgroup: industrial
+  subgroup_order: 0
   year_start: 1980
   year_end: null
   origin: ''
@@ -186,6 +135,8 @@
 - id: power_electronics_music_genre
   name: Power electronics (music genre)
   track: industrial
+  subgroup: industrial
+  subgroup_order: 0
   year_start: 1980
   year_end: null
   origin: ''
@@ -201,12 +152,14 @@
 - id: cold_wave
   name: Cold Wave
   track: industrial
+  subgroup: gothic
+  subgroup_order: 2
   year_start: 1977
   year_end: null
   origin: FR/BE
   parents:
+  - post_punk
   - new_wave
-  - industrial_music
   description: Cold Wave entstand in Frankreich und Belgien Ende der 70er als eiskalter
     Post-Punk mit Synthesizern statt Gitarren. Dunkle, minimalistische Arrangements
     und Vocals mit nihilistischer Distanz. Trisomie 21, Kas Product und Asylum Party
@@ -226,13 +179,14 @@
 - id: minimal_wave
   name: Minimal Wave
   track: industrial
+  subgroup: gothic
+  subgroup_order: 2
   year_start: 1977
   year_end: null
   origin: US/EU
   parents:
-  - electronic_music
   - cold_wave
-  - industrial_music
+  - synth_pop
   description: 'Minimal Wave ist eine Retrobezeichnung fuer experimentellen Synthesizer-Undergroundpop
     der spaeten 70er bis 80er: Lo-fi, karg, selbstproduziert. Das Label Minimal Wave
     Records (Chloe Lula, 2005) machte das Genre retrospektiv bekannt.'
@@ -249,12 +203,14 @@
 - id: dark_wave
   name: Dark Wave
   track: industrial
+  subgroup: gothic
+  subgroup_order: 2
   year_start: 1980
   year_end: null
   origin: UK/US
   parents:
+  - gothic
   - cold_wave
-  - new_wave
   description: Dark Wave ist ein breiter Begriff fuer duestere, introspektive Elektronik
     im Schnittfeld von Gothic, Post-Punk und Cold Wave. Sisters of Mercy, Clan of
     Xymox und Faith and the Muse stehen fuer schwarze Aesthetik, schwere Synthesizer
@@ -272,10 +228,57 @@
   wikidata_id: ''
   wikipedia_slug: Dark_wave
   audio_examples: []
+- id: gothic
+  name: Gothic
+  track: industrial
+  subgroup: gothic
+  subgroup_order: 2
+  year_start: 1982
+  year_end: null
+  origin: London, UK
+  parents:
+  - post_punk
+  description: ''
+  key_artists: []
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q13646229
+  wikipedia_slug: Gothic_music
+  audio_examples: []
+- id: gothic_rock
+  name: Gothic Rock
+  track: industrial
+  subgroup: gothic
+  subgroup_order: 2
+  year_start: 1979
+  year_end: null
+  origin: UK
+  parents:
+  - gothic
+  description: Gothic rock grew directly out of post-punk, replacing its angular energy
+    with dark romanticism, reverb-drenched guitars and theatrical vocals. Bauhaus,
+    Siouxsie and the Banshees, and The Cure defined the sound that seeded dark wave,
+    ethereal wave and the entire goth subculture.
+  key_artists:
+  - Bauhaus
+  - Siouxsie and the Banshees
+  - The Cure
+  - The Sisters of Mercy
+  key_labels:
+  - 4AD
+  - Beggars Banquet
+  subvariants:
+  - Goth
+  - Deathrock
+  wikidata_id: Q181108
+  wikipedia_slug: Gothic_rock
+  audio_examples: []
 - id: power_noise
   name: Power Noise
   track: industrial
-  year_start: 1981
+  subgroup: ebm
+  subgroup_order: 1
+  year_start: 1992
   year_end: null
   origin: DE/UK
   parents:
@@ -301,6 +304,8 @@
 - id: neue_deutsche_haerte
   name: Neue Deutsche Härte
   track: industrial
+  subgroup: ebm
+  subgroup_order: 1
   year_start: 1990
   year_end: null
   origin: DE
@@ -327,6 +332,8 @@
 - id: futurepop
   name: Futurepop
   track: industrial
+  subgroup: ebm
+  subgroup_order: 1
   year_start: 1993
   year_end: null
   origin: DE/SE
@@ -351,6 +358,8 @@
 - id: new_beat
   name: New Beat
   track: industrial
+  subgroup: ebm
+  subgroup_order: 1
   year_start: 1987
   year_end: 1992
   origin: BE
@@ -371,4 +380,34 @@
   subvariants: []
   wikidata_id: ''
   wikipedia_slug: New_beat
+  audio_examples: []
+- id: neofolk
+  name: Neofolk
+  track: industrial
+  subgroup: gothic
+  subgroup_order: 2
+  year_start: 1981
+  origin: England, UK
+  parents:
+  - post_punk
+  - industrial_music
+  - dark_wave
+  - dark_ambient
+  description: 'Neofolk entstand Anfang der 1980er in England aus dem Post-Punk- und
+    Industrial-Underground. Akustische Instrumente, Folk-Melodik und dunkle, apokalyptische
+    Texte verschmelzen mit experimenteller Produktion. Death in June, Current 93 und
+    Sol Invictus prägten das Genre, das auch als Apocalyptic Folk bekannt wurde.'
+  key_artists:
+  - Death in June
+  - Current 93
+  - Sol Invictus
+  - Fire + Ice
+  key_labels:
+  - Durtro
+  - World Serpent
+  subvariants:
+  - Apocalyptic Folk
+  - Dark Folk
+  wikidata_id: Q775614
+  wikipedia_slug: Neofolk
   audio_examples: []

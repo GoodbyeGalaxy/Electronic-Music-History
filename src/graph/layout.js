@@ -3,7 +3,7 @@ export const YEAR_END = 2025;
 const NODE_HEIGHT = 36;
 const CHAR_WIDTH = 7;
 const NODE_PADDING_X = 20;
-const MIN_TRACK_H = 80;
+const MIN_TRACK_H = 150;
 
 /**
  * Computes target positions (tx, ty) for each node and resolves edge references.
@@ -94,26 +94,92 @@ export function computeLayout(data, svgWidth, svgHeight) {
     return top + h / 2;
   };
 
+  const childCount = new Map();
+  genres.forEach(g => g.parents.forEach(pid => {
+    childCount.set(pid, (childCount.get(pid) ?? 0) + 1);
+  }));
+
   const nodes = genres.map(genre => {
     const width = Math.max(genre.name.length * CHAR_WIDTH + NODE_PADDING_X * 2, 60);
     const tx = xScale(genre.year_start);
     const ty = yScale(genre.track);
-    return { ...genre, tx, ty, width, height: NODE_HEIGHT };
+    return { ...genre, tx, ty, width, height: NODE_HEIGHT, childCount: childCount.get(genre.id) ?? 0 };
   });
 
-  // Pre-distribute nodes sharing the same track+year bucket vertically
+  // --- Subgroup bands: vertical sub-lanes within a track ---
+  // Collect unique subgroups per track, ordered by earliest member year_start.
+  // Collect subgroups per track; sort by explicit subgroup_order if present,
+  // else fall back to min year_start.
+  const trackSgMeta = new Map(); // "trackId\0subgroup" → { order, year }
+  nodes.forEach(n => {
+    if (!n.subgroup) return;
+    const key = `${n.track}\0${n.subgroup}`;
+    const cur = trackSgMeta.get(key) ?? { order: Infinity, year: Infinity };
+    if (n.subgroup_order != null) cur.order = Math.min(cur.order, n.subgroup_order);
+    cur.year = Math.min(cur.year, n.year_start);
+    trackSgMeta.set(key, cur);
+  });
+  const trackSubgroupOrder = new Map();
+  trackSgMeta.forEach(({ order, year }, key) => {
+    const sep = key.indexOf('\0');
+    const trackId = key.slice(0, sep);
+    const subgroup = key.slice(sep + 1);
+    if (!trackSubgroupOrder.has(trackId)) trackSubgroupOrder.set(trackId, []);
+    trackSubgroupOrder.get(trackId).push({ subgroup, sortKey: isFinite(order) ? order : year });
+  });
+  trackSubgroupOrder.forEach((sgs, trackId) => {
+    sgs.sort((a, b) => a.sortKey - b.sortKey);
+    trackSubgroupOrder.set(trackId, sgs.map(s => s.subgroup));
+  });
+
+  // Override ty to subgroup band centre; store hard band boundaries.
+  nodes.forEach(n => {
+    const order = trackSubgroupOrder.get(n.track);
+    if (!order || !n.subgroup) return;
+    const idx = order.indexOf(n.subgroup);
+    const numBands = order.length;
+    const top = trackTops.get(n.track);
+    const h = trackHeights.get(n.track);
+    const bandH = h / numBands;
+    n.ty = top + bandH * idx + bandH / 2;
+    n._bandH = bandH;
+    n._bandTop = top + bandH * idx;
+    n._bandBottom = n._bandTop + bandH;
+    n._subgroupIdx = idx;
+    n._numSubgroups = numBands;
+  });
+
+  // Subgrouped nodes: small year-based seed offset to break symmetry so the
+  // simulation can resolve collisions. Step is intentionally small — the
+  // simulation does the real spreading via collision + weak forceY.
+  const sgBuckets = new Map();
+  nodes.forEach(n => {
+    if (!n.subgroup) return;
+    const key = `${n.track}\0${n.subgroup}`;
+    if (!sgBuckets.has(key)) sgBuckets.set(key, []);
+    sgBuckets.get(key).push(n);
+  });
+  sgBuckets.forEach(bucket => {
+    bucket.sort((a, b) => a.year_start - b.year_start || a.name.localeCompare(b.name));
+    const half = (bucket.length - 1) / 2;
+    bucket.forEach((n, i) => { n.ty += (i - half) * 12; });
+  });
+
+  // Non-subgrouped nodes: full year-window bucket distribution as before.
   const buckets = new Map();
   nodes.forEach(n => {
-    const key = `${n.track}:${n.year_start}`;
+    if (n.subgroup) return;
+    const key = `${n.track}\0${Math.floor(n.year_start / 5) * 5}`;
     if (!buckets.has(key)) buckets.set(key, []);
     buckets.get(key).push(n);
   });
   buckets.forEach(bucket => {
     if (bucket.length < 2) return;
-    bucket.sort((a, b) => a.name.localeCompare(b.name));
-    const step = NODE_HEIGHT + 4;
+    bucket.sort((a, b) => a.year_start - b.year_start || a.name.localeCompare(b.name));
+    const step = NODE_HEIGHT + 40;
     const half = (bucket.length - 1) / 2;
-    const trackH = trackHeights.get(bucket[0].track) ?? MIN_TRACK_H;
+    const ref = bucket[0];
+    const trackH = trackHeights.get(ref.track) ?? MIN_TRACK_H;
     const maxOffset = trackH / 2 - NODE_HEIGHT / 2 - 2;
     bucket.forEach((n, i) => {
       const raw = (i - half) * step;

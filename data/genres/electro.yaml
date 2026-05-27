@@ -8,6 +8,7 @@
   - electronic_music
   - hip_hop
   - funk
+  - new_wave
   description: ''
   key_artists: []
   key_labels: []
@@ -70,12 +71,13 @@
   audio_examples: []
 - id: electronic_rock
   name: Electronic rock
-  track: electro
+  track: rock
   year_start: 1965
   year_end: null
   origin: ''
   parents:
   - electronic_music
+  - rock
   description: ''
   key_artists: []
   key_labels: []
@@ -85,12 +87,14 @@
   audio_examples: []
 - id: electronica
   name: Electronica
-  track: electro
+  track: downtempo
   year_start: 1991
   year_end: null
   origin: ''
   parents:
   - electronic_music
+  - idm
+  - ambient_techno
   description: Electronica is both a broad group of electronic-based music styles
     intended for listening rather than strictly for dancing and a music scene that
     came to prominence in the early 1990s in the United Kingdom which incorporated
@@ -166,7 +170,7 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
+  - house
   description: ''
   key_artists: []
   key_labels: []
@@ -181,8 +185,9 @@
   year_end: null
   origin: ''
   parents:
+  - post_punk
   - new_wave
-  - electro_music
+  - krautrock
   description: Synth-pop (short for synthesizer pop; also called techno-pop) is a
     music genre that first became prominent in the late 1970s and features the synthesizer
     as the dominant musical instrument. It was prefigured in the 1960s and early 1970s
@@ -229,6 +234,8 @@
   origin: UK/US
   parents:
   - electronic_music
+  - punk
+  - post_punk
   description: New Wave entstand als Ableger des Punk mit staerkerem Fokus auf Synthesizer,
     Keyboards und Pop-Strukturen. Talking Heads, Devo und Gary Numan bauten Bruecken
     zwischen Punk-Haltung und elektronischen Texturen.

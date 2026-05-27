@@ -9,7 +9,98 @@
   type: influence
   label: "Kraftwerk, Giorgio Moroder"
 
-- from: ebm
+- from: electronic_body_music
   to: techno
   type: influence
   label: "Detroit, 1985"
+
+- from: krautrock
+  to: techno
+  type: influence
+  label: "Motorik, Kraftwerk"
+
+- from: jazz
+  to: musique_concrete
+  type: influence
+  label: "Klangexperiment, Improvisation"
+
+- from: funk
+  to: house
+  type: influence
+  label: "Rhythmische DNA, Chicago DJs"
+
+- from: dub
+  to: drum_and_bass
+  type: influence
+  label: "Soundsystem-Kultur, Bassweight"
+
+- from: disco
+  to: techno
+  type: influence
+  label: "4/4-Puls, Club-Kontext"
+
+- from: reggae
+  to: hip_hop
+  type: influence
+  label: "DJ Kool Herc, Soundsystem-Kultur"
+
+- from: dub
+  to: punk
+  type: influence
+  label: "The Clash, UK Punk-Reggae"
+
+- from: elektronische_musik
+  to: synth_pop
+  type: influence
+  label: "Stockhausen → Kraftwerk → Techno-Pop"
+
+- from: drone
+  to: industrial_music
+  type: influence
+  label: "La Monte Young, Noise-Ästhetik, Tape-Minimalismus"
+
+- from: krautrock
+  to: electronic_body_music
+  type: influence
+  label: "Kraftwerk, Sequencer-Bassline, Klaus Schulze"
+
+- from: electro_music
+  to: house
+  type: influence
+  label: "Roland 808/909, Chicago DJs"
+
+- from: theremin
+  to: elektronische_musik
+  type: influence
+  label: "Frühes elektronisches Instrument, berührungslos"
+
+- from: theremin
+  to: musique_concrete
+  type: influence
+  label: "Experimentelle Komposition, John Cage"
+
+- from: ondes_martenot
+  to: musique_concrete
+  type: influence
+  label: "Messiaen, Boulez"
+
+- from: ondes_martenot
+  to: electroacoustic_music
+  type: influence
+  label: "Keyboard-Synthese, elektronisches Instrument"
+
+- from: hammond_organ
+  to: jazz
+  type: influence
+  label: "Jazz-Organ-Tradition, Jimmy Smith"
+
+- from: hammond_organ
+  to: gospel
+  type: influence
+  label: "Kirchenmusik, Hammond-Tradition"
+
+- from: hammond_organ
+  to: soul
+  type: influence
+  label: "Gospel-Soul-Verbindung, Hammond-Sound"
+

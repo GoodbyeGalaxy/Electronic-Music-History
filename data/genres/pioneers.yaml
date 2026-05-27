@@ -113,12 +113,13 @@
   audio_examples: []
 - id: krautrock
   name: Krautrock
-  track: pioneers
+  track: rock
   year_start: 1967
   year_end: null
   origin: DE
   parents:
   - elektronische_musik
+  - psychedelic_rock
   description: Krautrock ist ein Sammelbegriff fuer die deutsche Avantgarde-Rockmusik
     der fruehen 70er, die elektronische Experimente, repetitive Rhythmen und Synthesizer
     mit Psychedelia verband. Bands wie Can, Neu!, Faust und Tangerine Dream schufen

@@ -1,5 +1,5 @@
 - id: musique_concrete
-  name: Musique Concrete
+  name: Musique concrète
   track: electroacoustic
   year_start: 1948
   origin: Paris, FR
@@ -83,25 +83,10 @@
   wikidata_id: Q1326777
   wikipedia_slug: Electroacoustic_music
   audio_examples: []
-- id: musique_concr_te
-  name: Musique concrète
-  track: electroacoustic
-  year_start: 1948
-  year_end: null
-  origin: ''
-  parents:
-  - musique_concrete
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q823560
-  wikipedia_slug: Musique_concrète
-  audio_examples: []
 - id: noise_music
   name: Noise Music
   track: electroacoustic
-  year_start: 1910
+  year_start: 1984
   year_end: null
   origin: IT/JP
   parents:

@@ -18,7 +18,7 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
   // Y: 4× taller so nodes can spread vertically without overlapping;
   //    rendered height (4× × 0.5zoom) = 2× viewport → user pans to see all tracks.
   const LAYOUT_SCALE   = 2;
-  const LAYOUT_SCALE_Y = 4;
+  const LAYOUT_SCALE_Y = 9;
   const layoutWidth  = viewWidth  * LAYOUT_SCALE;
   const layoutHeight = viewHeight * LAYOUT_SCALE_Y;
   const layout = computeLayout(data, layoutWidth, layoutHeight);
@@ -42,12 +42,17 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
 
   const zoomGroup = svg.append('g').attr('class', 'zoom-group');
 
+  let _transform = d3.zoomIdentity.scale(1 / LAYOUT_SCALE);
+
   const zoomBehavior = d3.zoom()
     .scaleExtent([0.15, 4])
-    .on('zoom', e => zoomGroup.attr('transform', e.transform));
+    .on('zoom', e => {
+      _transform = e.transform;
+      zoomGroup.attr('transform', e.transform);
+    });
 
   svg.call(zoomBehavior);
-  svg.call(zoomBehavior.transform, d3.zoomIdentity.scale(1 / LAYOUT_SCALE));
+  svg.call(zoomBehavior.transform, _transform);
 
   layout.tracks.forEach((track, i) => {
     if (i === 0) return;
@@ -65,10 +70,16 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     .attr('class', d => `edge edge--${d.type}`)
     .attr('stroke', d => {
       if (d.type === 'influence') return '#ffa657';
-      const track = layout.tracks.find(t => t.id === d.target.track);
+      const isCrossTrack = d.source.track !== d.target.track;
+      const trackId = isCrossTrack ? d.source.track : d.target.track;
+      const track = layout.tracks.find(t => t.id === trackId);
       return track ? track.color : '#4fc3f7';
     })
-    .attr('stroke-dasharray', d => d.type === 'influence' ? '5,3' : null);
+    .attr('stroke-dasharray', d => d.type === 'influence' ? '5,3' : null)
+    .attr('stroke-width', d =>
+      d.type === 'derives' && d.source.track !== d.target.track ? 1.1 : 1.5
+    )
+    .attr('stroke-opacity', d => d.type === 'influence' ? 0.5 : 1);
 
   const nodeGroup = zoomGroup.append('g').attr('class', 'nodes');
   const nodeSel = nodeGroup.selectAll('g.node')
@@ -76,17 +87,22 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     .join('g')
     .attr('class', 'node');
 
+  const maxChildren = Math.max(1, ...layout.nodes.map(n => n.childCount));
+
   nodeSel.append('rect')
     .attr('width', d => d.width)
     .attr('height', d => d.height)
     .attr('rx', 6)
     .attr('fill', d => {
       const track = layout.tracks.find(t => t.id === d.track);
-      return track ? hexToFill(track.color) : '#111';
+      const color = track ? track.color : '#888888';
+      const factor = 0.08 + (d.childCount / maxChildren) * 0.52;
+      return hexToFill(color, d._subgroupIdx, d._numSubgroups, factor);
     })
     .attr('stroke', d => {
       const track = layout.tracks.find(t => t.id === d.track);
-      return track ? track.color : '#888';
+      const color = track ? track.color : '#888888';
+      return subgroupStroke(color, d._subgroupIdx, d._numSubgroups);
     })
     .attr('stroke-width', 1.5);
 
@@ -105,8 +121,18 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
 
   const simulation = d3.forceSimulation(layout.nodes)
     .force('x', d3.forceX(d => d.tx).strength(0.2))
-    .force('y', d3.forceY(d => d.ty).strength(0.9))
-    .force('collide', forceRectCollide(16, 14, 6))
+    .force('y', d3.forceY(d => d.ty).strength(d => {
+      if (!d.subgroup) return 0.6;
+      return d.isParent ? 0.45 : 0.25;
+    }))
+    .force('bandClamp', () => {
+      layout.nodes.forEach(n => {
+        if (n._bandTop === undefined) return;
+        const half = n.height / 2;
+        n.y = Math.max(n._bandTop + half, Math.min(n._bandBottom - half, n.y));
+      });
+    })
+    .force('collide', forceRectCollide(16, 22, 8))
     .alphaDecay(0.015)
     .on('tick', ticked);
 
@@ -141,17 +167,24 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     .on('click', (event, d) => {
       event.stopPropagation();
       onNodeClick(d);
-      highlight(d.id);
+      highlightHover(d.id);
+      _clickHighlightId = d.id;
       simulation.alpha(0.08).restart();
     })
-    .on('mouseover', (event, d) => {
+    .on('mouseenter', (event, d) => {
       if (!_clickHighlightId) highlightHover(d.id);
     })
-    .on('mouseout', () => {
+    .on('mouseleave', () => {
       if (!_clickHighlightId) clearHighlight();
     });
 
-  svg.on('click', () => { _clickHighlightId = null; clearHighlight(); onNodeClick(null); });
+  let _bgClickHandler = null;
+  svg.on('click', () => {
+    _clickHighlightId = null;
+    clearHighlight();
+    onNodeClick(null);
+    if (_bgClickHandler) _bgClickHandler();
+  });
 
   let _clickHighlightId = null;
 
@@ -241,7 +274,41 @@ export function createRenderer(wrapper, labelsEl, data, onNodeClick) {
     _applyFilters();
   }
 
-  return { highlight, clearHighlight, filterTracks, filterYears, layout };
+  function focusTrack(trackId) {
+    if (!trackId) {
+      // Zoom out keeping the current viewport centre as anchor
+      const centerX = (viewWidth  / 2 - _transform.x) / _transform.k;
+      const centerY = (viewHeight / 2 - _transform.y) / _transform.k;
+      const k0 = 1 / LAYOUT_SCALE;
+      const tx = viewWidth  / 2 - centerX * k0;
+      const ty = viewHeight / 2 - centerY * k0;
+      svg.transition().duration(600)
+        .call(zoomBehavior.transform, d3.zoomIdentity.translate(tx, ty).scale(k0));
+      return;
+    }
+    const top = layout.trackTops.get(trackId);
+    const h   = layout.trackHeights.get(trackId);
+    if (top === undefined) return;
+    const k  = _transform.k;
+    const tx = _transform.x;
+    const ty = viewHeight / 2 - (top + h / 2) * k;
+    svg.transition().duration(600)
+      .call(zoomBehavior.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+  }
+
+  function setBackgroundClickHandler(fn) { _bgClickHandler = fn; }
+
+  function scrollToNode(nodeId) {
+    const node = layout.nodes.find(n => n.id === nodeId);
+    if (!node) return;
+    const k = _transform.k;
+    const tx = viewWidth  / 2 - node.x * k;
+    const ty = viewHeight / 2 - node.y * k;
+    svg.transition().duration(500)
+      .call(zoomBehavior.transform, d3.zoomIdentity.translate(tx, ty).scale(k));
+  }
+
+  return { highlight, clearHighlight, filterTracks, filterYears, focusTrack, scrollToNode, setBackgroundClickHandler, layout };
 }
 
 // Rectangular collision force: resolves overlap along the axis with least penetration.
@@ -294,9 +361,22 @@ function edgePath(d) {
   return `M ${sx},${sy} C ${mx},${sy} ${mx},${ey} ${ex},${ey}`;
 }
 
-function hexToFill(hex) {
+function hexToFill(hex, subgroupIdx, numSubgroups, baseOverride) {
   const r = parseInt(hex.slice(1, 3), 16);
   const g = parseInt(hex.slice(3, 5), 16);
   const b = parseInt(hex.slice(5, 7), 16);
-  return `rgb(${Math.round(r * 0.12)},${Math.round(g * 0.12)},${Math.round(b * 0.12)})`;
+  const t = (numSubgroups > 1 && subgroupIdx != null)
+    ? subgroupIdx / (numSubgroups - 1) : 0;
+  const factor = baseOverride ?? (0.10 + t * 0.10);
+  return `rgb(${Math.round(r * factor)},${Math.round(g * factor)},${Math.round(b * factor)})`;
+}
+
+function subgroupStroke(hex, subgroupIdx, numSubgroups) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  const t = (numSubgroups > 1 && subgroupIdx != null)
+    ? subgroupIdx / (numSubgroups - 1) : 0;
+  const mix = t * 0.35; // bis 35% Weiß beimischen
+  return `rgb(${Math.round(r + (255 - r) * mix)},${Math.round(g + (255 - g) * mix)},${Math.round(b + (255 - b) * mix)})`;
 }

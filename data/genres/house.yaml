@@ -1,7 +1,7 @@
 - id: house
   name: House
   track: house
-  year_start: 1983
+  year_start: 1982
   origin: Chicago, USA
   parents:
   - soul
@@ -21,34 +21,8 @@
   - Trax Records
   - DJ International
   subvariants: []
-  wikidata_id: Q1647099
+  wikidata_id: Q20502
   wikipedia_slug: House_music
-  audio_examples: []
-- id: deep_house
-  name: Deep House
-  track: house
-  year_start: 1986
-  origin: Chicago/New York, USA
-  parents:
-  - house
-  - soul
-  - jazz
-  description: 'Larry Heard (Mr. Fingers) praegte mit Tracks wie Can You Feel It (1986)
-    einen soulreicheren, atmosphaerisch tieferen House-Stil. New Yorker Labels wie
-    Strictly Rhythm und Nervous Records trugen zur Verbreitung bei.
-
-    '
-  key_artists:
-  - Larry Heard
-  - Larry Levan
-  - Kerri Chandler
-  key_labels:
-  - Trax Records
-  - Strictly Rhythm
-  - Nervous Records
-  subvariants: []
-  wikidata_id: Q1067317
-  wikipedia_slug: Deep_house
   audio_examples: []
 - id: acid_house
   name: Acid House
@@ -57,9 +31,10 @@
   origin: Chicago, USA
   parents:
   - house
-  description: 'Die zufaellig entdeckten Klaenge der Roland TB-303 Bassmaschine —
-    verwendet auf Phuture Acid Tracks (1987) — definierten das Subgenre. In Grossbritannien
-    loeste Acid House 1988 den Second Summer of Love aus.
+  description: 'Acid House entstand in Chicago, als Produzenten die Roland TB-303
+    Bassmaschine zweckentfremdeten, um squelchende, resonante Basslinien zu erzeugen.
+    Phuture Acid Tracks (1987) definierte das Subgenre. In Grossbritannien loeste
+    Acid House 1988 den Second Summer of Love aus und pragte die gesamte Rave-Kultur.
 
     '
   key_artists:
@@ -107,7 +82,7 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
+  - house
   - deep_house
   description: Afro house (also known as Afro-house or Afrohouse) is a sub-genre of
     house music mainly developed in South Africa. The genre emerged in the 1990s.
@@ -127,7 +102,7 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
+  - house
   - deep_house
   description: ''
   key_artists: []
@@ -143,7 +118,6 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
   - house
   - techno
   description: ''
@@ -160,7 +134,6 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
   - house
   description: ''
   key_artists: []
@@ -169,21 +142,7 @@
   wikidata_id: Q29973057
   wikipedia_slug: Gqom
   audio_examples: []
-- id: house_music
-  name: House music
-  track: house
-  year_start: 1982
-  year_end: null
-  origin: ''
-  parents:
-  - house
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q20502
-  wikipedia_slug: House_music
-  audio_examples: []
+
 - id: kwaito
   name: Kwaito
   track: house
@@ -191,7 +150,7 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
+  - house
   - disco
   description: Kwaito is a music genre that emerged in Soweto, Johannesburg, South
     Africa, between the late 1980s and 1990s. It is a sound that features the use
@@ -212,7 +171,7 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
+  - house
   description: ''
   key_artists: []
   key_labels: []
@@ -227,7 +186,7 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
+  - house
   description: ''
   key_artists: []
   key_labels: []
@@ -242,7 +201,7 @@
   year_end: null
   origin: ''
   parents:
-  - house_music
+  - house
   description: 'Vinahouse is a genre of electronic dance music, popularised in Vietnam.
 
     It rose to prominence in Vietnam in the 1990s. The initial name for the genre
@@ -316,4 +275,34 @@
   - Moombahcore
   wikidata_id: ''
   wikipedia_slug: Moombahton
+  audio_examples: []
+- id: french_house
+  name: French House
+  track: house
+  year_start: 1995
+  year_end: null
+  origin: Paris, Frankreich
+  parents:
+  - house
+  - disco
+  description: French House entstand Mitte der 1990er in Paris und zeichnet sich durch
+    Filter- und Phasereffekte auf gesampleten Disco- und Funk-Platten aus. Daft Punk,
+    Cassius und Bob Sinclar prägten den Sound des "French Touch", der mit Vocoder-Gesang,
+    komprimiertem Groove und einer Nähe zu Space Disco die internationale Clubkultur
+    der späten 90er und 2000er dominierte.
+  key_artists:
+  - Daft Punk
+  - Cassius
+  - Bob Sinclar
+  - Modjo
+  - Justice
+  - Étienne de Crécy
+  key_labels:
+  - Roulé
+  - Ed Banger Records
+  - F Communications
+  - Kitsuné
+  subvariants: []
+  wikidata_id: Q1455292
+  wikipedia_slug: French_house
   audio_examples: []

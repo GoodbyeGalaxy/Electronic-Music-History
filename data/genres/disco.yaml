@@ -34,8 +34,32 @@
   key_artists: []
   key_labels: []
   subvariants: []
-  wikidata_id: ''
+  wikidata_id: Q164444
   wikipedia_slug: Funk
+  audio_examples: []
+- id: boogie
+  name: Boogie
+  track: disco
+  year_start: 1977
+  year_end: null
+  origin: USA
+  parents:
+  - funk
+  - disco
+  description: Boogie entstand Ende der 1970er als Brücke zwischen Funk/Post-Disco
+    und der elektronischen Tanzmusik. Mid-Tempo-Rhythmen, Slap-Bass, Synthesizer und
+    Vocoder-Effekte charakterisieren den Sound, der direkt in Electro und House mündete.
+    Kashif, Patrice Rushen und D. Train prägten das Genre.
+  key_artists:
+  - Kashif
+  - Patrice Rushen
+  - D. Train
+  - Sharon Redd
+  - Hamilton Bohannon
+  key_labels: []
+  subvariants: []
+  wikidata_id: Q4942839
+  wikipedia_slug: Boogie_(genre)
   audio_examples: []
 - id: philadelphia_soul
   name: Philadelphia Soul
@@ -45,7 +69,7 @@
   origin: Philadelphia USA
   parents:
   - soul
-  - disco
+  - funk
   description: Philadelphia soul (Philly soul) defined the lush, orchestral sound
     of early 1970s dance music. Its use of strings, syncopated rhythms and polished
     production created the direct blueprint for disco.
@@ -63,6 +87,7 @@
   parents:
   - soul
   - funk
+  - philadelphia_soul
   description: 'Disco entstand in den New Yorker Underground-Clubs der fruehen 1970er
     als Musik fuer queere und afroamerikanische Communities. Giorgio Moroder, Nile
     Rodgers (Chic) und die Produzenten von Philly Soul definierten den Klang mit Streichern
@@ -141,7 +166,6 @@
   origin: ''
   parents:
   - disco
-  - italo_disco
   description: In music, the terms Afro/cosmic disco, the cosmic sound, free-style
     sound, and combinations thereof (Afro, cosmic Afro, Afro-cosmic, Afro-freestyle,
     etc., as well as Afro-funky and later Afro house) are used somewhat interchangeably
@@ -155,42 +179,30 @@
   wikidata_id: Q336567
   wikipedia_slug: Afro/cosmic_music
   audio_examples: []
-- id: discomagic_records
-  name: Discomagic Records
+- id: italo_house
+  name: Italo House
   track: disco
-  year_start: 1982
+  year_start: 1987
   year_end: null
-  origin: ''
+  origin: IT
   parents:
   - italo_disco
-  description: 'Discomagic Records (1979–1997), owned by Severo Lombardoni was the
-    largest dance record label in Italy. It spawned a large number of sub-labels from
-    the early 1980s to the early 1990s and it set the standards for an entire genre
-    of music ranging from Italo disco to Italo house.
-
-    With S.r.I as its initial legal form, the company changed its legal form to S.p.A.
-    in 1994, and to S.a.S. in 1995. Due to financial problems, Discomagic ceased its
-    operations in 1997. Lombardoni sold the company to Bernha'
-  key_artists: []
-  key_labels: []
+  - house
+  description: Italo House entstand um 1987, als italienische Italodisco-Produzenten
+    den Chicago-House-Sound adaptierten. Charakteristisch sind lyrische Elektropiano-Akkorde,
+    euphorischer Gesang und ein treibender Four-on-the-Floor-Rhythmus. Black Box,
+    Cappella und die Produktionsfirma Media Records praegten das Genre.
+  key_artists:
+  - Black Box
+  - Cappella
+  - 49ers
+  - East Side Beat
+  key_labels:
+  - Media Records
+  - Discomagic Records
   subvariants: []
-  wikidata_id: Q3709905
-  wikipedia_slug: Discomagic_Records
-  audio_examples: []
-- id: disco_2
-  name: Disco
-  track: disco
-  year_start: 1972
-  year_end: null
-  origin: ''
-  parents:
-  - disco
-  description: ''
-  key_artists: []
-  key_labels: []
-  subvariants: []
-  wikidata_id: Q58339
-  wikipedia_slug: Disco
+  wikidata_id: Q1569144
+  wikipedia_slug: Italo_house
   audio_examples: []
 - id: eurodisco
   name: Eurodisco
@@ -250,11 +262,11 @@
 - id: italo_dance
   name: Italo Dance
   track: disco
-  year_start: 1988
+  year_start: 1995
   year_end: null
   origin: IT
   parents:
-  - hi_nrg
+  - italo_house
   - eurodance
   description: 'Italo Dance ist die internationale Weiterentwicklung des Italo Disco:
     eingaengige Synthesizer-Melodien, Vier-auf-den-Boden-Rhythmik und emotionale Vocals

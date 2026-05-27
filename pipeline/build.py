@@ -8,29 +8,29 @@ TRACKS = [
     # ── Roots / Art Music ────────────────────────────────────────────────
     Track(id="pioneers",        label="Pioneers",              color="#546e7a", order=0),
     Track(id="electroacoustic", label="Electroacoustic",       color="#388e3c", order=1),
-    Track(id="industrial",      label="Industrial / EBM",      color="#c62828", order=2),
-    Track(id="ambient",         label="Ambient / Chill Out",   color="#7b1fa2", order=3),
-    Track(id="downtempo",       label="Downtempo",             color="#795548", order=4),
+    Track(id="rock",            label="Rock",                  color="#d84315", order=2),
+    Track(id="industrial",      label="Industrial / EBM",      color="#c62828", order=3),
+    Track(id="ambient",         label="Ambient / Chill Out",   color="#7b1fa2", order=4),
+    Track(id="downtempo",       label="Downtempo",             color="#795548", order=5),
     # ── Soul / Funk / Disco ───────────────────────────────────────────────
-    Track(id="disco",           label="Disco / Funk",          color="#e65100", order=5),
-    Track(id="urban",           label="Urban",                 color="#ff8f00", order=6),
+    Track(id="disco",           label="Disco / Funk",          color="#e65100", order=6),
+    Track(id="urban",           label="Urban",                 color="#ff8f00", order=7),
     # ── Hip Hop & Electro ────────────────────────────────────────────────
-    Track(id="hip_hop",         label="Hip Hop",               color="#f57f17", order=7),
-    Track(id="electro",         label="Electro",               color="#0288d1", order=8),
-    Track(id="breakbeat",       label="Breakbeat",             color="#6a1b9a", order=9),
+    Track(id="hip_hop",         label="Hip Hop",               color="#f57f17", order=8),
+    Track(id="electro",         label="Electro",               color="#0288d1", order=9),
+    Track(id="breakbeat",       label="Breakbeat",             color="#6a1b9a", order=10),
     # ── Rave / Club ──────────────────────────────────────────────────────
-    Track(id="techno",          label="Techno",                color="#00695c", order=10),
-    Track(id="hardcore",        label="Hardcore",              color="#b71c1c", order=11),
-    Track(id="drum_n_bass",     label="Drum n Bass",           color="#ad1457", order=12),
+    Track(id="techno",          label="Techno",                color="#00695c", order=11),
+    Track(id="hardcore",        label="Hardcore",              color="#b71c1c", order=12),
+    Track(id="drum_n_bass",     label="Drum n Bass",           color="#ad1457", order=13),
     # ── House Family ─────────────────────────────────────────────────────
-    Track(id="acid",            label="Acid",                  color="#f9a825", order=13),
     Track(id="house",           label="House",                 color="#1565c0", order=14),
     Track(id="garage",          label="Garage / Deep House",   color="#004d40", order=15),
     Track(id="tech_house",      label="Tech House",            color="#01579b", order=16),
     Track(id="progressive",     label="Progressive",           color="#283593", order=17),
     # ── Modern UK Electronic ─────────────────────────────────────────────
-    Track(id="uk_garage",       label="UK Garage",             color="#006064", order=18),
-    Track(id="bass",            label="Bass",                  color="#37474f", order=19),
+    Track(id="uk_garage", label="UK Garage",             color="#006064", order=18),
+    Track(id="bass",            label="Bass",                  color="#37474f", order=20),
 ]
 
 

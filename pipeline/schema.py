@@ -22,6 +22,8 @@ class Genre(BaseModel):
     key_artists: list[str] = []
     key_labels: list[str] = []
     subvariants: list[str] = []
+    subgroup: Optional[str] = None
+    subgroup_order: Optional[int] = None
     wikidata_id: str = ""
     wikipedia_slug: str = ""
     audio_examples: list[AudioExample] = []
